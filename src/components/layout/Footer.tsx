@@ -5,6 +5,6 @@ export const Footer = () => (
     <span>
       {resume.name} · {new Date().getFullYear()}
     </span>
-    <span>Built with React + Vite + Tailwind · Hosted on GitHub Pages</span>
+    <span>Built with React + Vite + Tailwind · Hosted on Firebase</span>
   </footer>
 )
