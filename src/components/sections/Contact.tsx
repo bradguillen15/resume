@@ -42,7 +42,7 @@ export const Contact = () => {
   return (
     <section id="contact" className="px-12 pt-[120px] pb-[160px]">
       <SectionLabel number="05" label="Contact" />
-      <div className="grid grid-cols-2 gap-16 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
         <div>
           <h2 className="font-display text-[36px] font-light leading-[1.2] mb-5 text-text">
             Let's work

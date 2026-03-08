@@ -100,7 +100,7 @@ export const Reviews = () => {
     <section id="reviews" className="px-12 py-[120px]">
       <SectionLabel number="04" label="Reviews" />
 
-      <div className="grid grid-cols-2 gap-12 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
         <div>
           <h2 className="font-display text-[28px] font-light leading-[1.2] mb-4 text-text">
             Leave a{" "}
