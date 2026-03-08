@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Solo se muestran reviews aprobados. Create/update/delete solo vía Admin (Cloud Functions).
+    match /reviews/{reviewId} {
+      allow read: if resource.data.status == 'approved';
+      allow create, update, delete: if false;
+    }
+    // blocked_ips y submission_log solo los usa Cloud Functions (Admin SDK).
+    match /blocked_ips/{docId} {
+      allow read, write: if false;
+    }
+    match /submission_log/{docId} {
+      allow read, write: if false;
+    }
+  }
+}
