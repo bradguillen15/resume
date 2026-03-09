@@ -26,14 +26,22 @@ function hashIp(ip) {
   return crypto.createHash("sha256").update(ip).digest("hex");
 }
 
+function getBlockedUntilMillis(data) {
+  if (!data || !data.blockedUntil) return 0;
+  const v = data.blockedUntil;
+  if (typeof v.toMillis === "function") return v.toMillis();
+  if (typeof v === "number") return v;
+  return 0;
+}
+
 async function checkRateLimitAndRecord(ipHash, type) {
   const now = Date.now();
-  const oneHourAgo = new Date(now - RATE_WINDOW_MS);
+  const oneHourAgoTimestamp = admin.firestore.Timestamp.fromMillis(now - RATE_WINDOW_MS);
 
   const blockedRef = db.collection("blocked_ips").doc(ipHash);
   const blockedSnap = await blockedRef.get();
   if (blockedSnap.exists) {
-    const blockedUntil = blockedSnap.data().blockedUntil?.toMillis?.() ?? 0;
+    const blockedUntil = getBlockedUntilMillis(blockedSnap.data());
     if (blockedUntil > now) {
       throw new HttpsError("resource-exhausted", "Demasiados envíos. Intenta de nuevo más tarde.");
     }
@@ -42,7 +50,8 @@ async function checkRateLimitAndRecord(ipHash, type) {
   const logSnap = await db
     .collection("submission_log")
     .where("ipHash", "==", ipHash)
-    .where("createdAt", ">", oneHourAgo)
+    .where("createdAt", ">", oneHourAgoTimestamp)
+    .orderBy("createdAt", "asc")
     .get();
 
   if (logSnap.size >= MAX_SUBMISSIONS_PER_WINDOW) {
@@ -108,36 +117,42 @@ exports.submitReview = onCall(
     region: "us-central1",
   },
   async (request) => {
-    const ip = getClientIp(request);
-    const ipHash = hashIp(ip);
+    try {
+      const ip = getClientIp(request);
+      const ipHash = hashIp(ip);
 
-    await checkRateLimitAndRecord(ipHash, "review");
+      await checkRateLimitAndRecord(ipHash, "review");
 
-    const { name, email, role, message } = request.data || {};
-    if (!name || !email || !message) {
-      throw new HttpsError("invalid-argument", "Faltan nombre, email o mensaje.");
+      const { name, email, role, message } = request.data || {};
+      if (!name || !email || !role || !message) {
+        throw new HttpsError("invalid-argument", "Faltan nombre, email, role o mensaje.");
+      }
+
+      const trimmedMessage = String(message).trim();
+      if (trimmedMessage.length > 500) {
+        throw new HttpsError("invalid-argument", "El mensaje no puede superar 500 caracteres.");
+      }
+
+      const date = new Date().toLocaleDateString("en-US", {
+        month: "short",
+        year: "numeric",
+      });
+
+      await db.collection("reviews").add({
+        name: String(name).trim(),
+        email: String(email).trim().toLowerCase(),
+        role: String(role).trim(),
+        message: trimmedMessage,
+        date,
+        status: "pending",
+        createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+
+      return { success: true };
+    } catch (err) {
+      if (err instanceof HttpsError) throw err;
+      console.error("submitReview error:", err);
+      throw new HttpsError("internal", err.message || "Error al enviar el review.");
     }
-
-    const trimmedMessage = String(message).trim();
-    if (trimmedMessage.length > 500) {
-      throw new HttpsError("invalid-argument", "El mensaje no puede superar 500 caracteres.");
-    }
-
-    const date = new Date().toLocaleDateString("en-US", {
-      month: "short",
-      year: "numeric",
-    });
-
-    await db.collection("reviews").add({
-      name: String(name).trim(),
-      email: String(email).trim().toLowerCase(),
-      role: role ? String(role).trim() : "",
-      message: trimmedMessage,
-      date,
-      status: "pending",
-      createdAt: admin.firestore.FieldValue.serverTimestamp(),
-    });
-
-    return { success: true };
   }
 );

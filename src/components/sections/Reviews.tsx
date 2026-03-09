@@ -68,7 +68,7 @@ export const Reviews = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!name.trim() || !email.trim() || !message.trim()) return
+    if (!name.trim() || !email.trim() || !role.trim() || !message.trim()) return
 
     setSubmitStatus("sending")
     setErrorMessage("")
@@ -76,7 +76,7 @@ export const Reviews = () => {
       await submitReviewFn({
         name: name.trim(),
         email: email.trim(),
-        role: role.trim() || undefined,
+        role: role.trim(),
         message: message.trim(),
       })
       setSubmitStatus("success")
@@ -128,9 +128,10 @@ export const Reviews = () => {
               className={inputClasses}
             />
             <input
-              placeholder="Role / Company (optional)"
+              placeholder="Role / Company"
               value={role}
               onChange={(e) => setRole(e.target.value)}
+              required
               className={inputClasses}
             />
             <textarea
