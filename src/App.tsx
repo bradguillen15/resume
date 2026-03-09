@@ -11,7 +11,7 @@ export default function App() {
   return (
     <>
       <Nav />
-      <div className="pt-16 max-w-[1100px] mx-auto">
+      <div className="pt-16 max-w-[1100px] mx-auto w-full overflow-x-hidden">
         <Hero />
         <Experience />
         <Skills />
