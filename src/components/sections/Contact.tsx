@@ -70,6 +70,11 @@ export const Contact = () => {
                 value: resume.phone,
                 href: `tel:${resume.phone}`,
               },
+              {
+                label: "GitHub",
+                value: resume.github,
+                href: `https://${resume.github}`,
+              },
             ].map((item) => (
               <a
                 key={item.label}

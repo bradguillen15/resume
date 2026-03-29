@@ -7,7 +7,7 @@ export const resume = {
   email: "bradguillen15@gmail.com",
   phone: "+506 6201-1840",
   linkedin: "linkedin.com/in/brad-guillen-89794ba8",
-  github: "github.com/bradguillen",
+  github: "github.com/bradguillen15",
 
   experience: [
     {
@@ -134,17 +134,17 @@ export const resume = {
         "This site! A personal portfolio and resume built from scratch with a dark blue theme, animated skill bars, and a reviews section.",
       tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"],
       status: "Active",
-      github: "github.com/bradguillen/resume",
+      github: "https://github.com/bradguillen15/resume",
       live: null,
     },
     {
       id: "plan-estrategico-drea",
       title: "Plan Estratégico DREA",
       description:
-        "Digitalization of the Strategic Plan for the MEP (Ministerio de Educación Pública). Converted physical documentation into a structured, accessible digital format.",
-      tags: ["React", "TypeScript", "Firebase", "TanStack Query"],
+        "Sistema de gestión del Plan Estratégico Regional para la DREA (MEP): objetivos, planes operativos, supervisiones, roles, auditoría y exportación Excel/CSV/PDF. React 19, Firebase (Auth, Firestore, Functions).",
+      tags: ["React", "TypeScript", "Firebase", "Firestore", "Tailwind CSS"],
       status: "Completed",
-      github: "#",
+      github: "https://github.com/bradguillen15/plan-estrategico-drea",
       live: null,
     },
   ],
