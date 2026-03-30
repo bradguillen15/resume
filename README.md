@@ -9,7 +9,7 @@ Single-page resume and portfolio site. Live at **[resume-e74cb.web.app](https://
 | Layer | Tech |
 |-------|------|
 | **UI** | React 19, TypeScript, Vite 7 |
-| **Styling** | Tailwind CSS 4, Framer Motion |
+| **Styling** | Tailwind CSS 4, shadcn/ui, Framer Motion |
 | **Hosting** | Firebase Hosting |
 | **Data** | Firestore (reviews with pending/approved flow) |
 | **Backend** | Cloud Functions (contact form via Gmail, review submission, IP rate limit) |
@@ -20,7 +20,7 @@ Single-page resume and portfolio site. Live at **[resume-e74cb.web.app](https://
 
 - **Contact** — Form submits to a Cloud Function; email sent via Gmail (Nodemailer). Rate limit and 1h IP block to reduce spam.
 - **Reviews** — Visitors submit reviews to Firestore; only `approved` reviews are shown. Manual approval in Firebase Console.
-- **Responsive** — Centered layout, max-width 1100px, adapts to screen size.
+- **Responsive** — Desktop sidebar + scrollable content; mobile header and stacked sections.
 
 ---
 
