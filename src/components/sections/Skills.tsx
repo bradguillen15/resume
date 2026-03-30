@@ -1,65 +1,41 @@
-import { motion } from "framer-motion"
-import { resume } from "@/data/resume"
-import { SectionLabel } from "@/components/ui/SectionLabel"
+import { motion } from 'framer-motion'
+import { resume } from '@/data/resume'
+import { SectionLabel } from '@/components/ui/SectionLabel'
 
-const SkillBar = ({
-  name,
-  level,
-  delay,
-}: {
+interface SkillItem {
   name: string
-  level: number
-  delay: number
-}) => (
-  <div className="mb-3.5">
-    <div className="flex justify-between items-baseline mb-1.5">
-      <span className="text-text-muted text-[13px]">{name}</span>
-      <span className="text-text-faint text-[11px] font-mono">{level}%</span>
-    </div>
-    <div className="w-full h-1 bg-border rounded-sm overflow-hidden">
-      <motion.div
-        initial={{ width: 0 }}
-        whileInView={{ width: `${level}%` }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay, ease: "easeOut" }}
-        className="h-full rounded-sm"
-        style={{
-          background:
-            level >= 85
-              ? "var(--color-accent)"
-              : level >= 65
-                ? "rgba(74, 158, 255, 0.6)"
-                : "rgba(74, 158, 255, 0.35)",
-        }}
-      />
-    </div>
+  icon: string | null
+}
+
+const SkillChip = ({ item }: { item: SkillItem }) => (
+  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-bg-secondary border border-border hover:border-accent/30 transition-colors duration-200 group">
+    {item.icon && (
+      <i className={`${item.icon} colored text-[18px] group-hover:scale-110 transition-transform duration-200`} />
+    )}
+    <span className="text-text-secondary text-[12px] whitespace-nowrap">{item.name}</span>
   </div>
 )
 
 export const Skills = () => (
-  <section id="skills" className="px-12 py-[120px]">
+  <section id="skills" className="px-6 sm:px-8 lg:px-12 py-20 lg:py-[120px]">
     <SectionLabel number="02" label="Skills" />
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-8">
+    <div className="space-y-10">
       {resume.skills.map((group, gi) => (
         <motion.div
           key={group.category}
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: gi * 0.1 }}
-          className="p-7 bg-bg-subtle border border-border rounded-lg transition-colors duration-200 hover:border-border-hover"
+          transition={{ delay: gi * 0.08 }}
         >
-          <div className="text-accent text-[11px] tracking-[0.1em] uppercase mb-5 pb-3 border-b border-border">
+          <h3 className="text-[11px] tracking-[0.12em] uppercase text-accent mb-4 pb-3 border-b border-border font-mono">
             {group.category}
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {group.items.map((item) => (
+              <SkillChip key={item.name} item={item} />
+            ))}
           </div>
-          {group.items.map((item, ii) => (
-            <SkillBar
-              key={item.name}
-              name={item.name}
-              level={item.level}
-              delay={gi * 0.1 + ii * 0.05}
-            />
-          ))}
         </motion.div>
       ))}
     </div>

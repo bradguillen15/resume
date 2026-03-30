@@ -11,6 +11,8 @@ import {
 } from "firebase/firestore"
 import { SectionLabel } from "@/components/ui/SectionLabel"
 import { db, submitReviewFn } from "@/lib/firebase"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 
 interface Review {
   id: string
@@ -21,7 +23,7 @@ interface Review {
 }
 
 const inputClasses =
-  "w-full bg-bg-subtle border border-border rounded-md px-4 py-3 text-text text-[13px] font-mono outline-none transition-colors duration-200 focus:border-accent"
+  "w-full bg-bg-secondary border border-border rounded-lg px-4 py-3 text-text-primary text-[13px] font-mono outline-none transition-colors duration-200 focus:border-accent placeholder:text-text-muted"
 
 const REVIEWS_LIMIT = 50
 
@@ -87,8 +89,8 @@ export const Reviews = () => {
       setTimeout(() => setSubmitStatus("idle"), 4000)
     } catch (err: unknown) {
       setSubmitStatus("error")
-      const message = err && typeof err === "object" && "message" in err ? String((err as { message: unknown }).message) : ""
-      if (message.includes("Demasiados")) {
+      const msg = err && typeof err === "object" && "message" in err ? String((err as { message: unknown }).message) : ""
+      if (msg.includes("Demasiados")) {
         setErrorMessage("Demasiados envíos. Intenta de nuevo en 1 hora.")
       } else {
         setErrorMessage("No se pudo enviar. Intenta de nuevo.")
@@ -97,18 +99,17 @@ export const Reviews = () => {
   }
 
   return (
-    <section id="reviews" className="px-12 py-[120px]">
-      <SectionLabel number="04" label="Reviews" />
+    <section id="reviews" className="px-6 sm:px-8 lg:px-12 py-20 lg:py-[120px]">
+      <SectionLabel number="05" label="Reviews" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+        {/* Form column */}
         <div>
-          <h2 className="font-display text-[28px] font-light leading-[1.2] mb-4 text-text">
-            Leave a{" "}
-            <span className="font-medium text-accent">review</span>
+          <h2 className="font-display text-[26px] sm:text-[28px] font-semibold leading-[1.2] mb-3 text-text-primary">
+            Leave a <span className="text-accent">review</span>
           </h2>
-          <p className="text-text-muted text-[13px] leading-[1.8] mb-6">
-            Worked with me? I'd appreciate your feedback. Leave a short comment
-            about our collaboration.
+          <p className="text-text-secondary text-[13px] leading-[1.8] mb-6">
+            Worked with me? I'd appreciate your feedback. Leave a short comment about our collaboration.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -143,39 +144,38 @@ export const Reviews = () => {
               maxLength={500}
               className={`${inputClasses} resize-y`}
             />
-            <button
+            <Button
               type="submit"
               disabled={submitStatus === "sending"}
-              className={`px-6 py-2.5 rounded-md text-[13px] font-mono font-normal tracking-[0.04em] transition-opacity duration-200 ${
-                submitStatus === "sending"
-                  ? "bg-bg-elevated text-text-muted cursor-not-allowed"
-                  : "bg-accent text-[#0A0A0F] cursor-pointer hover:opacity-85"
-              }`}
+              className="bg-accent text-[#0A0A0F] hover:bg-accent/90 font-mono text-[13px] tracking-[0.04em] cursor-pointer w-full sm:w-auto"
             >
               {submitStatus === "sending" ? "Sending..." : "Submit review →"}
-            </button>
+            </Button>
             {submitStatus === "success" && (
-              <p className="text-accent text-[12px]">
-                Thanks! Your review is pending approval.
-              </p>
+              <p className="text-accent text-[12px]">Thanks! Your review is pending approval.</p>
             )}
             {submitStatus === "error" && errorMessage && (
-              <p className="text-[#E8837A] text-[12px]">{errorMessage}</p>
+              <p className="text-[#f87171] text-[12px]">{errorMessage}</p>
             )}
           </form>
         </div>
 
+        {/* Reviews column */}
         <div className="flex flex-col gap-4">
           {loading ? (
-            <div className="px-6 py-10 border border-border rounded-lg text-center">
-              <p className="text-text-faint text-[13px]">Loading reviews...</p>
-            </div>
+            <Card className="border-border bg-bg-secondary">
+              <CardContent className="px-6 py-10 text-center">
+                <p className="text-text-muted text-[13px]">Loading reviews...</p>
+              </CardContent>
+            </Card>
           ) : reviews.length === 0 ? (
-            <div className="px-6 py-10 border border-border rounded-lg text-center">
-              <p className="text-text-faint text-[13px] leading-[1.7]">
-                No reviews yet. Be the first to leave one!
-              </p>
-            </div>
+            <Card className="border-border bg-bg-secondary">
+              <CardContent className="px-6 py-10 text-center">
+                <p className="text-text-muted text-[13px] leading-[1.7]">
+                  No reviews yet. Be the first to leave one!
+                </p>
+              </CardContent>
+            </Card>
           ) : (
             reviews.map((review, i) => (
               <motion.div
@@ -184,26 +184,27 @@ export const Reviews = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="px-6 py-5 bg-bg-subtle border border-border rounded-lg transition-colors duration-200 hover:border-border-hover"
               >
-                <p className="text-text-muted text-[13px] leading-[1.7] mb-3 italic">
-                  "{review.message}"
-                </p>
-                <div className="flex justify-between items-baseline">
-                  <div>
-                    <span className="text-text text-[12px] font-normal">
-                      {review.name}
-                    </span>
-                    {review.role && (
-                      <span className="text-text-faint text-[11px] ml-2">
-                        · {review.role}
-                      </span>
-                    )}
-                  </div>
-                  <span className="text-text-faint text-[11px]">
-                    {review.date}
-                  </span>
-                </div>
+                <Card className="border-border bg-bg-secondary hover:border-border-strong transition-colors duration-200">
+                  <CardContent className="px-6 py-5">
+                    <p className="text-text-secondary text-[13px] leading-[1.7] mb-3 italic">
+                      "{review.message}"
+                    </p>
+                    <div className="flex justify-between items-start gap-4">
+                      <div className="min-w-0">
+                        <p className="text-text-primary text-[12px] font-medium truncate">
+                          {review.name}
+                        </p>
+                        {review.role && (
+                          <p className="text-text-muted text-[11px] leading-[1.5] truncate">
+                            {review.role}
+                          </p>
+                        )}
+                      </div>
+                      <span className="text-text-muted text-[11px] shrink-0 mt-0.5">{review.date}</span>
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))
           )}

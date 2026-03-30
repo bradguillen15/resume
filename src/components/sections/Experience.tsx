@@ -4,7 +4,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel"
 import { Tag } from "@/components/ui/Tag"
 
 export const Experience = () => (
-  <section id="experience" className="px-12 py-[120px]">
+  <section id="experience" className="px-6 sm:px-8 lg:px-12 py-20 lg:py-[120px]">
     <SectionLabel number="01" label="Experience" />
     <div className="relative">
       <div className="absolute left-0 top-0 bottom-0 w-px bg-border" />
@@ -16,25 +16,35 @@ export const Experience = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: i * 0.1 }}
-          className="pl-10 mb-16 relative"
+          className="pl-8 sm:pl-10 mb-14 relative group"
         >
           <div
-            className="absolute -left-1 top-1.5 w-[9px] h-[9px] rounded-full border border-border-hover"
+            className="absolute -left-1 top-1.5 w-[9px] h-[9px] rounded-full border border-border-strong transition-colors duration-200 group-hover:border-accent"
             style={{
-              background: i === 0 ? "var(--color-accent)" : "var(--color-bg-elevated)",
+              background: i === 0 ? "var(--color-accent)" : "var(--color-bg-hover)",
             }}
           />
 
+          {/* Hover left border accent */}
+          <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200 -ml-px" />
+
           <div className="flex justify-between items-start mb-2 flex-wrap gap-2">
             <div>
-              <h3 className="font-display text-[20px] font-light text-text mb-0.5">
+              <h3 className="font-display text-[18px] sm:text-[20px] font-semibold text-text-primary mb-0.5">
                 {exp.role}
               </h3>
-              <span className="text-accent text-[13px]">{exp.company}</span>
+              <a
+                href={exp.companyUrl || undefined}
+                target={exp.companyUrl ? "_blank" : undefined}
+                rel="noreferrer"
+                className="text-accent text-[13px] hover:underline"
+              >
+                {exp.company}
+              </a>
             </div>
             <div className="text-right">
-              <div className="text-text-muted text-[12px]">{exp.period}</div>
-              <div className="text-text-faint text-[11px]">{exp.duration}</div>
+              <div className="text-text-secondary text-[12px]">{exp.period}</div>
+              <div className="text-text-muted text-[11px]">{exp.duration}</div>
             </div>
           </div>
 
@@ -42,9 +52,9 @@ export const Experience = () => (
             {exp.highlights.map((h, j) => (
               <li
                 key={j}
-                className="text-text-muted text-[13px] leading-[1.8] pl-4 relative mb-1"
+                className="text-text-secondary text-[13px] leading-[1.8] pl-4 relative mb-1"
               >
-                <span className="absolute left-0 text-text-faint">–</span>
+                <span className="absolute left-0 text-text-muted">–</span>
                 {h}
               </li>
             ))}
