@@ -1,6 +1,6 @@
 # Brad Guillen — Resume
 
-Single-page resume and portfolio site. Live at **[resume-e74cb.web.app](https://resume-e74cb.web.app/)**.
+Single-page resume and portfolio site. Live at **[bradguillen.com](https://bradguillen.com/)**.
 
 ---
 
