@@ -145,7 +145,7 @@ export const resume = {
       status: 'Active',
       github: 'https://github.com/bradguillen15/resume',
       live: 'https://resume-e74cb.web.app',
-      image: '/resume.png',
+      image: '/resume.webp',
       visible: true,
     },
     {
@@ -157,7 +157,7 @@ export const resume = {
       status: 'Completed',
       github: 'https://github.com/bradguillen15/plan-estrategico-drea',
       live: null,
-      image: '/plan-estrategico-drea.png',
+      image: '/plan-estrategico-drea.webp',
       visible: true,
     },
   ],
