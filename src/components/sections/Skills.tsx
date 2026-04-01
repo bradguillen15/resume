@@ -6,7 +6,7 @@ interface SkillItem {
   name: string
   icon: string | null
   years: number
-  level: 1 | 2 | 3 | 4
+  level: number
 }
 
 const LevelDots = ({ level }: { level: number }) => (
