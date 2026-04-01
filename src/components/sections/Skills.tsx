@@ -5,14 +5,37 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 interface SkillItem {
   name: string
   icon: string | null
+  years: number
+  level: 1 | 2 | 3 | 4
 }
 
+const LevelDots = ({ level }: { level: number }) => (
+  <div className="flex gap-[3px] items-center">
+    {[1, 2, 3, 4].map((i) => (
+      <span
+        key={i}
+        className={`w-[5px] h-[5px] rounded-full transition-colors duration-200 ${
+          i <= level ? 'bg-accent' : 'bg-border-strong group-hover:bg-accent/20'
+        }`}
+      />
+    ))}
+  </div>
+)
+
 const SkillChip = ({ item }: { item: SkillItem }) => (
-  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-bg-secondary border border-border hover:border-accent/30 transition-colors duration-200 group">
-    {item.icon && (
-      <i className={`${item.icon} colored text-[18px] group-hover:scale-110 transition-transform duration-200`} />
-    )}
-    <span className="text-text-secondary text-[12px] whitespace-nowrap">{item.name}</span>
+  <div
+    className="flex flex-col items-center gap-2 px-4 py-3 rounded-lg border border-border hover:border-accent hover:shadow-[0_0_12px_rgba(14,165,233,0.2)] transition-all duration-200 group cursor-default min-w-[80px]"
+    style={{ background: '#252540' }}
+    onMouseEnter={e => (e.currentTarget.style.background = '#303055')}
+    onMouseLeave={e => (e.currentTarget.style.background = '#252540')}
+  >
+    <div className="flex items-center gap-2">
+      {item.icon && (
+        <i className={`${item.icon} colored text-[20px] group-hover:scale-110 transition-transform duration-200 flex-shrink-0`} />
+      )}
+      <span className="text-text-secondary text-[12px] font-semibold whitespace-nowrap group-hover:text-text-primary transition-colors duration-200 leading-none">{item.name}</span>
+    </div>
+    <LevelDots level={item.level} />
   </div>
 )
 
