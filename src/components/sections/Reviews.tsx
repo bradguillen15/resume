@@ -77,7 +77,7 @@ function ReviewMetaRow(props: {
               )}
               onClick={e => e.stopPropagation()}
             >
-              <span className="min-w-0 truncate">{name}</span>
+              <span>{name}</span>
               <LinkedInIcon className="size-4 shrink-0" />
             </a>
           ) : (
