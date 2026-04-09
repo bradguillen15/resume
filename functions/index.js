@@ -123,15 +123,29 @@ exports.submitReview = onCall(
 
       await checkRateLimitAndRecord(ipHash, "review");
 
-      const { name, email, role, message } = request.data || {};
+      const { name, email, role, message, linkedInUrl } = request.data || {};
       if (!name || !email || !role || !message) {
         throw new HttpsError("invalid-argument", "Faltan nombre, email, role o mensaje.");
       }
 
       const trimmedMessage = String(message).trim();
-      if (trimmedMessage.length > 500) {
-        throw new HttpsError("invalid-argument", "El mensaje no puede superar 500 caracteres.");
+
+      const rawLinkedIn = linkedInUrl != null ? String(linkedInUrl).trim() : "";
+      if (!rawLinkedIn) {
+        throw new HttpsError("invalid-argument", "Falta la URL de LinkedIn.");
       }
+
+      let url;
+      try {
+        url = new URL(rawLinkedIn.startsWith("http") ? rawLinkedIn : `https://${rawLinkedIn}`);
+      } catch {
+        throw new HttpsError("invalid-argument", "La URL de LinkedIn no es válida.");
+      }
+      const host = url.hostname.replace(/^www\./, "").toLowerCase();
+      if (host !== "linkedin.com" && !host.endsWith(".linkedin.com")) {
+        throw new HttpsError("invalid-argument", "La URL debe ser un perfil de LinkedIn.");
+      }
+      const linkedInStored = url.href;
 
       const date = new Date().toLocaleDateString("en-US", {
         month: "short",
@@ -143,6 +157,7 @@ exports.submitReview = onCall(
         email: String(email).trim().toLowerCase(),
         role: String(role).trim(),
         message: trimmedMessage,
+        linkedInUrl: linkedInStored,
         date,
         status: "pending",
         createdAt: admin.firestore.FieldValue.serverTimestamp(),

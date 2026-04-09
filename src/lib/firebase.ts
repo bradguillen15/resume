@@ -22,6 +22,12 @@ export const sendContactEmailFn = httpsCallable<
 >(functions, "sendContactEmail")
 
 export const submitReviewFn = httpsCallable<
-  { name: string; email: string; role: string; message: string },
+  {
+    name: string
+    email: string
+    role: string
+    message: string
+    linkedInUrl: string
+  },
   { success: boolean }
 >(functions, "submitReview")
