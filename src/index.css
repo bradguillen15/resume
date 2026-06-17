@@ -97,7 +97,13 @@ body {
   font-size: 14px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  cursor: none;
+}
+
+/* Desktop custom cursor — hide native pointer only when fine pointer is available */
+@media (min-width: 1280px) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
 }
 
 /* Mobile / tablet: restore native scroll and cursor */
@@ -112,7 +118,7 @@ body {
   }
   /* Offset sections so the fixed header doesn't cover them on scroll */
   section[id] {
-    scroll-margin-top: 57px;
+    scroll-margin-top: 65px;
   }
 }
 
@@ -178,5 +184,90 @@ a {
   body {
     background: var(--color-bg-primary);
     color: var(--color-text-primary);
+  }
+}
+
+/* Profile photo spinning ring */
+.spin-ring-wrap {
+  position: relative;
+  display: inline-flex;
+  border-radius: 50%;
+  padding: 4px;
+}
+.spin-ring-wrap-sm {
+  padding: 1.5px;
+}
+.spin-ring-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #0EA5E9 130deg,
+    rgba(14, 165, 233, 0.25) 220deg,
+    transparent 300deg
+  );
+  animation: spin-ring 3s linear infinite;
+}
+.spin-ring-wrap img {
+  position: relative;
+  z-index: 1;
+}
+@keyframes spin-ring {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Skills floating chip animation */
+@keyframes chip-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-5px); }
+}
+
+/* Stack banner connector shimmer — shared class keeps all wires in sync */
+@keyframes line-shimmer {
+  0%   { transform: translateX(-100%); opacity: 0.4; }
+  50%  { opacity: 1; }
+  100% { transform: translateX(200%); opacity: 0.4; }
+}
+
+.stack-wire-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+  animation: line-shimmer 1.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.stack-wire-shimmer-vertical {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent, var(--color-accent), transparent);
+  animation: line-shimmer-vertical 1.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes line-shimmer-vertical {
+  0%   { transform: translateY(-100%); opacity: 0.4; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(200%); opacity: 0.4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin-ring-wrap::before {
+    animation: none !important;
+  }
+
+  .stack-wire-shimmer,
+  .stack-wire-shimmer-vertical {
+    animation: none !important;
   }
 }

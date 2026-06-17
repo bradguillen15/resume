@@ -39,7 +39,7 @@ export const Contact = () => {
   })
 
   return (
-    <section id="contact" className="px-6 sm:px-8 lg:px-12 pt-20 pb-24 lg:pt-[120px] lg:pb-[160px]">
+    <section id="contact" className="px-6 sm:px-8 lg:px-12 py-20 lg:py-[120px]">
       <SectionLabel number="06" label="Contact" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
         {/* Left: info */}
