@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { resume } from '@/data/resume'
 
 const NAV_LINKS = [
   { id: 'about', label: 'About' },
@@ -19,6 +20,7 @@ interface Props {
 
 export const MobileHeader = ({ scrollToSection, activeSection }: Props) => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [firstName, ...lastNameParts] = resume.name.split(' ')
 
   const handleNav = (id: string) => {
     setMenuOpen(false)
@@ -32,15 +34,19 @@ export const MobileHeader = ({ scrollToSection, activeSection }: Props) => {
           type="button"
           onClick={() => scrollToSection('about')}
           aria-label="Go to About"
-          className="cursor-pointer bg-transparent border-none p-0 shrink-0"
+          className="flex items-center gap-2.5 cursor-pointer bg-transparent border-none p-0 min-w-0"
         >
-          <div className="spin-ring-wrap spin-ring-wrap-sm">
+          <div className="spin-ring-wrap spin-ring-wrap-sm shrink-0">
             <img
               src="/profile-photo.jpg"
               alt=""
               className="w-12 h-12 rounded-full object-cover object-top"
             />
           </div>
+          <span className="font-display text-[15px] sm:text-[16px] text-text-primary truncate">
+            {firstName}{' '}
+            <span className="text-accent">{lastNameParts.join(' ')}</span>
+          </span>
         </button>
 
         {/* Hamburger */}

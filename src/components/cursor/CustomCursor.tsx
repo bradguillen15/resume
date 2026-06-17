@@ -1,49 +1,72 @@
-import { useEffect, useState } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
+
+const INTERACTIVE_SELECTOR = 'a, button, [role="button"], input, textarea, select, label';
+const DESKTOP_CURSOR_QUERY = '(min-width: 1280px) and (pointer: fine)';
 
 export const CustomCursor = () => {
-  const mouseX = useMotionValue(-100)
-  const mouseY = useMotionValue(-100)
-  const [isHovering, setIsHovering] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
+  const [enabled, setEnabled] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia(DESKTOP_CURSOR_QUERY).matches,
+  );
+  const mouseX = useMotionValue(-100);
+  const mouseY = useMotionValue(-100);
+  const ringX = useSpring(mouseX, { stiffness: 280, damping: 28, mass: 0.08 });
+  const ringY = useSpring(mouseY, { stiffness: 280, damping: 28, mass: 0.08 });
 
-  const springConfig = { stiffness: 200, damping: 20, mass: 0.1 }
-  const ringX = useSpring(mouseX, springConfig)
-  const ringY = useSpring(mouseY, springConfig)
+  const [isHovering, setIsHovering] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const hoveringRef = useRef(false);
+  const visibleRef = useRef(false);
 
   useEffect(() => {
-    // Don't render on touch devices
-    if (window.matchMedia('(pointer: coarse)').matches) return
+    const media = window.matchMedia(DESKTOP_CURSOR_QUERY);
+    const updateEnabled = () => setEnabled(media.matches);
+    updateEnabled();
+    media.addEventListener('change', updateEnabled);
+    return () => media.removeEventListener('change', updateEnabled);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
 
     const move = (e: MouseEvent) => {
-      mouseX.set(e.clientX)
-      mouseY.set(e.clientY)
-      if (!isVisible) setIsVisible(true)
-    }
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
 
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as Element
-      setIsHovering(!!target.closest('a, button, [role="button"], input, textarea'))
-    }
+      if (!visibleRef.current) {
+        visibleRef.current = true;
+        setIsVisible(true);
+      }
 
-    window.addEventListener('mousemove', move)
-    document.addEventListener('mouseover', handleMouseOver)
+      const interactive = !!(e.target as Element).closest(INTERACTIVE_SELECTOR);
+      if (interactive !== hoveringRef.current) {
+        hoveringRef.current = interactive;
+        setIsHovering(interactive);
+      }
+    };
+
+    const hide = () => {
+      visibleRef.current = false;
+      setIsVisible(false);
+    };
+
+    window.addEventListener('mousemove', move, { passive: true });
+    document.addEventListener('mouseleave', hide);
 
     return () => {
-      window.removeEventListener('mousemove', move)
-      document.removeEventListener('mouseover', handleMouseOver)
-    }
-  }, [mouseX, mouseY, isVisible])
+      window.removeEventListener('mousemove', move);
+      document.removeEventListener('mouseleave', hide);
+    };
+  }, [enabled, mouseX, mouseY]);
 
-  if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
-    return null
+  if (!enabled) {
+    return null;
   }
 
   return (
     <>
-      {/* Inner dot — instant follow */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full will-change-transform"
         style={{
           x: mouseX,
           y: mouseY,
@@ -56,9 +79,8 @@ export const CustomCursor = () => {
           opacity: isVisible ? 1 : 0,
         }}
       />
-      {/* Outer ring — spring lag */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full will-change-transform"
         style={{
           x: ringX,
           y: ringY,
@@ -73,5 +95,5 @@ export const CustomCursor = () => {
         }}
       />
     </>
-  )
-}
+  );
+};

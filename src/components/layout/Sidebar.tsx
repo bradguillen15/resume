@@ -6,7 +6,6 @@ import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 
@@ -141,9 +140,7 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
         transition={{ delay: 1.1 }}
         className="flex gap-4 pt-4 border-t border-border mt-auto"
       >
-        <TooltipProvider>
-          {/* Resume */}
-          <Tooltip>
+        <Tooltip>
             <TooltipTrigger asChild>
               <a
                 href={resume.resumeUrl}
@@ -237,7 +234,6 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
             </TooltipTrigger>
             <TooltipContent>Email</TooltipContent>
           </Tooltip>
-        </TooltipProvider>
       </motion.div>
     </motion.div>
   </aside>

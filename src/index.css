@@ -97,7 +97,13 @@ body {
   font-size: 14px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  cursor: none;
+}
+
+/* Desktop custom cursor — hide native pointer only when fine pointer is available */
+@media (min-width: 1280px) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
 }
 
 /* Mobile / tablet: restore native scroll and cursor */
@@ -212,4 +218,46 @@ a {
 @keyframes spin-ring {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+
+/* Stack banner connector shimmer — shared class keeps all wires in sync */
+@keyframes line-shimmer {
+  0%   { transform: translateX(-100%); opacity: 0.4; }
+  50%  { opacity: 1; }
+  100% { transform: translateX(200%); opacity: 0.4; }
+}
+
+.stack-wire-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+  animation: line-shimmer 1.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.stack-wire-shimmer-vertical {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent, var(--color-accent), transparent);
+  animation: line-shimmer-vertical 1.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes line-shimmer-vertical {
+  0%   { transform: translateY(-100%); opacity: 0.4; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(200%); opacity: 0.4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack-wire-shimmer,
+  .stack-wire-shimmer-vertical {
+    animation: none !important;
+  }
 }

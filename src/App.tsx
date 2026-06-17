@@ -1,6 +1,7 @@
 import { lazy, Suspense, useRef } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { Spotlight } from '@/components/cursor/Spotlight';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { ScrollContainer } from '@/components/layout/ScrollContainer';
 import { MobileHeader } from '@/components/layout/MobileHeader';
@@ -13,8 +14,8 @@ import { Certifications } from '@/components/sections/Certifications';
 import { Reviews } from '@/components/sections/Reviews';
 import { Contact } from '@/components/sections/Contact';
 import { Hobbies } from '@/components/sections/Hobbies';
+import { StackBanner } from '@/components/sections/stack-banner';
 import { useActiveSection } from '@/hooks/useActiveSection';
-import { useMousePosition } from '@/hooks/useMousePosition';
 import { ScrollContext } from '@/context/ScrollContext';
 import { resume } from '@/data/resume';
 
@@ -39,7 +40,6 @@ const SECTIONS = [
 export default function App() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const activeSection = useActiveSection(scrollRef, SECTIONS);
-  const { x, y } = useMousePosition();
 
   const scrollToSection = (id: string) => {
     // Desktop: scroll within the right panel container
@@ -57,14 +57,10 @@ export default function App() {
   };
 
   return (
+    <TooltipProvider>
     <div className="xl:flex xl:h-screen bg-bg-primary relative">
-      {/* Spotlight glow — desktop only */}
-      <div
-        className="hidden xl:block pointer-events-none fixed inset-0 z-0"
-        style={{
-          background: `radial-gradient(600px circle at ${x}px ${y}px, rgba(14,165,233,0.05), transparent 80%)`,
-        }}
-      />
+      {/* Spotlight glow — desktop only, no React re-renders on mousemove */}
+      <Spotlight />
 
       {/* Custom cursor — lazy loaded, desktop only */}
       <Suspense fallback={null}>
@@ -90,6 +86,8 @@ export default function App() {
 
           {/* Spacer to push content below the fixed mobile header (~65px) */}
           <div className="xl:hidden h-[65px]" />
+
+          <StackBanner />
 
           {/* Mobile hero intro (visible only below xl) */}
           <div className="xl:hidden px-6 sm:px-8 pt-10 pb-6 bg-bg-secondary border-b border-border">
@@ -125,7 +123,6 @@ export default function App() {
             </p>
             {/* Social icons */}
             <div className="flex gap-5">
-              <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a
@@ -214,7 +211,6 @@ export default function App() {
                   </TooltipTrigger>
                   <TooltipContent>Resume</TooltipContent>
                 </Tooltip>
-              </TooltipProvider>
             </div>
           </div>
 
@@ -231,5 +227,6 @@ export default function App() {
         </ScrollContainer>
       </ScrollContext.Provider>
     </div>
+    </TooltipProvider>
   );
 }

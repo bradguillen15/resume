@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 import { resume } from '@/data/resume'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { SKILL_ICON_COLORS, SKILL_ICONS } from '@/lib/skillIcons'
 
 interface SkillItem {
   name: string
-  icon: string | null
   years: number
   level: number
 }
@@ -22,22 +22,31 @@ const LevelDots = ({ level }: { level: number }) => (
   </div>
 )
 
-const SkillChip = ({ item }: { item: SkillItem }) => (
-  <div
-    className="flex flex-col items-center gap-2 px-4 py-3 rounded-lg border border-border hover:border-accent hover:shadow-[0_0_12px_rgba(14,165,233,0.2)] transition-all duration-200 group cursor-default min-w-[80px]"
-    style={{ background: '#252540' }}
-    onMouseEnter={e => (e.currentTarget.style.background = '#303055')}
-    onMouseLeave={e => (e.currentTarget.style.background = '#252540')}
-  >
-    <div className="flex items-center gap-2">
-      {item.icon && (
-        <i className={`${item.icon} colored text-[20px] group-hover:scale-110 transition-transform duration-200 flex-shrink-0`} />
-      )}
-      <span className="text-text-secondary text-[12px] font-semibold whitespace-nowrap group-hover:text-text-primary transition-colors duration-200 leading-none">{item.name}</span>
+const SkillChip = ({ item }: { item: SkillItem }) => {
+  const Icon = SKILL_ICONS[item.name]
+  const iconColor = SKILL_ICON_COLORS[item.name]
+
+  return (
+    <div
+      className="flex flex-col items-center gap-2 px-4 py-3 rounded-lg border border-border hover:border-accent hover:shadow-[0_0_12px_rgba(14,165,233,0.2)] transition-all duration-200 group cursor-default min-w-[80px]"
+      style={{ background: '#252540' }}
+      onMouseEnter={e => (e.currentTarget.style.background = '#303055')}
+      onMouseLeave={e => (e.currentTarget.style.background = '#252540')}
+    >
+      <div className="flex items-center gap-2">
+        {Icon && (
+          <Icon
+            size={20}
+            color={iconColor}
+            className="group-hover:scale-110 transition-transform duration-200 flex-shrink-0"
+          />
+        )}
+        <span className="text-text-secondary text-[12px] font-semibold whitespace-nowrap group-hover:text-text-primary transition-colors duration-200 leading-none">{item.name}</span>
+      </div>
+      <LevelDots level={item.level} />
     </div>
-    <LevelDots level={item.level} />
-  </div>
-)
+  )
+}
 
 export const Skills = () => (
   <section id="skills" className="px-6 sm:px-8 lg:px-12 py-20 lg:py-[120px]">
