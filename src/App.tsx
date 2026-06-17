@@ -113,7 +113,7 @@ export default function App() {
                 repeat={Infinity}
               />
             </div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-5">
               <span className="relative flex h-2 w-2">
                 <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
@@ -122,9 +122,6 @@ export default function App() {
                 Available for work
               </span>
             </div>
-            <p className="text-text-secondary text-[13px] leading-[1.7] mb-5">
-              {resume.heroBio}
-            </p>
             {/* Social icons */}
             <div className="flex gap-5">
                 <Tooltip>

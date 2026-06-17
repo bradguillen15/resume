@@ -1,8 +1,6 @@
 export const resume = {
   name: 'Brad Guillen',
   title: 'Senior Frontend Engineer',
-  heroBio:
-    'I build fast, scalable web applications. 8+ years shipping production-grade code at enterprise scale, with a growing focus on full stack and building with AI APIs.',
   aboutSummary:
     'Senior Web Developer with 8+ years of experience in web development, specializing in React. Experienced building and maintaining large-scale applications, driving technical migrations, optimizing performance, and consolidating multiple codebases. Comfortable with mentoring, demoing, managing deployments, and delivering clean, maintainable code in agile environments.',
   aboutContext:
