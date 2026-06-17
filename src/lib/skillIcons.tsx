@@ -17,6 +17,7 @@ import {
   SiGulp,
   SiJavascript,
   SiJest,
+  SiHelm,
   SiJenkins,
   SiMongodb,
   SiMysql,
@@ -31,6 +32,7 @@ import {
   SiReacthookform,
   SiReactquery,
   SiSpringboot,
+  SiSpinnaker,
   SiSupabase,
   SiTypescript,
   SiVite,
@@ -64,6 +66,10 @@ export const SKILL_ICONS: Record<string, SkillIcon> = {
   Docker: SiDocker,
   AWS: DiAws,
   Jenkins: SiJenkins,
+  'MFE / Module Federation': SiWebpack,
+  Harness: SiHelm,
+  Spinnaker: SiSpinnaker,
+  NoSQL: SiMongodb,
   Firebase: SiFirebase,
   'TanStack Query': SiReactquery,
   'React Hook Form': SiReacthookform,
@@ -103,6 +109,10 @@ export const SKILL_ICON_COLORS: Partial<Record<string, string>> = {
   Docker: '#2496ED',
   AWS: '#FF9900',
   Jenkins: '#D24939',
+  'MFE / Module Federation': '#8DD6F9',
+  Harness: '#00ADE4',
+  Spinnaker: '#139BB4',
+  NoSQL: '#47A248',
   Firebase: '#FFCA28',
   'TanStack Query': '#FF4154',
   'React Hook Form': '#EC5990',
@@ -119,9 +129,11 @@ export const SKILL_ICON_COLORS: Partial<Record<string, string>> = {
 const DEFAULT_ICON_COLOR = '#F1F5F9';
 
 export function getSkillIcon(name: string): SkillIcon | undefined {
-  return SKILL_ICONS[name];
+  return Object.hasOwn(SKILL_ICONS, name) ? SKILL_ICONS[name] : undefined;
 }
 
 export function getSkillColor(name: string): string {
-  return SKILL_ICON_COLORS[name] ?? DEFAULT_ICON_COLOR;
+  return Object.hasOwn(SKILL_ICON_COLORS, name)
+    ? (SKILL_ICON_COLORS[name] ?? DEFAULT_ICON_COLOR)
+    : DEFAULT_ICON_COLOR;
 }

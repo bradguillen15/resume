@@ -26,7 +26,7 @@ interface Props {
 }
 
 export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
-  <aside className="h-screen flex flex-col px-10 xl:px-14 py-10 bg-bg-secondary border-r border-border overflow-hidden">
+  <aside className="h-screen flex flex-col px-10 xl:px-14 py-10 bg-bg-secondary border-r border-border overflow-y-auto overflow-x-hidden">
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}

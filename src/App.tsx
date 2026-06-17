@@ -37,6 +37,9 @@ const SECTIONS = [
   'hobbies',
 ];
 
+const [heroFirstName, ...heroLastNameParts] = resume.name.split(' ');
+const heroLastName = heroLastNameParts.join(' ');
+
 export default function App() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const activeSection = useActiveSection(scrollRef, SECTIONS);
@@ -92,7 +95,8 @@ export default function App() {
           {/* Mobile hero intro (visible only below xl) */}
           <div className="xl:hidden px-6 sm:px-8 pt-10 pb-6 bg-bg-secondary border-b border-border">
             <h1 className="font-display text-[26px] sm:text-[32px] font-semibold text-text-primary mb-1">
-              Brad <span className="text-accent">Guillen</span>
+              {heroFirstName}{' '}
+              <span className="text-accent">{heroLastName}</span>
             </h1>
             <div className="text-text-secondary text-[13px] font-mono h-[20px] mb-3">
               <TypeAnimation

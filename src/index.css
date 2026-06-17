@@ -262,6 +262,10 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .spin-ring-wrap::before {
+    animation: none !important;
+  }
+
   .stack-wire-shimmer,
   .stack-wire-shimmer-vertical {
     animation: none !important;
