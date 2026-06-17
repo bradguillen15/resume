@@ -220,6 +220,12 @@ a {
   to   { transform: rotate(360deg); }
 }
 
+/* Skills floating chip animation */
+@keyframes chip-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-5px); }
+}
+
 /* Stack banner connector shimmer — shared class keeps all wires in sync */
 @keyframes line-shimmer {
   0%   { transform: translateX(-100%); opacity: 0.4; }
