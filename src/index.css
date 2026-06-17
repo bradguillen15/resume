@@ -112,7 +112,7 @@ body {
   }
   /* Offset sections so the fixed header doesn't cover them on scroll */
   section[id] {
-    scroll-margin-top: 57px;
+    scroll-margin-top: 65px;
   }
 }
 
@@ -179,4 +179,37 @@ a {
     background: var(--color-bg-primary);
     color: var(--color-text-primary);
   }
+}
+
+/* Profile photo spinning ring */
+.spin-ring-wrap {
+  position: relative;
+  display: inline-flex;
+  border-radius: 50%;
+  padding: 4px;
+}
+.spin-ring-wrap-sm {
+  padding: 1.5px;
+}
+.spin-ring-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #0EA5E9 130deg,
+    rgba(14, 165, 233, 0.25) 220deg,
+    transparent 300deg
+  );
+  animation: spin-ring 3s linear infinite;
+}
+.spin-ring-wrap img {
+  position: relative;
+  z-index: 1;
+}
+@keyframes spin-ring {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }

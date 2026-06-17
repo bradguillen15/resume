@@ -12,6 +12,7 @@ import { Projects } from '@/components/sections/Projects';
 import { Certifications } from '@/components/sections/Certifications';
 import { Reviews } from '@/components/sections/Reviews';
 import { Contact } from '@/components/sections/Contact';
+import { Hobbies } from '@/components/sections/Hobbies';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { useMousePosition } from '@/hooks/useMousePosition';
 import { ScrollContext } from '@/context/ScrollContext';
@@ -32,6 +33,7 @@ const SECTIONS = [
   'certifications',
   'reviews',
   'contact',
+  'hobbies',
 ];
 
 export default function App() {
@@ -86,8 +88,8 @@ export default function App() {
             activeSection={activeSection}
           />
 
-          {/* Spacer to push content below the fixed mobile header (~57px) */}
-          <div className="xl:hidden h-[57px]" />
+          {/* Spacer to push content below the fixed mobile header (~65px) */}
+          <div className="xl:hidden h-[65px]" />
 
           {/* Mobile hero intro (visible only below xl) */}
           <div className="xl:hidden px-6 sm:px-8 pt-10 pb-6 bg-bg-secondary border-b border-border">
@@ -224,6 +226,7 @@ export default function App() {
           <Certifications />
           <Reviews />
           <Contact />
+          <Hobbies />
           <Footer />
         </ScrollContainer>
       </ScrollContext.Provider>

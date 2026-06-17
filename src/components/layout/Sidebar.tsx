@@ -18,6 +18,7 @@ const NAV_LINKS = [
   { id: 'certifications', label: 'Certifications' },
   { id: 'reviews', label: 'Reviews' },
   { id: 'contact', label: 'Contact' },
+  { id: 'hobbies', label: 'Hobbies' },
 ];
 
 interface Props {
@@ -26,13 +27,29 @@ interface Props {
 }
 
 export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
-  <aside className="h-screen flex flex-col px-10 xl:px-14 py-10 bg-bg-secondary border-r border-border overflow-y-auto">
+  <aside className="h-screen flex flex-col px-10 xl:px-14 py-10 bg-bg-secondary border-r border-border overflow-hidden">
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className="flex flex-col min-h-full"
     >
+      {/* Profile photo */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.1, duration: 0.5 }}
+        className="mb-5 flex justify-center"
+      >
+        <div className="spin-ring-wrap">
+          <img
+            src="/profile-photo.jpg"
+            alt={resume.name}
+            className="w-45 h-45 rounded-full object-cover object-top"
+          />
+        </div>
+      </motion.div>
+
       {/* Name */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -86,20 +103,10 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
         </span>
       </motion.div>
 
-      {/* Bio */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.55 }}
-        className="text-text-secondary text-[13px] leading-[1.7] mb-5"
-      >
-        {resume.heroBio}
-      </motion.p>
-
-      <Separator className="bg-border mb-6" />
+      <Separator className="bg-border mb-4" />
 
       {/* Nav */}
-      <nav className="flex flex-col gap-0.5" aria-label="Portfolio sections">
+      <nav className="flex flex-col gap-0.5 mb-4" aria-label="Portfolio sections">
         {NAV_LINKS.map((link, i) => {
           const isActive = activeSection === link.id;
           return (
@@ -132,7 +139,7 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.1 }}
-        className="flex gap-4 pt-5 border-t border-border mt-auto"
+        className="flex gap-4 pt-4 border-t border-border mt-auto"
       >
         <TooltipProvider>
           {/* Resume */}

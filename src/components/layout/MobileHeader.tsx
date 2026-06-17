@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { id: 'certifications', label: 'Certifications' },
   { id: 'reviews', label: 'Reviews' },
   { id: 'contact', label: 'Contact' },
+  { id: 'hobbies', label: 'Hobbies' },
 ]
 
 interface Props {
@@ -26,13 +27,20 @@ export const MobileHeader = ({ scrollToSection, activeSection }: Props) => {
 
   return (
     <header className="xl:hidden fixed top-0 left-0 right-0 z-50 bg-bg-secondary/90 backdrop-blur-md border-b border-border">
-      <div className="flex items-center justify-between px-5 py-4">
-        {/* Name / brand */}
+      <div className="flex items-center justify-between px-5 py-2">
         <button
+          type="button"
           onClick={() => scrollToSection('about')}
-          className="font-display text-[16px] text-text-primary cursor-pointer bg-transparent border-none"
+          aria-label="Go to About"
+          className="cursor-pointer bg-transparent border-none p-0 shrink-0"
         >
-          <span className="text-accent">Brad</span> Guillen
+          <div className="spin-ring-wrap spin-ring-wrap-sm">
+            <img
+              src="/profile-photo.jpg"
+              alt=""
+              className="w-12 h-12 rounded-full object-cover object-top"
+            />
+          </div>
         </button>
 
         {/* Hamburger */}
