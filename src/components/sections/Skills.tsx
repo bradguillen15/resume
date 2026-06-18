@@ -1,8 +1,7 @@
-import { createElement } from 'react'
 import { motion } from 'framer-motion'
 import { resume } from '@/data/resume'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import { getSkillColor, getSkillIcon } from '@/lib/skillIcons'
+import { SkillIconImage } from '@/components/icons/SkillIconImage'
 
 interface SkillItem {
   name: string
@@ -24,8 +23,6 @@ const LevelDots = ({ level }: { level: number }) => (
 )
 
 const SkillChip = ({ item, index }: { item: SkillItem; index: number }) => {
-  const Icon = getSkillIcon(item.name)
-  const iconColor = getSkillColor(item.name)
   const duration = 2.8 + (index % 5) * 0.35
   const delay = index * 0.22
 
@@ -50,13 +47,11 @@ const SkillChip = ({ item, index }: { item: SkillItem; index: number }) => {
       }}
     >
       <div className="flex items-center gap-2">
-        {Icon &&
-          createElement(Icon, {
-            size: 20,
-            color: iconColor,
-            className:
-              'group-hover:scale-110 transition-transform duration-200 flex-shrink-0',
-          })}
+        <SkillIconImage
+          name={item.name}
+          size={20}
+          className="group-hover:scale-110 transition-transform duration-200 flex-shrink-0"
+        />
         <span className="text-text-secondary text-[12px] font-semibold whitespace-nowrap group-hover:text-text-primary transition-colors duration-200 leading-none">
           {item.name}
         </span>

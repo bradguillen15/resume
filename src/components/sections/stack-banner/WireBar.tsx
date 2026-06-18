@@ -5,17 +5,19 @@ import {
   WIRE_VERTICAL_CLASS,
 } from './constants';
 
-const SHIMMER_HORIZONTAL = 'stack-wire-shimmer';
-const SHIMMER_VERTICAL = 'stack-wire-shimmer-vertical';
+const WIRE_DOT_HORIZONTAL = 'stack-wire-dot';
+const WIRE_DOT_VERTICAL = 'stack-wire-dot-vertical';
 
 /** Horizontal connector */
 export const WireBar = memo(function WireBar() {
   return (
     <div
-      className={`relative h-px bg-border-strong overflow-hidden ${WIRE_CLASS}`}
+      className={`relative flex items-center overflow-visible ${WIRE_CLASS}`}
       aria-hidden
     >
-      <span className={SHIMMER_HORIZONTAL} />
+      <div className="relative h-px w-full bg-border-strong overflow-visible">
+        <span className={WIRE_DOT_HORIZONTAL} />
+      </div>
     </div>
   );
 });
@@ -32,10 +34,12 @@ export const VerticalWireBar = memo(function VerticalWireBar({
 
   return (
     <div
-      className={`relative bg-border-strong overflow-hidden ${sizeClass}`}
+      className={`relative flex justify-center overflow-visible ${sizeClass}`}
       aria-hidden
     >
-      <span className={SHIMMER_VERTICAL} />
+      <div className="relative h-full w-px bg-border-strong overflow-visible">
+        <span className={WIRE_DOT_VERTICAL} />
+      </div>
     </div>
   );
 });

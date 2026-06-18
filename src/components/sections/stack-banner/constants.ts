@@ -1,4 +1,4 @@
-export const ROTATE_MS = 5000;
+export const ROTATE_MS = 3500;
 
 /** Fixed wire width — narrower on mobile for tighter layouts */
 export const WIRE_CLASS = 'w-8 sm:w-11 lg:w-14 shrink-0';

@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { getSkillColor, getSkillIcon } from '@/lib/skillIcons';
+import { SkillIconImage } from '@/components/icons/SkillIconImage';
 import { CARD_CLASS } from './constants';
 import { STACK_CATEGORY_BY_ID } from './data';
 import type { StackCategoryId } from './types';
@@ -17,8 +17,6 @@ export const RotatingStackCard = memo(
   function RotatingStackCard({ categoryId, index, onAdvance }: RotatingStackCardProps) {
     const category = STACK_CATEGORY_BY_ID[categoryId];
     const name = category.items[index];
-    const Icon = getSkillIcon(name);
-    const color = getSkillColor(name);
 
     return (
       <button
@@ -33,7 +31,7 @@ export const RotatingStackCard = memo(
 
         <div className="relative flex flex-1 items-center justify-center w-full min-h-0">
           <AnimatePresence mode="wait" initial={false}>
-            {Icon ? (
+            {name ? (
               <motion.div
                 key={`${categoryId}-icon-${name}`}
                 initial={{ opacity: 0 }}
@@ -42,7 +40,7 @@ export const RotatingStackCard = memo(
                 transition={FADE_TRANSITION}
                 className="absolute inset-0 flex items-center justify-center"
               >
-                <Icon size={38} color={color} />
+                <SkillIconImage name={name} size={38} />
               </motion.div>
             ) : null}
           </AnimatePresence>

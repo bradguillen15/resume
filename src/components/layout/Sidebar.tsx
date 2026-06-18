@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
 import { resume } from '@/data/resume';
+import { HeroTypeAnimation } from '@/components/layout/HeroTypeAnimation';
 import { Separator } from '@/components/ui/separator';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 import {
@@ -69,21 +69,8 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.35 }}
-        className="text-text-secondary text-[15px] font-mono h-[24px] mb-4"
       >
-        <TypeAnimation
-          sequence={[
-            'Senior Frontend Developer',
-            2200,
-            'Full Stack Developer',
-            2200,
-            'AI Engineer in Progress...',
-            2200,
-          ]}
-          wrapper="span"
-          cursor={true}
-          repeat={Infinity}
-        />
+        <HeroTypeAnimation className="text-text-secondary text-[15px] font-mono h-[24px] mb-4" />
       </motion.div>
 
       {/* Available for work badge */}

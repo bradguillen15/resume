@@ -2,7 +2,39 @@ import { motion } from 'framer-motion'
 import { resume } from '@/data/resume'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 
+const GROUP_URLS: Record<string, string> = {
+  Anthropic: 'https://anthropic.skilljar.com/',
+  'Boot.dev': 'https://www.boot.dev/',
+}
+
+const ExternalLinkIcon = () => (
+  <svg
+    width="11"
+    height="11"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="flex-shrink-0 opacity-70"
+    aria-hidden
+  >
+    <path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+  </svg>
+)
+
 const groupConfig = {
+  Anthropic: {
+    dotClass: 'bg-green-500',
+    labelClass: 'text-green-400',
+    badgeClass: 'border-green-500/30 text-green-400 hover:bg-green-500/10',
+  },
+  'Boot.dev': {
+    dotClass: 'bg-accent',
+    labelClass: 'text-accent',
+    badgeClass: 'border-accent/30 text-accent hover:bg-accent/10',
+  },
   Completed: {
     dotClass: 'bg-green-500',
     labelClass: 'text-green-400',
@@ -37,9 +69,21 @@ export const Certifications = () => (
             {/* Group heading */}
             <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border">
               <span className={`w-2 h-2 rounded-full flex-shrink-0 ${config.dotClass}`} />
-              <span className={`text-[11px] tracking-[0.1em] uppercase font-mono font-medium ${config.labelClass}`}>
-                {group.group}
-              </span>
+              {GROUP_URLS[group.group] ? (
+                <a
+                  href={GROUP_URLS[group.group]}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[11px] tracking-[0.1em] uppercase font-mono font-medium text-accent underline underline-offset-2 decoration-accent/40 hover:decoration-accent transition-colors duration-200"
+                >
+                  {group.group}
+                  <ExternalLinkIcon />
+                </a>
+              ) : (
+                <span className={`text-[11px] tracking-[0.1em] uppercase font-mono font-medium ${config.labelClass}`}>
+                  {group.group}
+                </span>
+              )}
             </div>
 
             {/* Items */}
@@ -64,15 +108,9 @@ export const Certifications = () => (
                       </a>
                     )}
                   </div>
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-text-muted text-[11px]">{cert.issuer}</span>
-                    {cert.date && (
-                      <>
-                        <span className="text-text-muted text-[11px]">·</span>
-                        <span className="text-text-muted text-[11px]">{cert.date}</span>
-                      </>
-                    )}
-                  </div>
+                  {cert.date && (
+                    <span className="text-text-muted text-[11px]">{cert.date}</span>
+                  )}
                 </div>
               ))}
             </div>
