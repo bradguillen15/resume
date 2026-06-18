@@ -226,39 +226,47 @@ a {
   50%       { transform: translateY(-5px); }
 }
 
-/* Stack banner connector shimmer — shared class keeps all wires in sync */
-@keyframes line-shimmer {
-  0%   { transform: translateX(-100%); opacity: 0.4; }
-  50%  { opacity: 1; }
-  100% { transform: translateX(200%); opacity: 0.4; }
+/* Stack banner connector — traveling dot synced to the 3.5s tech rotation (ROTATE_MS).
+   The pulse travels the wire and lands on the node right as the technology swaps. */
+@keyframes wire-dot-horizontal {
+  0% { left: 100%; opacity: 0; }
+  6% { opacity: 1; }
+  84% { left: 0%; opacity: 1; }
+  94% { left: 0%; opacity: 1; }
+  100% { left: 0%; opacity: 0; }
 }
 
-.stack-wire-shimmer {
+@keyframes wire-dot-vertical {
+  0% { top: 100%; opacity: 0; }
+  6% { opacity: 1; }
+  84% { top: 0%; opacity: 1; }
+  94% { top: 0%; opacity: 1; }
+  100% { top: 0%; opacity: 0; }
+}
+
+.stack-wire-dot,
+.stack-wire-dot-vertical {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 50%;
-  background: linear-gradient(to right, transparent, var(--color-accent), transparent);
-  animation: line-shimmer 1.6s ease-in-out infinite;
-  will-change: transform;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--color-accent) 65%, transparent);
+  will-change: left, top, opacity;
 }
 
-.stack-wire-shimmer-vertical {
-  position: absolute;
-  top: 0;
+.stack-wire-dot {
+  top: 50%;
   left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(to bottom, transparent, var(--color-accent), transparent);
-  animation: line-shimmer-vertical 1.6s ease-in-out infinite;
-  will-change: transform;
+  transform: translate(-50%, -50%);
+  animation: wire-dot-horizontal 3.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
-@keyframes line-shimmer-vertical {
-  0%   { transform: translateY(-100%); opacity: 0.4; }
-  50%  { opacity: 1; }
-  100% { transform: translateY(200%); opacity: 0.4; }
+.stack-wire-dot-vertical {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  animation: wire-dot-vertical 3.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -266,8 +274,9 @@ a {
     animation: none !important;
   }
 
-  .stack-wire-shimmer,
-  .stack-wire-shimmer-vertical {
+  .stack-wire-dot,
+  .stack-wire-dot-vertical {
     animation: none !important;
+    opacity: 0.85;
   }
 }

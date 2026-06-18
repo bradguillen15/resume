@@ -1,6 +1,6 @@
 export const resume = {
   name: 'Brad Guillen',
-  title: 'Senior Frontend Engineer',
+  title: 'Senior Web Developer',
   aboutSummary:
     'Senior Web Developer with 8+ years of experience in web development, specializing in React. Experienced building and maintaining large-scale applications, driving technical migrations, optimizing performance, and consolidating multiple codebases. Comfortable with mentoring, demoing, managing deployments, and delivering clean, maintainable code in agile environments.',
   aboutContext:
@@ -84,12 +84,14 @@ export const resume = {
         { name: 'Node.js', years: 4, level: 3 },
         { name: 'Webpack', years: 5, level: 3 },
         { name: 'Next.js', years: 3, level: 3 },
+        { name: 'Tailwind', years: 2, level: 3 },
         { name: 'Express', years: 2, level: 3 },
         { name: 'GraphQL', years: 2, level: 2 },
         { name: 'Gulp', years: 2, level: 2 },
         { name: 'Jest', years: 3, level: 3 },
         { name: 'Spring Boot', years: 1, level: 2 },
         { name: 'Flask', years: 1, level: 1 },
+        { name: 'FastAPI', years: 1, level: 2 },
         { name: 'Vite', years: 1, level: 2 },
       ],
     },
@@ -99,7 +101,6 @@ export const resume = {
         { name: 'MySQL', years: 3, level: 3 },
         { name: 'PostgreSQL', years: 3, level: 3 },
         { name: 'MongoDB', years: 3, level: 3 },
-        { name: 'NoSQL', years: 3, level: 3 },
       ],
     },
     {
@@ -127,23 +128,15 @@ export const resume = {
 
   projects: [
     {
-      id: 'futures-crypto',
-      title: 'Sentiment',
+      id: 'resume-site',
+      title: 'Portfolio / Resume',
       description:
-        'Crypto futures sentiment assistant powered by Claude AI. Combines live BTC/USDT market data, Fear & Greed index, and futures positioning to deliver real-time sentiment reads via a chat interface.',
-      tags: [
-        'React',
-        'Next.js',
-        'TypeScript',
-        'Node.js',
-        'Claude API',
-        'RAG',
-        'Vercel',
-      ],
-      status: 'Completed',
-      github: 'https://github.com/bradguillen15/futures-crypto',
-      live: 'https://futures-crypto.vercel.app/',
-      image: '/sentiment.webp',
+        'This site — a personal portfolio built from scratch with a split-panel layout, custom cursor, typewriter effect, and Firebase backend.',
+      tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion'],
+      status: 'Active',
+      github: 'https://github.com/bradguillen15/resume',
+      live: 'https://resume-e74cb.web.app',
+      image: '/resume.webp',
       visible: true,
     },
     {
@@ -164,41 +157,31 @@ export const resume = {
       visible: true,
     },
     {
-      id: 'resume-site',
-      title: 'Portfolio / Resume',
+      id: 'futures-crypto',
+      title: 'Sentiment',
       description:
-        'This site — a personal portfolio built from scratch with a split-panel layout, custom cursor, typewriter effect, and Firebase backend.',
-      tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion'],
-      status: 'Active',
-      github: 'https://github.com/bradguillen15/resume',
-      live: 'https://resume-e74cb.web.app',
-      image: '/resume.webp',
+        'Crypto futures sentiment assistant powered by Claude AI. Combines live BTC/USDT market data, Fear & Greed index, and futures positioning into a real-time chat interface. Under active development — more features and code coming soon.',
+      tags: [
+        'React',
+        'Next.js',
+        'TypeScript',
+        'Node.js',
+        'Claude API',
+        'RAG',
+        'Vercel',
+      ],
+      status: 'In Progress',
+      github: 'https://github.com/bradguillen15/futures-crypto',
+      live: 'https://futures-crypto.vercel.app/',
+      image: '/sentiment.webp',
       visible: true,
     },
   ],
 
   certifications: [
     {
-      group: 'Completed',
+      group: 'Anthropic',
       items: [
-        {
-          name: 'Claude 101',
-          issuer: 'Anthropic',
-          date: 'March 2026',
-          url: 'https://verify.skilljar.com/c/hv3kfb632qj7',
-        },
-        {
-          name: 'Claude Code in Action',
-          issuer: 'Anthropic',
-          date: 'March 2026',
-          url: 'https://verify.skilljar.com/c/8wtazspmwpsq',
-        },
-        {
-          name: 'AI Fluency: Framework & Foundations',
-          issuer: 'Anthropic',
-          date: 'March 2026',
-          url: 'https://verify.skilljar.com/c/tohwz74w32wv',
-        },
         {
           name: 'Building with the Claude API',
           issuer: 'Anthropic',
@@ -211,28 +194,51 @@ export const resume = {
           date: 'March 2026',
           url: 'https://verify.skilljar.com/c/trk4n49o9kxf',
         },
+        {
+          name: 'Model Context Protocol: Advanced Topics',
+          issuer: 'Anthropic',
+          date: 'April 2026',
+          url: 'https://verify.skilljar.com/c/u7fefn923tpw',
+        },
+        {
+          name: 'Introduction to agent skills',
+          issuer: 'Anthropic',
+          date: 'May 2026',
+          url: 'https://verify.skilljar.com/c/stoca4h3r7ra',
+        },
+      ],
+    },
+    {
+      group: 'Boot.dev',
+      items: [
+        {
+          name: 'Learn AWS',
+          issuer: 'Boot.dev',
+          date: 'May 2026',
+          url: 'https://www.boot.dev/certificates/002b9b18-902f-40cb-a301-7cf93c47bf98',
+        },
+        {
+          name: 'Learn Docker',
+          issuer: 'Boot.dev',
+          date: 'May 2026',
+          url: 'https://www.boot.dev/certificates/4dd82515-a420-4e3c-9147-f85b8283a002',
+        },
+        {
+          name: 'Learn CI/CD with GitHub Actions',
+          issuer: 'Boot.dev',
+          date: 'June 2026',
+          url: 'https://www.boot.dev/certificates/b743ffb5-2b5d-486e-88e0-f65eef7f1a13',
+        },
       ],
     },
     {
       group: 'In Progress',
       items: [
         {
-          name: 'Model Context Protocol: Advanced Topics',
-          issuer: 'Anthropic',
+          name: 'Back-end Developer Path (Python & TypeScript)',
+          issuer: 'Boot.dev',
           date: null,
-          url: '',
-        },
-      ],
-    },
-    {
-      group: 'Planned',
-      items: [
-        { name: 'GitHub Actions', issuer: 'GitHub', date: null, url: '' },
-        {
-          name: 'AWS Cloud Practitioner',
-          issuer: 'Amazon',
-          date: null,
-          url: '',
+          url: 'https://www.boot.dev/u/bradgg',
         },
       ],
     },

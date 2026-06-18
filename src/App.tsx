@@ -1,8 +1,8 @@
 import { lazy, Suspense, useRef } from 'react';
-import { TypeAnimation } from 'react-type-animation';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Spotlight } from '@/components/cursor/Spotlight';
 import { Sidebar } from '@/components/layout/Sidebar';
+import { HeroTypeAnimation } from '@/components/layout/HeroTypeAnimation';
 import { ScrollContainer } from '@/components/layout/ScrollContainer';
 import { MobileHeader } from '@/components/layout/MobileHeader';
 import { Footer } from '@/components/layout/Footer';
@@ -98,21 +98,7 @@ export default function App() {
               {heroFirstName}{' '}
               <span className="text-accent">{heroLastName}</span>
             </h1>
-            <div className="text-text-secondary text-[13px] font-mono h-[20px] mb-3">
-              <TypeAnimation
-                sequence={[
-                  'Senior Frontend Engineer',
-                  2200,
-                  'Full Stack Developer',
-                  2200,
-                  'AI Engineer in Progress...',
-                  2200,
-                ]}
-                wrapper="span"
-                cursor={true}
-                repeat={Infinity}
-              />
-            </div>
+            <HeroTypeAnimation className="text-text-secondary text-[13px] font-mono h-[20px] mb-3" />
             <div className="flex items-center gap-2 mb-5">
               <span className="relative flex h-2 w-2">
                 <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />

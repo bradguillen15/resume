@@ -15,6 +15,8 @@ import {
   SiGooglegemini,
   SiGraphql,
   SiGulp,
+  SiHtml5,
+  SiCss,
   SiJavascript,
   SiJest,
   SiHelm,
@@ -29,16 +31,73 @@ import {
   SiPostgresql,
   SiPython,
   SiReact,
-  SiReacthookform,
   SiReactquery,
+  SiSass,
   SiSpringboot,
   SiSpinnaker,
   SiSupabase,
+  SiTailwindcss,
   SiTypescript,
   SiVite,
   SiWebpack,
 } from 'react-icons/si';
 
+const DEVICON =
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons';
+
+function devicon(folder: string, file = `${folder}-original`): string {
+  return `${DEVICON}/${folder}/${file}.svg`;
+}
+
+/** Full-color transparent SVG URLs (Devicon + SVGL). */
+export const SKILL_ICON_URLS: Record<string, string> = {
+  JavaScript: devicon('javascript'),
+  TypeScript: devicon('typescript'),
+  Java: devicon('java'),
+  Python: devicon('python'),
+  PHP: devicon('php'),
+  'C#': devicon('csharp'),
+  React: devicon('react'),
+  'Node.js': devicon('nodejs'),
+  Webpack: devicon('webpack'),
+  'Next.js': devicon('nextjs'),
+  Express: 'https://skillicons.dev/icons?i=express&theme=dark',
+  GraphQL: `${DEVICON}/graphql/graphql-plain.svg`,
+  Gulp: `${DEVICON}/gulp/gulp-plain.svg`,
+  Jest: `${DEVICON}/jest/jest-plain.svg`,
+  'Spring Boot': devicon('spring'),
+  Flask: 'https://skillicons.dev/icons?i=flask&theme=dark',
+  FastAPI: devicon('fastapi'),
+  Vite: devicon('vite'),
+  MySQL: devicon('mysql'),
+  PostgreSQL: devicon('postgresql'),
+  MongoDB: devicon('mongodb'),
+  NoSQL: devicon('mongodb'),
+  Supabase: devicon('supabase'),
+  Git: devicon('git'),
+  Docker: devicon('docker'),
+  AWS: 'https://skillicons.dev/icons?i=aws&theme=dark',
+  Jenkins: devicon('jenkins'),
+  'MFE / Module Federation': devicon('webpack'),
+  Harness: devicon('helm'),
+  Spinnaker: 'https://svgl.app/library/spinnaker.svg',
+  Firebase: devicon('firebase'),
+  TanStack: 'https://svgl.app/library/tanstack.svg',
+  HTML: devicon('html5'),
+  CSS: devicon('css3'),
+  Tailwind: devicon('tailwindcss'),
+  Sass: devicon('sass'),
+  Claude: 'https://svgl.app/library/claude-ai-icon.svg',
+  Gemini: 'https://svgl.app/library/gemini.svg',
+  OpenAI: 'https://svgl.app/library/openai_dark.svg',
+  Ollama: 'https://svgl.app/library/ollama_dark.svg',
+  Grok: 'https://svgl.app/library/grok-dark.svg',
+  'GitHub Copilot': 'https://svgl.app/library/copilot_dark.svg',
+  Cursor: 'https://svgl.app/library/cursor_dark.svg',
+  'Claude Code': 'https://svgl.app/library/claude-ai-icon.svg',
+};
+
+/** Fallback monochrome icons when CDN URL is unavailable. */
 export const SKILL_ICONS: Record<string, SkillIcon> = {
   JavaScript: SiJavascript,
   TypeScript: SiTypescript,
@@ -71,8 +130,11 @@ export const SKILL_ICONS: Record<string, SkillIcon> = {
   Spinnaker: SiSpinnaker,
   NoSQL: SiMongodb,
   Firebase: SiFirebase,
-  'TanStack Query': SiReactquery,
-  'React Hook Form': SiReacthookform,
+  TanStack: SiReactquery,
+  HTML: SiHtml5,
+  CSS: SiCss,
+  Tailwind: SiTailwindcss,
+  Sass: SiSass,
   Claude: SiClaude,
   Gemini: SiGooglegemini,
   OpenAI: SiOpenai,
@@ -114,8 +176,11 @@ export const SKILL_ICON_COLORS: Partial<Record<string, string>> = {
   Spinnaker: '#139BB4',
   NoSQL: '#47A248',
   Firebase: '#FFCA28',
-  'TanStack Query': '#FF4154',
-  'React Hook Form': '#EC5990',
+  TanStack: '#FF4154',
+  HTML: '#E34F26',
+  CSS: '#1572B6',
+  Tailwind: '#06B6D4',
+  Sass: '#CC6699',
   Claude: '#D97757',
   Gemini: '#8E75B2',
   OpenAI: '#10A37F',
@@ -127,6 +192,10 @@ export const SKILL_ICON_COLORS: Partial<Record<string, string>> = {
 };
 
 const DEFAULT_ICON_COLOR = '#F1F5F9';
+
+export function getSkillIconUrl(name: string): string | undefined {
+  return Object.hasOwn(SKILL_ICON_URLS, name) ? SKILL_ICON_URLS[name] : undefined;
+}
 
 export function getSkillIcon(name: string): SkillIcon | undefined {
   return Object.hasOwn(SKILL_ICONS, name) ? SKILL_ICONS[name] : undefined;

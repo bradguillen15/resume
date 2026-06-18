@@ -8,8 +8,11 @@ export const STACK_CATEGORIES: StackCategoryConfig[] = [
       'JavaScript',
       'TypeScript',
       'Next.js',
-      'TanStack Query',
-      'React Hook Form',
+      'HTML',
+      'CSS',
+      'Tailwind',
+      'Sass',
+      'TanStack',
     ],
   },
   {

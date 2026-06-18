@@ -2,11 +2,11 @@ import { memo } from 'react';
 
 export const DeviceMockups = memo(function DeviceMockups() {
   return (
-    <div className="flex items-end justify-center gap-2 sm:gap-3 shrink-0">
+    <div className="relative flex items-end justify-center shrink-0">
       <svg
         viewBox="0 0 220 150"
         fill="none"
-        className="w-[140px] sm:w-[185px] lg:w-[210px] shrink-0 drop-shadow-[0_8px_24px_rgba(14,165,233,0.12)]"
+        className="relative z-0 w-[140px] sm:w-[185px] lg:w-[210px] shrink-0 drop-shadow-[0_8px_24px_rgba(14,165,233,0.12)]"
         aria-hidden
       >
         <rect x=".5" y=".5" width="219" height="149" rx="8" fill="#1a2236" stroke="#475569" />
@@ -28,7 +28,7 @@ export const DeviceMockups = memo(function DeviceMockups() {
       <svg
         viewBox="0 0 72 128"
         fill="none"
-        className="w-[44px] sm:w-[54px] mb-[-6px] shrink-0 drop-shadow-[0_8px_24px_rgba(14,165,233,0.12)]"
+        className="relative z-10 -ml-[23px] sm:-ml-[31px] lg:-ml-[35px] w-[44px] sm:w-[54px] mb-[-11px] shrink-0 drop-shadow-[0_8px_24px_rgba(14,165,233,0.12)]"
         aria-hidden
       >
         <rect x="1" y="1" width="70" height="126" rx="11" fill="#1a2236" stroke="#64748b" strokeWidth="1.5" />
