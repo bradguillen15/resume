@@ -1,82 +1,88 @@
-import { useCallback, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CarouselProvider, useCarouselState } from './CarouselContext';
 import { DeviceMockups } from './DeviceMockups';
 import { DualChannels } from './DualChannels';
 import { PauseButton } from './PauseButton';
 import { RotatingStackCard } from './RotatingStackCard';
 import { WIRE_GAP, WIRE_GAP_Y } from './constants';
+import type { StackCategoryId } from './types';
 import { VerticalWireBar, WireBar } from './WireBar';
 
-function StackBannerFlow() {
-  const { indices, advance } = useCarouselState();
+const LG_MEDIA_QUERY = '(min-width: 1024px)';
 
-  const advanceFrontend = useCallback(() => advance('Frontend'), [advance]);
-  const advanceBackend = useCallback(() => advance('Backend'), [advance]);
-  const advanceDatabase = useCallback(() => advance('Database'), [advance]);
-  const advanceAi = useCallback(() => advance('AI'), [advance]);
+function useLargeScreen(): boolean {
+  const [isLarge, setIsLarge] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia(LG_MEDIA_QUERY).matches,
+  );
+
+  useEffect(() => {
+    const media = window.matchMedia(LG_MEDIA_QUERY);
+    const onChange = (event: MediaQueryListEvent) => setIsLarge(event.matches);
+    media.addEventListener('change', onChange);
+    return () => media.removeEventListener('change', onChange);
+  }, []);
+
+  return isLarge;
+}
+
+function CategoryCard({ categoryId }: { categoryId: StackCategoryId }) {
+  const { indices, advance } = useCarouselState();
+  const index =
+    categoryId === 'Frontend'
+      ? indices.Frontend
+      : categoryId === 'Backend'
+        ? indices.Backend
+        : categoryId === 'Database'
+          ? indices.Database
+          : indices.AI;
+
+  return (
+    <RotatingStackCard
+      categoryId={categoryId}
+      index={index}
+      onAdvance={() => advance(categoryId)}
+    />
+  );
+}
+
+function StackNodes({ layout }: { layout: 'mobile' | 'desktop' }) {
+  const isDesktop = layout === 'desktop';
+  const Connector = isDesktop ? WireBar : VerticalWireBar;
 
   return (
     <>
-      {/* Mobile / tablet — vertical stack, no horizontal scroll */}
-      <div className={`lg:hidden flex flex-col items-center w-full pt-9 px-2 ${WIRE_GAP_Y}`}>
-        <DeviceMockups />
-        <VerticalWireBar />
-        <RotatingStackCard
-          categoryId="Frontend"
-          index={indices.Frontend}
-          onAdvance={advanceFrontend}
-        />
-        <VerticalWireBar />
-        <RotatingStackCard
-          categoryId="Backend"
-          index={indices.Backend}
-          onAdvance={advanceBackend}
-        />
-        <DualChannels layout="fork">
-          <RotatingStackCard
-            categoryId="Database"
-            index={indices.Database}
-            onAdvance={advanceDatabase}
-          />
-          <RotatingStackCard
-            categoryId="AI"
-            index={indices.AI}
-            onAdvance={advanceAi}
-          />
-        </DualChannels>
-      </div>
+      <DeviceMockups />
+      <Connector />
+      <CategoryCard categoryId="Frontend" />
+      <Connector />
+      <CategoryCard categoryId="Backend" />
+      <DualChannels layout={isDesktop ? 'column' : 'fork'}>
+        <CategoryCard categoryId="Database" />
+        <CategoryCard categoryId="AI" />
+      </DualChannels>
+    </>
+  );
+}
 
-      {/* Desktop — horizontal flow */}
-      <div className="hidden lg:block w-full min-w-0 overflow-x-auto pt-9 pl-12">
-        <div className={`flex items-center min-w-max ${WIRE_GAP}`}>
-          <DeviceMockups />
-          <WireBar />
-          <RotatingStackCard
-            categoryId="Frontend"
-            index={indices.Frontend}
-            onAdvance={advanceFrontend}
-          />
-          <WireBar />
-          <RotatingStackCard
-            categoryId="Backend"
-            index={indices.Backend}
-            onAdvance={advanceBackend}
-          />
-          <DualChannels>
-            <RotatingStackCard
-              categoryId="Database"
-              index={indices.Database}
-              onAdvance={advanceDatabase}
-            />
-            <RotatingStackCard
-              categoryId="AI"
-              index={indices.AI}
-              onAdvance={advanceAi}
-            />
-          </DualChannels>
+function StackBannerFlow() {
+  const isDesktop = useLargeScreen();
+
+  if (isDesktop) {
+    return (
+      <div className="w-full min-w-0 overflow-x-auto pt-9">
+        <div className="inline-flex min-w-full justify-center">
+          <div className={`flex items-center ${WIRE_GAP}`}>
+            <StackNodes layout="desktop" />
+          </div>
         </div>
       </div>
-    </>
+    );
+  }
+
+  return (
+    <div className={`flex flex-col items-center w-full pt-9 px-2 ${WIRE_GAP_Y}`}>
+      <StackNodes layout="mobile" />
+    </div>
   );
 }
 
