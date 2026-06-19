@@ -33,14 +33,18 @@ export const Experience = () => (
               <h3 className="font-display text-[18px] sm:text-[20px] font-semibold text-text-primary mb-0.5">
                 {exp.role}
               </h3>
-              <a
-                href={exp.companyUrl || undefined}
-                target={exp.companyUrl ? "_blank" : undefined}
-                rel="noreferrer"
-                className="text-accent text-[13px] hover:underline"
-              >
-                {exp.company}
-              </a>
+              {exp.companyUrl ? (
+                <a
+                  href={exp.companyUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-accent text-[13px] hover:underline"
+                >
+                  {exp.company}
+                </a>
+              ) : (
+                <span className="text-accent text-[13px]">{exp.company}</span>
+              )}
             </div>
             <div className="text-right">
               <div className="text-text-secondary text-[12px]">{exp.period}</div>

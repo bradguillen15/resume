@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 import { cn } from '@/lib/utils';
+import { inputClasses } from '@/lib/inputClasses';
 
 interface Review {
   id: string;
@@ -25,9 +26,6 @@ interface Review {
   date: string;
   linkedInUrl: string;
 }
-
-const inputClasses =
-  'w-full bg-bg-secondary border border-border rounded-lg px-4 py-3 text-text-primary text-[13px] font-mono outline-none transition-colors duration-200 focus:border-accent placeholder:text-text-muted';
 
 const REVIEWS_LIMIT = 50;
 
@@ -232,9 +230,16 @@ export const Reviews = () => {
   >('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const formColumnRef = useRef<HTMLDivElement>(null);
+  const successTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [reviewsMaxHeightPx, setReviewsMaxHeightPx] = useState<
     number | undefined
   >(undefined);
+
+  useEffect(() => {
+    return () => {
+      if (successTimerRef.current !== null) clearTimeout(successTimerRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     const loadReviews = async () => {
@@ -289,12 +294,8 @@ export const Reviews = () => {
 
     const ro = new ResizeObserver(() => syncHeight());
     ro.observe(el);
-    window.addEventListener('resize', syncHeight);
     syncHeight();
-    return () => {
-      ro.disconnect();
-      window.removeEventListener('resize', syncHeight);
-    };
+    return () => ro.disconnect();
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -333,7 +334,7 @@ export const Reviews = () => {
       setRole('');
       setMessage('');
       setLinkedInInput('');
-      setTimeout(() => setSubmitStatus('idle'), 4000);
+      successTimerRef.current = setTimeout(() => setSubmitStatus('idle'), 4000);
     } catch (err: unknown) {
       setSubmitStatus('error');
       const msg =

@@ -5,9 +5,7 @@ import { resume } from "@/data/resume"
 import { SectionLabel } from "@/components/ui/SectionLabel"
 import { sendContactEmailFn } from "@/lib/firebase"
 import { Button } from "@/components/ui/button"
-
-const inputClasses =
-  "w-full bg-bg-secondary border border-border rounded-lg px-4 py-3 text-text-primary text-[13px] font-mono outline-none transition-colors duration-200 focus:border-accent placeholder:text-text-muted"
+import { inputClasses } from "@/lib/inputClasses"
 
 export const Contact = () => {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle")

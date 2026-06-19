@@ -28,22 +28,13 @@ const SkillChip = ({ item, index }: { item: SkillItem; index: number }) => {
 
   return (
     <div
-      className="flex flex-col items-center gap-2 px-4 py-3 rounded-lg border border-border hover:border-accent hover:shadow-[0_0_12px_rgba(14,165,233,0.2)] transition-colors duration-200 group cursor-default min-w-[80px]"
+      className="flex flex-col items-center gap-2 px-4 py-3 rounded-lg border border-border hover:border-accent hover:shadow-[0_0_12px_rgba(14,165,233,0.2)] transition-colors duration-200 group cursor-default min-w-[80px] bg-chip-bg hover:bg-chip-bg-hover hover:[animation-play-state:paused]"
       style={{
-        background: '#252540',
         animationName: 'chip-float',
         animationDuration: `${duration}s`,
         animationDelay: `${delay}s`,
         animationTimingFunction: 'ease-in-out',
         animationIterationCount: 'infinite',
-      }}
-      onMouseEnter={e => {
-        (e.currentTarget as HTMLElement).style.background = '#303055';
-        (e.currentTarget as HTMLElement).style.animationPlayState = 'paused';
-      }}
-      onMouseLeave={e => {
-        (e.currentTarget as HTMLElement).style.background = '#252540';
-        (e.currentTarget as HTMLElement).style.animationPlayState = 'running';
       }}
     >
       <div className="flex items-center gap-2">

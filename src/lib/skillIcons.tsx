@@ -42,156 +42,79 @@ import {
   SiWebpack,
 } from 'react-icons/si';
 
-const DEVICON =
-  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons';
+const DEVICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons';
 
 function devicon(folder: string, file = `${folder}-original`): string {
   return `${DEVICON}/${folder}/${file}.svg`;
 }
 
-/** Full-color transparent SVG URLs (Devicon + SVGL). */
-export const SKILL_ICON_URLS: Record<string, string> = {
-  JavaScript: devicon('javascript'),
-  TypeScript: devicon('typescript'),
-  Java: devicon('java'),
-  Python: devicon('python'),
-  PHP: devicon('php'),
-  'C#': devicon('csharp'),
-  React: devicon('react'),
-  'Node.js': devicon('nodejs'),
-  Webpack: devicon('webpack'),
-  'Next.js': devicon('nextjs'),
-  Express: 'https://skillicons.dev/icons?i=express&theme=dark',
-  GraphQL: `${DEVICON}/graphql/graphql-plain.svg`,
-  Gulp: `${DEVICON}/gulp/gulp-plain.svg`,
-  Jest: `${DEVICON}/jest/jest-plain.svg`,
-  'Spring Boot': devicon('spring'),
-  Flask: 'https://skillicons.dev/icons?i=flask&theme=dark',
-  FastAPI: devicon('fastapi'),
-  Vite: devicon('vite'),
-  MySQL: devicon('mysql'),
-  PostgreSQL: devicon('postgresql'),
-  MongoDB: devicon('mongodb'),
-  NoSQL: devicon('mongodb'),
-  Supabase: devicon('supabase'),
-  Git: devicon('git'),
-  Docker: devicon('docker'),
-  AWS: 'https://skillicons.dev/icons?i=aws&theme=dark',
-  Jenkins: devicon('jenkins'),
-  'MFE / Module Federation': devicon('webpack'),
-  Harness: devicon('helm'),
-  Spinnaker: 'https://svgl.app/library/spinnaker.svg',
-  Firebase: devicon('firebase'),
-  TanStack: 'https://svgl.app/library/tanstack.svg',
-  HTML: devicon('html5'),
-  CSS: devicon('css3'),
-  Tailwind: devicon('tailwindcss'),
-  Sass: devicon('sass'),
-  Claude: 'https://svgl.app/library/claude-ai-icon.svg',
-  Gemini: 'https://svgl.app/library/gemini.svg',
-  OpenAI: 'https://svgl.app/library/openai_dark.svg',
-  Ollama: 'https://svgl.app/library/ollama_dark.svg',
-  Grok: 'https://svgl.app/library/grok-dark.svg',
-  'GitHub Copilot': 'https://svgl.app/library/copilot_dark.svg',
-  Cursor: 'https://svgl.app/library/cursor_dark.svg',
-  'Claude Code': 'https://svgl.app/library/claude-ai-icon.svg',
-};
-
-/** Fallback monochrome icons when CDN URL is unavailable. */
-export const SKILL_ICONS: Record<string, SkillIcon> = {
-  JavaScript: SiJavascript,
-  TypeScript: SiTypescript,
-  Java: DiJava,
-  Python: SiPython,
-  PHP: SiPhp,
-  'C#': SiSharp,
-  React: SiReact,
-  'Node.js': SiNodedotjs,
-  Webpack: SiWebpack,
-  'Next.js': SiNextdotjs,
-  Express: SiExpress,
-  GraphQL: SiGraphql,
-  Gulp: SiGulp,
-  Jest: SiJest,
-  'Spring Boot': SiSpringboot,
-  Flask: SiFlask,
-  FastAPI: SiFastapi,
-  Vite: SiVite,
-  MySQL: SiMysql,
-  PostgreSQL: SiPostgresql,
-  MongoDB: SiMongodb,
-  Supabase: SiSupabase,
-  Git: SiGit,
-  Docker: SiDocker,
-  AWS: DiAws,
-  Jenkins: SiJenkins,
-  'MFE / Module Federation': SiWebpack,
-  Harness: SiHelm,
-  Spinnaker: SiSpinnaker,
-  NoSQL: SiMongodb,
-  Firebase: SiFirebase,
-  TanStack: SiReactquery,
-  HTML: SiHtml5,
-  CSS: SiCss,
-  Tailwind: SiTailwindcss,
-  Sass: SiSass,
-  Claude: SiClaude,
-  Gemini: SiGooglegemini,
-  OpenAI: SiOpenai,
-  Ollama: SiOllama,
-  Grok: GrokIcon,
-  'GitHub Copilot': SiGithubcopilot,
-  Cursor: CursorIcon,
-  'Claude Code': SiClaude,
-};
-
-export const SKILL_ICON_COLORS: Partial<Record<string, string>> = {
-  JavaScript: '#F7DF1E',
-  TypeScript: '#3178C6',
-  Java: '#E76F00',
-  Python: '#3776AB',
-  PHP: '#777BB4',
-  'C#': '#512BD4',
-  React: '#61DAFB',
-  'Node.js': '#68A063',
-  Webpack: '#8DD6F9',
-  'Next.js': '#ffffff',
-  Express: '#CBD5E1',
-  GraphQL: '#E10098',
-  Jest: '#C21325',
-  'Spring Boot': '#6DB33F',
-  Flask: '#ffffff',
-  FastAPI: '#009688',
-  Vite: '#646CFF',
-  MySQL: '#4479A1',
-  PostgreSQL: '#336791',
-  MongoDB: '#47A248',
-  Supabase: '#3FCF8E',
-  Git: '#F05032',
-  Docker: '#2496ED',
-  AWS: '#FF9900',
-  Jenkins: '#D24939',
-  'MFE / Module Federation': '#8DD6F9',
-  Harness: '#00ADE4',
-  Spinnaker: '#139BB4',
-  NoSQL: '#47A248',
-  Firebase: '#FFCA28',
-  TanStack: '#FF4154',
-  HTML: '#E34F26',
-  CSS: '#1572B6',
-  Tailwind: '#06B6D4',
-  Sass: '#CC6699',
-  Claude: '#D97757',
-  Gemini: '#8E75B2',
-  OpenAI: '#10A37F',
-  Ollama: '#ffffff',
-  Grok: '#F1F5F9',
-  'GitHub Copilot': '#ffffff',
-  Cursor: '#F1F5F9',
-  'Claude Code': '#D97757',
-};
-
 const DEFAULT_ICON_COLOR = '#F1F5F9';
+
+interface SkillDef {
+  name: string;
+  url: string;
+  icon: SkillIcon;
+  color?: string;
+}
+
+const SKILLS: SkillDef[] = [
+  { name: 'JavaScript',              url: devicon('javascript'),                                  icon: SiJavascript,    color: '#F7DF1E' },
+  { name: 'TypeScript',              url: devicon('typescript'),                                  icon: SiTypescript,    color: '#3178C6' },
+  { name: 'Java',                    url: devicon('java'),                                        icon: DiJava,          color: '#E76F00' },
+  { name: 'Python',                  url: devicon('python'),                                      icon: SiPython,        color: '#3776AB' },
+  { name: 'PHP',                     url: devicon('php'),                                         icon: SiPhp,           color: '#777BB4' },
+  { name: 'C#',                      url: devicon('csharp'),                                      icon: SiSharp,         color: '#512BD4' },
+  { name: 'React',                   url: devicon('react'),                                       icon: SiReact,         color: '#61DAFB' },
+  { name: 'Node.js',                 url: devicon('nodejs'),                                      icon: SiNodedotjs,     color: '#68A063' },
+  { name: 'Webpack',                 url: devicon('webpack'),                                     icon: SiWebpack,       color: '#8DD6F9' },
+  { name: 'Next.js',                 url: devicon('nextjs'),                                      icon: SiNextdotjs,     color: '#ffffff' },
+  { name: 'Express',                 url: 'https://skillicons.dev/icons?i=express&theme=dark',   icon: SiExpress,       color: '#CBD5E1' },
+  { name: 'GraphQL',                 url: `${DEVICON}/graphql/graphql-plain.svg`,                 icon: SiGraphql,       color: '#E10098' },
+  { name: 'Gulp',                    url: `${DEVICON}/gulp/gulp-plain.svg`,                       icon: SiGulp },
+  { name: 'Jest',                    url: `${DEVICON}/jest/jest-plain.svg`,                       icon: SiJest,          color: '#C21325' },
+  { name: 'Spring Boot',             url: devicon('spring'),                                      icon: SiSpringboot,    color: '#6DB33F' },
+  { name: 'Flask',                   url: 'https://skillicons.dev/icons?i=flask&theme=dark',     icon: SiFlask,         color: '#ffffff' },
+  { name: 'FastAPI',                 url: devicon('fastapi'),                                     icon: SiFastapi,       color: '#009688' },
+  { name: 'Vite',                    url: devicon('vite'),                                        icon: SiVite,          color: '#646CFF' },
+  { name: 'MySQL',                   url: devicon('mysql'),                                       icon: SiMysql,         color: '#4479A1' },
+  { name: 'PostgreSQL',              url: devicon('postgresql'),                                  icon: SiPostgresql,    color: '#336791' },
+  { name: 'MongoDB',                 url: devicon('mongodb'),                                     icon: SiMongodb,       color: '#47A248' },
+  { name: 'NoSQL',                   url: devicon('mongodb'),                                     icon: SiMongodb,       color: '#47A248' },
+  { name: 'Supabase',                url: devicon('supabase'),                                    icon: SiSupabase,      color: '#3FCF8E' },
+  { name: 'Git',                     url: devicon('git'),                                         icon: SiGit,           color: '#F05032' },
+  { name: 'Docker',                  url: devicon('docker'),                                      icon: SiDocker,        color: '#2496ED' },
+  { name: 'AWS',                     url: 'https://skillicons.dev/icons?i=aws&theme=dark',       icon: DiAws,           color: '#FF9900' },
+  { name: 'Jenkins',                 url: devicon('jenkins'),                                     icon: SiJenkins,       color: '#D24939' },
+  { name: 'MFE / Module Federation', url: devicon('webpack'),                                     icon: SiWebpack,       color: '#8DD6F9' },
+  { name: 'Harness',                 url: devicon('helm'),                                        icon: SiHelm,          color: '#00ADE4' },
+  { name: 'Spinnaker',               url: 'https://svgl.app/library/spinnaker.svg',              icon: SiSpinnaker,     color: '#139BB4' },
+  { name: 'Firebase',                url: devicon('firebase'),                                    icon: SiFirebase,      color: '#FFCA28' },
+  { name: 'TanStack',                url: 'https://svgl.app/library/tanstack.svg',               icon: SiReactquery,    color: '#FF4154' },
+  { name: 'HTML',                    url: devicon('html5'),                                       icon: SiHtml5,         color: '#E34F26' },
+  { name: 'CSS',                     url: devicon('css3'),                                        icon: SiCss,           color: '#1572B6' },
+  { name: 'Tailwind',                url: devicon('tailwindcss'),                                 icon: SiTailwindcss,   color: '#06B6D4' },
+  { name: 'Sass',                    url: devicon('sass'),                                        icon: SiSass,          color: '#CC6699' },
+  { name: 'Claude',                  url: 'https://svgl.app/library/claude-ai-icon.svg',         icon: SiClaude,        color: '#D97757' },
+  { name: 'Gemini',                  url: 'https://svgl.app/library/gemini.svg',                 icon: SiGooglegemini,  color: '#8E75B2' },
+  { name: 'OpenAI',                  url: 'https://svgl.app/library/openai_dark.svg',            icon: SiOpenai,        color: '#10A37F' },
+  { name: 'Ollama',                  url: 'https://svgl.app/library/ollama_dark.svg',            icon: SiOllama,        color: '#ffffff' },
+  { name: 'Grok',                    url: 'https://svgl.app/library/grok-dark.svg',              icon: GrokIcon,        color: '#F1F5F9' },
+  { name: 'GitHub Copilot',          url: 'https://svgl.app/library/copilot_dark.svg',           icon: SiGithubcopilot, color: '#ffffff' },
+  { name: 'Cursor',                  url: 'https://svgl.app/library/cursor_dark.svg',            icon: CursorIcon,      color: '#F1F5F9' },
+  { name: 'Claude Code',             url: 'https://svgl.app/library/claude-ai-icon.svg',         icon: SiClaude,        color: '#D97757' },
+];
+
+export const SKILL_ICON_URLS: Record<string, string> = Object.fromEntries(
+  SKILLS.map(s => [s.name, s.url]),
+);
+
+export const SKILL_ICONS: Record<string, SkillIcon> = Object.fromEntries(
+  SKILLS.map(s => [s.name, s.icon]),
+);
+
+export const SKILL_ICON_COLORS: Partial<Record<string, string>> = Object.fromEntries(
+  SKILLS.filter(s => s.color !== undefined).map(s => [s.name, s.color!]),
+);
 
 export function getSkillIconUrl(name: string): string | undefined {
   return Object.hasOwn(SKILL_ICON_URLS, name) ? SKILL_ICON_URLS[name] : undefined;

@@ -1,22 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import { CarouselProvider, useCarouselState } from './CarouselContext';
 import { DeviceMockups } from './DeviceMockups';
 import { DualChannels } from './DualChannels';
 import { PauseButton } from './PauseButton';
 import { RotatingStackCard } from './RotatingStackCard';
-import { WIRE_GAP, WIRE_GAP_Y } from './constants';
+import { WIRE_GAP, WIRE_GAP_Y, ROTATE_MS } from './constants';
 import type { StackCategoryId } from './types';
+import { BREAKPOINT_LG } from '@/lib/breakpoints';
 import { VerticalWireBar, WireBar } from './WireBar';
-
-const LG_MEDIA_QUERY = '(min-width: 1024px)';
 
 function useLargeScreen(): boolean {
   const [isLarge, setIsLarge] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia(LG_MEDIA_QUERY).matches,
+    () => typeof window !== 'undefined' && window.matchMedia(BREAKPOINT_LG).matches,
   );
 
   useEffect(() => {
-    const media = window.matchMedia(LG_MEDIA_QUERY);
+    const media = window.matchMedia(BREAKPOINT_LG);
     const onChange = (event: MediaQueryListEvent) => setIsLarge(event.matches);
     media.addEventListener('change', onChange);
     return () => media.removeEventListener('change', onChange);
@@ -27,14 +26,7 @@ function useLargeScreen(): boolean {
 
 function CategoryCard({ categoryId }: { categoryId: StackCategoryId }) {
   const { indices, advance } = useCarouselState();
-  const index =
-    categoryId === 'Frontend'
-      ? indices.Frontend
-      : categoryId === 'Backend'
-        ? indices.Backend
-        : categoryId === 'Database'
-          ? indices.Database
-          : indices.AI;
+  const index = indices[categoryId];
 
   return (
     <RotatingStackCard
@@ -90,7 +82,10 @@ export function StackBanner() {
   const [paused, setPaused] = useState(false);
 
   return (
-    <section className="relative w-full border-b border-border bg-gradient-to-b from-bg-secondary to-bg-primary py-8 sm:py-12 lg:py-14 px-3 sm:px-5 lg:px-8 overflow-hidden">
+    <section
+      className="relative w-full border-b border-border bg-gradient-to-b from-bg-secondary to-bg-primary py-8 sm:py-12 lg:py-14 px-3 sm:px-5 lg:px-8 overflow-hidden"
+      style={{ '--carousel-rotate-ms': `${ROTATE_MS}ms` } as CSSProperties}
+    >
       <PauseButton paused={paused} onToggle={() => setPaused((p) => !p)} />
 
       <CarouselProvider paused={paused}>
