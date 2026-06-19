@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { BREAKPOINT_XL } from '@/lib/breakpoints';
 
 const INTERACTIVE_SELECTOR = 'a, button, [role="button"], input, textarea, select, label';
-const DESKTOP_CURSOR_QUERY = '(min-width: 1280px) and (pointer: fine)';
+const DESKTOP_CURSOR_QUERY = `${BREAKPOINT_XL} and (pointer: fine)`;
 
 export const CustomCursor = () => {
   const [enabled, setEnabled] = useState(
@@ -29,6 +30,8 @@ export const CustomCursor = () => {
   useEffect(() => {
     if (!enabled) return;
 
+    let rafId = 0;
+
     const move = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -38,11 +41,14 @@ export const CustomCursor = () => {
         setIsVisible(true);
       }
 
-      const interactive = !!(e.target as Element).closest(INTERACTIVE_SELECTOR);
-      if (interactive !== hoveringRef.current) {
-        hoveringRef.current = interactive;
-        setIsHovering(interactive);
-      }
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const interactive = !!(e.target as Element).closest(INTERACTIVE_SELECTOR);
+        if (interactive !== hoveringRef.current) {
+          hoveringRef.current = interactive;
+          setIsHovering(interactive);
+        }
+      });
     };
 
     const hide = () => {
@@ -56,6 +62,7 @@ export const CustomCursor = () => {
     return () => {
       window.removeEventListener('mousemove', move);
       document.removeEventListener('mouseleave', hide);
+      cancelAnimationFrame(rafId);
     };
   }, [enabled, mouseX, mouseY]);
 

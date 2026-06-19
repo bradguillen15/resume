@@ -28,6 +28,10 @@
   --color-tag-bg: rgba(14, 165, 233, 0.1);
   --color-tag-text: #38BDF8;
 
+  /* Skill chip backgrounds */
+  --color-chip-bg: #252540;
+  --color-chip-bg-hover: #303055;
+
   /* Fonts */
   --font-display: 'Cal Sans', 'Arial', sans-serif;
   --font-body: 'Inter', 'Arial', sans-serif;
@@ -259,14 +263,14 @@ a {
   top: 50%;
   left: 0;
   transform: translate(-50%, -50%);
-  animation: wire-dot-horizontal 3.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation: wire-dot-horizontal var(--carousel-rotate-ms, 3.5s) cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 .stack-wire-dot-vertical {
   left: 50%;
   top: 0;
   transform: translate(-50%, -50%);
-  animation: wire-dot-vertical 3.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation: wire-dot-vertical var(--carousel-rotate-ms, 3.5s) cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

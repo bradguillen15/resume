@@ -1,17 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { resume } from '@/data/resume'
-
-const NAV_LINKS = [
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'certifications', label: 'Certifications' },
-  { id: 'reviews', label: 'Reviews' },
-  { id: 'contact', label: 'Contact' },
-  { id: 'hobbies', label: 'Hobbies' },
-]
+import { NAV_LINKS } from '@/lib/nav'
 
 interface Props {
   scrollToSection: (id: string) => void

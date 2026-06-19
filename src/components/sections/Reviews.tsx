@@ -16,6 +16,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 import { cn } from '@/lib/utils';
+import { inputClasses } from '@/lib/inputClasses';
+import { parseLinkedInUrl } from '@/lib/parseLinkedInUrl';
 
 interface Review {
   id: string;
@@ -26,30 +28,12 @@ interface Review {
   linkedInUrl: string;
 }
 
-const inputClasses =
-  'w-full bg-bg-secondary border border-border rounded-lg px-4 py-3 text-text-primary text-[13px] font-mono outline-none transition-colors duration-200 focus:border-accent placeholder:text-text-muted';
-
 const REVIEWS_LIMIT = 50;
 
 const REVIEW_EASE = [0.22, 1, 0.36, 1] as const;
 
 const iconTransition = { duration: 0.24, ease: [0.4, 0, 0.2, 1] as const };
 
-function parseLinkedInUrl(input: string): string | null {
-  const t = input.trim();
-  if (!t) return null;
-  let url: URL;
-  try {
-    url = new URL(t.startsWith('http') ? t : `https://${t}`);
-  } catch {
-    return null;
-  }
-  const host = url.hostname.replace(/^www\./, '').toLowerCase();
-  if (host !== 'linkedin.com' && !host.endsWith('.linkedin.com')) {
-    return null;
-  }
-  return url.href;
-}
 
 function ReviewMetaRow(props: {
   name: string;
@@ -232,9 +216,16 @@ export const Reviews = () => {
   >('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const formColumnRef = useRef<HTMLDivElement>(null);
+  const successTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [reviewsMaxHeightPx, setReviewsMaxHeightPx] = useState<
     number | undefined
   >(undefined);
+
+  useEffect(() => {
+    return () => {
+      if (successTimerRef.current !== null) clearTimeout(successTimerRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     const loadReviews = async () => {
@@ -289,12 +280,8 @@ export const Reviews = () => {
 
     const ro = new ResizeObserver(() => syncHeight());
     ro.observe(el);
-    window.addEventListener('resize', syncHeight);
     syncHeight();
-    return () => {
-      ro.disconnect();
-      window.removeEventListener('resize', syncHeight);
-    };
+    return () => ro.disconnect();
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -333,7 +320,7 @@ export const Reviews = () => {
       setRole('');
       setMessage('');
       setLinkedInInput('');
-      setTimeout(() => setSubmitStatus('idle'), 4000);
+      successTimerRef.current = setTimeout(() => setSubmitStatus('idle'), 4000);
     } catch (err: unknown) {
       setSubmitStatus('error');
       const msg =

@@ -7,6 +7,8 @@ const HERO_TYPE_SEQUENCE = [
   2200,
   'AI Engineer in Progress...',
   2200,
+  '',
+  500,
 ];
 
 interface HeroTypeAnimationProps {
