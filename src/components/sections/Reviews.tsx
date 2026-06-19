@@ -17,6 +17,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 import { cn } from '@/lib/utils';
 import { inputClasses } from '@/lib/inputClasses';
+import { parseLinkedInUrl } from '@/lib/parseLinkedInUrl';
 
 interface Review {
   id: string;
@@ -33,21 +34,6 @@ const REVIEW_EASE = [0.22, 1, 0.36, 1] as const;
 
 const iconTransition = { duration: 0.24, ease: [0.4, 0, 0.2, 1] as const };
 
-function parseLinkedInUrl(input: string): string | null {
-  const t = input.trim();
-  if (!t) return null;
-  let url: URL;
-  try {
-    url = new URL(t.startsWith('http') ? t : `https://${t}`);
-  } catch {
-    return null;
-  }
-  const host = url.hostname.replace(/^www\./, '').toLowerCase();
-  if (host !== 'linkedin.com' && !host.endsWith('.linkedin.com')) {
-    return null;
-  }
-  return url.href;
-}
 
 function ReviewMetaRow(props: {
   name: string;
