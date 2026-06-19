@@ -17,7 +17,7 @@ export default mergeConfig(
           'src/components/ui/**',
           'src/data/**',
         ],
-        reporter: ['text', 'html'],
+        reporter: ['text', 'text-summary', 'html'],
       },
     },
   }),
