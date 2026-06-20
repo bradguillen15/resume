@@ -1,32 +1,32 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
   /* Backgrounds */
-  --color-bg-primary: #0A0A0F;
-  --color-bg-secondary: #0F0F1A;
-  --color-bg-hover: #1A1A2E;
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: #0f0f1a;
+  --color-bg-hover: #1a1a2e;
 
   /* Borders */
-  --color-border: #1E293B;
-  --color-border-strong: #2D3F55;
+  --color-border: #1e293b;
+  --color-border-strong: #2d3f55;
 
   /* Text */
-  --color-text-primary: #F1F5F9;
-  --color-text-secondary: #94A3B8;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
   --color-text-muted: #475569;
 
   /* Accent */
-  --color-accent: #0EA5E9;
+  --color-accent: #0ea5e9;
   --color-accent-glow: rgba(14, 165, 233, 0.2);
   --color-accent-dim: rgba(14, 165, 233, 0.1);
 
   /* Tags */
   --color-tag-bg: rgba(14, 165, 233, 0.1);
-  --color-tag-text: #38BDF8;
+  --color-tag-text: #38bdf8;
 
   /* Skill chip backgrounds */
   --color-chip-bg: #252540;
@@ -66,24 +66,24 @@
 
 /* Portfolio dark palette — always dark, no light mode */
 :root {
-  --background: #0A0A0F;
-  --foreground: #F1F5F9;
-  --card: #0F0F1A;
-  --card-foreground: #F1F5F9;
-  --popover: #0F0F1A;
-  --popover-foreground: #F1F5F9;
-  --primary: #0EA5E9;
+  --background: #0a0a0f;
+  --foreground: #f1f5f9;
+  --card: #0f0f1a;
+  --card-foreground: #f1f5f9;
+  --popover: #0f0f1a;
+  --popover-foreground: #f1f5f9;
+  --primary: #0ea5e9;
   --primary-foreground: #ffffff;
-  --secondary: #1A1A2E;
-  --secondary-foreground: #F1F5F9;
-  --muted: #0F0F1A;
-  --muted-foreground: #94A3B8;
-  --accent: #0EA5E9;
+  --secondary: #1a1a2e;
+  --secondary-foreground: #f1f5f9;
+  --muted: #0f0f1a;
+  --muted-foreground: #94a3b8;
+  --accent: #0ea5e9;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: #1E293B;
-  --input: #1E293B;
-  --ring: #0EA5E9;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #0ea5e9;
   --radius: 0.5rem;
 }
 
@@ -191,61 +191,199 @@ a {
   }
 }
 
-/* Profile photo spinning ring */
-.spin-ring-wrap {
+/* Profile portrait cutout */
+.profile-portrait-wrap {
   position: relative;
   display: inline-flex;
-  border-radius: 50%;
-  padding: 4px;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+  padding: 0 16px 4px;
+  margin: 0 -16px -4px;
+  box-sizing: content-box;
 }
-.spin-ring-wrap-sm {
-  padding: 1.5px;
-}
-.spin-ring-wrap::before {
+.profile-portrait-wrap::before {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    #0EA5E9 130deg,
-    rgba(14, 165, 233, 0.25) 220deg,
-    transparent 300deg
+  left: 50%;
+  top: 4%;
+  width: 100%;
+  height: 80%;
+  border-radius: 999px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(186, 230, 253, 0.55) 0%,
+    rgba(125, 211, 252, 0.32) 38%,
+    rgba(56, 189, 248, 0.14) 62%,
+    transparent 86%
   );
-  animation: spin-ring 3s linear infinite;
+  filter: blur(8px);
+  transform: translateX(-50%) scale(0.98);
+  z-index: 0;
+  pointer-events: none;
+  animation: portrait-halo-breathe 6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  will-change: opacity, transform;
 }
-.spin-ring-wrap img {
+.profile-portrait-wrap::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  width: 68%;
+  height: 42%;
+  border-radius: 999px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(224, 242, 254, 0.5) 0%,
+    rgba(125, 211, 252, 0.24) 44%,
+    rgba(56, 189, 248, 0.1) 68%,
+    transparent 82%
+  );
+  filter: blur(10px);
+  transform: translateX(-50%) scale(0.92);
+  z-index: 0;
+  pointer-events: none;
+  animation: portrait-core-breathe 6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  will-change: opacity, transform;
+}
+.profile-portrait-wrap img {
   position: relative;
   z-index: 1;
+  display: block;
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+  object-position: bottom;
+  mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.42));
 }
-@keyframes spin-ring {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+.profile-portrait-wrap-sm {
+  padding: 0 14px 6px;
+  margin: 0 -14px -6px;
+}
+.profile-portrait-wrap-sm img {
+  width: 68px;
+  height: 64px;
+}
+.mobile-menu-photo {
+  min-height: 0;
+}
+.profile-portrait-wrap-menu {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: min(88vw, 360px);
+  padding: 0 16px 4px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.profile-portrait-wrap-menu img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.profile-portrait-wrap-menu::before {
+  width: 104%;
+  height: 68%;
+  filter: blur(8px);
+}
+.profile-portrait-wrap-menu::after {
+  width: 66%;
+  height: 40%;
+  filter: blur(10px);
+}
+.profile-portrait-wrap-sm::before {
+  width: 104%;
+  height: 64%;
+  filter: blur(7px);
+}
+.profile-portrait-wrap-sm::after {
+  width: 64%;
+  height: 38%;
+  filter: blur(9px);
+}
+@keyframes portrait-halo-breathe {
+  0%,
+  100% {
+    opacity: 0.62;
+    transform: translateX(-50%) scale(0.96);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translateX(-50%) scale(1.06);
+  }
+}
+@keyframes portrait-core-breathe {
+  0%,
+  100% {
+    opacity: 0.52;
+    transform: translateX(-50%) scale(0.9);
+  }
+  50% {
+    opacity: 0.88;
+    transform: translateX(-50%) scale(1.1);
+  }
 }
 
 /* Skills floating chip animation */
 @keyframes chip-float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-5px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Stack banner connector — traveling dot synced to the 3.5s tech rotation (ROTATE_MS).
    The pulse travels the wire and lands on the node right as the technology swaps. */
 @keyframes wire-dot-horizontal {
-  0% { left: 100%; opacity: 0; }
-  6% { opacity: 1; }
-  84% { left: 0%; opacity: 1; }
-  94% { left: 0%; opacity: 1; }
-  100% { left: 0%; opacity: 0; }
+  0% {
+    left: 100%;
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  84% {
+    left: 0%;
+    opacity: 1;
+  }
+  94% {
+    left: 0%;
+    opacity: 1;
+  }
+  100% {
+    left: 0%;
+    opacity: 0;
+  }
 }
 
 @keyframes wire-dot-vertical {
-  0% { top: 100%; opacity: 0; }
-  6% { opacity: 1; }
-  84% { top: 0%; opacity: 1; }
-  94% { top: 0%; opacity: 1; }
-  100% { top: 0%; opacity: 0; }
+  0% {
+    top: 100%;
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  84% {
+    top: 0%;
+    opacity: 1;
+  }
+  94% {
+    top: 0%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0;
+  }
 }
 
 .stack-wire-dot,
@@ -263,18 +401,21 @@ a {
   top: 50%;
   left: 0;
   transform: translate(-50%, -50%);
-  animation: wire-dot-horizontal var(--carousel-rotate-ms, 3.5s) cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation: wire-dot-horizontal var(--carousel-rotate-ms, 3.5s)
+    cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 .stack-wire-dot-vertical {
   left: 50%;
   top: 0;
   transform: translate(-50%, -50%);
-  animation: wire-dot-vertical var(--carousel-rotate-ms, 3.5s) cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation: wire-dot-vertical var(--carousel-rotate-ms, 3.5s)
+    cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .spin-ring-wrap::before {
+  .profile-portrait-wrap::before,
+  .profile-portrait-wrap::after {
     animation: none !important;
   }
 
