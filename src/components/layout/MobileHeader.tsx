@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { resume } from '@/data/resume'
 import { NAV_LINKS } from '@/lib/nav'
@@ -11,6 +11,13 @@ interface Props {
 export const MobileHeader = ({ scrollToSection, activeSection }: Props) => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [firstName, ...lastNameParts] = resume.name.split(' ')
+  const openBtnRef = useRef<HTMLButtonElement | null>(null)
+  const closeBtnRef = useRef<HTMLButtonElement | null>(null)
+
+  useEffect(() => {
+    if (menuOpen) closeBtnRef.current?.focus()
+    else openBtnRef.current?.focus()
+  }, [menuOpen])
 
   useEffect(() => {
     if (!menuOpen) return
@@ -39,6 +46,7 @@ export const MobileHeader = ({ scrollToSection, activeSection }: Props) => {
             </span>
 
             <button
+              ref={openBtnRef}
               type="button"
               aria-label="Open menu"
               aria-expanded={false}
@@ -59,6 +67,7 @@ export const MobileHeader = ({ scrollToSection, activeSection }: Props) => {
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
+            onKeyDown={(e) => { if (e.key === 'Escape') setMenuOpen(false) }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -72,6 +81,7 @@ export const MobileHeader = ({ scrollToSection, activeSection }: Props) => {
               </span>
 
               <button
+                ref={closeBtnRef}
                 type="button"
                 aria-label="Close menu"
                 aria-expanded={true}
