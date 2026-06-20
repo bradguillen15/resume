@@ -81,8 +81,8 @@ export default function App() {
             activeSection={activeSection}
           />
 
-          {/* Spacer to push content below the fixed mobile header (~65px) */}
-          <div className="xl:hidden h-[65px]" />
+          {/* Spacer to push content below the fixed mobile header (~48px) */}
+          <div className="xl:hidden h-[48px]" />
 
           <StackBanner />
 

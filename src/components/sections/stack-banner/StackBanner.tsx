@@ -83,7 +83,7 @@ export function StackBanner() {
 
   return (
     <section
-      className="relative w-full border-b border-border bg-gradient-to-b from-bg-secondary to-bg-primary py-8 sm:py-12 lg:py-14 px-3 sm:px-5 lg:px-8 overflow-hidden"
+      className="relative w-full border-b border-border py-8 sm:py-12 lg:py-14 px-3 sm:px-5 lg:px-8 overflow-hidden"
       style={{ '--carousel-rotate-ms': `${ROTATE_MS}ms` } as CSSProperties}
     >
       <PauseButton paused={paused} onToggle={() => setPaused((p) => !p)} />

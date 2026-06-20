@@ -19,25 +19,24 @@ interface Props {
 }
 
 export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
-  <aside className="h-screen flex flex-col px-10 xl:px-14 py-10 bg-bg-secondary border-r border-border overflow-y-auto overflow-x-hidden">
+  <aside className="h-screen flex flex-col px-10 xl:px-14 pt-0 pb-6 bg-bg-secondary border-r border-border overflow-hidden">
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="flex flex-col min-h-full"
+      className="flex flex-col flex-1 min-h-0"
     >
       {/* Profile photo */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.1, duration: 0.5 }}
-        className="mb-5 flex justify-center"
+        className="mt-0 mb-2 flex justify-center overflow-visible"
       >
-        <div className="spin-ring-wrap">
+        <div className="profile-portrait-wrap">
           <img
-            src="/profile-photo.jpg"
+            src="/profile-photo.png"
             alt={resume.name}
-            className="w-45 h-45 rounded-full object-cover object-top"
           />
         </div>
       </motion.div>
@@ -118,7 +117,7 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.1 }}
-        className="flex gap-4 pt-4 border-t border-border mt-auto"
+        className="flex gap-4 pt-4 pb-1 border-t border-border mt-auto"
       >
         <Tooltip>
             <TooltipTrigger asChild>
@@ -127,7 +126,7 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Resume"
-                className="text-text-muted hover:text-accent transition-colors duration-200"
+                className="inline-flex text-text-muted hover:text-accent transition-colors duration-200"
               >
                 <ResumeIcon width={20} height={20} />
               </a>
@@ -143,7 +142,7 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="text-text-muted hover:text-accent transition-colors duration-200"
+                className="inline-flex text-text-muted hover:text-accent transition-colors duration-200"
               >
                 <LinkedInIcon width={20} height={20} />
               </a>
@@ -159,7 +158,7 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="text-text-muted hover:text-accent transition-colors duration-200"
+                className="inline-flex text-text-muted hover:text-accent transition-colors duration-200"
               >
                 <GitHubIcon width={20} height={20} />
               </a>
@@ -173,7 +172,7 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
               <a
                 href={`mailto:${resume.email}`}
                 aria-label="Email"
-                className="text-text-muted hover:text-accent transition-colors duration-200"
+                className="inline-flex text-text-muted hover:text-accent transition-colors duration-200"
               >
                 <EmailIcon width={20} height={20} />
               </a>
