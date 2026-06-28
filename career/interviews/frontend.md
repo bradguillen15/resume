@@ -318,12 +318,12 @@ Ownership > ticket completion. Includes production behavior, CI/CD path, and fut
 
 | Area | Experience |
 |------|------------|
-| **Scale** | ~5 years large React/TypeScript production app (Keller Williams) |
+| **Scale** | ~5.5 years large React/TypeScript production app (Keller Williams) |
 | **State** | Redux, React Query |
 | **Architecture** | Micro frontend evolution; repository consolidation |
 | **Integration** | Cross-team REST API migrations, compatibility layers |
 | **CI/CD** | GitHub Actions, Harness, Spinnaker (production ownership) |
-| **Earlier** | React at Advision; dashboard performance work |
+| **Earlier** | React/full-stack at Advision (Java, Lambda, Node.js) |
 | **Current** | React 19, TypeScript, Supabase abstraction, E2E testing (Free Slot) |
 
 → [`../resume/master-resume.md`](../resume/master-resume.md)

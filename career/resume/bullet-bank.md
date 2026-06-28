@@ -47,7 +47,7 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 
 - Diagnosed and resolved frontend rendering bottlenecks that significantly improved dashboard responsiveness in a production React application.
   - **Source:** [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md)
-  - **Tags:** frontend, react, performance, advision
+  - **Tags:** frontend, react, performance, keller-williams
 
 - Investigated application rendering behavior to identify and eliminate unnecessary React renders without a large architectural rewrite.
   - **Source:** [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md)
@@ -55,7 +55,7 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 
 - Improved user experience through targeted frontend rendering optimizations while keeping implementations simple and maintainable.
   - **Source:** [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md)
-  - **Tags:** frontend, performance, advision
+  - **Tags:** frontend, performance, keller-williams
 
 - Participated in migration toward a micro frontend architecture to improve team independence and long-term maintainability.
   - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
@@ -85,9 +85,13 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
   - **Source:** [`../experience/first-factory.md`](../experience/first-factory.md), [`../experience/advision.md`](../experience/advision.md)
   - **Tags:** backend, rest-api
 
-- Implemented business logic and persistence layers using Hibernate on relational databases for the CommonBond lending platform.
+- Architected a Java REST API from scratch using Hibernate and Jersey, with JUnit and Mockito test coverage and Selenium-based QA automation.
   - **Source:** [`../experience/first-factory.md`](../experience/first-factory.md)
-  - **Tags:** backend, java, hibernate, first-factory
+  - **Tags:** backend, java, hibernate, jersey, testing, first-factory
+
+- Built a Yeoman generator that scaffolds full CRUD APIs for Java (Spring Boot) or Node.js from user-selected options, reducing boilerplate for new services.
+  - **Source:** [`../experience/first-factory.md`](../experience/first-factory.md)
+  - **Tags:** backend, tooling, java, nodejs, developer-experience, first-factory
 
 - Created Node.js services and GraphQL endpoints where they fit specific product requirements at Advision Development.
   - **Source:** [`../experience/advision.md`](../experience/advision.md)
@@ -185,17 +189,29 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
   - **Source:** [`../stories/api-migration-v1-v2.md`](../stories/api-migration-v1-v2.md), [`../projects/free-slot.md`](../projects/free-slot.md)
   - **Tags:** architecture, abstraction, maintainability
 
+- Led a data layer migration that removed Redux in favor of a more maintainable, performant state-management approach, reducing boilerplate by ~40%.
+  - **Source:** [`../stories/redux-removal.md`](../stories/redux-removal.md)
+  - **Tags:** architecture, frontend, state-management, simplification, metrics, keller-williams
+
+- Reduced state-management complexity and improved developer experience by replacing a heavyweight global store with lighter patterns and React Query for server state.
+  - **Source:** [`../stories/redux-removal.md`](../stories/redux-removal.md)
+  - **Tags:** architecture, frontend, react-query, maintainability, keller-williams
+
 ---
 
 ## Performance
 
+- Reduced dashboard load time by ~35%+ by implementing lazy loading to resolve excessive re-render issues in a production React application.
+  - **Source:** [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md)
+  - **Tags:** performance, react, metrics, keller-williams
+
 - Diagnosed and resolved frontend rendering bottlenecks to improve application responsiveness by tracing render behavior before applying optimizations.
   - **Source:** [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md)
-  - **Tags:** performance, react, debugging, advision
+  - **Tags:** performance, react, debugging, keller-williams
 
 - Investigated performance issues by distinguishing backend latency from unnecessary frontend rendering work.
   - **Source:** [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md)
-  - **Tags:** performance, debugging, advision
+  - **Tags:** performance, debugging, keller-williams
 
 - Prioritized responsive drag-and-drop interactions through sensible state management rather than premature optimization.
   - **Source:** [`../projects/free-slot.md`](../projects/free-slot.md)
@@ -228,6 +244,10 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 ---
 
 ## Technical Leadership
+
+- Served as Team Lead for a frontend team of 4 at Advision, mentoring developers and analyzing requirements, while also taking on Scrum Master responsibilities (sprint ceremonies, stakeholder communication).
+  - **Source:** [`../experience/advision.md`](../experience/advision.md)
+  - **Tags:** leadership, team-lead, scrum-master, mentoring, advision
 
 - Owned complex frontend features from design collaboration through production deployment and long-term maintenance.
   - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
@@ -459,6 +479,28 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 
 ---
 
+## Continuous Learning & Certifications
+
+- Completed structured AI engineering coursework through Anthropic: Claude Code in Action, AI Fluency, and Model Context Protocol (introductory and advanced), plus Agent Skills.
+  - **Source:** [`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)
+  - **Tags:** ai-engineering, certifications, mcp, continuous-learning
+
+- Advanced backend and full-stack skills through Boot.dev coursework (in progress): Python (OOP and functional), server-side TypeScript, SQL, Docker, CI/CD, AWS, and Retrieval Augmented Generation, reinforced by guided projects including an AI agent in Python.
+  - **Source:** [`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)
+  - **Tags:** backend, full-stack, python, typescript, certifications, continuous-learning
+
+- Reinforced cloud and DevOps fundamentals through completed Boot.dev courses in AWS, S3/CloudFront, Docker, and CI/CD with GitHub Actions.
+  - **Source:** [`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)
+  - **Tags:** cloud, devops, aws, cicd, continuous-learning
+
+- Built foundational understanding of LLM application patterns through completed coursework in Retrieval Augmented Generation and Model Context Protocol.
+  - **Source:** [`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)
+  - **Tags:** ai-engineering, rag, mcp, continuous-learning
+
+**Note:** These are structured courses and guided projects—evidence of deliberate skill development, not production ownership. Frame as continuous learning; do not present as enterprise production experience.
+
+---
+
 ## Usage Rules
 
 Future resume generators should:
@@ -477,9 +519,9 @@ Future resume generators should:
 |-------------|----------------------|
 | **Frontend Engineer** | Frontend Engineering, Performance, Architecture, Collaboration |
 | **Senior Software Engineer** | Architecture, Technical Leadership, Code Quality, Ownership, Collaboration |
-| **Full Stack Engineer** | Full Stack, Backend Engineering, Cloud and DevOps, Architecture, Personal Projects |
-| **AI Software Engineer** | AI Engineering, Code Quality, Architecture, Personal Projects, Testing |
-| **Platform Engineer** | Cloud and DevOps, CI/CD, Architecture, Migration Experience |
+| **Full Stack Engineer** | Full Stack, Backend Engineering, Cloud and DevOps, Architecture, Personal Projects, Continuous Learning & Certifications |
+| **AI Software Engineer** | AI Engineering, Code Quality, Architecture, Personal Projects, Testing, Continuous Learning & Certifications |
+| **Platform Engineer** | Cloud and DevOps, CI/CD, Architecture, Migration Experience, Continuous Learning & Certifications |
 
 ### Frame consistently
 

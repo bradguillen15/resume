@@ -165,7 +165,7 @@ Each entry summarizes STAR components. **Full detail lives in linked story files
 
 ### Dashboard Performance
 
-**Source:** [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) · **Employer:** Advision
+**Source:** [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) · **Employer:** Keller Williams
 
 | STAR | Summary |
 |------|---------|
@@ -265,9 +265,9 @@ For each: **recommended stories**, **important points**, **mistakes to avoid**.
 
 **Recommended flow (2–3 minutes):**
 
-1. Senior Software Engineer, ~9 years, software engineer with deep frontend expertise and practical backend experience
+1. Senior Software Engineer, ~10 years, software engineer with deep frontend expertise and practical backend experience
 2. Recent years: large-scale React/TypeScript at Keller Williams—ownership, architecture, API migrations, simplification
-3. Foundation: full-stack at Advision—Java, Spring Boot, Lambda, Node.js; backend at First Factory
+3. Foundation: Team Lead / full-stack at Advision—led a frontend team of 4; Java, Spring Boot, Lambda, Node.js; backend at First Factory
 4. Current: Free Slot and portfolio—full-stack, Supabase, AI-assisted engineering, documentation-driven career repo
 5. Theme: ownership, maintainability, simplifying systems, product thinking
 
@@ -442,10 +442,10 @@ Use with **specific story evidence**—not as unsupported adjectives.
 | Ownership | Contractor rescue, KW feature ownership, Free Slot |
 | Architecture | API migration, repo consolidation, modal vs. page |
 | Simplification | Repo deprecation, banners, deletion over addition |
-| Large codebases | KW (~5 years), incremental refactoring philosophy |
+| Large codebases | KW (~5.5 years), incremental refactoring philosophy |
 | Communication | Cross-team API migration, modal vs. page, Product/Design |
 | Maintainability | Philosophy throughout; compatibility layers; Supabase abstraction |
-| Learning quickly | Dashboard investigation; Advision full-stack context switching |
+| Learning quickly | Dashboard investigation (KW, new codebase); Advision full-stack context switching |
 | Cross-functional collaboration | KW daily work; API migration |
 | AI code review | Free Slot rejection example |
 

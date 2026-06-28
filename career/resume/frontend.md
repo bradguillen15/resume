@@ -2,7 +2,7 @@
 
 ## Professional Summary
 
-Senior Frontend Engineer with approximately nine years of software engineering experience, including five years building and maintaining large-scale React and TypeScript applications in production at Keller Williams. Trusted to own critical product features end-to-end—from design collaboration through deployment, production support, and long-term maintenance.
+Senior Frontend Engineer with approximately ten years of software engineering experience, including five years building and maintaining large-scale React and TypeScript applications in production at Keller Williams. Trusted to own critical product features end-to-end—from design collaboration through deployment, production support, and long-term maintenance.
 
 Known for frontend architecture, incremental modernization, and reducing unnecessary complexity: repository consolidation, API compatibility layers, configurable systems, and micro frontend evolution. Strong collaboration with Product, Design, Backend Engineers, and QA. Professional backend experience in Java, Spring Boot, Node.js, and REST APIs supports effective cross-stack work without overstating backend depth.
 
@@ -14,7 +14,7 @@ Known for frontend architecture, incremental modernization, and reducing unneces
 
 ## Core Skills
 
-**Frontend:** React · TypeScript · JavaScript · HTML · CSS · Redux · React Query · Micro frontends · Component architecture · State management · Performance optimization · Tailwind CSS · Framer Motion
+**Frontend:** React · TypeScript · JavaScript · HTML · CSS · Redux · React Query · Next.js · Micro frontends (Module Federation) · Webpack · Component architecture · State management · Performance optimization · SEO · Tailwind CSS · Framer Motion
 
 **Architecture & quality:** Frontend architecture · Incremental refactoring · API integration patterns · Compatibility layers · Code review · Maintainability · Developer experience
 
@@ -24,7 +24,7 @@ Known for frontend architecture, incremental modernization, and reducing unneces
 
 **DevOps & tooling:** GitHub Actions · Harness · Spinnaker · CI/CD · Git · Vite
 
-**Testing:** Unit · integration · E2E (Playwright on personal projects) · Vitest
+**Testing:** Unit · integration · E2E (Playwright on personal projects) · Vitest · Jest · React Testing Library · JUnit
 
 ---
 
@@ -32,12 +32,14 @@ Known for frontend architecture, incremental modernization, and reducing unneces
 
 ### Keller Williams
 
-**Senior Software Engineer** · ~5 years
+**Senior Software Engineer** · Nov 2020 – Apr 2026
 
 Built and maintained large-scale React applications in TypeScript serving production users in a long-lived codebase. Grew from frontend engineer into senior ownership of critical product areas—architecture discussions, cross-team API integration, CI/CD pipeline support, and production quality—not UI implementation alone.
 
 - Owned complex frontend features from design collaboration through production deployment and long-term maintenance, becoming the primary point of contact for questions, bugs, and enhancements on those systems.
 - Developed complex user interfaces using React, TypeScript, Redux, and React Query while improving maintainability through refactoring, consolidation, and removal of repetitive patterns.
+- Led a data-layer migration off Redux to a lighter, more maintainable approach (React Query for server state), reducing state-management boilerplate by ~40% and improving developer experience.
+- Diagnosed a slow production dashboard as a frontend rendering issue and applied lazy loading to reduce load time by ~35%+, tracing render behavior before optimizing.
 - Led frontend implementation of a cross-team API migration by introducing a compatibility layer that isolated V2 contract changes from application consumers, coordinating with an external backend engineering team.
 - Designed and implemented a configurable banner system that replaced repeated one-off sprint work with a reusable, configuration-driven solution used for approximately three years.
 - Consolidated application architecture by deprecating an entire repository and reducing frontend deployment complexity from three repositories to two, aligned with an in-flight product migration.
@@ -51,12 +53,12 @@ Built and maintained large-scale React applications in TypeScript serving produc
 
 ### Advision Development
 
-**Software Engineer (Full Stack)** · ~3 years
+**Team Lead / Full Stack Software Engineer** · Nov 2017 – Nov 2020
 
-Full-stack delivery on a small engineering team—frontend work alongside professional backend and cloud integration. Strongest frontend evidence outside Keller Williams.
+Led a frontend team of 4 while delivering full-stack on a small engineering team—frontend work alongside professional backend and cloud integration. Strongest frontend evidence outside Keller Williams.
 
+- Led a frontend team of 4 as Team Lead and acted as Scrum Master—delegating work, reviewing code, and analyzing requirements with stakeholders.
 - Built React frontends and user flows as part of end-to-end feature delivery spanning frontend, backend, infrastructure, and production support.
-- Diagnosed and resolved frontend rendering bottlenecks that significantly improved dashboard responsiveness by tracing render behavior and eliminating unnecessary React renders—not a large architectural rewrite.
 - Took ownership of an incomplete React feature after an external contractor failed to deliver; evaluated partial work, rebuilt the implementation, and met the project deadline from approved designs.
 - Adapted frontend integrations to support a CMS migration from a custom React CMS to WordPress with minimal disruption to existing user-facing functionality.
 - Collaborated with Product and Design on implementation trade-offs; worked directly with the CTO on architecture while owning technical execution.
@@ -67,13 +69,13 @@ Full-stack delivery on a small engineering team—frontend work alongside profes
 
 ### First Factory
 
-**Software Engineer** · ~1 year
+**Software Engineer** · May 2016 – Nov 2017
 
 First professional role on a backend-focused team. Established foundations in layered architecture, REST API design, Git workflow, and maintainable code in enterprise systems.
 
-- Built backend services and REST API endpoints using Java, Spring Boot, and Hibernate for the CommonBond lending platform.
-- Implemented business logic and persistence layers on relational databases; supported frontend API consumers.
-- Participated in backend architecture discussions and professional code review within junior assigned scope.
+- Architected a Java REST API from scratch with Hibernate and Jersey (JUnit/Mockito tests; Selenium QA automation).
+- Built a Yeoman generator scaffolding full CRUD APIs for Java (Spring Boot) or Node.js, and a Google Sheets reporting add-on (JavaScript ES6, Webpack, Google Apps Script).
+- Supported enterprise applications (Java 8, JSP, Spring, jQuery); established professional code review and Git workflow foundations.
 
 ---
 
@@ -93,14 +95,26 @@ Live production site (React 19, TypeScript, Vite, Tailwind, Firebase) with autom
 
 | Theme | Evidence |
 |-------|----------|
-| **Frontend at scale** | ~5 years on large production React/TypeScript codebase (Keller Williams) |
+| **Frontend at scale** | ~5.5 years on large production React/TypeScript codebase (Keller Williams) |
 | **Architecture & simplification** | Repository consolidation · API compatibility layer · configurable banner system · modal→page evolution |
-| **Performance** | Dashboard rendering diagnosis and fix (Advision) · responsive drag-and-drop UX (Free Slot) |
+| **Performance** | Dashboard rendering diagnosis and fix (Keller Williams) · responsive drag-and-drop UX (Free Slot) |
 | **Micro frontends** | Participated in incremental migration toward team-independent frontend architecture |
 | **Cross-team integration** | Led frontend side of cross-team API V1→V2 migration |
 | **Ownership & delivery** | Feature lifecycle ownership at KW · contractor rescue rebuild under deadline (Advision) |
 | **CI/CD** | GitHub Actions, Harness, Spinnaker (KW) · GitHub Actions (personal projects) |
 | **Collaboration** | Daily work with Product, Design, Backend, QA; mentoring juniors and teammates |
+| **Team leadership** | Team Lead of a frontend team of 4 + Scrum Master (Advision) |
+
+---
+
+## Education
+
+- **Computer Engineering** — ULACIT (2015, ~90% completed)
+- **Middle Technician in Software Development** — Colegio Técnico Carlos Luis Fallas (2012–2014)
+
+## Languages
+
+Spanish (native) · English (C1)
 
 ---
 
@@ -122,7 +136,7 @@ Future resume customizations should begin from this document rather than creatin
 
 ### Sources
 
-Derived from [`master-resume.md`](master-resume.md) and [`bullet-bank.md`](bullet-bank.md). Story detail: [`../stories/`](../stories/). Do not invent calendar dates or metrics—durations are approximate (~5y / ~3y / ~1y).
+Derived from [`master-resume.md`](master-resume.md) and [`bullet-bank.md`](bullet-bank.md). Story detail: [`../stories/`](../stories/). Employment dates are on file (KW Nov 2020–Apr 2026, Advision Nov 2017–Nov 2020, First Factory May 2016–Nov 2017). Use the documented ~35%+ (dashboard) and ~40% (Redux) figures; do not invent others.
 
 ### One-page tailoring
 

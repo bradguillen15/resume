@@ -4,7 +4,7 @@
 
 Interview-specific prep derived from [`../leadership.md`](../leadership.md). Use the canonical leadership document for themes, evidence, and framing rules; use this file for **question mapping** and **answer outlines**.
 
-**Rules:** Never claim formal management. Never inflate Lambda into sole architect. Always link to story files for STAR detail.
+**Rules:** Team Lead of a frontend team of 4 (+ Scrum Master) at Advision is accurate—state it plainly. Do not claim Engineering Manager / people-manager-of-record. Never inflate Lambda into sole architect. Always link to story files for STAR detail.
 
 ---
 
@@ -12,6 +12,7 @@ Interview-specific prep derived from [`../leadership.md`](../leadership.md). Use
 
 | Theme | Primary story | Backup |
 |-------|---------------|--------|
+| Formal team leadership | [`../experience/advision.md`](../experience/advision.md) (Team Lead of 4 + Scrum Master) | — |
 | Influence without authority | [`../stories/repository-deprecation.md`](../stories/repository-deprecation.md) | [`../stories/configurable-banner-system.md`](../stories/configurable-banner-system.md) |
 | Disagreement / collaborative adaptation | [`../stories/modal-vs-page-decision.md`](../stories/modal-vs-page-decision.md) | [`../stories/api-migration-v1-v2.md`](../stories/api-migration-v1-v2.md) |
 | Implementation leadership (backend/cloud) | [`../stories/lambda-wordpress-integration.md`](../stories/lambda-wordpress-integration.md) | [`../stories/api-migration-v1-v2.md`](../stories/api-migration-v1-v2.md) |
@@ -56,6 +57,23 @@ Interview-specific prep derived from [`../leadership.md`](../leadership.md). Use
 **Avoid:** Conflict drama; "they were wrong"
 
 → Full detail: [`../stories/modal-vs-page-decision.md`](../stories/modal-vs-page-decision.md)
+
+---
+
+### Tell me about leading a team
+
+**Story:** Advision — Team Lead of a frontend team of 4
+
+**Outline:**
+
+- **Situation:** Small company; I led a frontend team of 4 and took on Scrum Master duties while staying hands-on full-stack
+- **Task:** Deliver as a team—distribute work, keep quality high, and keep stakeholders aligned
+- **Action:** Delegated and reviewed code, analyzed requirements with stakeholders, ran sprint ceremonies, and mentored juniors through pairing and explained reviews
+- **Result:** The team shipped; juniors grew more independent; I learned that delivery and quality are a shared responsibility, not just an individual one
+
+**Honest framing:** A genuine Team Lead role—not an Engineering Manager (no hiring/performance authority). State the title plainly; don't inflate it.
+
+→ [`../experience/advision.md`](../experience/advision.md)
 
 ---
 

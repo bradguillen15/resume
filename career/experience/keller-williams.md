@@ -10,7 +10,7 @@ Canonical record of employment at Keller Williams. Resume bullets and interview 
 
 **Role:** Senior Software Engineer
 
-**Duration:** Approximately five years
+**Dates:** November 2020 – April 2026 (~5.5 years)
 
 Keller Williams is where I grew from a frontend engineer into a senior software engineer with significant ownership over critical parts of a large production application.
 
@@ -104,6 +104,22 @@ Understanding deployment pipelines became part of owning production software. A 
 
 **Engineering impact:** Reduced time lost to opaque deployment failures and improved confidence that owned features could be shipped without last-minute pipeline surprises.
 
+### Data Layer Migration (Removing Redux)
+
+I led a migration of the application's data layer **off Redux** toward a more maintainable, less boilerplate-heavy approach—leaning on lighter state patterns and React Query for server state instead of forcing everything through a global store. The migration was incremental, aligned with ongoing delivery rather than a stop-the-world rewrite.
+
+**Engineering impact:** Reduced state-management boilerplate by **~40%**, producing a more maintainable and performant data layer—clearer feature code, easier onboarding, and server state handled by purpose-built tooling.
+
+→ Detailed story: [`../stories/redux-removal.md`](../stories/redux-removal.md)
+
+### Dashboard Performance
+
+Early in my time on the project, one of the application's dashboards felt noticeably slow—functionally correct, but with a long delay before the interface became responsive after data arrived. I traced the rendering flow, ruled out backend latency as the primary cause, and identified unnecessary frontend rendering work as the real bottleneck. The fix stayed intentionally simple: remove the unnecessary work rather than layer on memoization or caching.
+
+**Engineering impact:** The dashboard became noticeably more responsive, resolving a long-tolerated usability pain point without destabilizing a production feature. Teammates valued the fix more than I initially did—a reminder that engineering impact is measured by user experience, not implementation complexity.
+
+→ Detailed story: [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md)
+
 ---
 
 ## Working Style
@@ -168,6 +184,8 @@ Keller Williams shaped how I think about software engineering at scale:
 | [`../stories/repository-deprecation.md`](../stories/repository-deprecation.md) | Repository consolidation (three → two) |
 | [`../stories/configurable-banner-system.md`](../stories/configurable-banner-system.md) | Configurable banner system |
 | [`../stories/modal-vs-page-decision.md`](../stories/modal-vs-page-decision.md) | Modal vs page architectural disagreement |
+| [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) | Dashboard rendering performance investigation |
+| [`../stories/redux-removal.md`](../stories/redux-removal.md) | Data layer migration—removing Redux (~40% less boilerplate) |
 | [`../context.md`](../context.md) | Engineer profile and working principles |
 | [`../philosophy/engineering.md`](../philosophy/engineering.md) | How these patterns reflect broader philosophy |
 | [`../resume/`](../resume/) | Curated bullets derived from this file |

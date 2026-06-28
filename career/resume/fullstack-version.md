@@ -70,7 +70,7 @@ Avoid as primary title: **Senior Frontend Engineer**, **UI Engineer**, **Fronten
 
 ### Summary template (adapt; do not copy verbatim every time)
 
-> Senior Software Engineer with ~9 years of experience building production web applications. Deep expertise in React and TypeScript at scale, with professional backend experience in Java, Spring Boot, Node.js, REST APIs, GraphQL, and AWS. Led API migrations, compatibility layers, and cloud integrations while owning CI/CD and architectural simplification. Currently building full-stack production applications with Supabase and AI-assisted workflows. Known for ownership, maintainability, and reducing unnecessary complexity.
+> Senior Software Engineer with ~10 years of experience building production web applications. Deep expertise in React and TypeScript at scale, with professional backend experience in Java, Spring Boot, Node.js, REST APIs, GraphQL, and AWS. Led API migrations, compatibility layers, and cloud integrations while owning CI/CD and architectural simplification. Currently building full-stack production applications with Supabase and AI-assisted workflows. Known for ownership, maintainability, and reducing unnecessary complexity.
 
 → Ground facts in [`master-resume.md`](master-resume.md), [`../context.md`](../context.md)
 
@@ -78,13 +78,13 @@ Avoid as primary title: **Senior Frontend Engineer**, **UI Engineer**, **Fronten
 
 ## Experience Section — Priorities
 
-Use **approximate durations** from master resume. **Do not invent calendar dates** if not provided by the author.
+**Employment dates are now on file** in [`master-resume.md`](master-resume.md) (KW Nov 2020–Apr 2026, Advision Nov 2017–Nov 2020, First Factory May 2016–Nov 2017)—prefer dates on generated resumes, or fall back to durations. Do not invent dates beyond those recorded.
 
 **Bullets per role:** 4–5 on a one-page resume. **Total mix target:** ~45% backend/cloud, ~35% frontend, ~20% leadership/architecture (across all roles).
 
 ---
 
-### Keller Williams — Senior Software Engineer (~5 years)
+### Keller Williams — Senior Software Engineer (Nov 2020 – Apr 2026, ~5.5 years)
 
 **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
 
@@ -123,14 +123,15 @@ Use **approximate durations** from master resume. **Do not invent calendar dates
 
 ---
 
-### Advision Development — Software Engineer, Full Stack (~3 years)
+### Advision Development — Team Lead / Software Engineer, Full Stack (~3 years)
 
 **Source:** [`../experience/advision.md`](../experience/advision.md)
 
-**This is the strongest backend section.** Give it the most backend-heavy bullet mix.
+**This is the strongest backend section**, and the one role with formal team leadership. Give it the most backend-heavy bullet mix, plus one team-leadership bullet.
 
 **Emphasize (strongest backend section on the resume):**
 
+- **Team Lead of a frontend team of 4 + Scrum Master** (lead with this for senior/leadership-leaning roles)
 - Node.js, REST APIs, GraphQL
 - AWS Lambda, backend integrations, cloud infrastructure
 - Java, Spring Boot, Hibernate (professional backend)
@@ -158,7 +159,7 @@ Dashboard performance: at most **one** bullet if space allows.
 
 ---
 
-### First Factory — Software Engineer (~1 year)
+### First Factory — Software Engineer (~1.5 years)
 
 **Source:** [`../experience/first-factory.md`](../experience/first-factory.md)
 
@@ -166,20 +167,20 @@ Dashboard performance: at most **one** bullet if space allows.
 
 **Emphasize:**
 
-- Java, Spring Boot, Hibernate
+- Java, Spring Boot, Hibernate, Jersey
 - REST APIs, database design, SQL
 - Backend architecture in enterprise context
-- Maven, relational databases
-- CommonBond backend work (student loan refinancing/lending)
-- Junior scope—assigned backend features, not system ownership
+- Maven, relational databases, JUnit/Mockito, Selenium
+- Architected a Java REST API from scratch; built a Yeoman CRUD-API generator and a Google Sheets add-on
+- Early-career, but owned concrete deliverables (REST API, code generator, reporting tool)
 
 **Purpose:** Clearly establish **professional backend experience**—the floor the Full Stack narrative builds on.
 
 **Recommended bullets (pick 2–3):**
 
-1. Built backend services using Java, Spring Boot, Hibernate, and relational databases — **Backend**
-2. Designed and implemented REST APIs supporting frontend consumers on CommonBond lending platform — **Backend**
-3. *(Optional)* Implemented business logic and persistence layers in an enterprise Java codebase — **Backend**
+1. Architected a Java REST API from scratch with Hibernate and Jersey (JUnit/Mockito tests; Selenium QA) — **Backend**
+2. Built a Yeoman generator that scaffolds full CRUD APIs for Java (Spring Boot) or Node.js — **Backend / Tooling**
+3. *(Optional)* Supported enterprise applications (Java 8, JSP, Spring, jQuery) — **Backend**
 
 **Do not:** Inflate into senior backend leadership. No invented endpoint or schema details.
 
@@ -221,11 +222,11 @@ Node.js · Express · Spring Boot · REST APIs · GraphQL
 
 ### Databases
 
-PostgreSQL · SQL · Supabase
+PostgreSQL · MySQL · MongoDB · SQL · Supabase
 
 ### Frontend
 
-React · Next.js · Redux · React Query · Tailwind
+React · Next.js · Redux · React Query · Micro Frontends (Module Federation) · Tailwind
 
 ### Cloud
 
@@ -237,7 +238,7 @@ GitHub Actions · Harness · Spinnaker
 
 ### Testing
 
-Playwright · Vitest · Unit Testing · E2E Testing
+Playwright · Vitest · Jest · React Testing Library · JUnit · Mockito · Unit Testing · E2E Testing
 
 ### AI Engineering
 
@@ -328,7 +329,7 @@ Weave into summary, skills, and bullets—never a detached keyword block. Do not
 | **Objective statement** | Omit |
 | **Adjectives** | Minimal—let accomplishments speak |
 | **Skills vs. bullets** | Skills support accomplishments; never skills-only resume |
-| **Dates** | Use only if author provides; otherwise durations ("~5 years") |
+| **Dates** | Dates are on file in master-resume (KW Nov 2020–Apr 2026, etc.)—prefer them; durations otherwise |
 | **Duplication** | No repeated skills or identical bullet themes |
 
 ---
@@ -348,14 +349,14 @@ TECHNICAL SKILLS
 
 EXPERIENCE
 
-Keller Williams · Senior Software Engineer · ~5 years
-• (4–5 bullets — backend/cloud/architecture weighted)
+Keller Williams · Senior Software Engineer · Nov 2020 – Apr 2026
+• (4–5 bullets — backend/cloud/architecture weighted; incl. Redux migration ~40%, dashboard ~35%+)
 
-Advision Development · Software Engineer (Full Stack) · ~3 years
-• (4–5 bullets — strongest backend section)
+Advision Development · Team Lead / Software Engineer (Full Stack) · Nov 2017 – Nov 2020
+• (4–5 bullets — strongest backend section + one team-leadership bullet)
 
-First Factory · Software Engineer · ~1 year
-• (2–3 bullets — Java/Spring Boot foundation)
+First Factory · Software Engineer · May 2016 – Nov 2017
+• (2–3 bullets — Java REST API, CRUD generator, Spring Boot foundation)
 
 PROJECTS
 
@@ -373,7 +374,9 @@ Before finalizing a generated Full Stack resume, verify:
 - [ ] Summary uses **"Software Engineer with deep frontend expertise and practical backend experience"** or equivalent
 - [ ] **Advision** has the most backend-heavy bullets
 - [ ] **Keller Williams** includes API migration and/or CI/CD—not only React
-- [ ] **First Factory** establishes Java/Spring Boot professionally
+- [ ] **First Factory** establishes Java/Spring Boot professionally (REST API from scratch, CRUD generator)
+- [ ] **Advision** shows **Team Lead (frontend team of 4)** where leadership/seniority matters
+- [ ] Quantified wins included where they fit: dashboard **~35%+** load time, Redux removal **~40%** boilerplate
 - [ ] **Free Slot** is included with Supabase/full-stack signal
 - [ ] Bullet mix approximates **45/35/20** backend-frontend-leadership
 - [ ] No invented metrics, dates, or technologies

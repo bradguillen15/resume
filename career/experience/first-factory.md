@@ -14,7 +14,7 @@ This document describes the beginning of my professional engineering career. It 
 
 **Role:** Software Engineer
 
-**Duration:** Approximately one year
+**Dates:** May 2016 – November 2017 (~1.5 years)
 
 This was my first professional software engineering role. It gave me experience designing backend applications, working inside enterprise software, and contributing as part of a professional engineering team—not solo academic projects.
 
@@ -24,18 +24,15 @@ The role established foundations I still use: layered architecture, API design, 
 
 ## Primary Responsibilities
 
-As a junior engineer on a backend-focused team, I was responsible for assigned work within larger systems—not owning entire products end-to-end. That was appropriate for a first role, and the learning curve was steep.
+This was an early-career role, but I owned concrete deliverables end-to-end rather than only assigned tickets:
 
-Responsibilities included:
+- Architecting a **Java REST API from scratch** with **Hibernate** and **Jersey**, covered by **JUnit** and **Mockito** tests; collaborating with QA on **Selenium**-based automation
+- Building a **Yeoman generator** that scaffolds full CRUD APIs for **Java (Spring Boot)** or **Node.js** from user-selected options
+- Developing a **Google Sheets add-on** to auto-generate reports using **JavaScript (ES6)**, **Webpack**, and **Google Apps Script**
+- Providing support across multiple **enterprise applications** using **Java 8**, **JSP**, **Spring**, and **jQuery**
+- Designing and implementing **REST APIs** with **Hibernate** persistence against **relational databases**
 
-- Building backend services in **Java** with **Spring Boot**
-- Designing and implementing **REST APIs**
-- Working with **Hibernate** for persistence against **relational databases**
-- Implementing business logic according to requirements and team patterns
-- Participating in backend architecture discussions—more listening and learning early on, with increasing contribution over time
-- Supporting frontend integrations by providing stable, well-shaped API contracts
-
-I did not lead architecture or manage other engineers. I owned my assigned features and grew into understanding how they fit the broader system.
+Architectural direction for the larger enterprise systems came from senior engineers, but I owned the design and implementation of the tools and services above.
 
 ---
 
@@ -43,32 +40,29 @@ I did not lead architecture or manage other engineers. I owned my assigned featu
 
 First Factory placed engineers on client projects using enterprise Java tooling. The stack I worked with included:
 
-- **Java** and **Spring Boot** for application services
-- **Hibernate** as the ORM layer
+- **Java** (incl. Java 8) and **Spring Boot** for application services; **JSP** and **jQuery** in older enterprise apps
+- **Hibernate** as the ORM layer; **Jersey** for REST endpoints
 - **REST APIs** as the primary integration surface for frontends and other consumers
-- **Maven** for build and dependency management
-- **Git** for version control
+- **JUnit** and **Mockito** for testing; **Selenium** for QA automation
+- **Node.js**, **JavaScript (ES6)**, **Webpack**, **Yeoman**, and **Google Apps Script** for tooling and add-on work
+- **Maven** for build and dependency management; **Git** for version control
 - **Relational databases** for persistence
 
 This was my introduction to professional **enterprise applications**—codebases with existing structure, conventions, and history that predated my arrival. Specific database products, deployment environments, and internal tooling details are no longer remembered with confidence; what persisted is the experience of working within that kind of system rather than starting from a blank file.
 
 ---
 
-## Main Project — CommonBond
+## Key Projects
 
-One of the primary projects involved building backend systems for **CommonBond**, an application supporting financial services related to student loan refinancing and lending.
+**Java REST API (architected from scratch)** — Designed and built a Java REST API using Hibernate and Jersey, with JUnit and Mockito test coverage, and worked with QA on Selenium-based automation. Real production backend work with ownership over the design, not just assigned tickets.
 
-My responsibilities on that project included:
+**Yeoman CRUD-API generator** — Built a developer tool that scaffolds full CRUD APIs for Java (Spring Boot) or Node.js based on user-selected options—reducing repetitive boilerplate for new services. An early example of the "remove repeated work" instinct that recurs throughout my career.
 
-- Designing backend endpoints (within team standards and review)
-- Implementing business logic
-- Connecting persistence through **Hibernate**
-- Working with **relational databases**
-- Supporting frontend consumption of the APIs I helped build
+**Google Sheets reporting add-on** — Developed an add-on that auto-generates reports using JavaScript (ES6), Webpack, and Google Apps Script.
 
-This was real production backend work on a regulated-domain product—not a tutorial or internship sandbox. I do not remember every endpoint, schema detail, or business rule today. Documenting the project here is honest about scope and technology, not about reconstructing specifics I cannot verify.
+**Enterprise application support** — Supported multiple enterprise applications built with Java 8, JSP, Spring, and jQuery.
 
-**Engineering impact:** Professional exposure to backend development in a domain where correctness and clarity matter. Learning how API design, persistence, and business logic connect in a system other people depend on.
+**Engineering impact:** Concrete, owned deliverables (a REST API, a code generator, a reporting tool) in a professional environment—establishing real backend and tooling experience, not tutorial-level exposure.
 
 ---
 

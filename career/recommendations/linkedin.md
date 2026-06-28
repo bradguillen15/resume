@@ -118,7 +118,7 @@ The About section is a **short professional narrative**—conversational, authen
 
 > I improve software by making it easier to understand, maintain, and evolve.
 
-Support with 2–3 sentences on how that shows up professionally (~9 years, React at scale, full-stack history, current AI-native practice).
+Support with 2–3 sentences on how that shows up professionally (~10 years, React at scale, full-stack history, current AI-native practice).
 
 ### What About should not be
 
@@ -158,9 +158,9 @@ Featured content should **prove credibility quickly**—production work, not scr
 - **Do not copy the résumé verbatim** — LinkedIn allows slightly more narrative; still keep bullets scannable
 - **3–6 bullets per role** on the profile (canonical detail lives in career docs)
 - **No invented dates** — calendar dates are not recorded in the knowledge base; use approximate durations or add dates to [`../resume/master-resume.md`](../resume/master-resume.md) first
-- **Honest scope** — informal leadership and feature ownership, not "Engineering Manager" or "Led team of N" unless documented
+- **Honest scope** — Team Lead of a frontend team of 4 at Advision is documented and fine to state; do not claim "Engineering Manager" or people-management authority
 
-### Keller Williams (~5 years · Senior Software Engineer)
+### Keller Williams (~5.5 years · Senior Software Engineer)
 
 **Emphasize:**
 
@@ -171,32 +171,33 @@ Featured content should **prove credibility quickly**—production work, not scr
 | Configurable banner system | [`../stories/configurable-banner-system.md`](../stories/configurable-banner-system.md) |
 | Frontend architecture (modal→page, micro frontends) | [`../stories/modal-vs-page-decision.md`](../stories/modal-vs-page-decision.md) · [`../experience/keller-williams.md`](../experience/keller-williams.md) |
 | Feature ownership & mentoring | [`../experience/keller-williams.md`](../experience/keller-williams.md) · [`../leadership.md`](../leadership.md) |
+| Quantified wins: dashboard ~35%+ load time; Redux removal ~40% boilerplate | [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) · [`../stories/redux-removal.md`](../stories/redux-removal.md) |
 | CI/CD (GitHub Actions, Harness, Spinnaker) | [`../experience/keller-williams.md`](../experience/keller-williams.md) |
 | Cross-team backend collaboration | API migration story; integration layers—not primary backend author |
 
 → Resume bullets: [`../resume/frontend.md`](../resume/frontend.md)
 
-### Advision Development (~3 years · Software Engineer / Full Stack)
+### Advision Development (~3 years · Team Lead / Full Stack)
 
 **Emphasize:**
 
 | Theme | Story / source |
 |-------|----------------|
+| Team Lead of a frontend team of 4 + Scrum Master | [`../experience/advision.md`](../experience/advision.md) · [`../leadership.md`](../leadership.md) |
 | Lambda integration | [`../stories/lambda-wordpress-integration.md`](../stories/lambda-wordpress-integration.md) |
 | Full-stack delivery | [`../experience/advision.md`](../experience/advision.md) |
-| Dashboard performance | [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) |
 | Contractor rescue / ownership | [`../stories/contractor-rescue.md`](../stories/contractor-rescue.md) |
 | CMS migration | [`../stories/react-cms-to-wordpress.md`](../stories/react-cms-to-wordpress.md) |
 | Mentoring juniors | [`../experience/advision.md`](../experience/advision.md) |
 
 **Frame Lambda as:** implementation leadership under CTO-defined architecture—not sole platform architect.
 
-### First Factory (~1 year · Software Engineer)
+### First Factory (~1.5 years · Software Engineer)
 
 **Emphasize:**
 
-- Java, Spring Boot, Hibernate, REST APIs — CommonBond backend foundation
-- Junior scope; professional enterprise introduction
+- Java, Spring Boot, Hibernate, Jersey, REST APIs — architected a Java REST API from scratch; built a CRUD-API generator
+- Early-career; owned concrete deliverables (REST API, code generator, reporting tool)
 
 → [`../experience/first-factory.md`](../experience/first-factory.md)
 

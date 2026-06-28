@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Canonical description of how I lead engineering work as a **Senior Software Engineer**. This is **not** about people management or formal leadership titles.
+Canonical description of how I lead engineering work as a **Senior Software Engineer**. Most of my leadership is through ownership and influence rather than title—though I did serve formally as **Team Lead** (frontend team of 4) and **Scrum Master** at Advision.
 
 Future AI assistants should use this file when generating resumes, interview answers, promotion documents, recommendation requests, portfolio content, and leadership examples.
 
@@ -10,7 +10,8 @@ Future AI assistants should use this file when generating resumes, interview ans
 
 **Rules:**
 
-- I have **not** been an Engineering Manager or people manager in documented roles
+- I served as **Team Lead** for a frontend team of 4 (plus **Scrum Master** duties) at Advision—this is accurate and may be stated plainly
+- I have **not** been an Engineering Manager or people-manager-of-record (no formal performance/hiring authority)
 - Leadership examples must link to real work in [`stories/`](stories/), [`experience/`](experience/), or [`projects/`](projects/)
 - Distinguish **implementation leadership** from **architectural direction by others** (e.g., Lambda with CTO)
 
@@ -53,6 +54,14 @@ My leadership usually happens **through engineering**, not through org charts.
 | Identifying long-term improvements | Unprompted proposals (banners, repo consolidation) |
 
 I prefer **influencing through technical reasoning** rather than authority.
+
+### Formal Team Leadership (Advision)
+
+The one role where I led formally: **Team Lead for a frontend team of 4** at Advision (~2017–2020), with **Scrum Master** responsibilities. This meant distributing work, reviewing the team's code, analyzing requirements with stakeholders, running sprint ceremonies, and being accountable for the team's delivery—alongside staying hands-on as a full-stack engineer.
+
+It was a team-lead role, **not** an Engineering Manager position (no formal hiring or performance authority), but it is genuine, titled team leadership and should be stated plainly on resumes and in interviews.
+
+→ [`experience/advision.md`](experience/advision.md)
 
 **Evidence:**
 
@@ -115,6 +124,7 @@ I enjoy mentoring developers. My style is based on **questions instead of answer
 
 | Context | Source |
 |---------|--------|
+| Led and mentored a frontend team of 4 as Team Lead at Advision | [`experience/advision.md`](experience/advision.md) |
 | Junior developers at Advision—architecture, pairing, explained reviews | [`experience/advision.md`](experience/advision.md) |
 | KW teammates on features and systems I owned deeply | [`experience/keller-williams.md`](experience/keller-williams.md) |
 
@@ -355,7 +365,7 @@ When generating leadership content, AI assistants should consistently describe m
 
 That is my leadership style.
 
-**Do not describe me as:** Engineering Manager, people manager, org-wide tech lead with formal reports, or sole architect of enterprise platforms.
+**Do not describe me as:** Engineering Manager, people-manager-of-record (hiring/performance authority), org-wide tech lead, or sole architect of enterprise platforms. **Team Lead (frontend team of 4) and Scrum Master at Advision are accurate** and may be stated directly.
 
 ---
 
@@ -369,6 +379,7 @@ Use this table when mapping interview questions to leadership examples.
 | Disagreement / adaptation | Modal vs. page | API migration (cross-team) |
 | Implementation leadership | Lambda integration | API migration |
 | Ownership under pressure | Contractor rescue | Feature ownership at KW |
+| Formal team leadership | Advision Team Lead (team of 4) + Scrum Master | — |
 | Mentoring | Advision juniors | KW teammates on owned features |
 | Long-term architecture | API migration | Repository consolidation |
 | Product collaboration | Configurable banners | Modal vs. page |

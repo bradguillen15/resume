@@ -265,9 +265,9 @@ I lead through:
 - **Collaboration** — Product, Design, Backend as partners
 - **Consistency** — long-term ownership of areas I build
 
-I don't need formal authority to improve a project. I influence direction through **technical reasoning** and reliable delivery.
+I don't need formal authority to improve a project—I influence direction through **technical reasoning** and reliable delivery. And when I have held a formal lead role—**Team Lead of a frontend team of 4 (plus Scrum Master) at Advision**—I led the same way: through delivery, mentoring, and clear communication rather than command.
 
-**Evidence:** Informal leadership at KW; mentoring at Advision; Lambda implementation leadership; unprompted banner and repo consolidation initiatives.
+**Evidence:** Team Lead of a frontend team of 4 + Scrum Master at Advision; informal leadership at KW; mentoring at Advision; Lambda implementation leadership; unprompted banner and repo consolidation initiatives.
 
 → [`interviews/behavioral.md`](interviews/behavioral.md) · [`leadership.md`](leadership.md)
 

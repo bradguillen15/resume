@@ -131,7 +131,7 @@ Contains:
 
 ### Keller Williams
 
-**[`experience/keller-williams.md`](experience/keller-williams.md)** · ~5 years · Senior Software Engineer (frontend-heavy)
+**[`experience/keller-williams.md`](experience/keller-williams.md)** · Nov 2020–Apr 2026 (~5.5 years) · Senior Software Engineer (frontend-heavy)
 
 Contains:
 
@@ -143,21 +143,21 @@ Contains:
 
 **Primary source** for Senior Frontend / Senior Software Engineer (frontend-heavy) experience.
 
-**Related stories:** [Repository consolidation](#repository-consolidation) · [API migration](#api-migration) · [Configurable banners](#configurable-banner-system) · [Modal vs page](#modal-vs-page-decision) · [Dashboard performance](#dashboard-performance-optimization)
+**Related stories:** [Repository consolidation](#repository-consolidation) · [API migration](#api-migration) · [Configurable banners](#configurable-banner-system) · [Modal vs page](#modal-vs-page-decision) · [Dashboard performance](#dashboard-performance-optimization) · [Data layer migration (Redux removal)](stories/redux-removal.md)
 
 ---
 
 ### Advision
 
-**[`experience/advision.md`](experience/advision.md)** · ~3 years · Full Stack
+**[`experience/advision.md`](experience/advision.md)** · Nov 2017–Nov 2020 (~3 years) · Team Lead / Full Stack
 
 Contains:
 
+- **Team Lead of a frontend team of 4** · Scrum Master
 - Node.js · GraphQL · REST APIs
 - AWS Lambda · WordPress integration
 - React frontend · backend collaboration
-- Mentoring junior developers
-- Small-team end-to-end ownership
+- Mentoring junior developers · small-team end-to-end ownership
 
 **Primary source** for Full Stack experience.
 
@@ -167,15 +167,23 @@ Contains:
 
 ### First Factory
 
-**[`experience/first-factory.md`](experience/first-factory.md)** · ~1 year · Backend foundation
+**[`experience/first-factory.md`](experience/first-factory.md)** · May 2016–Nov 2017 (~1.5 years) · Backend foundation
 
 Contains:
 
-- Java · Spring Boot · Hibernate
-- REST APIs · database design
-- CommonBond backend (junior scope)
+- Java · Spring Boot · Hibernate · Jersey · JUnit/Mockito
+- Architected a Java REST API from scratch · Yeoman CRUD-API generator · Google Sheets add-on
+- Enterprise app support (Java 8, JSP, Spring, jQuery)
 
-**Primary source** for professional backend foundation—not senior backend leadership.
+**Primary source** for professional backend foundation and early tooling work.
+
+---
+
+### Intertec International
+
+**[`experience/intertec.md`](experience/intertec.md)** · Oct–Nov 2014 (~2 months) · Intern
+
+Earliest professional exposure—short internship (SharePoint, C#, Java, SQL). **Usually omitted from senior resumes**; documented for timeline completeness.
 
 ---
 
@@ -226,6 +234,7 @@ Use [`interviews/behavioral.md`](interviews/behavioral.md) for question → stor
 | **Lambda integration** | [`stories/lambda-wordpress-integration.md`](stories/lambda-wordpress-integration.md) | Backend/cloud · implementation leadership · service boundaries |
 | **Modal vs page decision** | [`stories/modal-vs-page-decision.md`](stories/modal-vs-page-decision.md) | Disagreement · collaboration · architecture evolution |
 | **Dashboard performance** | [`stories/dashboard-performance.md`](stories/dashboard-performance.md) | Performance · ownership · root-cause investigation |
+| **Data layer migration (Redux removal)** | [`stories/redux-removal.md`](stories/redux-removal.md) | Architecture · simplification · ~40% boilerplate reduction |
 | **Contractor rescue** | [`stories/contractor-rescue.md`](stories/contractor-rescue.md) | Ownership under pressure · delivery · responsibility |
 | **CMS migration** | [`stories/react-cms-to-wordpress.md`](stories/react-cms-to-wordpress.md) | Build vs buy · frontend transition · pragmatic modernization |
 

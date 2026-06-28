@@ -49,7 +49,7 @@ This document is **not** a collection of backend interview questions or API triv
 
 | Layer | Documented depth |
 |-------|------------------|
-| **Frontend at scale** | Keller Williams (~5 years)—strongest |
+| **Frontend at scale** | Keller Williams (~5.5 years)—strongest |
 | **Professional backend** | Advision, First Factory—Java/Spring Boot, Node.js, Lambda, GraphQL |
 | **Integration architecture** | KW API migration, Advision Lambda/WordPress |
 | **Current full-stack practice** | Free Slot (Supabase), Portfolio (Firebase) |
@@ -150,7 +150,7 @@ I enjoy understanding the **entire lifecycle**—not owning every layer in isola
 
 | Technology | Context |
 |------------|---------|
-| **Java, Spring Boot, Hibernate** | First Factory (CommonBond), Advision |
+| **Java, Spring Boot, Hibernate** | First Factory (architected a REST API), Advision |
 | **REST APIs** | All professional roles |
 | **Node.js, GraphQL** | Advision—where problem fit |
 | **AWS Lambda** | Advision—implementation leadership |

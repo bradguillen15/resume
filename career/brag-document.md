@@ -55,14 +55,20 @@ A chronological record of what I actually did, built, learned, and shipped. Upda
 
 → Detail: [`projects/portfolio.md`](projects/portfolio.md)
 
+### Certifications & courses
+
+- **Boot.dev** Backend/Full-Stack path (in progress) — 14 courses + 5 guided projects completed Apr–Jun 2026; remaining modules ongoing. Done: Python (basics, OOP, functional), TypeScript, HTTP clients/servers in TS, SQL, Git, Linux, Docker, CI/CD with GitHub Actions, AWS, S3/CloudFront, and Retrieval Augmented Generation. Projects include Build an AI Agent in Python. Profile: [boot.dev/u/bradgg](https://www.boot.dev/u/bradgg)
+- Completed **Anthropic (Skilljar)** AI engineering courses: Claude 101, Claude Code in Action, AI Fluency: Framework & Foundations, Introduction to MCP, MCP: Advanced Topics, Introduction to Agent Skills
+- Completed **MouréDev (Big School)** *Certificado de iniciación al desarrollo con AI* (intro level; listed on LinkedIn)
+
+→ Detail: [`learning/2026.md`](learning/2026.md#certifications--structured-courses)
+
 ### Tools and learning (in progress)
 
 - Using CodeRabbit + manual review in personal project workflows
-- Exploring MCP (Model Context Protocol) via Cursor—**not production-scale yet**
-- Active study areas tracked in [`learning/2026.md`](learning/2026.md)—goals not fully documented yet
+- Exploring MCP (Model Context Protocol) via Cursor—**not production-scale yet** (Anthropic MCP coursework now complete)
 
 <!-- Add as they happen — examples:
-- Completed Boot.dev AWS module X
 - Shipped feature Y at [employer]
 - Led migration Z
 -->
@@ -81,9 +87,9 @@ Major accomplishments from employment are **not** logged here chronologically—
 
 | Period | Source |
 |--------|--------|
-| Keller Williams (~5 years) | [`experience/keller-williams.md`](experience/keller-williams.md) + KW stories |
-| Advision (~3 years) | [`experience/advision.md`](experience/advision.md) + Advision stories |
-| First Factory (~1 year) | [`experience/first-factory.md`](experience/first-factory.md) |
+| Keller Williams (Nov 2020 – Apr 2026, ~5.5 years) | [`experience/keller-williams.md`](experience/keller-williams.md) + KW stories |
+| Advision — Team Lead / Full Stack (Nov 2017 – Nov 2020, ~3 years) | [`experience/advision.md`](experience/advision.md) + Advision stories |
+| First Factory (May 2016 – Nov 2017, ~1.5 years) | [`experience/first-factory.md`](experience/first-factory.md) |
 
 Use this section as a reminder: **don't rely on memory for Advision/KW stories**—they're documented. This file is for *new* work going forward.
 

@@ -2,7 +2,7 @@
 
 ## Professional Summary
 
-Senior Software Engineer with approximately nine years of experience building production web applications. Combines strong software engineering fundamentals—architecture, ownership, maintainability, testing, and cross-functional collaboration—with modern AI-assisted development workflows.
+Senior Software Engineer with approximately ten years of experience building production web applications. Combines strong software engineering fundamentals—architecture, ownership, maintainability, testing, and cross-functional collaboration—with modern AI-assisted development workflows.
 
 AI accelerates implementation, exploration, and test authoring in my daily work; engineering judgment decides what ships. Every AI-generated contribution is reviewed, simplified, and rejected when it introduces unnecessary complexity. Active practice in context engineering: structured documentation and clear architecture so both humans and AI tools produce better output.
 
@@ -18,7 +18,9 @@ Professional experience spans large-scale React/TypeScript systems (Keller Willi
 
 **AI-assisted engineering:** AI-assisted software development · Context engineering · Prompt engineering · AI code review · Human-in-the-loop quality · Documentation as AI context
 
-**AI tools:** Cursor · Claude · ChatGPT · GitHub Copilot · CodeRabbit · MCP (active exploration)
+**AI tools:** Cursor · Claude · ChatGPT · GitHub Copilot · CodeRabbit · MCP (coursework complete + exploration)
+
+**Continuous learning:** Anthropic AI engineering courses (Claude Code, AI Fluency, MCP intro + advanced, Agent Skills) · Boot.dev RAG · structured backend/cloud coursework — see [`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)
 
 **Software engineering:** Architecture · Maintainability · Ownership · Incremental refactoring · API design · Service boundaries · Code review · Technical debt (intentional)
 
@@ -36,7 +38,7 @@ Professional experience spans large-scale React/TypeScript systems (Keller Willi
 
 ### Keller Williams
 
-**Senior Software Engineer** · ~5 years
+**Senior Software Engineer** · Nov 2020 – Apr 2026
 
 Owned critical features on a large production React application. Applied consistent engineering discipline—maintainability, simplification, architecture, ownership—that translates directly to AI-assisted workflows: clear boundaries, predictable patterns, and review standards that scale when AI drafts code.
 
@@ -52,10 +54,11 @@ Owned critical features on a large production React application. Applied consist
 
 ### Advision Development
 
-**Software Engineer (Full Stack)** · ~3 years
+**Team Lead / Full Stack Software Engineer** · Nov 2017 – Nov 2020
 
-End-to-end ownership on a small team—frontend, backend, cloud, and production. Production software under real constraints, not experiments.
+Led a frontend team of 4 with end-to-end ownership on a small team—frontend, backend, cloud, and production. Production software under real constraints, not experiments.
 
+- Led a frontend team of 4 as Team Lead and acted as Scrum Master—delegating, reviewing code, and managing stakeholder communication while staying hands-on across the stack.
 - Led implementation of an AWS Lambda integration that transformed internal service data into a WordPress-friendly format under CTO-defined architecture—clear service boundaries and data transformation at the integration layer.
 - Delivered features spanning React frontends, Java/Spring Boot and Node.js backend services, REST APIs, GraphQL, and AWS cloud resources.
 - Diagnosed and resolved frontend performance issues through investigation and targeted fixes—engineering judgment over premature optimization.
@@ -67,11 +70,11 @@ End-to-end ownership on a small team—frontend, backend, cloud, and production.
 
 ### First Factory
 
-**Software Engineer** · ~1 year
+**Software Engineer** · May 2016 – Nov 2017
 
-Backend foundation: Java, Spring Boot, Hibernate, REST APIs, and relational databases on the CommonBond platform. Professional Git, code review, and enterprise codebase practices.
+Backend foundation: Java, Spring Boot, Hibernate, Jersey, REST APIs, and developer tooling. Professional Git, code review, and enterprise codebase practices.
 
-- Built backend services and REST endpoints; implemented business logic and persistence layers within junior assigned scope.
+- Architected a Java REST API from scratch (Hibernate, Jersey; JUnit/Mockito; Selenium QA) and built a Yeoman generator that scaffolds full CRUD APIs for Java or Node.js—an early example of removing repeated work.
 
 ---
 
@@ -102,18 +105,24 @@ Live site at bradguillen.com (React 19, Firebase, GitHub Actions) evolving into 
 | **AI workflow with discipline** | Free Slot full lifecycle; review and reject unnecessary AI complexity |
 | **Context engineering** | `career/` knowledge base structure; portfolio documentation philosophy |
 | **AI tooling** | Cursor, Claude, ChatGPT, Copilot, CodeRabbit in engineering workflows |
-| **MCP** | Active exploration via Cursor—not claimed at production scale |
+| **MCP** | Anthropic intro + advanced coursework complete; exploration via Cursor—not claimed at production scale |
+| **Continuous learning** | Anthropic AI courses (Claude Code, AI Fluency, MCP, Agent Skills) · Boot.dev backend/cloud path + RAG (in progress) |
 | **Testing with AI assistance** | E2E against local Supabase (Free Slot); expanded coverage as AI lowers authoring cost |
 | **Architecture for maintainability** | API compatibility layers · service boundaries · Supabase abstraction · repo consolidation |
-| **Production software** | ~9 years professional delivery · enterprise CI/CD · live personal products |
+| **Production software** | ~10 years professional delivery · enterprise CI/CD · live personal products |
 | **Full-stack credibility** | KW integration architecture · Advision Lambda/full-stack · Free Slot end-to-end |
 | **Ownership & judgment** | Feature lifecycle ownership · contractor rescue · simplification over cleverness |
+
+### Education & Languages
+
+- **Computer Engineering** — ULACIT (2015, ~90% completed) · **Middle Technician in Software Development** — Colegio Técnico Carlos Luis Fallas (2012–2014)
+- **Languages:** Spanish (native) · English (C1)
 
 ### What this resume is not
 
 - Machine learning model training or fine-tuning
 - Data science or research engineering
-- RAG or agent systems in production (learning areas—not documented as shipped)
+- RAG or agent systems in production (completed coursework and guided projects—not yet documented as shipped)
 
 ---
 
@@ -139,7 +148,7 @@ Derived from [`master-resume.md`](master-resume.md), [`bullet-bank.md`](bullet-b
 
 ### One-page tailoring
 
-For applications, select **4–5 bullets per role** emphasizing AI workflow, review discipline, architecture, testing, and production ownership. Lead summary with **Software Engineer first, AI second**. Highlight Free Slot and career repo as current evidence. Omit or soften MCP unless the role specifically asks—frame as active exploration.
+For applications, select **4–5 bullets per role** emphasizing AI workflow, review discipline, architecture, testing, and production ownership. Lead summary with **Software Engineer first, AI second**. Highlight Free Slot and career repo as current evidence. MCP now has completed Anthropic coursework—frame as structured learning plus exploration; still soften for roles that don't ask. Include a brief continuous-learning/certifications line when the role values AI fundamentals (MCP, RAG, agent skills).
 
 ### Frame consistently
 

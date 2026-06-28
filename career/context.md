@@ -10,7 +10,7 @@ This is internal engineering documentation—not a resume, not LinkedIn copy, no
 
 ## About Me
 
-Senior Software Engineer with approximately nine years of professional experience.
+Senior Software Engineer with approximately ten years of professional experience.
 
 The last five years have been primarily frontend-focused, but I do not consider myself "just a frontend engineer." Earlier in my career I worked professionally on backend systems using Java, Spring Boot, Hibernate, REST APIs, Node.js, and GraphQL. Outside work I continue building full-stack applications. I enjoy working across the stack whenever it creates value for the product.
 
@@ -103,6 +103,8 @@ See also [`philosophy/working-with-ai.md`](philosophy/working-with-ai.md).
 
 ## Career Direction
 
+**Current status (June 2026):** Between roles following Keller Williams (ended April 2026); actively interviewing and **available immediately**. Using the time to ship personal projects and complete structured coursework ([`learning/2026.md`](learning/2026.md))—continuous building, not a gap.
+
 Current target roles:
 
 - Senior Software Engineer
@@ -111,14 +113,15 @@ Current target roles:
 
 I am intentionally strengthening backend skills while continuing to improve frontend expertise. Active study areas:
 
-- AI-assisted software engineering
+- AI-assisted software engineering — incl. completed Anthropic coursework (Claude Code, MCP, Agent Skills) and Boot.dev RAG
+- Python — completed Boot.dev courses (basics, OOP, functional) + guided projects; deepening toward production use
+- Server-side TypeScript, SQL, Docker, CI/CD — completed Boot.dev coursework
 - Node.js
-- Python
 - Testing
-- Cloud architecture
+- Cloud architecture — completed Boot.dev AWS and S3/CloudFront courses
 - Modern software architecture
 
-Progress and yearly goals are tracked in [`learning/2026.md`](learning/2026.md).
+These reflect structured coursework and guided projects, not production ownership. Progress, dated certifications, and yearly goals are tracked in [`learning/2026.md`](learning/2026.md).
 
 ---
 

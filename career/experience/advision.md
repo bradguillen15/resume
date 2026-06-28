@@ -12,18 +12,20 @@ This role is the strongest evidence that my backend experience is professional, 
 
 **Company:** Advision Development
 
-**Role:** Software Engineer (Full Stack)
+**Role:** Team Lead / Full Stack Software Engineer
 
-**Duration:** Approximately three years
+**Dates:** November 2017 – November 2020 (~3 years)
 
 Advision was the foundation of my engineering career. The team was relatively small, so engineers owned features end-to-end rather than handing off across rigid role boundaries.
 
-I regularly worked across frontend, backend, infrastructure, and product discussions. Architectural direction often came from the CTO, but implementation and day-to-day technical decisions were mine to execute. This role shaped how I think about software engineering today—ownership, pragmatism, and understanding the full path from idea to production.
+I served as **Team Lead for a frontend team of 4**, and also took on **Scrum Master** responsibilities—facilitating sprint ceremonies, managing stakeholder communication, and mentoring junior developers—while remaining hands-on across frontend, backend, infrastructure, and product. Architectural direction often came from the CTO, but implementation, day-to-day technical decisions, and team delivery were mine to lead and execute. This role shaped how I think about software engineering today—ownership, pragmatism, and understanding the full path from idea to production.
 
 ---
 
 ## Primary Responsibilities
 
+- **Led a frontend team of 4**—delegating work, reviewing code, and analyzing requirements with stakeholders
+- Acted as **Scrum Master**—facilitating sprint ceremonies (planning, standups, retros) and managing stakeholder communication
 - Built backend services in **Java** and **Spring Boot**, with **Hibernate** for database access
 - Designed and implemented **REST APIs**
 - Built **React** frontends in **JavaScript**
@@ -107,11 +109,11 @@ That constant context-switching was demanding, but it built confidence I still r
 
 ---
 
-## Mentoring
+## Leadership & Mentoring
 
-I mentored junior developers on the team—helping them understand architecture, pairing on difficult problems, reviewing code with explanations rather than just approvals, and walking through why a particular engineering decision made sense in context.
+As **Team Lead for a frontend team of 4**, I owned more than my own deliverables: I distributed work, reviewed the team's code, analyzed requirements with stakeholders, and was accountable for the team shipping. As **Scrum Master**, I ran sprint ceremonies and kept communication flowing between the team and stakeholders.
 
-Supporting others' technical growth was informal, not a formal management responsibility. It reinforced my own understanding: explaining a design forces clarity about whether it is actually good.
+I mentored junior developers directly—helping them understand architecture, pairing on difficult problems, reviewing code with explanations rather than just approvals, and walking through why a particular engineering decision made sense in context. Explaining a design forces clarity about whether it is actually good, and leading the team reinforced that engineering quality and delivery are a shared responsibility, not just an individual one.
 
 ---
 

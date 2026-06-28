@@ -20,7 +20,7 @@ This file intentionally contains **significantly more information** than any sin
 
 ## Professional Summary
 
-Senior Software Engineer with approximately **nine years** of professional experience building and maintaining web applications across frontend and backend environments.
+Senior Software Engineer with approximately **ten years** of professional experience building and maintaining web applications across frontend and backend environments.
 
 **Strongest expertise:** React and modern frontend architecture at scale—TypeScript, state management, micro frontend evolution, CI/CD ownership, and cross-team API integration.
 
@@ -33,6 +33,10 @@ I am a **software engineer who spent the last several years primarily focused on
 **Trust pattern:** consistently entrusted to own large features, simplify complex codebases, lead technical initiatives, mentor teammates, collaborate with Product and Design, and improve maintainability without blocking delivery.
 
 **Target roles:** Senior Software Engineer, Senior Full Stack Engineer, AI Software Engineer.
+
+**Contact:** Costa Rica · +506 6201-1840 · bradguillen15@gmail.com · [linkedin.com/in/brad-guillen-89794ba8](https://linkedin.com/in/brad-guillen-89794ba8) · [github.com/bradguillen15](https://github.com/bradguillen15) · [bradguillen.com](https://bradguillen.com)
+
+**Languages:** Spanish (native) · English (C1)
 
 → Canonical identity: [`../context.md`](../context.md)
 
@@ -81,13 +85,14 @@ Summarized from [`../philosophy/engineering.md`](../philosophy/engineering.md). 
 
 ## Career Timeline Note
 
-Exact **start and end dates** for each employer are **not recorded** in this repository. Durations below are **approximate** and sum to ~nine years total professional experience. Do not invent calendar dates when generating resumes—use durations or request dates from the author.
+Employment dates (author-provided). Total professional experience is **approximately ten years** (May 2016–present), with an earlier short internship in 2014. Resumes may show either dates or durations—do not invent dates beyond those below.
 
-| Order | Company | Role | Approximate duration |
-|-------|---------|------|----------------------|
-| Most recent | Keller Williams | Senior Software Engineer | ~5 years |
-| | Advision Development | Software Engineer (Full Stack) | ~3 years |
-| Earliest | First Factory | Software Engineer | ~1 year |
+| Order | Company | Role | Dates | Duration |
+|-------|---------|------|-------|----------|
+| Most recent | Keller Williams | Senior Software Engineer | Nov 2020 – Apr 2026 | ~5.5 years |
+| | Advision Development | Team Lead / Software Engineer (Full Stack) | Nov 2017 – Nov 2020 | ~3 years |
+| | First Factory | Software Engineer | May 2016 – Nov 2017 | ~1.5 years |
+| Earliest | Intertec International | Intern | Oct 2014 – Nov 2014 | ~2 months |
 
 ---
 
@@ -96,7 +101,7 @@ Exact **start and end dates** for each employer are **not recorded** in this rep
 ### Keller Williams
 
 **Role:** Senior Software Engineer  
-**Duration:** Approximately five years  
+**Dates:** Nov 2020 – Apr 2026 (~5.5 years)  
 **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
 
 #### Context
@@ -129,6 +134,8 @@ React, TypeScript, Redux, React Query, REST APIs, AWS, micro frontends, GitHub A
 | **Modal vs. page decision** | Raised architectural concerns for cross-org search; team evolved to page-based solution as nav requirements emerged | [`../stories/modal-vs-page-decision.md`](../stories/modal-vs-page-decision.md) |
 | **Micro frontend modernization** | Participated in migration toward micro frontend architecture for team independence and maintainability | (overview in experience doc) |
 | **CI/CD ownership** | Maintained deployment pipelines across GitHub Actions, Harness, Spinnaker | (overview in experience doc) |
+| **Dashboard performance** | Diagnosed frontend rendering bottleneck (not backend) early in tenure; lazy loading to resolve excessive re-renders; **~35%+ load-time reduction** | [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) |
+| **Data layer migration (Redux removal)** | Led migration off Redux to a more maintainable, performant approach; **~40% boilerplate reduction** | [`../stories/redux-removal.md`](../stories/redux-removal.md) |
 
 **Metrics:** Not documented for any Keller Williams accomplishment—do not invent percentages, time saved, or deployment counts.
 
@@ -165,13 +172,13 @@ React, TypeScript, Redux, React Query, REST APIs, AWS, micro frontends, GitHub A
 
 ### Advision Development
 
-**Role:** Software Engineer (Full Stack)  
-**Duration:** Approximately three years  
+**Role:** Team Lead / Software Engineer (Full Stack)  
+**Dates:** Nov 2017 – Nov 2020 (~3 years)  
 **Source:** [`../experience/advision.md`](../experience/advision.md)
 
 #### Context
 
-Foundation of engineering career. **Small team—end-to-end feature ownership** across frontend, backend, infrastructure, and product. Strongest evidence that **backend experience is professional, not theoretical**.
+Foundation of engineering career. **Team Lead for a frontend team of 4** with **Scrum Master** duties, while remaining hands-on across frontend, backend, infrastructure, and product on a small team with **end-to-end feature ownership**. Strongest evidence that **backend experience is professional, not theoretical**—and the first role where I formally led a team.
 
 #### Technologies
 
@@ -194,7 +201,6 @@ Java, Spring Boot, Hibernate, REST APIs, Node.js, GraphQL, React, JavaScript, AW
 |----------------|---------|-------|
 | **Lambda ↔ WordPress integration** | Led Lambda implementation: fetch internal API → transform → cache → WordPress-friendly API; CTO defined architecture, I owned execution | [`../stories/lambda-wordpress-integration.md`](../stories/lambda-wordpress-integration.md) |
 | **React CMS → WordPress migration** | Frontend integration for migrating custom React CMS to WordPress; build-vs-buy pragmatism | [`../stories/react-cms-to-wordpress.md`](../stories/react-cms-to-wordpress.md) |
-| **Dashboard performance** | Diagnosed frontend rendering bottleneck (not backend); simplified unnecessary render work; noticeably improved responsiveness | [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) |
 | **Contractor rescue** | Inherited incomplete React page; evaluated partial work; clean rebuild; delivered before deadline | [`../stories/contractor-rescue.md`](../stories/contractor-rescue.md) |
 | **Backend development** | Production Java/Spring Boot, Hibernate, REST, Node.js, GraphQL—earlier career; architectural direction often from CTO | (overview in experience doc) |
 
@@ -230,39 +236,45 @@ Java, Spring Boot, Hibernate, REST APIs, Node.js, GraphQL, React, JavaScript, AW
 ### First Factory
 
 **Role:** Software Engineer  
-**Duration:** Approximately one year  
+**Dates:** May 2016 – Nov 2017 (~1.5 years)  
 **Source:** [`../experience/first-factory.md`](../experience/first-factory.md)
 
 #### Context
 
-**First professional role.** Backend-focused team; assigned work within larger enterprise systems—not full product ownership. Established foundations: layered architecture, API design, Git workflow, code review, maintainable code in existing codebases.
+**First professional role.** Backend-focused team within larger enterprise systems; owned concrete deliverables end-to-end (a REST API, a code generator, a reporting tool). Established foundations: layered architecture, API design, Git workflow, code review, maintainable code in existing codebases.
 
 #### Technologies
 
-Java, Spring Boot, Hibernate, REST APIs, Maven, Git, relational databases
+Java (incl. Java 8), Spring Boot, Hibernate, Jersey, REST APIs, JUnit, Mockito, Selenium, Node.js, JavaScript (ES6), Webpack, Yeoman, Google Apps Script, JSP, jQuery, Maven, Git, relational databases
 
-#### Responsibilities
+#### Key projects
 
-- Backend services and REST API endpoints
-- Business logic and Hibernate persistence
-- Supporting frontend API consumers
-- Backend architecture discussions (learning-weighted early on)
-
-#### Major project — CommonBond
-
-Backend systems for **CommonBond** (student loan refinancing/lending). Endpoint design, business logic, Hibernate, relational databases, API support for frontends.
-
-**Note:** Specific endpoints, schemas, and implementation details **no longer remembered**—scope and technology documented honestly, not reconstructed.
+- **Java REST API** architected from scratch (Hibernate, Jersey; JUnit/Mockito tests; Selenium QA automation)
+- **Yeoman generator** scaffolding full CRUD APIs for Java (Spring Boot) or Node.js from user-selected options
+- **Google Sheets add-on** auto-generating reports (JavaScript ES6, Webpack, Google Apps Script)
+- **Enterprise application support** (Java 8, JSP, Spring, jQuery)
 
 #### Backend and growth
 
 - Introduction to **enterprise applications** and professional **Git**, **code review**, **estimates**, **team workflow**
-- Junior scope—did not lead architecture or manage engineers
+- Owned the design/implementation of the deliverables above; architectural direction for larger systems came from senior engineers
 - **Foundation** for later full-stack work at Advision
 
 #### Stories
 
 No dedicated story files—documented at experience overview depth only.
+
+---
+
+### Intertec International
+
+**Role:** Intern  
+**Dates:** Oct 2014 – Nov 2014 (~2 months)  
+**Source:** [`../experience/intertec.md`](../experience/intertec.md)
+
+Earliest professional exposure—a short pre-career internship. Developed a SharePoint application using C#, Java, and SQL; prepared daily progress reports and joined daily/weekly meetings.
+
+**Resume guidance:** Typically **omit** from senior one-page resumes. Include only when an application specifically values early experience or a complete timeline. Adds C# and SharePoint to the early technology history—not current focus.
 
 ---
 
@@ -350,7 +362,29 @@ Organized by category. **Proficiency depth varies**—recent professional depth 
 
 ### Development tools
 
-Git, GitHub, Vite, Docker (basic), Linux
+Git, GitHub, Vite, Webpack, Yeoman, Docker, Linux, Jenkins, Google Apps Script
+
+### Additional / earlier-career technologies
+
+Module Federation, Jest, React Testing Library, JUnit, Mockito, Selenium, Jersey, MongoDB, MySQL, JSP, jQuery (legacy enterprise apps), Scrum / Scrum Master, SEO. List per role relevance—do not imply current depth in legacy items.
+
+---
+
+## Education
+
+| Credential | Institution | Notes |
+|------------|-------------|-------|
+| **Computer Engineering** | ULACIT | 2015 · ~90% completed |
+| **Middle Technician in Software Development** | Colegio Técnico Carlos Luis Fallas | 2012–2014 |
+
+Computer Engineering is **not** marked complete—state "90% completed" or omit completion status; do not claim a conferred degree.
+
+---
+
+## Languages
+
+- **Spanish** — Native
+- **English** — C1 (advanced professional working proficiency)
 
 ---
 
@@ -382,6 +416,12 @@ Configuration-driven banners replaced one-off sprint work; ~3 years in use; depr
 
 → [`../stories/configurable-banner-system.md`](../stories/configurable-banner-system.md)
 
+### Data layer migration — Redux removal (Keller Williams)
+
+Led migration of the data layer off Redux to a more maintainable, performant approach; **~40% boilerplate reduction**.
+
+→ [`../stories/redux-removal.md`](../stories/redux-removal.md)
+
 ### Modal vs. page architecture (Keller Williams)
 
 Cross-org search feature evolved from modal to page as navigation requirements clarified; collaboration with Product/Design.
@@ -400,7 +440,7 @@ Custom React CMS → WordPress; frontend adaptation; build-vs-buy judgment.
 
 → [`../stories/react-cms-to-wordpress.md`](../stories/react-cms-to-wordpress.md)
 
-### Dashboard performance (Advision)
+### Dashboard performance (Keller Williams)
 
 Frontend rendering diagnosis and fix; investigation over premature optimization.
 
@@ -414,7 +454,7 @@ Rebuild vs. continue decision; delivered under deadline.
 
 ### Backend architecture (First Factory, Advision)
 
-Java/Spring Boot/Hibernate/REST in production; Node.js/GraphQL at Advision; CommonBond backend work.
+Java/Spring Boot/Hibernate/REST in production; architected a Java REST API from scratch and built a CRUD-API generator at First Factory; Node.js/GraphQL at Advision.
 
 → [`../experience/first-factory.md`](../experience/first-factory.md), [`../experience/advision.md`](../experience/advision.md)
 
@@ -438,6 +478,7 @@ Summarized across roles—not formal people management.
 
 | Theme | Examples |
 |-------|----------|
+| **Team leadership** | Advision: **Team Lead of a frontend team of 4** + **Scrum Master** (sprint ceremonies, stakeholder communication) |
 | **Feature ownership** | KW: de facto owner of critical features; Advision: end-to-end delivery |
 | **Mentoring** | KW: teammates on owned systems; Advision: junior developers—pairing, architecture, code review |
 | **Cross-team collaboration** | KW: external backend team API migrations; Advision: CTO collaboration |
@@ -466,7 +507,7 @@ Summarized across roles—not formal people management.
 
 ### Honest scope notes
 
-- First Factory: junior assigned backend work on CommonBond
+- First Factory: early-career; owned a REST API, a CRUD-API generator, and a reporting tool—architectural direction for larger systems from senior engineers
 - Advision: full-stack; CTO often set architecture; production backend nonetheless
 - Keller Williams: integration and transformation layers—not primary backend service author
 
@@ -622,6 +663,7 @@ Complete index of the `career/` repository. **Leaf documents are authoritative**
 | [`../experience/keller-williams.md`](../experience/keller-williams.md) | Keller Williams employment |
 | [`../experience/advision.md`](../experience/advision.md) | Advision employment |
 | [`../experience/first-factory.md`](../experience/first-factory.md) | First Factory employment |
+| [`../experience/intertec.md`](../experience/intertec.md) | Intertec internship (2014)—usually omitted from resumes |
 
 ### Projects
 

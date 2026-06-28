@@ -185,7 +185,6 @@ Do not add invented timeline or cost-savings metrics.
 |----------|--------------|
 | [`../experience/advision.md`](../experience/advision.md) | Employer overview—high-level summary links here |
 | [`../philosophy/engineering.md`](../philosophy/engineering.md) | Pragmatism, maintainability, objective evaluation |
-| [`dashboard-performance.md`](dashboard-performance.md) | Related Advision story—early-career React work |
 | [`../resume/bullet-bank.md`](../resume/bullet-bank.md) | Curated bullets should reference this story |
 | [`../interviews/behavioral.md`](../interviews/behavioral.md) | Ownership, pressure, delivery themes |
 | [`../leadership.md`](../leadership.md) | Ownership and responsibility themes |

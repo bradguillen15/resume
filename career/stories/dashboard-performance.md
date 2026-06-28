@@ -2,17 +2,17 @@
 
 ## Purpose
 
-Engineering case study documenting a performance optimization early in my time at Advision Development. This is **not** presented as a revolutionary breakthrough—it demonstrates debugging process, understanding of React rendering behavior, and approach to diagnosing performance problems.
+Engineering case study documenting a performance optimization early in my time at Keller Williams. This is **not** presented as a revolutionary breakthrough—it demonstrates debugging process, understanding of React rendering behavior, and approach to diagnosing performance problems.
 
 Facts live here; resume bullets and interview answers reference this file—they do not duplicate it. Implementation specifics that are no longer remembered are not fabricated.
 
-**Employer:** Advision Development — see [`../experience/advision.md`](../experience/advision.md) for role context.
+**Employer:** Keller Williams — see [`../experience/keller-williams.md`](../experience/keller-williams.md) for role context.
 
 ---
 
 ## Context
 
-Early in my time at Advision Development, one of the **dashboards** in the application felt noticeably slow.
+Early in my time at Keller Williams, one of the **dashboards** in the application felt noticeably slow.
 
 The feature was **functionally correct**—data loaded, interactions worked—but users experienced long loading times before the interface became responsive.
 
@@ -47,11 +47,9 @@ Rather than immediately changing code, I spent time **understanding how the dash
 
 I traced the rendering flow, observed component behavior, and looked for where work repeated or ran before it was needed. The investigation distinguished frontend rendering cost from network latency—an important fork because optimizing the wrong layer would have wasted effort.
 
-Although I **no longer remember every implementation detail**—specific component names, exact render counts, or whether the fix involved memoization, key restructuring, or conditional rendering—the investigation ultimately pointed toward a **rendering issue**, not a backend performance problem.
+The investigation pointed toward a **rendering issue**, not a backend performance problem: the dashboard did more work up front than necessary before showing useful information. The fix centered on **lazy loading** to defer non-critical work and resolve the excessive re-renders. I no longer recall every low-level detail (component names, exact render counts), but the core technique—lazy loading to cut unnecessary upfront rendering—is documented.
 
 Once the cause became clear, the **actual fix was relatively straightforward**. The difficult part was understanding the behavior, not deploying an exotic optimization.
-
-Specific techniques applied are omitted here rather than guessed.
 
 ---
 
@@ -77,7 +75,7 @@ I personally viewed the fix as a **normal engineering task**—find unnecessary 
 
 That gap in perception reinforced a lesson I still apply: **engineering value is often measured by user impact rather than implementation complexity.** A simple fix to a painful problem can matter more than a sophisticated feature nobody asked for.
 
-No before/after timing metrics were recorded and none should be invented.
+**Documented figure:** a prior resume records an approximately **35%+ reduction in dashboard load time** from this work (lazy loading to resolve excessive re-renders). Use that figure; do not inflate beyond it.
 
 ---
 
@@ -85,7 +83,7 @@ No before/after timing metrics were recorded and none should be invented.
 
 | Large rewrite | Targeted rendering fix |
 |---------------|------------------------|
-| Could address structural debt | Out of scope for early tenure + production stability |
+| Could address structural debt | Out of scope for a new-to-codebase fix + production stability |
 | High risk, long timeline | **Minimal implementation risk** |
 | Might optimize more than the bottleneck | Addressed **root cause** directly |
 
@@ -111,7 +109,7 @@ See also [`../philosophy/engineering.md`](../philosophy/engineering.md).
 
 ## Business Impact
 
-Exact metrics are unavailable and should not be invented.
+Documented impact: an approximately **35%+ reduction in dashboard load time** (recorded on a prior resume).
 
 Users experienced a **noticeably faster dashboard**. The improvement **increased team confidence**—an existing performance issue was resolved **without introducing instability**. A tolerated pain point became a solved one.
 
@@ -155,7 +153,7 @@ This story works well for questions such as:
 - Tell me about optimizing a React application
 - Tell me about improving user experience
 
-**Suggested framing:** Lead with investigation and ruling out the backend. Be honest that specific React APIs used are not recalled—emphasize process. Mention teammates valued it more than you did—shows humility and user-impact awareness.
+**Suggested framing:** Lead with investigation and ruling out the backend, then the lazy-loading fix and the ~35%+ load-time reduction. Be honest that low-level details aren't all recalled—emphasize process. Mention teammates valued it more than you did—shows humility and user-impact awareness.
 
 ---
 
@@ -163,11 +161,12 @@ This story works well for questions such as:
 
 Possible bullets—add to [`../resume/bullet-bank.md`](../resume/bullet-bank.md) with `Source:` link to this file:
 
+- Reduced dashboard load time by ~35%+ by implementing lazy loading to resolve excessive re-renders in a production React application.
 - Diagnosed and resolved frontend rendering bottlenecks that significantly improved dashboard responsiveness in a production React application.
 - Investigated application rendering behavior to identify and eliminate unnecessary React renders without a large architectural rewrite.
 - Improved user experience by optimizing frontend rendering while maintaining a simple and maintainable implementation.
 
-Do not add invented latency percentages or render-count metrics.
+Use only the documented ~35%+ figure; do not invent additional latency percentages or render-count metrics.
 
 ---
 
@@ -175,9 +174,9 @@ Do not add invented latency percentages or render-count metrics.
 
 | Document | Relationship |
 |----------|--------------|
-| [`../experience/advision.md`](../experience/advision.md) | Employer overview—early-career React work |
+| [`../experience/keller-williams.md`](../experience/keller-williams.md) | Employer overview—large-scale React ownership |
 | [`../philosophy/engineering.md`](../philosophy/engineering.md) | Simplicity, root causes, remove unnecessary work |
-| [`contractor-rescue.md`](contractor-rescue.md) | Related Advision story—ownership under pressure |
+| [`redux-removal.md`](redux-removal.md) | Related Keller Williams data-layer/maintainability story |
 | [`../resume/bullet-bank.md`](../resume/bullet-bank.md) | Curated bullets should reference this story |
 | [`../resume/frontend.md`](../resume/frontend.md) | Frontend resume view—React performance evidence |
 | [`../interviews/technical.md`](../interviews/technical.md) | Performance, React, debugging themes |

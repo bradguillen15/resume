@@ -173,7 +173,6 @@ Do not add invented migration timelines, team sizes, or percentage effort reduct
 | [`../experience/advision.md`](../experience/advision.md) | Employer overview—high-level summary links here |
 | [`../philosophy/engineering.md`](../philosophy/engineering.md) | Pragmatism, deletion, maintainability |
 | [`lambda-wordpress-integration.md`](lambda-wordpress-integration.md) | Related WordPress integration at Advision |
-| [`dashboard-performance.md`](dashboard-performance.md) | Related Advision frontend work |
 | [`contractor-rescue.md`](contractor-rescue.md) | Related Advision delivery story |
 | [`../resume/bullet-bank.md`](../resume/bullet-bank.md) | Curated bullets should reference this story |
 | [`../interviews/technical.md`](../interviews/technical.md) | Migration, legacy, build-vs-buy themes |
