@@ -72,7 +72,7 @@ Future AI assistants should use this file whenever helping improve my LinkedIn h
 
 **Full Stack emphasis:**
 
-> Senior Software Engineer · React · Java · Node.js · AWS · Architecture & Ownership
+> Senior Software Engineer · React · Node.js · AWS · Architecture & Ownership
 
 **AI Software Engineer emphasis:**
 
@@ -158,7 +158,7 @@ Featured content should **prove credibility quickly**—production work, not scr
 - **Do not copy the résumé verbatim** — LinkedIn allows slightly more narrative; still keep bullets scannable
 - **3–6 bullets per role** on the profile (canonical detail lives in career docs)
 - **No invented dates** — calendar dates are not recorded in the knowledge base; use approximate durations or add dates to [`../resume/master-resume.md`](../resume/master-resume.md) first
-- **Honest scope** — Team Lead of a frontend team of 4 at Advision is documented and fine to state; do not claim "Engineering Manager" or people-management authority
+- **Honest scope** — Team Lead of a frontend team of 4 at Advision is accurate, but it was the **Lead Web Developer** role (2020, the final ~11 months), not the full tenure; do not imply 3 years of leadership, "Engineering Manager," or people-management authority. At **Keller Williams I was a senior IC** (not a formal lead).
 
 ### Keller Williams (~5.5 years · Senior Software Engineer)
 
@@ -170,24 +170,28 @@ Featured content should **prove credibility quickly**—production work, not scr
 | API migration / compatibility layer | [`../stories/api-migration-v1-v2.md`](../stories/api-migration-v1-v2.md) |
 | Configurable banner system | [`../stories/configurable-banner-system.md`](../stories/configurable-banner-system.md) |
 | Frontend architecture (modal→page, micro frontends) | [`../stories/modal-vs-page-decision.md`](../stories/modal-vs-page-decision.md) · [`../experience/keller-williams.md`](../experience/keller-williams.md) |
-| Feature ownership & mentoring | [`../experience/keller-williams.md`](../experience/keller-williams.md) · [`../leadership.md`](../leadership.md) |
+| Scope: owned 3 of a ~40 micro-frontend platform (user, admin, shared); cross-team collaboration on multiple projects | [`../experience/keller-williams.md`](../experience/keller-williams.md) |
+| Feature ownership & mentoring (senior **IC**, not a formal lead) | [`../experience/keller-williams.md`](../experience/keller-williams.md) · [`../leadership.md`](../leadership.md) |
 | Quantified wins: dashboard ~35%+ load time; Redux removal ~40% boilerplate | [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) · [`../stories/redux-removal.md`](../stories/redux-removal.md) |
 | CI/CD (GitHub Actions, Harness, Spinnaker) | [`../experience/keller-williams.md`](../experience/keller-williams.md) |
 | Cross-team backend collaboration | API migration story; integration layers—not primary backend author |
 
 → Resume bullets: [`../resume/frontend.md`](../resume/frontend.md)
 
-### Advision Development (~3 years · Team Lead / Full Stack)
+### Advision Development (~3 years · Senior Web Developer → Lead Web Developer)
+
+Two roles: **Senior Web Developer** (Nov 2017 – Dec 2019) → promoted to **Lead Web Developer** (Jan – Nov 2020). The Team Lead / Scrum Master scope belongs to the Lead Web Developer period.
 
 **Emphasize:**
 
 | Theme | Story / source |
 |-------|----------------|
-| Team Lead of a frontend team of 4 + Scrum Master | [`../experience/advision.md`](../experience/advision.md) · [`../leadership.md`](../leadership.md) |
+| Lead Web Developer (2020): Team Lead of 4 + Scrum Master; set coding standards, reviewed designs, interviewed/hired | [`../experience/advision.md`](../experience/advision.md) · [`../leadership.md`](../leadership.md) |
+| Backend in **Node.js / Express**, REST & GraphQL APIs, **WebSockets** (real-time) — not Java | [`../experience/advision.md`](../experience/advision.md) |
 | Lambda integration | [`../stories/lambda-wordpress-integration.md`](../stories/lambda-wordpress-integration.md) |
-| Full-stack delivery | [`../experience/advision.md`](../experience/advision.md) |
+| Full-stack delivery (React + Node.js across 3+ apps) | [`../experience/advision.md`](../experience/advision.md) |
 | Contractor rescue / ownership | [`../stories/contractor-rescue.md`](../stories/contractor-rescue.md) |
-| CMS migration | [`../stories/react-cms-to-wordpress.md`](../stories/react-cms-to-wordpress.md) |
+| CMS migration (React CMS → WordPress) | [`../stories/react-cms-to-wordpress.md`](../stories/react-cms-to-wordpress.md) |
 | Mentoring juniors | [`../experience/advision.md`](../experience/advision.md) |
 
 **Frame Lambda as:** implementation leadership under CTO-defined architecture—not sole platform architect.
@@ -196,12 +200,17 @@ Featured content should **prove credibility quickly**—production work, not scr
 
 **Emphasize:**
 
-- Java, Spring Boot, Hibernate, Jersey, REST APIs — architected a Java REST API from scratch; built a CRUD-API generator
-- Early-career; owned concrete deliverables (REST API, code generator, reporting tool)
+- Java, Spring Boot, Hibernate, Jersey, REST APIs — architected a Java REST API from scratch for a US client; built a Yeoman generator
+- Also **C# / ASP.NET MVC** (clinic app) and **Python / Flask** — early multi-stack breadth
+- Early-career; owned concrete deliverables (REST API, code generator, C# app, reporting tool)
 
 → [`../experience/first-factory.md`](../experience/first-factory.md)
 
 **Keep brief** — 2–3 bullets maximum on LinkedIn.
+
+### FPT Latin America (formerly Intertec) — 2014 internship (~3 months)
+
+On the profile for completeness; **keep minimal** (SharePoint app in JS/C#/Java/SQL). Low emphasis — earliest, oldest experience. → [`../experience/fpt-latin-america.md`](../experience/fpt-latin-america.md)
 
 ---
 
@@ -239,11 +248,11 @@ React · TypeScript · JavaScript · Redux · React Query · HTML · CSS · Micr
 
 **Backend**
 
-Java · Spring Boot · Node.js · REST APIs · GraphQL · Hibernate · SQL
+Node.js · Express · REST APIs · GraphQL · WebSockets · Java · Spring Boot · Hibernate · SQL · C# / ASP.NET (early-career)
 
 **Cloud**
 
-AWS · Lambda · Supabase · Firebase · CI/CD · GitHub Actions
+AWS · Lambda · Supabase · Firebase · Vercel · CI/CD · GitHub Actions
 
 **Architecture**
 
@@ -266,8 +275,9 @@ Documentation · Code review · AI-native workflows · MCP (exploration—do not
 | Skill | Note |
 |-------|------|
 | Express · Next.js · CloudFront | In inventory—confirm depth before pinning ([`../resume/master-resume.md`](../resume/master-resume.md)) |
-| Python | Active study ([`../learning/2026.md`](../learning/2026.md))—not production depth |
-| RAG · MCP · Agents | Learning areas—**not** ML engineer skills |
+| Python | Boot.dev coursework + early Flask (First Factory)—not deep recent production |
+| RAG | Shipped a recommendation feature in Free Slot + Boot.dev coursework (application-layer, **not** ML research) |
+| MCP · Agents | Coursework/exploration—**not** ML engineer skills |
 | Machine Learning · Deep Learning | **Do not add** unless experience is documented |
 
 **Avoid keyword stuffing.** Natural placement in headline, About, and Experience beats repeating every skill in Skills.
@@ -357,7 +367,7 @@ Incorporate terms **naturally** in headline, About, and Experience—where they 
 
 ### High-value terms
 
-Software Engineer · Senior Software Engineer · Full Stack · Frontend · React · TypeScript · JavaScript · Node.js · Java · Spring Boot · REST APIs · GraphQL · AWS · Lambda · CI/CD · GitHub Actions · Architecture · System design · Micro frontends · Testing · Playwright · Supabase · Firebase · Technical leadership · Ownership · Mentoring · Refactoring · API migration · AI-assisted development · Engineering productivity · Software architecture · Maintainability
+Software Engineer · Senior Software Engineer · Full Stack · Frontend · React · TypeScript · JavaScript · Node.js · Express · WebSockets · Java · Spring Boot · REST APIs · GraphQL · AWS · Lambda · CI/CD · GitHub Actions · Architecture · System design · Micro frontends · Testing · Playwright · Supabase · Firebase · Technical leadership · Ownership · Mentoring · Refactoring · API migration · AI-assisted development · Engineering productivity · Software architecture · Maintainability
 
 ### AI-adjacent (application layer only)
 
