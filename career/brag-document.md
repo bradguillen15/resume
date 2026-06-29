@@ -57,7 +57,7 @@ A chronological record of what I actually did, built, learned, and shipped. Upda
 
 ### Certifications & courses
 
-- **Boot.dev** Backend/Full-Stack path (in progress) — 14 courses + 5 guided projects completed Apr–Jun 2026; remaining modules ongoing. Done: Python (basics, OOP, functional), TypeScript, HTTP clients/servers in TS, SQL, Git, Linux, Docker, CI/CD with GitHub Actions, AWS, S3/CloudFront, and Retrieval Augmented Generation. Projects include Build an AI Agent in Python. Profile: [boot.dev/u/bradgg](https://www.boot.dev/u/bradgg)
+- **Boot.dev** Back-end Developer Path (in progress) — 14 courses + 5 guided projects completed Apr–Jun 2026; remaining modules ongoing. Done: Python (basics, OOP, functional), TypeScript, HTTP clients/servers in TS, SQL, Git, Linux, Docker, CI/CD with GitHub Actions, AWS, S3/CloudFront, and Retrieval Augmented Generation. Projects include Build an AI Agent in Python. Profile: [boot.dev/u/bradgg](https://www.boot.dev/u/bradgg)
 - Completed **Anthropic (Skilljar)** AI engineering courses: Claude 101, Claude Code in Action, AI Fluency: Framework & Foundations, Introduction to MCP, MCP: Advanced Topics, Introduction to Agent Skills
 - Completed **MouréDev (Big School)** *Certificado de iniciación al desarrollo con AI* (intro level; listed on LinkedIn)
 

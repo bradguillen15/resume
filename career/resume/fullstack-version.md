@@ -123,7 +123,7 @@ Avoid as primary title: **Senior Frontend Engineer**, **UI Engineer**, **Fronten
 
 ---
 
-### Advision Development — Team Lead / Software Engineer, Full Stack (~3 years)
+### Advision Development — Lead Web Developer (promoted from Senior Web Developer) (~3 years)
 
 **Source:** [`../experience/advision.md`](../experience/advision.md)
 
@@ -131,7 +131,7 @@ Avoid as primary title: **Senior Frontend Engineer**, **UI Engineer**, **Fronten
 
 **Emphasize (strongest backend section on the resume):**
 
-- **Team Lead of a frontend team of 4 + Scrum Master** (lead with this for senior/leadership-leaning roles)
+- **Team Lead of a frontend team of 4 + Scrum Master** — as Lead Web Developer (2020); lead with this for senior/leadership-leaning roles
 - Node.js, REST APIs, GraphQL
 - AWS Lambda, backend integrations, cloud infrastructure
 - Java, Spring Boot, Hibernate (professional backend)
@@ -352,7 +352,7 @@ EXPERIENCE
 Keller Williams · Senior Software Engineer · Nov 2020 – Apr 2026
 • (4–5 bullets — backend/cloud/architecture weighted; incl. Redux migration ~40%, dashboard ~35%+)
 
-Advision Development · Team Lead / Software Engineer (Full Stack) · Nov 2017 – Nov 2020
+Advision Development · Lead Web Developer (promoted from Senior Web Developer) · Nov 2017 – Nov 2020
 • (4–5 bullets — strongest backend section + one team-leadership bullet)
 
 First Factory · Software Engineer · May 2016 – Nov 2017

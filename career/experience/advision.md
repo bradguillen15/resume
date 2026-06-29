@@ -12,24 +12,28 @@ This role is the strongest evidence that my backend experience is professional, 
 
 **Company:** Advision Development
 
-**Role:** Team Lead / Full Stack Software Engineer
+**Role:** Senior Web Developer, promoted to **Lead Web Developer** (Team Lead)
 
 **Dates:** November 2017 – November 2020 (~3 years)
+- **Senior Web Developer:** Nov 2017 – Dec 2019 (~2 years)
+- **Lead Web Developer:** Jan 2020 – Nov 2020 (~11 months)
 
 Advision was the foundation of my engineering career. The team was relatively small, so engineers owned features end-to-end rather than handing off across rigid role boundaries.
 
-I served as **Team Lead for a frontend team of 4**, and also took on **Scrum Master** responsibilities—facilitating sprint ceremonies, managing stakeholder communication, and mentoring junior developers—while remaining hands-on across frontend, backend, infrastructure, and product. Architectural direction often came from the CTO, but implementation, day-to-day technical decisions, and team delivery were mine to lead and execute. This role shaped how I think about software engineering today—ownership, pragmatism, and understanding the full path from idea to production.
+I joined as a **Senior Web Developer**, delivering full-stack across React, Node.js/Express, REST and GraphQL APIs, and real-time WebSocket features. In **January 2020 I was promoted to Lead Web Developer**, where I led a **frontend team of 4** and took on **Scrum Master** responsibilities—facilitating sprint ceremonies, managing stakeholder communication, and mentoring junior developers—while remaining hands-on. Architectural direction often came from the CTO, but implementation, day-to-day technical decisions, and (in the lead role) team delivery were mine to execute. This role shaped how I think about software engineering today—ownership, pragmatism, and understanding the full path from idea to production.
+
+**Honest framing:** the **Team Lead / Scrum Master** responsibilities belong to the **Lead Web Developer** period (~final 11 months), not the full three years.
 
 ---
 
 ## Primary Responsibilities
 
-- **Led a frontend team of 4**—delegating work, reviewing code, and analyzing requirements with stakeholders
-- Acted as **Scrum Master**—facilitating sprint ceremonies (planning, standups, retros) and managing stakeholder communication
-- Built backend services in **Java** and **Spring Boot**, with **Hibernate** for database access
-- Designed and implemented **REST APIs**
-- Built **React** frontends in **JavaScript**
-- Created **Node.js** services and worked with **GraphQL**
+- *(As Lead Web Developer, 2020)* **Led a frontend team of 4**—delegating work, reviewing code, and analyzing requirements with stakeholders
+- *(As Lead Web Developer, 2020)* Acted as **Scrum Master**—facilitating sprint ceremonies and managing stakeholder communication
+- Built and consumed **RESTful APIs** in **Node.js** and **Express**, coordinating with backend teams on contract definitions
+- Worked with **GraphQL** to query and mutate backend data, improving frontend data-fetching efficiency
+- Implemented **real-time features with WebSockets** for low-latency live updates
+- Built **React** frontends in **JavaScript**; developed reusable components and shared logic across 3+ web applications
 - Deployed applications to **AWS** (**EC2**, **S3**, **API Gateway**, **IAM**, **Lambda**)
 - Collaborated directly with the CTO on architecture and technical direction
 - Participated in architectural decisions for features and systems
@@ -41,7 +45,7 @@ I served as **Team Lead for a frontend team of 4**, and also took on **Scrum Mas
 
 ## Engineering Context
 
-Advision operated as a small engineering team building client and internal products. The stack reflected that reality: **Java** and **Spring Boot** on the backend, **React** on the frontend, **Node.js** and **GraphQL** where they fit specific problems, and **AWS** for deployment and serverless work.
+Advision operated as a small engineering team building client and internal products. The stack reflected that reality: **Node.js** and **Express** on the backend, **React** on the frontend, **GraphQL** and **REST** where they fit specific problems, **WebSockets** for real-time features, and **AWS** for deployment and serverless work.
 
 There was no luxury of narrow specialization. A feature might require a **REST API**, a **React** UI, an **AWS Lambda** function, and a **WordPress** integration in the same delivery cycle. **Git** and **CI/CD** were part of everyday work—not a separate ops team's problem.
 
@@ -77,7 +81,7 @@ The existing CMS had been developed before the **React** ecosystem matured. Over
 
 ### Backend Development
 
-I built backend services using **Java** and **Spring Boot**, working with **Hibernate** for persistence and designing **REST APIs** for frontend and external consumers. I also contributed to **Node.js** services and **GraphQL** endpoints where the problem fit those tools better than a Java service.
+I built backend services using **Node.js**, designing **REST APIs** and **GraphQL** endpoints for frontend and external consumers and handling data persistence and business logic.
 
 This was earlier in my career—I was not the most senior backend engineer on the team, and architectural direction often came from the CTO. But the work was production backend development: real services, real databases, real deployments—not tutorials or side projects.
 
@@ -100,7 +104,7 @@ I rebuilt the feature from scratch, completed it before the deadline, and delive
 Working in a smaller company required wearing many hats. On any given week I might move between:
 
 - **Frontend** — **React** components, user flows, integration with APIs
-- **Backend** — **Spring Boot** services, **Hibernate** models, **REST** and **GraphQL** endpoints
+- **Backend** — **Node.js** services, **REST** and **GraphQL** endpoints
 - **Infrastructure** — **AWS** resources, **Lambda** functions, deployment configuration
 - **Architecture discussions** — trade-offs with the CTO before committing to an approach
 - **Production support** — debugging issues that crossed layer boundaries
@@ -111,7 +115,9 @@ That constant context-switching was demanding, but it built confidence I still r
 
 ## Leadership & Mentoring
 
-As **Team Lead for a frontend team of 4**, I owned more than my own deliverables: I distributed work, reviewed the team's code, analyzed requirements with stakeholders, and was accountable for the team shipping. As **Scrum Master**, I ran sprint ceremonies and kept communication flowing between the team and stakeholders.
+As **Lead Web Developer** (2020), leading a **frontend team of 4**, I owned more than my own deliverables: I distributed work, reviewed the team's code, analyzed requirements with stakeholders, and was accountable for the team shipping. As **Scrum Master**, I ran sprint ceremonies and kept communication flowing between the team and stakeholders.
+
+In the lead role I also **defined coding standards and reusable patterns**, **reviewed others' designs and architecture**, **mentored developers** (not only on my own work), and **interviewed and helped hire** as the team grew. *(This is the formal-leadership scope — at Keller Williams I was a senior IC, not a lead.)*
 
 I mentored junior developers directly—helping them understand architecture, pairing on difficult problems, reviewing code with explanations rather than just approvals, and walking through why a particular engineering decision made sense in context. Explaining a design forces clarity about whether it is actually good, and leading the team reinforced that engineering quality and delivery are a shared responsibility, not just an individual one.
 
@@ -123,7 +129,7 @@ Advision taught me principles I still apply:
 
 - **Full-stack thinking** — problems rarely respect layer boundaries; understanding the whole system leads to better decisions
 - **Ownership** — end-to-end responsibility from idea to production, especially on a small team
-- **Backend architecture** — professional experience with **Java**, **Spring Boot**, **REST**, and service design—not theoretical knowledge
+- **Backend architecture** — professional experience with **Node.js**, **REST**, **GraphQL**, and service design—not theoretical knowledge
 - **Cloud fundamentals** — **AWS** services, deployment, and serverless patterns in production contexts
 - **Learning from experienced engineers** — working closely with the CTO on architectural direction accelerated my judgment
 - **Keeping an open mind** — the right answer is not always the one you would build from scratch

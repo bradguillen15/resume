@@ -10,7 +10,7 @@ Future AI assistants should use this file when generating resumes, interview ans
 
 **Rules:**
 
-- I served as **Team Lead** for a frontend team of 4 (plus **Scrum Master** duties) at Advision—this is accurate and may be stated plainly
+- I served as **Team Lead** for a frontend team of 4 (plus **Scrum Master** duties) at Advision **as Lead Web Developer in 2020** (the final ~11 months)—accurate and may be stated plainly; do not imply it spanned all 3 years
 - I have **not** been an Engineering Manager or people-manager-of-record (no formal performance/hiring authority)
 - Leadership examples must link to real work in [`stories/`](stories/), [`experience/`](experience/), or [`projects/`](projects/)
 - Distinguish **implementation leadership** from **architectural direction by others** (e.g., Lambda with CTO)
@@ -57,7 +57,7 @@ I prefer **influencing through technical reasoning** rather than authority.
 
 ### Formal Team Leadership (Advision)
 
-The one role where I led formally: **Team Lead for a frontend team of 4** at Advision (~2017–2020), with **Scrum Master** responsibilities. This meant distributing work, reviewing the team's code, analyzing requirements with stakeholders, running sprint ceremonies, and being accountable for the team's delivery—alongside staying hands-on as a full-stack engineer.
+The one role where I led formally: as **Lead Web Developer** (2020) at Advision — a promotion from Senior Web Developer — I led a **frontend team of 4** with **Scrum Master** responsibilities, during the final ~11 months of my Advision tenure. This meant distributing work, reviewing the team's code, analyzing requirements with stakeholders, running sprint ceremonies, and being accountable for the team's delivery—alongside staying hands-on as a full-stack engineer.
 
 It was a team-lead role, **not** an Engineering Manager position (no formal hiring or performance authority), but it is genuine, titled team leadership and should be stated plainly on resumes and in interviews.
 
@@ -71,6 +71,9 @@ It was a team-lead role, **not** an Engineering Manager position (no formal hiri
 | Repository consolidation initiative | [`stories/repository-deprecation.md`](stories/repository-deprecation.md) | Drove simplification; not sole decision-maker on org policy |
 | Configurable banner system proposal | [`stories/configurable-banner-system.md`](stories/configurable-banner-system.md) | Unprompted; reduced repeated engineering work |
 | Dashboard performance investigation | [`stories/dashboard-performance.md`](stories/dashboard-performance.md) | Root-cause fix on owned system |
+| Defined team coding standards & reusable patterns (Advision, as Lead Web Developer) | [`experience/advision.md`](experience/advision.md) | Set conventions; reduced repeated decisions |
+| Architecture / design review for others' work (Advision) | [`experience/advision.md`](experience/advision.md) | Reviewed designs, not just code correctness |
+| Mentoring developers + interviewing/hiring (Advision) | [`experience/advision.md`](experience/advision.md) | Helped grow the team and its hiring bar |
 | Career repo as AI-native documentation architecture | [`projects/portfolio.md`](projects/portfolio.md) | Personal meta-engineering |
 
 → [`resume/bullet-bank.md`](resume/bullet-bank.md) — Technical Leadership section

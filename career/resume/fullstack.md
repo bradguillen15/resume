@@ -49,15 +49,14 @@ Owned critical product areas of a large, long-lived production React application
 - Proposed and built a configuration-driven banner system that let Product manage informational banners without engineering cycles—eliminating a recurring class of sprint work; in use ~3 years before being deprecated cleanly.
 - Participated in the migration toward a micro frontend architecture for clearer team boundaries and independent deployment, and partnered with Product, Design, and QA—raising the modal-vs-page navigation concern that the team later adopted as requirements grew.
 
-### Advision Development — Team Lead / Full Stack Software Engineer · Nov 2017 – Nov 2020
+### Advision Development — Lead Web Developer (promoted from Senior Web Developer) · Nov 2017 – Nov 2020
 
-Strongest evidence of full-stack capability and team leadership. Led a frontend team of 4 while owning features end-to-end across frontend, backend, infrastructure, and production on a small team—context-switching weekly rather than handing off across role boundaries.
+Strongest evidence of full-stack capability and team leadership. Joined as Senior Web Developer (2017–2019); promoted to Lead Web Developer in 2020, leading a frontend team of 4. Owned features end-to-end across frontend, backend, infrastructure, and production on a small team—context-switching weekly rather than handing off across role boundaries.
 
-- Led a **frontend team of 4** as Team Lead and ran sprint ceremonies as **Scrum Master**—delegating work, reviewing code, analyzing requirements, and managing stakeholder communication while staying hands-on across the stack.
+- As **Lead Web Developer** (2020), led a **frontend team of 4** and ran sprint ceremonies as **Scrum Master**—delegating work, reviewing code, analyzing requirements, and managing stakeholder communication while staying hands-on across the stack.
 - Led implementation of an AWS Lambda integration (under CTO-defined architecture) that consumed an internal API, transformed and cached the response, and exposed a WordPress-friendly API—so the CMS displayed dynamic data without calling internal services directly or duplicating backend logic.
 - Provisioned and configured the supporting AWS infrastructure: Lambda, API Gateway, EC2, IAM, and S3, with scheduled synchronization chosen as a pragmatic cost/complexity trade-off over real-time.
-- Built production backend services in Java, Spring Boot, and Hibernate, and designed REST APIs for frontend and external consumers.
-- Created Node.js services and GraphQL endpoints where they fit the problem better than a Java service.
+- Built and consumed RESTful APIs in Node.js and Express and used GraphQL, coordinating with backend teams on contract definitions; implemented real-time features with WebSockets for low-latency live updates.
 - Drove a custom React CMS → WordPress migration (build-vs-buy), adapting frontend integrations so existing product behavior survived without a disruptive transition—shifting engineering time from maintaining a bespoke CMS to differentiating product work.
 - Took ownership of a critical page after an external contractor failed to deliver; evaluated the partial work, rebuilt it cleanly, and shipped before the deadline. Mentored junior developers through pairing and code review with explanation.
 
@@ -84,7 +83,7 @@ First professional role; backend foundation that the full-stack narrative builds
 - Built a local-first Supabase stack shared by development and end-to-end tests: clone-and-run onboarding and honest Playwright coverage against real auth and data paths instead of mocks.
 - Implemented anonymous-first UX—anonymous activity is stored in local storage and seamlessly migrated to Supabase on signup, removing onboarding friction without data loss.
 - Use AI for drafts, tests, and refactors with every contribution reviewed and simplified—rejecting over-engineered output in favor of maintainable logic.
-- *(In progress)* Building a RAG-based recommendation feature—feeding user activity data to an LLM to suggest habits the user wants to build (reading, meditating)—applying RAG coursework to a live product.
+- Built a RAG-based recommendation feature—feeding user activity data to an LLM to suggest habits the user wants to build (reading, meditating)—applying RAG coursework to a live product.
 
 ### Web Resume — Portfolio & Career Knowledge Base
 
@@ -99,7 +98,7 @@ First professional role; backend foundation that the full-stack narrative builds
 
 Deliberate, dated skill development reinforcing the backend, cloud, and AI dimensions of the full-stack profile. *Structured coursework and guided projects—not production ownership.*
 
-- **Boot.dev — Backend/Full-Stack Developer path** (in progress; [boot.dev/u/bradgg](https://www.boot.dev/u/bradgg)): completed 14 courses + 5 guided projects in 2026 spanning Python (incl. OOP and functional), server-side TypeScript (HTTP clients/servers), SQL, Git, Linux, Docker, CI/CD with GitHub Actions, AWS, S3/CloudFront, and Retrieval Augmented Generation—reinforced by projects including an AI agent in Python.
+- **Boot.dev — Back-end Developer Path** (in progress; [boot.dev/u/bradgg](https://www.boot.dev/u/bradgg)): completed 14 courses + 5 guided projects in 2026 spanning Python (incl. OOP and functional), server-side TypeScript (HTTP clients/servers), SQL, Git, Linux, Docker, CI/CD with GitHub Actions, AWS, S3/CloudFront, and Retrieval Augmented Generation—reinforced by projects including an AI agent in Python.
 - **Anthropic (Skilljar) — AI engineering courses:** Claude Code in Action, AI Fluency: Framework & Foundations, Introduction to and Advanced Model Context Protocol, and Introduction to Agent Skills.
 - **MouréDev (Big School):** *Certificado de iniciación al desarrollo con AI* (introductory).
 

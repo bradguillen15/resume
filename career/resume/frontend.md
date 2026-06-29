@@ -53,11 +53,11 @@ Built and maintained large-scale React applications in TypeScript serving produc
 
 ### Advision Development
 
-**Team Lead / Full Stack Software Engineer** · Nov 2017 – Nov 2020
+**Lead Web Developer (promoted from Senior Web Developer)** · Nov 2017 – Nov 2020
 
-Led a frontend team of 4 while delivering full-stack on a small engineering team—frontend work alongside professional backend and cloud integration. Strongest frontend evidence outside Keller Williams.
+Joined as Senior Web Developer; promoted to Lead Web Developer in 2020, leading a frontend team of 4 while delivering full-stack on a small engineering team. Strongest frontend evidence outside Keller Williams.
 
-- Led a frontend team of 4 as Team Lead and acted as Scrum Master—delegating work, reviewing code, and analyzing requirements with stakeholders.
+- As Lead Web Developer (2020), led a frontend team of 4 as Scrum Master—delegating work, reviewing code, and analyzing requirements with stakeholders.
 - Built React frontends and user flows as part of end-to-end feature delivery spanning frontend, backend, infrastructure, and production support.
 - Took ownership of an incomplete React feature after an external contractor failed to deliver; evaluated partial work, rebuilt the implementation, and met the project deadline from approved designs.
 - Adapted frontend integrations to support a CMS migration from a custom React CMS to WordPress with minimal disruption to existing user-facing functionality.
@@ -103,7 +103,7 @@ Live production site (React 19, TypeScript, Vite, Tailwind, Firebase) with autom
 | **Ownership & delivery** | Feature lifecycle ownership at KW · contractor rescue rebuild under deadline (Advision) |
 | **CI/CD** | GitHub Actions, Harness, Spinnaker (KW) · GitHub Actions (personal projects) |
 | **Collaboration** | Daily work with Product, Design, Backend, QA; mentoring juniors and teammates |
-| **Team leadership** | Team Lead of a frontend team of 4 + Scrum Master (Advision) |
+| **Team leadership** | Lead Web Developer (2020): Team Lead of a frontend team of 4 + Scrum Master (Advision) |
 
 ---
 

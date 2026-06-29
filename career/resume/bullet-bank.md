@@ -78,8 +78,8 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 ## Backend Engineering
 
 - Built backend services using Java, Spring Boot, Hibernate, and relational databases in production applications.
-  - **Source:** [`../experience/first-factory.md`](../experience/first-factory.md), [`../experience/advision.md`](../experience/advision.md)
-  - **Tags:** backend, java, spring-boot, hibernate
+  - **Source:** [`../experience/first-factory.md`](../experience/first-factory.md)
+  - **Tags:** backend, java, spring-boot, hibernate, first-factory
 
 - Designed and implemented REST APIs for frontend consumers and internal services.
   - **Source:** [`../experience/first-factory.md`](../experience/first-factory.md), [`../experience/advision.md`](../experience/advision.md)
@@ -121,9 +121,13 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
   - **Source:** [`../experience/advision.md`](../experience/advision.md)
   - **Tags:** full-stack, advision
 
-- Worked across React, Java/Spring Boot, Node.js, REST APIs, GraphQL, relational databases, and AWS services in production contexts.
-  - **Source:** [`../experience/advision.md`](../experience/advision.md), [`../resume/master-resume.md`](master-resume.md)
+- Worked across React, Node.js, REST APIs, GraphQL, relational databases, and AWS at Advision — plus Java/Spring Boot backend earlier at First Factory.
+  - **Source:** [`../experience/advision.md`](../experience/advision.md), [`../experience/first-factory.md`](../experience/first-factory.md)
   - **Tags:** full-stack, backend, frontend
+
+- Implemented real-time features with WebSockets at Advision, enabling low-latency live updates on the frontend.
+  - **Source:** [`../experience/advision.md`](../experience/advision.md)
+  - **Tags:** full-stack, realtime, websockets, advision
 
 - Collaborated with backend teams to migrate API contracts while maintaining frontend stability through compatibility layers.
   - **Source:** [`../stories/api-migration-v1-v2.md`](../stories/api-migration-v1-v2.md)
@@ -245,13 +249,21 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 
 ## Technical Leadership
 
-- Served as Team Lead for a frontend team of 4 at Advision, mentoring developers and analyzing requirements, while also taking on Scrum Master responsibilities (sprint ceremonies, stakeholder communication).
+- Promoted to Lead Web Developer (2020) at Advision and led a frontend team of 4 as Scrum Master—mentoring developers, analyzing requirements, and running sprint ceremonies and stakeholder communication.
   - **Source:** [`../experience/advision.md`](../experience/advision.md)
   - **Tags:** leadership, team-lead, scrum-master, mentoring, advision
+
+- As Lead Web Developer at Advision, defined team coding standards and reusable patterns, reviewed others' architecture and technical designs, mentored developers, and interviewed and helped hire engineers.
+  - **Source:** [`../experience/advision.md`](../experience/advision.md)
+  - **Tags:** leadership, standards, architecture-review, mentoring, hiring, advision
 
 - As one of only two frontend engineers on a cross-functional product squad, owned large portions of a large-scale production React application end-to-end.
   - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
   - **Tags:** ownership, frontend, scope, keller-williams
+
+- Owned three interconnected frontend applications (user, admin, shared) within a platform of ~40 micro frontends, consolidating them from three repositories into two.
+  - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
+  - **Tags:** frontend, architecture, micro-frontends, scale, keller-williams
 
 - Owned complex frontend features from design collaboration through production deployment and long-term maintenance.
   - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
@@ -468,6 +480,10 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 - Implemented anonymous-first UX in a production app: anonymous activity is stored in local storage and seamlessly migrated to Supabase when the user creates an account—removing signup friction without losing data.
   - **Source:** [`../projects/free-slot.md`](../projects/free-slot.md)
   - **Tags:** personal-project, full-stack, supabase, ux, architecture
+
+- Added production error monitoring and observability with Sentry on a personal production app, capturing and triaging errors from production rather than relying on user reports.
+  - **Source:** [`../projects/free-slot.md`](../projects/free-slot.md)
+  - **Tags:** personal-project, observability, sentry, production
 
 - Built a local Supabase development environment enabling offline work and end-to-end testing without production credentials.
   - **Source:** [`../projects/free-slot.md`](../projects/free-slot.md)

@@ -34,13 +34,13 @@ Although my title was frontend-focused, my work regularly extended beyond UI imp
 
 ## Engineering Context
 
-The team operated on a mature frontend stack centered on **React** and **TypeScript**, with **Redux** and **React Query** handling state and server data. Applications were evolving toward a **micro frontend** architecture so teams could ship and maintain independently.
+The team operated on a mature frontend stack centered on **React** and **TypeScript**, with **Redux** and **React Query** handling state and server data. The product was a large **micro frontend** platform composed of roughly **40 micro frontends**, letting teams ship and maintain independently. Within it, I owned **three interconnected applications (user, admin, and shared)** — later consolidated from three repositories into two.
 
 Backend integration was primarily through **REST APIs** on **AWS**. Deployments ran through **CI/CD** tooling—**GitHub Actions** for automation, **Harness** and **Spinnaker** for release orchestration. **Testing** was part of the delivery process, though the emphasis varied by area of the codebase.
 
 Understanding how code reached production was not optional. Owning a feature meant understanding its deployment path, not just its component tree.
 
-The team was a small cross-functional product squad of roughly **6–8 people**: **2–3 frontend engineers (including me)**, 2 backend engineers, 2–3 QA, a product owner, a designer, and an engineering manager. For most of my tenure there were only **two frontend engineers**—me and one partner—which meant I owned large portions of the frontend end-to-end rather than a narrow slice.
+The team was a small cross-functional product squad of roughly **6–8 people**: **2–3 frontend engineers (including me)**, 2 backend engineers, 2–3 QA, a product owner, a designer, and an engineering manager. For most of my tenure there were only **two frontend engineers**—me and one partner—which meant I owned large portions of the frontend rather than a narrow slice.
 
 **Scope note:** Application user/traffic scale is not documented—observability was owned by the engineering manager, not me. Do not invent user counts or traffic metrics for Keller Williams.
 
@@ -158,11 +158,11 @@ API migrations in particular demanded coordination: agreeing on timelines, under
 
 ## Leadership
 
-I was not a formal engineering manager, but ownership created informal leadership.
+At Keller Williams I was a **senior individual contributor** — not a formal lead. My influence came through **ownership and technical reasoning** rather than authority.
 
-When I owned important features, teammates naturally came to me with questions, bug reports, and ideas for future enhancements. I had the deepest context on how those systems worked, why certain decisions were made, and where the risks lived.
+When I owned important features, teammates naturally came to me with questions, bug reports, and enhancement ideas — I held the deepest context on how those systems worked and where the risks lived. That ownership extended to mentoring teammates on systems I had built, reviewing PRs with an eye toward long-term maintainability, driving unprompted initiatives (repository consolidation, the configurable banner system), and coordinating cross-team on API migrations.
 
-That ownership extended to mentoring—helping others navigate code I had written or systems I had designed, and reviewing PRs with an eye toward long-term maintainability rather than just correctness.
+**Scope note:** Formal team leadership — defining standards, reviewing others' designs, interviewing/hiring — came earlier, as **Lead Web Developer at Advision** (see [`advision.md`](advision.md)). Do not frame KW as a formal lead role.
 
 ---
 

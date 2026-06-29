@@ -45,6 +45,7 @@ First Factory placed engineers on client projects using enterprise Java tooling.
 - **REST APIs** as the primary integration surface for frontends and other consumers
 - **JUnit** and **Mockito** for testing; **Selenium** for QA automation
 - **Node.js**, **JavaScript (ES6)**, **Webpack**, **Yeoman**, and **Google Apps Script** for tooling and add-on work
+- **C#** / **ASP.NET MVC** for a clinic management application; **Python / Flask** project contribution
 - **Maven** for build and dependency management; **Git** for version control
 - **Relational databases** for persistence
 
@@ -54,15 +55,19 @@ This was my introduction to professional **enterprise applications**—codebases
 
 ## Key Projects
 
-**Java REST API (architected from scratch)** — Designed and built a Java REST API using Hibernate and Jersey, with JUnit and Mockito test coverage, and worked with QA on Selenium-based automation. Real production backend work with ownership over the design, not just assigned tickets.
+**Java REST API (architected from scratch)** — Designed and built a Java REST API using Hibernate and Jersey, with JUnit and Mockito test coverage, **for a US client**—including on-site collaboration and direct stakeholder reporting. Worked with QA on Selenium-based automation. Real production backend work with ownership over the design, not just assigned tickets.
 
-**Yeoman CRUD-API generator** — Built a developer tool that scaffolds full CRUD APIs for Java (Spring Boot) or Node.js based on user-selected options—reducing repetitive boilerplate for new services. An early example of the "remove repeated work" instinct that recurs throughout my career.
+**Yeoman generator** — Built a developer tool that scaffolds full-stack project templates for Java (Spring Boot) or Node.js based on user-selected options—reducing setup time and repetitive boilerplate for new projects. An early example of the "remove repeated work" instinct that recurs throughout my career.
+
+**Clinic management application (C# / ASP.NET MVC)** — Developed a C# application to handle internal operational workflows for a clinic.
+
+**Python / Flask** — Contributed to a Python Flask project.
 
 **Google Sheets reporting add-on** — Developed an add-on that auto-generates reports using JavaScript (ES6), Webpack, and Google Apps Script.
 
-**Enterprise application support** — Supported multiple enterprise applications built with Java 8, JSP, Spring, and jQuery.
+**Enterprise application support** — Supported multiple enterprise applications built with Java 8, JSP, Spring, JavaScript, and jQuery.
 
-**Engineering impact:** Concrete, owned deliverables (a REST API, a code generator, a reporting tool) in a professional environment—establishing real backend and tooling experience, not tutorial-level exposure.
+**Engineering impact:** Concrete, owned deliverables across multiple languages (Java REST API, a code generator, a C# application, Python/Flask, a reporting tool) in a professional environment—establishing real backend and tooling experience, not tutorial-level exposure.
 
 ---
 

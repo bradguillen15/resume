@@ -6,7 +6,7 @@ Senior Software Engineer with approximately ten years of experience building pro
 
 AI accelerates implementation, exploration, and test authoring in my daily work; engineering judgment decides what ships. Every AI-generated contribution is reviewed, simplified, and rejected when it introduces unnecessary complexity. Active practice in context engineering: structured documentation and clear architecture so both humans and AI tools produce better output.
 
-Professional experience spans large-scale React/TypeScript systems (Keller Williams), full-stack delivery with Java, Node.js, AWS Lambda, and REST APIs (Advision), and current production personal projects (Free Slot, portfolio) built with AI in the loop. **Not** an ML engineer—no model training or data science depth claimed.
+Professional experience spans large-scale React/TypeScript systems (Keller Williams), full-stack delivery with Node.js, AWS Lambda, REST and GraphQL APIs (Advision) plus Java/Spring Boot backend earlier (First Factory), and current production personal projects (Free Slot, portfolio) built with AI in the loop. **Not** an ML engineer—no model training or data science depth claimed.
 
 **Engineering narrative:** I improve software by making it easier to understand, maintain, and evolve—AI is a force multiplier for that discipline, not a replacement for it.
 
@@ -54,13 +54,13 @@ Owned critical features on a large production React application. Applied consist
 
 ### Advision Development
 
-**Team Lead / Full Stack Software Engineer** · Nov 2017 – Nov 2020
+**Lead Web Developer (promoted from Senior Web Developer)** · Nov 2017 – Nov 2020
 
 Led a frontend team of 4 with end-to-end ownership on a small team—frontend, backend, cloud, and production. Production software under real constraints, not experiments.
 
-- Led a frontend team of 4 as Team Lead and acted as Scrum Master—delegating, reviewing code, and managing stakeholder communication while staying hands-on across the stack.
+- As Lead Web Developer (2020), led a frontend team of 4 as Scrum Master—delegating, reviewing code, and managing stakeholder communication while staying hands-on across the stack.
 - Led implementation of an AWS Lambda integration that transformed internal service data into a WordPress-friendly format under CTO-defined architecture—clear service boundaries and data transformation at the integration layer.
-- Delivered features spanning React frontends, Java/Spring Boot and Node.js backend services, REST APIs, GraphQL, and AWS cloud resources.
+- Delivered features spanning React frontends, Node.js backend services, REST and GraphQL APIs, and AWS cloud resources.
 - Diagnosed and resolved frontend performance issues through investigation and targeted fixes—engineering judgment over premature optimization.
 - Took ownership of an incomplete React deliverable; evaluated partial contractor work, rebuilt cleanly, and met deadline.
 - Mentored junior developers through pairing, code review with explanation, and architectural discussion.
@@ -122,7 +122,7 @@ Live site at bradguillen.com (React 19, Firebase, GitHub Actions) evolving into 
 
 - Machine learning model training or fine-tuning
 - Data science or research engineering
-- RAG or agent systems in production (completed coursework and guided projects—not yet documented as shipped)
+- Enterprise-scale agent/RAG platforms (a RAG recommendation feature is shipped in Free Slot, but not claimed at enterprise scale)
 
 ---
 

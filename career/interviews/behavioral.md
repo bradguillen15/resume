@@ -267,7 +267,7 @@ For each: **recommended stories**, **important points**, **mistakes to avoid**.
 
 1. Senior Software Engineer, ~10 years, software engineer with deep frontend expertise and practical backend experience
 2. Recent years: large-scale React/TypeScript at Keller Williams—ownership, architecture, API migrations, simplification
-3. Foundation: Team Lead / full-stack at Advision—led a frontend team of 4; Java, Spring Boot, Lambda, Node.js; backend at First Factory
+3. Foundation: Team Lead / full-stack at Advision—led a frontend team of 4; Node.js, Lambda, GraphQL; Java/Spring Boot backend at First Factory
 4. Current: Free Slot and portfolio—full-stack, Supabase, AI-assisted engineering, documentation-driven career repo
 5. Theme: ownership, maintainability, simplifying systems, product thinking
 

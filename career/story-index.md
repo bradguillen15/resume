@@ -149,11 +149,12 @@ Contains:
 
 ### Advision
 
-**[`experience/advision.md`](experience/advision.md)** · Nov 2017–Nov 2020 (~3 years) · Team Lead / Full Stack
+**[`experience/advision.md`](experience/advision.md)** · Nov 2017–Nov 2020 (~3 years) · Senior Web Developer → Lead Web Developer
 
 Contains:
 
-- **Team Lead of a frontend team of 4** · Scrum Master
+- **Lead Web Developer (2020): Team Lead of a frontend team of 4** · Scrum Master (final ~11 months)
+- **Senior Web Developer (2017–2019):** Node.js/Express, REST/GraphQL, WebSockets, React
 - Node.js · GraphQL · REST APIs
 - AWS Lambda · WordPress integration
 - React frontend · backend collaboration
@@ -179,11 +180,11 @@ Contains:
 
 ---
 
-### Intertec International
+### FPT Latin America (formerly Intertec)
 
-**[`experience/intertec.md`](experience/intertec.md)** · Oct–Nov 2014 (~2 months) · Intern
+**[`experience/fpt-latin-america.md`](experience/fpt-latin-america.md)** · Oct–Dec 2014 (~3 months) · Software Developer Internship
 
-Earliest professional exposure—short internship (SharePoint, C#, Java, SQL). **Usually omitted from senior resumes**; documented for timeline completeness.
+Earliest professional exposure—short internship (SharePoint from scratch; JS, C#, Java, SQL). **Usually omitted from senior resumes**; documented for timeline completeness.
 
 ---
 

@@ -183,7 +183,7 @@ CI/CD here is sized for a personal project: enough pipeline to catch regressions
 
 ## Observability
 
-I am adding **Sentry** for error monitoring and observability (**in progress**). This closes a gap I previously flagged: a personal app running in production deserves the same visibility into errors and regressions I would expect on professional software—not just green CI.
+I added **Sentry** for production error monitoring and observability. This closes a gap I previously flagged: a personal app running in production deserves the same visibility into errors and regressions I would expect on professional software—not just green CI. Errors are now captured and triaged from production rather than discovered by users.
 
 ---
 
@@ -208,18 +208,24 @@ This project reflects the engineer I am today more accurately than many professi
 
 ---
 
+## AI Recommendation Feature (RAG)
+
+Free Slot includes a **shipped RAG-based recommendation feature**: it feeds the user's own activity data to an LLM to suggest habits and activities they want to build (e.g., reading, meditating). This is a direct application of my RAG coursework ([`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)) — product AI running in a live app, not a tutorial.
+
+---
+
 ## Future Plans
 
 Documented directions—not commitments with dates, but intentional areas for evolution:
 
-- **AI integration in the product** (planned, **not yet shipped**; may start this week)—a **RAG-based recommendation feature** that feeds the user's own activity data to an LLM to suggest habits/activities they want to build (e.g., reading, meditating). Direct application of RAG coursework ([`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)). Do not claim product AI on resume/portfolio until it ships.
+- Expand the **RAG recommendation feature** (now shipped) with richer signals and evaluation
 - More **automation** in testing and deployment
 - Improved **analytics** for understanding usage patterns
 - Additional **testing** coverage where risk justifies it
 - **Performance** improvements driven by real interaction needs
 - **Backend expansion** if Supabase boundaries become limiting
 - **Authentication** improvements as user and security requirements grow
-- **Sentry** observability—**in progress** (see Observability section)
+- Expand **Sentry** observability (now live) with alerting and performance tracing
 - Continued **architecture evolution** as tools and requirements change
 
 This section should be updated as plans become decisions and decisions become shipped work.

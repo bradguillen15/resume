@@ -4,7 +4,7 @@
 
 Interview-specific prep derived from [`../leadership.md`](../leadership.md). Use the canonical leadership document for themes, evidence, and framing rules; use this file for **question mapping** and **answer outlines**.
 
-**Rules:** Team Lead of a frontend team of 4 (+ Scrum Master) at Advision is accurate—state it plainly. Do not claim Engineering Manager / people-manager-of-record. Never inflate Lambda into sole architect. Always link to story files for STAR detail.
+**Rules:** Team Lead of a frontend team of 4 (+ Scrum Master) at Advision is accurate (as **Lead Web Developer**, 2020 — the final ~11 months)—state it plainly; don't imply it spanned all 3 years. Do not claim Engineering Manager / people-manager-of-record. Never inflate Lambda into sole architect. Always link to story files for STAR detail.
 
 ---
 
@@ -62,7 +62,7 @@ Interview-specific prep derived from [`../leadership.md`](../leadership.md). Use
 
 ### Tell me about leading a team
 
-**Story:** Advision — Team Lead of a frontend team of 4
+**Story:** Advision — Lead Web Developer (2020): Team Lead of a frontend team of 4
 
 **Outline:**
 

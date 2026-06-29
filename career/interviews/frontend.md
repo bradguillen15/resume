@@ -323,7 +323,7 @@ Ownership > ticket completion. Includes production behavior, CI/CD path, and fut
 | **Architecture** | Micro frontend evolution; repository consolidation |
 | **Integration** | Cross-team REST API migrations, compatibility layers |
 | **CI/CD** | GitHub Actions, Harness, Spinnaker (production ownership) |
-| **Earlier** | React/full-stack at Advision (Java, Lambda, Node.js) |
+| **Earlier** | React/full-stack at Advision (Node.js, Lambda, GraphQL) |
 | **Current** | React 19, TypeScript, Supabase abstraction, E2E testing (Free Slot) |
 
 → [`../resume/master-resume.md`](../resume/master-resume.md)

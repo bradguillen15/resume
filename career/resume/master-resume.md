@@ -22,7 +22,7 @@ This file intentionally contains **significantly more information** than any sin
 
 Senior Software Engineer with approximately **ten years** of professional experience building and maintaining web applications across frontend and backend environments.
 
-**Strongest expertise:** React and modern frontend architecture at scale—TypeScript, state management, micro frontend evolution, CI/CD ownership, and cross-team API integration.
+**Strongest expertise:** React and modern frontend architecture at scale—TypeScript, state management, micro frontend platforms (~40 MFEs at KW), CI/CD ownership, and cross-team API integration.
 
 **Broader experience:** Node.js, GraphQL, Java, Spring Boot, Hibernate, REST APIs, AWS (Lambda, EC2, S3, API Gateway, IAM), relational databases, serverless patterns, WordPress integration, and production deployment pipelines.
 
@@ -90,9 +90,9 @@ Employment dates (author-provided). Total professional experience is **approxima
 | Order | Company | Role | Dates | Duration |
 |-------|---------|------|-------|----------|
 | Most recent | Keller Williams | Senior Software Engineer | Nov 2020 – Apr 2026 | ~5.5 years |
-| | Advision Development | Team Lead / Software Engineer (Full Stack) | Nov 2017 – Nov 2020 | ~3 years |
+| | Advision Development | Senior Web Developer → Lead Web Developer (Team Lead) | Nov 2017 – Nov 2020 | ~3 years |
 | | First Factory | Software Engineer | May 2016 – Nov 2017 | ~1.5 years |
-| Earliest | Intertec International | Intern | Oct 2014 – Nov 2014 | ~2 months |
+| Earliest | FPT Latin America (formerly Intertec) | Intern | Oct 2014 – Dec 2014 | ~3 months |
 
 ---
 
@@ -106,7 +106,7 @@ Employment dates (author-provided). Total professional experience is **approxima
 
 #### Context
 
-Grew from frontend engineer into senior software engineer with significant ownership over critical parts of a **large production React application**. Title was frontend-focused; work regularly extended to architecture, backend API integration, CI/CD, cross-team migrations, product planning, and production support. Worked on a small cross-functional squad (~6–8: 2–3 frontend incl. me, 2 backend, 2–3 QA, PO, designer, EM); as **one of only two frontend engineers** for most of my tenure, I owned large portions of the frontend. **User/traffic scale not documented**—do not invent.
+Grew from frontend engineer into senior software engineer with significant ownership over critical parts of a **large production React application**. Title was frontend-focused; work regularly extended to architecture, backend API integration, CI/CD, cross-team migrations, product planning, and production support. Worked on a small cross-functional squad (~6–8: 2–3 frontend incl. me, 2 backend, 2–3 QA, PO, designer, EM); as **one of only two frontend engineers** for most of my tenure, I owned large portions of the frontend. The product was a **micro frontend platform of ~40 micro frontends**; I owned and maintained **3 of them (user, admin, shared)** (later consolidated from 3 repos to 2) and collaborated cross-team on multiple projects. Senior **individual-contributor** role with strong influence (unprompted initiatives, cross-team migrations, mentoring on owned systems)—**not** a formal lead (formal team leadership was earlier, as Lead Web Developer at Advision). **User/traffic scale not documented**—do not invent (a real number may be added later if obtained).
 
 #### Technologies
 
@@ -172,24 +172,23 @@ React, TypeScript, Redux, React Query, REST APIs, AWS, micro frontends, GitHub A
 
 ### Advision Development
 
-**Role:** Team Lead / Software Engineer (Full Stack)  
+**Role:** Senior Web Developer (Nov 2017 – Dec 2019), promoted to **Lead Web Developer** / Team Lead (Jan – Nov 2020)  
 **Dates:** Nov 2017 – Nov 2020 (~3 years)  
 **Source:** [`../experience/advision.md`](../experience/advision.md)
 
 #### Context
 
-Foundation of engineering career. **Team Lead for a frontend team of 4** with **Scrum Master** duties, while remaining hands-on across frontend, backend, infrastructure, and product on a small team with **end-to-end feature ownership**. Strongest evidence that **backend experience is professional, not theoretical**—and the first role where I formally led a team.
+Foundation of engineering career. Joined as **Senior Web Developer** (full-stack: React, Node.js/Express, REST/GraphQL, WebSockets); promoted to **Lead Web Developer** in 2020, where I led a **frontend team of 4** with **Scrum Master** duties. Remained hands-on across frontend, backend, infrastructure, and product on a small team with **end-to-end feature ownership**. **Honest scope:** the Team Lead/Scrum Master responsibilities belong to the final ~11 months (Lead Web Developer), not the full three years.
 
 #### Technologies
 
-Java, Spring Boot, Hibernate, REST APIs, Node.js, GraphQL, React, JavaScript, AWS (Lambda, EC2, S3, API Gateway, IAM), WordPress, Git, CI/CD
+Node.js, REST APIs, GraphQL, React, JavaScript, AWS (Lambda, EC2, S3, API Gateway, IAM), WordPress, Git, CI/CD
 
 #### Responsibilities
 
-- Built backend services (Java/Spring Boot, Hibernate)
-- Designed and implemented REST APIs
+- Built backend services in Node.js
+- Designed and implemented REST APIs and GraphQL endpoints
 - Built React frontends
-- Node.js services and GraphQL endpoints
 - Deployed to AWS; configured cloud resources
 - Collaborated with CTO on architecture
 - Owned features from idea through production
@@ -202,7 +201,7 @@ Java, Spring Boot, Hibernate, REST APIs, Node.js, GraphQL, React, JavaScript, AW
 | **Lambda ↔ WordPress integration** | Led Lambda implementation: fetch internal API → transform → cache → WordPress-friendly API; CTO defined architecture, I owned execution | [`../stories/lambda-wordpress-integration.md`](../stories/lambda-wordpress-integration.md) |
 | **React CMS → WordPress migration** | Frontend integration for migrating custom React CMS to WordPress; build-vs-buy pragmatism | [`../stories/react-cms-to-wordpress.md`](../stories/react-cms-to-wordpress.md) |
 | **Contractor rescue** | Inherited incomplete React page; evaluated partial work; clean rebuild; delivered before deadline | [`../stories/contractor-rescue.md`](../stories/contractor-rescue.md) |
-| **Backend development** | Production Java/Spring Boot, Hibernate, REST, Node.js, GraphQL—earlier career; architectural direction often from CTO | (overview in experience doc) |
+| **Backend development** | Production Node.js, REST, GraphQL—earlier career; architectural direction often from CTO | (overview in experience doc) |
 
 **Metrics:** Not documented—do not invent latency improvements or migration timelines.
 
@@ -214,10 +213,10 @@ Java, Spring Boot, Hibernate, REST APIs, Node.js, GraphQL, React, JavaScript, AW
 
 #### Backend work
 
-- **Java**, **Spring Boot**, **Hibernate**, **REST APIs**
-- **Node.js**, **GraphQL** where appropriate
-- Database persistence through Hibernate on relational databases
+- **Node.js** services, **REST APIs**, **GraphQL**
+- Data persistence and business logic on the Node.js backend
 - Not the most senior backend engineer on team—**production backend work**, not tutorial level
+- (Java/Spring Boot/Hibernate experience is from **First Factory**, not Advision)
 
 #### Cloud work
 
@@ -266,13 +265,13 @@ No dedicated story files—documented at experience overview depth only.
 
 ---
 
-### Intertec International
+### FPT Latin America (formerly Intertec)
 
-**Role:** Intern  
-**Dates:** Oct 2014 – Nov 2014 (~2 months)  
-**Source:** [`../experience/intertec.md`](../experience/intertec.md)
+**Role:** Software Developer Internship  
+**Dates:** Oct 2014 – Dec 2014 (~3 months) · Aurora, Costa Rica  
+**Source:** [`../experience/fpt-latin-america.md`](../experience/fpt-latin-america.md)
 
-Earliest professional exposure—a short pre-career internship. Developed a SharePoint application using C#, Java, and SQL; prepared daily progress reports and joined daily/weekly meetings.
+Earliest professional exposure—a short pre-career internship. Built a SharePoint application from scratch using JavaScript, C#, Java, and SQL; delivered on schedule, presented progress to the Operations Manager, and ran end-user training.
 
 **Resume guidance:** Typically **omit** from senior one-page resumes. Include only when an application specifically values early experience or a complete timeline. Adds C# and SharePoint to the early technology history—not current focus.
 
@@ -306,9 +305,9 @@ Organized by category. **Proficiency depth varies**—recent professional depth 
 | Express | Personal/learning—confirm before claiming production depth |
 | REST APIs | Professional (all roles) |
 | GraphQL | Professional (Advision) |
-| Java | Professional (First Factory, Advision) |
-| Spring Boot | Professional (First Factory, Advision) |
-| Hibernate | Professional (First Factory, Advision) |
+| Java | Professional (First Factory) |
+| Spring Boot | Professional (First Factory) |
+| Hibernate | Professional (First Factory) |
 | Maven | Professional (First Factory) |
 
 ### Databases
@@ -318,7 +317,7 @@ Organized by category. **Proficiency depth varies**—recent professional depth 
 | SQL | Professional (relational databases) |
 | PostgreSQL | Supabase (Free Slot personal project) |
 | Supabase | Production personal project (Free Slot) |
-| Relational databases / Hibernate ORM | Professional (First Factory, Advision) |
+| Relational databases / Hibernate ORM | Professional (First Factory) |
 
 ### Cloud
 
@@ -366,7 +365,7 @@ Git, GitHub, Vite, Webpack, Yeoman, Docker, Linux, Jenkins, Google Apps Script
 
 ### Additional / earlier-career technologies
 
-Module Federation, Jest, React Testing Library, JUnit, Mockito, Selenium, Jersey, MongoDB, MySQL, JSP, jQuery (legacy enterprise apps), Scrum / Scrum Master, SEO. List per role relevance—do not imply current depth in legacy items.
+Module Federation, Jest, React Testing Library, JUnit, Mockito, Selenium, Jersey, MongoDB, MySQL, JSP, jQuery, C#, ASP.NET (MVC), SharePoint (legacy/early-career, ~2014–2017), WebSockets, Scrum / Scrum Master, SEO. List per role relevance—do not imply current depth in legacy items.
 
 ---
 
@@ -478,7 +477,7 @@ Summarized across roles—not formal people management.
 
 | Theme | Examples |
 |-------|----------|
-| **Team leadership** | Advision: **Team Lead of a frontend team of 4** + **Scrum Master** (sprint ceremonies, stakeholder communication) |
+| **Team leadership** | Advision (as **Lead Web Developer**, 2020): **Team Lead of a frontend team of 4** + **Scrum Master** (sprint ceremonies, stakeholder communication) |
 | **Feature ownership** | KW: de facto owner of critical features; Advision: end-to-end delivery |
 | **Mentoring** | KW: teammates on owned systems; Advision: junior developers—pairing, architecture, code review |
 | **Cross-team collaboration** | KW: external backend team API migrations; Advision: CTO collaboration |
@@ -663,7 +662,7 @@ Complete index of the `career/` repository. **Leaf documents are authoritative**
 | [`../experience/keller-williams.md`](../experience/keller-williams.md) | Keller Williams employment |
 | [`../experience/advision.md`](../experience/advision.md) | Advision employment |
 | [`../experience/first-factory.md`](../experience/first-factory.md) | First Factory employment |
-| [`../experience/intertec.md`](../experience/intertec.md) | Intertec internship (2014)—usually omitted from resumes |
+| [`../experience/fpt-latin-america.md`](../experience/fpt-latin-america.md) | FPT Latin America internship (2014)—usually omitted from resumes |
 
 ### Projects
 
