@@ -77,12 +77,14 @@ First professional role; backend foundation that the full-stack narrative builds
 
 ### Free Slot — Production full-stack application
 
-**React 19 · TypeScript · Supabase · Playwright · CI/CD** — solo-built and run in production.
+**React 19 · TypeScript · Supabase · Playwright · CI/CD** — solo-built and run in production · [live demo](https://free-slot-blush.vercel.app/).
 
 - Designed, built, and operate the application end-to-end—authentication, database, and deployment—owning the full lifecycle alone and keeping `main` releasable through CI/CD.
 - Encapsulated Supabase behind services and hooks so the UI stays vendor-agnostic and the backend remains swappable—infrastructure isolated from application logic by design, not as an afterthought.
 - Built a local-first Supabase stack shared by development and end-to-end tests: clone-and-run onboarding and honest Playwright coverage against real auth and data paths instead of mocks.
+- Implemented anonymous-first UX—anonymous activity is stored in local storage and seamlessly migrated to Supabase on signup, removing onboarding friction without data loss.
 - Use AI for drafts, tests, and refactors with every contribution reviewed and simplified—rejecting over-engineered output in favor of maintainable logic.
+- *(In progress)* Building a RAG-based recommendation feature—feeding user activity data to an LLM to suggest habits the user wants to build (reading, meditating)—applying RAG coursework to a live product.
 
 ### Web Resume — Portfolio & Career Knowledge Base
 

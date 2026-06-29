@@ -40,6 +40,10 @@ Backend integration was primarily through **REST APIs** on **AWS**. Deployments 
 
 Understanding how code reached production was not optional. Owning a feature meant understanding its deployment path, not just its component tree.
 
+The team was a small cross-functional product squad of roughly **6–8 people**: **2–3 frontend engineers (including me)**, 2 backend engineers, 2–3 QA, a product owner, a designer, and an engineering manager. For most of my tenure there were only **two frontend engineers**—me and one partner—which meant I owned large portions of the frontend end-to-end rather than a narrow slice.
+
+**Scope note:** Application user/traffic scale is not documented—observability was owned by the engineering manager, not me. Do not invent user counts or traffic metrics for Keller Williams.
+
 ---
 
 ## Major Engineering Contributions

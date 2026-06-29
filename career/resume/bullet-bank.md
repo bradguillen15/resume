@@ -249,6 +249,10 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
   - **Source:** [`../experience/advision.md`](../experience/advision.md)
   - **Tags:** leadership, team-lead, scrum-master, mentoring, advision
 
+- As one of only two frontend engineers on a cross-functional product squad, owned large portions of a large-scale production React application end-to-end.
+  - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
+  - **Tags:** ownership, frontend, scope, keller-williams
+
 - Owned complex frontend features from design collaboration through production deployment and long-term maintenance.
   - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
   - **Tags:** leadership, ownership, keller-williams
@@ -460,6 +464,10 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 - Designed and deployed Free Slot, a production-ready React 19 application with Supabase authentication, database integration, and CI/CD automation.
   - **Source:** [`../projects/free-slot.md`](../projects/free-slot.md)
   - **Tags:** personal-project, full-stack, react, supabase
+
+- Implemented anonymous-first UX in a production app: anonymous activity is stored in local storage and seamlessly migrated to Supabase when the user creates an account—removing signup friction without losing data.
+  - **Source:** [`../projects/free-slot.md`](../projects/free-slot.md)
+  - **Tags:** personal-project, full-stack, supabase, ux, architecture
 
 - Built a local Supabase development environment enabling offline work and end-to-end testing without production credentials.
   - **Source:** [`../projects/free-slot.md`](../projects/free-slot.md)

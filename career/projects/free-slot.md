@@ -12,9 +12,11 @@ Future AI assistants should treat this file as the primary source of truth when 
 
 **Project:** Free Slot
 
+**Live:** [free-slot-blush.vercel.app](https://free-slot-blush.vercel.app/) — free to use; no account required to try. Hosted on Vercel (a `vercel.app` subdomain is intentional—no custom domain purchased for a side project).
+
 Free Slot is a production-ready personal application built to solve a real problem—not to showcase a technology checklist.
 
-The application lets users log activities over time through an intuitive drag-and-drop interface, making it easier to visualize, organize, and track their schedule.
+The application lets users track their time and activities through an intuitive drag-and-drop interface, giving them a clear view of where their time actually goes—what is spent well and what is wasted. It is **live in production and free to use**: anyone can try it immediately without an account, or create a free account to persist their data.
 
 Complete ownership over every technical decision makes this project a more accurate reflection of my current engineering style than most professional work, where constraints, legacy systems, and team boundaries shape what gets built. The project is intentionally designed to be maintainable, testable, AI-friendly, and easy to evolve.
 
@@ -65,7 +67,7 @@ Supabase was chosen to reduce operational overhead for a personal project while 
 
 ### Deployment and tooling
 
-- **Production deployment** with the application kept releasable at any point
+- **Production deployment on Vercel**, with the application kept releasable at any point
 - **CI/CD** automation to validate changes without manual ceremony
 - **Version control** with changes sized for review and rollback
 
@@ -112,6 +114,14 @@ Supabase is hidden behind reusable **services** and **hooks**.
 Components do not know they are talking to Supabase. They request data through a stable interface. If the backend changes—different BaaS, custom API, self-hosted Postgres—the migration surface stays isolated instead of spreading through every screen.
 
 This reflects how I think about infrastructure: **infrastructure decisions should remain isolated.** Coupling UI to a vendor SDK is fast initially and expensive later. The abstraction is not over-engineering for a personal project—it is practice for how I build software that is expected to live for years.
+
+---
+
+## Anonymous-First UX & Data Migration
+
+Free Slot is usable **without an account**. Anonymous users' data is stored in **local storage**, so they can try the product immediately with zero friction. When a user later creates an account, their local data is **migrated into Supabase**—nothing they did before signing up is lost.
+
+This is a deliberate UX and engineering decision: remove the barrier to first use, then seamlessly upgrade anonymous local state to authenticated, persistent storage. It also reinforces the same boundary discipline as the Supabase abstraction—where data lives is an implementation detail the UI does not need to care about.
 
 ---
 
@@ -171,6 +181,12 @@ CI/CD here is sized for a personal project: enough pipeline to catch regressions
 
 ---
 
+## Observability
+
+I am adding **Sentry** for error monitoring and observability (**in progress**). This closes a gap I previously flagged: a personal app running in production deserves the same visibility into errors and regressions I would expect on professional software—not just green CI.
+
+---
+
 ## What This Project Demonstrates
 
 Free Slot demonstrates more than React proficiency:
@@ -196,14 +212,14 @@ This project reflects the engineer I am today more accurately than many professi
 
 Documented directions—not commitments with dates, but intentional areas for evolution:
 
-- More **AI capabilities** in the product and in the development workflow
+- **AI integration in the product** (planned, **not yet shipped**; may start this week)—a **RAG-based recommendation feature** that feeds the user's own activity data to an LLM to suggest habits/activities they want to build (e.g., reading, meditating). Direct application of RAG coursework ([`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)). Do not claim product AI on resume/portfolio until it ships.
 - More **automation** in testing and deployment
 - Improved **analytics** for understanding usage patterns
 - Additional **testing** coverage where risk justifies it
 - **Performance** improvements driven by real interaction needs
 - **Backend expansion** if Supabase boundaries become limiting
 - **Authentication** improvements as user and security requirements grow
-- Better **monitoring** and observability for production confidence
+- **Sentry** observability—**in progress** (see Observability section)
 - Continued **architecture evolution** as tools and requirements change
 
 This section should be updated as plans become decisions and decisions become shipped work.

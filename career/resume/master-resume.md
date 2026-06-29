@@ -106,7 +106,7 @@ Employment dates (author-provided). Total professional experience is **approxima
 
 #### Context
 
-Grew from frontend engineer into senior software engineer with significant ownership over critical parts of a **large production React application**. Title was frontend-focused; work regularly extended to architecture, backend API integration, CI/CD, cross-team migrations, product planning, and production support.
+Grew from frontend engineer into senior software engineer with significant ownership over critical parts of a **large production React application**. Title was frontend-focused; work regularly extended to architecture, backend API integration, CI/CD, cross-team migrations, product planning, and production support. Worked on a small cross-functional squad (~6–8: 2–3 frontend incl. me, 2 backend, 2–3 QA, PO, designer, EM); as **one of only two frontend engineers** for most of my tenure, I owned large portions of the frontend. **User/traffic scale not documented**—do not invent.
 
 #### Technologies
 
