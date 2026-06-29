@@ -36,6 +36,7 @@ This document does **not** duplicate information. It explains **where each type 
 | Portfolio / personal site | [`projects/portfolio.md`](projects/portfolio.md) | [`projects/free-slot.md`](projects/free-slot.md) |
 | Career advice / planning | [`context.md`](context.md) | [`learning/2026.md`](learning/2026.md) |
 | LinkedIn content | [`recommendations/linkedin.md`](recommendations/linkedin.md) | [`strengths.md`](strengths.md) · bullet bank |
+| GitHub profile | [`recommendations/github-profile.md`](recommendations/github-profile.md) | [`github-profile-readme.md`](recommendations/github-profile-readme.md) · [`projects/`](projects/) |
 | Promotion / recommendation request | [`strengths.md`](strengths.md) + [`leadership.md`](leadership.md) | Specific stories with evidence links |
 
 ---
@@ -143,7 +144,7 @@ Contains:
 
 **Primary source** for Senior Frontend / Senior Software Engineer (frontend-heavy) experience.
 
-**Related stories:** [Repository consolidation](#repository-consolidation) · [API migration](#api-migration) · [Configurable banners](#configurable-banner-system) · [Modal vs page](#modal-vs-page-decision) · [Dashboard performance](#dashboard-performance-optimization) · [Data layer migration (Redux removal)](stories/redux-removal.md)
+**Related stories:** [Repository consolidation](stories/repository-deprecation.md) · [API migration](stories/api-migration-v1-v2.md) · [Configurable banners](stories/configurable-banner-system.md) · [Modal vs page](stories/modal-vs-page-decision.md) · [Dashboard performance](stories/dashboard-performance.md) · [Data layer migration (Redux removal)](stories/redux-removal.md)
 
 ---
 
@@ -162,7 +163,7 @@ Contains:
 
 **Primary source** for Full Stack experience.
 
-**Related stories:** [Lambda integration](#lambda-integration) · [CMS migration](#cms-migration) · [Contractor rescue](#contractor-rescue)
+**Related stories:** [Lambda integration](stories/lambda-wordpress-integration.md) · [CMS migration](stories/react-cms-to-wordpress.md) · [Contractor rescue](stories/contractor-rescue.md)
 
 ---
 
@@ -285,6 +286,7 @@ Use [`interviews/behavioral.md`](interviews/behavioral.md) for question → stor
 |----------|---------|
 | [`learning/2026.md`](learning/2026.md) | Current-year learning goals and progress |
 | [`recommendations/linkedin.md`](recommendations/linkedin.md) | LinkedIn content pointers |
+| [`recommendations/github-profile.md`](recommendations/github-profile.md) | GitHub profile metadata, pins, README strategy |
 | [`brag-document.md`](brag-document.md) | Living accomplishment log—update monthly/quarterly |
 | [`templates/`](templates/) | Schemas for new experience, project, and story entries |
 | [`README.md`](README.md) | Repository principles and maintenance rules |

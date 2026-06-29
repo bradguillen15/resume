@@ -15,7 +15,7 @@ export const resume = {
   phone: '+506 6201-1840',
   linkedin: 'linkedin.com/in/brad-guillen-89794ba8',
   github: 'github.com/bradguillen15',
-  resumeUrl: '/resume.pdf',
+  resumeUrl: '/Brad%20Guillen%20-%20Senior%20Software%20Engineer.pdf',
 
   experience: [
     {

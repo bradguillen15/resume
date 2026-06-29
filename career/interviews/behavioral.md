@@ -453,7 +453,7 @@ Use with **specific story evidence**—not as unsupported adjectives.
 
 ---
 
-## Weaknesses (Honest — Not Humble-Brags)
+## Weaknesses
 
 **Do not use fake weaknesses** ("I work too hard").
 

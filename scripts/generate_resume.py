@@ -1,145 +1,266 @@
 #!/usr/bin/env python3
-"""Render Brad Guillen's resume PDF from resume_data.py (the content source).
+"""Render Brad Guillen's resume PDF from resume_data.py.
 
 Usage:
-    python3 scripts/generate_resume.py                 # -> public/resume.pdf
-    python3 scripts/generate_resume.py -o some.pdf     # custom output path
+    python3 scripts/generate_resume.py
+    python3 scripts/generate_resume.py -o exports/preview.pdf
 
-This file is RENDERING ONLY — edit wording in scripts/resume_data.py.
+Edit wording in scripts/resume_data.py — this file is rendering only.
 """
-import argparse, os, tempfile, sys
-from reportlab.lib.pagesizes import letter
-from reportlab.lib.units import inch
-from reportlab.lib import colors
-from reportlab.lib.styles import ParagraphStyle
+from __future__ import annotations
+
+import argparse
+import os
+import sys
+
 from reportlab.lib.enums import TA_CENTER, TA_RIGHT
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Table, TableStyle, HRFlowable
-from PIL import Image, ImageDraw, ImageFont
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.platypus import HRFlowable, Paragraph, SimpleDocTemplate, Table, TableStyle
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import resume_data as D
+import resume_pdf_theme as T
 
-NAVY = colors.HexColor("#1F3864"); BLUE = colors.HexColor("#2E5C8A")
-GRAY = colors.HexColor("#555555"); RULE = NAVY; NAVY_RGB = (31, 56, 100); S = 64
-ICONDIR = tempfile.mkdtemp(prefix="resume_icons_")
-
-# ---- icon drawing (clickable contact links) ----
-def _save(img, n): p = os.path.join(ICONDIR, n + ".png"); img.save(p); return p
-def _c(): return Image.new("RGBA", (S, S), (0, 0, 0, 0))
-def icon_email():
-    img = _c(); d = ImageDraw.Draw(img); w = 5
-    d.rounded_rectangle([8, 16, 56, 48], radius=5, outline=NAVY_RGB, width=w)
-    d.line([10, 19, 32, 36], fill=NAVY_RGB, width=w); d.line([54, 19, 32, 36], fill=NAVY_RGB, width=w)
-    return _save(img, "email")
-def icon_phone():
-    img = _c(); d = ImageDraw.Draw(img)
-    d.rounded_rectangle([20, 6, 44, 58], radius=7, outline=NAVY_RGB, width=5)
-    d.ellipse([29, 48, 35, 54], fill=NAVY_RGB); return _save(img, "phone")
-def icon_pin():
-    img = _c(); d = ImageDraw.Draw(img)
-    d.ellipse([18, 8, 46, 36], fill=NAVY_RGB); d.polygon([(22, 30), (42, 30), (32, 56)], fill=NAVY_RGB)
-    d.ellipse([27, 16, 37, 26], fill=(255, 255, 255, 255)); return _save(img, "pin")
-def icon_globe():
-    img = _c(); d = ImageDraw.Draw(img); w = 4
-    d.ellipse([10, 10, 54, 54], outline=NAVY_RGB, width=w); d.ellipse([24, 10, 40, 54], outline=NAVY_RGB, width=w)
-    d.line([10, 32, 54, 32], fill=NAVY_RGB, width=w)
-    d.line([14, 20, 50, 20], fill=NAVY_RGB, width=3); d.line([14, 44, 50, 44], fill=NAVY_RGB, width=3)
-    return _save(img, "globe")
-def _font(sz):
-    for f in ["/System/Library/Fonts/Supplemental/Arial Bold.ttf", "/System/Library/Fonts/Helvetica.ttc"]:
-        if os.path.exists(f):
-            try: return ImageFont.truetype(f, sz)
-            except Exception: pass
-    return ImageFont.load_default()
-def badge(letters, n):
-    img = _c(); d = ImageDraw.Draw(img)
-    d.rounded_rectangle([4, 4, 60, 60], radius=12, fill=NAVY_RGB)
-    fnt = _font(34 if len(letters) <= 2 else 26); bb = d.textbbox((0, 0), letters, font=fnt)
-    d.text(((S - (bb[2] - bb[0])) / 2 - bb[0], (S - (bb[3] - bb[1])) / 2 - bb[1]), letters, font=fnt, fill="white")
-    return _save(img, n)
-
-IC = dict(pin=icon_pin(), phone=icon_phone(), email=icon_email(), globe=icon_globe(),
-          linkedin=badge("in", "linkedin"), github=badge("GH", "github"))
+LINK_ICON = T.icon_external_link()
 
 
-def build():
+def _styles() -> dict[str, ParagraphStyle]:
     P = ParagraphStyle
-    st = {
-        'name': P("name", fontName="Helvetica-Bold", fontSize=21, leading=24, textColor=NAVY, alignment=TA_CENTER, spaceAfter=1),
-        'title': P("title", fontName="Helvetica-Bold", fontSize=11.5, leading=14, textColor=BLUE, alignment=TA_CENTER, spaceAfter=4),
-        'contact': P("contact", fontName="Helvetica", fontSize=8.6, leading=12, textColor=GRAY, alignment=TA_CENTER, spaceAfter=2),
-        'sec': P("sec", fontName="Helvetica-Bold", fontSize=10.5, leading=12, textColor=NAVY, spaceBefore=8, spaceAfter=1),
-        'jt': P("jt", fontName="Helvetica-Bold", fontSize=10, leading=12, textColor=colors.black),
-        'date': P("date", fontName="Helvetica", fontSize=8.8, leading=12, textColor=GRAY, alignment=TA_RIGHT),
-        'ctx': P("ctx", fontName="Helvetica-Oblique", fontSize=8.8, leading=12.0, textColor=GRAY, spaceAfter=1.5),
-        'body': P("body", fontName="Helvetica", fontSize=9.6, leading=13.2, textColor=colors.black),
-        'bullet': P("bullet", fontName="Helvetica", fontSize=9.5, leading=12.8, textColor=colors.black, leftIndent=11, bulletIndent=1, spaceAfter=3.0),
-        'skill': P("skill", fontName="Helvetica", fontSize=9.2, leading=13.0, textColor=colors.black, spaceAfter=0.5),
+    return {
+        "name": P(
+            "name",
+            fontName=T.FONT["display"],
+            fontSize=20,
+            leading=23,
+            textColor=T.TEXT_DARK,
+            alignment=TA_CENTER,
+            spaceAfter=2,
+        ),
+        "title": P(
+            "title",
+            fontName=T.FONT["body_bold"],
+            fontSize=10,
+            leading=13,
+            textColor=T.ACCENT,
+            alignment=TA_CENTER,
+            spaceAfter=4,
+        ),
+        "contact": P(
+            "contact",
+            fontName=T.FONT["contact"],
+            fontSize=8.5,
+            leading=11,
+            textColor=T.MUTED,
+            alignment=TA_CENTER,
+            spaceAfter=2,
+        ),
+        "sec": P(
+            "sec",
+            fontName=T.FONT["display"],
+            fontSize=11,
+            leading=13,
+            textColor=T.TEXT_DARK,
+            spaceBefore=6,
+            spaceAfter=1,
+        ),
+        "jt": P(
+            "jt",
+            fontName=T.FONT["body_bold"],
+            fontSize=9.2,
+            leading=11.5,
+            textColor=T.TEXT_DARK,
+        ),
+        "date": P(
+            "date",
+            fontName=T.FONT["body"],
+            fontSize=8.2,
+            leading=11,
+            textColor=T.MUTED,
+            alignment=TA_RIGHT,
+        ),
+        "project_link": P(
+            "project_link",
+            fontName=T.FONT["body_italic"],
+            fontSize=8.0,
+            leading=11,
+            textColor=T.LINK,
+            alignment=TA_RIGHT,
+        ),
+        "ctx": P(
+            "ctx",
+            fontName=T.FONT["body_italic"],
+            fontSize=8.4,
+            leading=11,
+            textColor=T.MUTED,
+            spaceAfter=1.5,
+        ),
+        "body": P(
+            "body",
+            fontName=T.FONT["body"],
+            fontSize=9.0,
+            leading=12.2,
+            textColor=T.BODY,
+        ),
+        "bullet": P(
+            "bullet",
+            fontName=T.FONT["body"],
+            fontSize=8.9,
+            leading=11.8,
+            textColor=T.BODY,
+            leftIndent=11,
+            bulletIndent=1,
+            spaceAfter=1.8,
+        ),
+        "skill": P(
+            "skill",
+            fontName=T.FONT["body"],
+            fontSize=8.8,
+            leading=12.0,
+            textColor=T.BODY,
+            spaceAfter=1,
+        ),
     }
 
-    def section(t): return [Paragraph(t, st['sec']), HRFlowable(width="100%", thickness=1, color=RULE, spaceBefore=1, spaceAfter=2, lineCap="round")]
-    def img(p): return f'<img src="{p}" width="9.5" height="9.5" valign="middle"/>'
-    def jobhdr(title, date):
-        tbl = Table([[Paragraph(title, st['jt']), Paragraph(date, st['date'])]], colWidths=[4.85 * inch, 2.45 * inch])
-        tbl.setStyle(TableStyle([("LEFTPADDING", (0, 0), (-1, -1), 0), ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-                                 ("TOPPADDING", (0, 0), (-1, -1), 1), ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
-                                 ("VALIGN", (0, 0), (-1, -1), "MIDDLE")]))
-        return tbl
-    def bul(t): return Paragraph(t, st['bullet'], bulletText="•")
 
+def _section(title: str, st: dict[str, ParagraphStyle]) -> list:
+    return [
+        Paragraph(title, st["sec"]),
+        HRFlowable(
+            width="100%",
+            thickness=1,
+            color=T.TEXT_DARK,
+            spaceBefore=1,
+            spaceAfter=2,
+            lineCap="round",
+        ),
+    ]
+
+
+def _job_header(
+    title_html: str,
+    date_html: str,
+    st: dict[str, ParagraphStyle],
+    *,
+    date_style: str = "date",
+) -> Table:
+    table = Table(
+        [[Paragraph(title_html, st["jt"]), Paragraph(date_html, st[date_style])]],
+        colWidths=[4.85 * inch, 2.45 * inch],
+    )
+    table.setStyle(
+        TableStyle(
+            [
+                ("LEFTPADDING", (0, 0), (-1, -1), 0),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+                ("TOPPADDING", (0, 0), (-1, -1), 1),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+                ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+            ]
+        )
+    )
+    return table
+
+
+def _bullet(text: str, st: dict[str, ParagraphStyle]) -> Paragraph:
+    return Paragraph(text, st["bullet"], bulletText="•")
+
+
+def build_story() -> list:
+    T.register_template_fonts()
+    st = _styles()
+    icons = T._draw_contact_icons(T.ACCENT_RGB)
     c = D.CONTACT
-    s = [Paragraph(c["name"], st['name']), Paragraph(c["title"], st['title'])]
-    sep = '<font color="#BBBBBB"> &nbsp;|&nbsp; </font>'
-    s.append(Paragraph(
-        f'{img(IC["pin"])} {c["location"]}' + sep +
-        f'{img(IC["phone"])} <a href="tel:{c["phone_tel"]}" color="#555555">{c["phone_display"]}</a>' + sep +
-        f'{img(IC["email"])} <a href="mailto:{c["email"]}" color="#555555">{c["email"]}</a>' + sep +
-        f'<a href="{c["linkedin"]}" color="#2E5C8A">{img(IC["linkedin"])} LinkedIn</a>' + sep +
-        f'<a href="{c["github"]}" color="#2E5C8A">{img(IC["github"])} GitHub</a>' + sep +
-        f'<a href="{c["website"]}" color="#2E5C8A">{img(IC["globe"])} {c["website_display"]}</a>', st['contact']))
-    s.append(HRFlowable(width="100%", thickness=1.2, color=RULE, spaceBefore=4, spaceAfter=2))
+    accent = T.ACCENT_HEX
+    link = T.ACCENT_HEX
+    muted = "#999999"
+    sep = f'<font color="{muted}"> &nbsp;|&nbsp; </font>'
 
-    s += section("PROFESSIONAL SUMMARY")
-    s.append(Paragraph(D.SUMMARY, st['body']))
+    story: list = [
+        Paragraph(c["name"], st["name"]),
+        Paragraph(c["title"], st["title"]),
+        Paragraph(
+            f'{T.img_tag(icons["pin"])} {c["location"]}{sep}'
+            f'{T.img_tag(icons["phone"])} <a href="tel:{c["phone_tel"]}" color="{accent}">{c["phone_display"]}</a>{sep}'
+            f'{T.img_tag(icons["email"])} <a href="mailto:{c["email"]}" color="{muted}">{c["email"]}</a>{sep}'
+            f'<a href="{c["linkedin"]}" color="{muted}">{T.img_tag(icons["linkedin"])} LinkedIn</a>{sep}'
+            f'<a href="{c["github"]}" color="{muted}">{T.img_tag(icons["github"])} GitHub</a>{sep}'
+            f'<a href="{c["website"]}" color="{muted}">{T.img_tag(icons["globe"])} {c["website_display"]}</a>',
+            st["contact"],
+        ),
+        HRFlowable(
+            width="100%",
+            thickness=1.2,
+            color=T.TEXT_DARK,
+            spaceBefore=4,
+            spaceAfter=2,
+            lineCap="round",
+        ),
+    ]
 
-    s += section("TECHNICAL PHILOSOPHY")
-    s.append(Paragraph(D.PHILOSOPHY, st['body']))
+    story += _section("PROFESSIONAL SUMMARY", st)
+    story.append(Paragraph(D.SUMMARY, st["body"]))
 
-    s += section("SELECTED PROJECTS")
+    story += _section("TECHNICAL PHILOSOPHY", st)
+    story.append(Paragraph(D.PHILOSOPHY, st["body"]))
+
+    story += _section("SELECTED PROJECTS", st)
     pr = D.PROJECT
-    s.append(jobhdr(f'<a href="{pr["url"]}" color="#1F3864">{pr["name"]}</a> &mdash; {pr["subtitle"]}',
-                    f'<a href="{pr["url"]}" color="#2E5C8A">{pr["url_display"]}</a>'))
-    s.append(Paragraph(pr["tech"], st['ctx']))
-    for b in pr["bullets"]:
-        s.append(bul(b))
+    story.append(
+        _job_header(
+            f'<font color="{accent}"><b>{pr["name"]}</b></font> &mdash; {pr["subtitle"]}',
+            T.linked_url(pr["url"], pr["url_display"], icon_path=LINK_ICON, color=link, icon_size=7),
+            st,
+            date_style="project_link",
+        )
+    )
+    story.append(Paragraph(pr["tech"], st["ctx"]))
+    for bullet in pr["bullets"]:
+        story.append(_bullet(bullet, st))
 
-    s += section("TECHNICAL SKILLS")
-    for k, v in D.SKILLS:
-        s.append(Paragraph(f'<b>{k}:</b> {v}', st['skill']))
+    story += _section("TECHNICAL SKILLS", st)
+    for label, value in D.SKILLS:
+        story.append(
+            Paragraph(
+                f'<font color="{T.ACCENT_HEX}"><b>{label}:</b></font> {value}',
+                st["skill"],
+            )
+        )
 
-    s += section("PROFESSIONAL EXPERIENCE")
+    story += _section("PROFESSIONAL EXPERIENCE", st)
     for role in D.EXPERIENCE:
-        s.append(jobhdr(role["title"], role["date"]))
+        story.append(_job_header(role["title"], role["date"], st))
         if role.get("ctx"):
-            s.append(Paragraph(role["ctx"].format(scale=D.KW_USER_SCALE), st['ctx']))
-        for b in role["bullets"]:
-            s.append(bul(b))
+            story.append(Paragraph(role["ctx"].format(scale=D.KW_USER_SCALE), st["ctx"]))
+        for bullet in role["bullets"]:
+            story.append(_bullet(bullet, st))
 
-    s += section("EDUCATION &amp; LANGUAGES")
+    story += _section("EDUCATION &amp; LANGUAGES", st)
     for line in D.EDUCATION:
-        s.append(Paragraph(line, st['skill']))
-    return s
+        story.append(Paragraph(line, st["skill"]))
+
+    return story
 
 
-def main():
+def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("-o", "--out", default="public/resume.pdf")
-    a = ap.parse_args()
-    doc = SimpleDocTemplate(a.out, pagesize=letter, topMargin=0.5 * inch, bottomMargin=0.5 * inch,
-                            leftMargin=0.6 * inch, rightMargin=0.6 * inch,
-                            title="Brad Guillen Garcia - Senior Software Engineer", author="Brad Guillen Garcia")
-    doc.build(build())
-    print("WROTE", a.out)
+    ap.add_argument("-o", "--out", default="public/Brad Guillen - Senior Software Engineer.pdf")
+    args = ap.parse_args()
+    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
+
+    doc = SimpleDocTemplate(
+        args.out,
+        pagesize=letter,
+        topMargin=0.5 * inch,
+        bottomMargin=0.5 * inch,
+        leftMargin=0.6 * inch,
+        rightMargin=0.6 * inch,
+        title="Brad Guillen Garcia - Senior Software Engineer",
+        author="Brad Guillen Garcia",
+    )
+    doc.build(build_story())
+    print("WROTE", args.out)
 
 
 if __name__ == "__main__":

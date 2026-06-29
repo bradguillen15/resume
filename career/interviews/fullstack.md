@@ -153,7 +153,6 @@ I enjoy understanding the **entire lifecycle**—not owning every layer in isola
 | **Java, Spring Boot, Hibernate** | First Factory (architected a REST API) |
 | **Node.js, GraphQL** | Advision (production backend services) |
 | **REST APIs** | All professional roles |
-| **Node.js, GraphQL** | Advision—where problem fit |
 | **AWS Lambda** | Advision—implementation leadership |
 | **Backend integrations** | Lambda ↔ WordPress, internal services |
 | **SQL / relational DBs** | Hibernate-backed persistence |

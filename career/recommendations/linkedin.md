@@ -141,8 +141,8 @@ Featured content should **prove credibility quickly**—production work, not scr
 | **Free Slot** | Production full-stack app; architecture, testing, Supabase, AI workflow | [`../projects/free-slot.md`](../projects/free-slot.md) |
 | **GitHub profile** | Code visibility; personal project repos | `github.com/bradguillen15` |
 | **Portfolio repository** | Meta-engineering; career knowledge base vision | [`../projects/portfolio.md`](../projects/portfolio.md) |
-| **Technical articles** | **Future** — add when published; architecture, AI workflow, lessons learned |
-| **Significant shipped work** | Only if public link exists; prefer story-backed accomplishments |
+| **Technical articles** | **Future** — add when published; architecture, AI workflow, lessons learned | — (future) |
+| **Significant shipped work** | Only if public link exists; prefer story-backed accomplishments | — |
 
 **Order:** Portfolio site → strongest production project (Free Slot) → GitHub → articles when available.
 

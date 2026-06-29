@@ -1,5 +1,7 @@
 # Technical Interview Prep
 
+> **Status: scaffold / in progress** — not yet populated. Sections below are placeholders to fill before a technical loop; do not treat as complete prep.
+
 ## Purpose
 
 Notes for technical interviews—topics to review, system design angles, and coding patterns grounded in real experience.
