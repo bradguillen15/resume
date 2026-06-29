@@ -143,7 +143,7 @@ Contains:
 
 **Primary source** for Senior Frontend / Senior Software Engineer (frontend-heavy) experience.
 
-**Related stories:** [Repository consolidation](#repository-consolidation) · [API migration](#api-migration) · [Configurable banners](#configurable-banner-system) · [Modal vs page](#modal-vs-page-decision) · [Dashboard performance](#dashboard-performance-optimization) · [Data layer migration (Redux removal)](stories/redux-removal.md)
+**Related stories:** [Repository consolidation](stories/repository-deprecation.md) · [API migration](stories/api-migration-v1-v2.md) · [Configurable banners](stories/configurable-banner-system.md) · [Modal vs page](stories/modal-vs-page-decision.md) · [Dashboard performance](stories/dashboard-performance.md) · [Data layer migration (Redux removal)](stories/redux-removal.md)
 
 ---
 
@@ -162,7 +162,7 @@ Contains:
 
 **Primary source** for Full Stack experience.
 
-**Related stories:** [Lambda integration](#lambda-integration) · [CMS migration](#cms-migration) · [Contractor rescue](#contractor-rescue)
+**Related stories:** [Lambda integration](stories/lambda-wordpress-integration.md) · [CMS migration](stories/react-cms-to-wordpress.md) · [Contractor rescue](stories/contractor-rescue.md)
 
 ---
 

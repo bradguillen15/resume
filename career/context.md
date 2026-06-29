@@ -41,7 +41,7 @@ I strongly prefer:
 
 Technical debt is sometimes acceptable when business benefits outweigh the cost—but it should always be intentional. I do not chase perfect architecture. I optimize for good engineering decisions.
 
-Deeper treatment of principles lives in [`philosophy/engineering.md`](philosophy/engineering.md) and [`philosophy/architecture.md`](philosophy/architecture.md).
+Deeper treatment of principles lives in [`philosophy/engineering.md`](philosophy/engineering.md); [`philosophy/architecture.md`](philosophy/architecture.md) is still in progress.
 
 ---
 

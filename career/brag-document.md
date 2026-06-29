@@ -32,7 +32,7 @@ A chronological record of what I actually did, built, learned, and shipped. Upda
 ### Career knowledge base
 
 - Populated `career/` repository as professional source of truth (experience, projects, stories, resume layer, interview prep)
-- Documented 8 retrospective engineering stories from KW and Advision
+- Documented 9 retrospective engineering stories from KW and Advision
 - Wrote canonical identity docs: [`strengths.md`](strengths.md), [`leadership.md`](leadership.md), [`philosophy/working-with-ai.md`](philosophy/working-with-ai.md)
 - Created [`story-index.md`](story-index.md) navigation index for AI assistants and quick lookup
 - Started this brag document

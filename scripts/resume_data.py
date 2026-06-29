@@ -1,7 +1,7 @@
 # Resume content — single source of truth for the generated PDF.
 #
 # EDIT HERE to change resume wording, then render with:
-#     python3 scripts/generate_resume.py            # -> public/resume.pdf
+#     python3 scripts/generate_resume.py            # -> public/Brad Guillen - Senior Software Engineer.pdf
 #
 # Markup notes (reportlab): use <b>, <i>, <a href="...">, and the entities
 # &amp; (literal &), &mdash; (—), &ndash; (–), &bull; (•), &nbsp; (no-break space).

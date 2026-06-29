@@ -2,12 +2,12 @@
 """Render Brad Guillen's resume PDF from resume_data.py (the content source).
 
 Usage:
-    python3 scripts/generate_resume.py                 # -> public/resume.pdf
+    python3 scripts/generate_resume.py                 # -> public/Brad Guillen - Senior Software Engineer.pdf
     python3 scripts/generate_resume.py -o some.pdf     # custom output path
 
 This file is RENDERING ONLY — edit wording in scripts/resume_data.py.
 """
-import argparse, os, tempfile, sys
+import argparse, atexit, os, shutil, tempfile, sys
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
 from reportlab.lib import colors
@@ -22,6 +22,7 @@ import resume_data as D
 NAVY = colors.HexColor("#1F3864"); BLUE = colors.HexColor("#2E5C8A")
 GRAY = colors.HexColor("#555555"); RULE = NAVY; NAVY_RGB = (31, 56, 100); S = 64
 ICONDIR = tempfile.mkdtemp(prefix="resume_icons_")
+atexit.register(shutil.rmtree, ICONDIR, ignore_errors=True)  # clean up temp icons on exit
 
 # ---- icon drawing (clickable contact links) ----
 def _save(img, n): p = os.path.join(ICONDIR, n + ".png"); img.save(p); return p
@@ -133,8 +134,9 @@ def build():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("-o", "--out", default="public/resume.pdf")
+    ap.add_argument("-o", "--out", default="public/Brad Guillen - Senior Software Engineer.pdf")
     a = ap.parse_args()
+    os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     doc = SimpleDocTemplate(a.out, pagesize=letter, topMargin=0.5 * inch, bottomMargin=0.5 * inch,
                             leftMargin=0.6 * inch, rightMargin=0.6 * inch,
                             title="Brad Guillen Garcia - Senior Software Engineer", author="Brad Guillen Garcia")
