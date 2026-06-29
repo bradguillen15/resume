@@ -339,6 +339,7 @@ Use this summary as the **thematic anchor** for introductions and cover letters�
 | **Cover letter** | Lead with 2–3 strengths matched to job; cite evidence |
 | **Interview prep** | Map question → strength → story ([`interviews/behavioral.md`](interviews/behavioral.md)) |
 | **LinkedIn / bio** | [`recommendations/linkedin.md`](recommendations/linkedin.md) should reference this file |
+| **GitHub profile** | [`recommendations/github-profile.md`](recommendations/github-profile.md) should reference this file |
 | **Recommendations** | Ask recommenders to echo ownership, simplification, product thinking with examples you provide |
 | **Career advice** | Strengths + [`context.md`](context.md) career direction |
 
