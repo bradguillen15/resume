@@ -44,13 +44,13 @@ PHILOSOPHY = (
 )
 
 SKILLS = [
-    ("Frontend", "React, Redux, React Query, Next.js, Micro Frontends (Module Federation), Webpack, Tailwind CSS"),
+    ("Frontend", "React, Redux, React Query, Next.js, Micro Frontends (Module Federation), Webpack, Tailwind CSS, Web Accessibility (WCAG, ARIA, a11y), SEO"),
     ("Backend", "Node.js, Express, REST APIs, GraphQL, WebSockets, ASP.NET (MVC), Spring Boot, Hibernate, AWS Lambda (serverless)"),
     ("Cloud &amp; DevOps", "AWS (Lambda, API Gateway, EC2, S3, IAM, CloudFront), Firebase, Vercel, GitHub Actions, Jenkins, Harness, Spinnaker, Docker"),
     ("Testing", "Playwright, Jest, React Testing Library, Vitest, JUnit, Mockito"),
     ("Databases", "PostgreSQL, MySQL, MongoDB, Supabase"),
     ("Languages", "TypeScript, JavaScript, Java, C#, Python, SQL"),
-    ("AI Engineering", "LLM integration, RAG applications, prompt &amp; context engineering, AI-assisted development (Cursor, Claude Code, Copilot, CodeRabbit)"),
+    ("AI Engineering", "LLM integration, RAG applications, MCP (Model Context Protocol) servers, prompt &amp; context engineering, AI-assisted development (Cursor, Claude Code, Copilot, CodeRabbit)"),
 ]
 
 PROJECT = {
@@ -80,12 +80,14 @@ EXPERIENCE = [
             "collaborated cross-team across multiple projects."
         ),
         "bullets": [
-            "Designed a compatibility/transformation layer for API V1-to-V2 migration so frontend teams could migrate independently, reducing rollout risk without a coordinated multi-team release.",
+            "Single-handedly migrated my application off another team's API V1 to V2 (a full response-format redesign), building a transformation/mapping layer that normalized V2 into the shape consumers already expected so I could migrate every call site without a risky big-bang rewrite.",
             "Migrated server state from Redux to React Query, cutting state-management boilerplate ~40% and simplifying onboarding for new feature work.",
             "Diagnosed rendering bottlenecks through production debugging and introduced lazy loading, cutting dashboard load time ~35%+.",
             "Consolidated three repositories into two, reducing deployment steps, pipeline maintenance, and onboarding cost.",
             "Designed a configuration-driven banner system that let Product manage banners without engineering cycles, eliminating a recurring class of sprint work.",
+            "Built reusable, accessible React components to WCAG/ARIA standards (keyboard navigation and screen-reader support) in the shared component library.",
             "Contributed to micro-frontend architecture and maintained CI/CD across GitHub Actions, Harness, and Spinnaker.",
+            "Used Datadog for production observability &mdash; dashboards, monitors, and alerts &mdash; across apps serving ~60,000 users, helping catch regressions and triage incidents.",
         ],
     },
     {
@@ -101,6 +103,7 @@ EXPERIENCE = [
             "Led an AWS Lambda integration (API Gateway, EC2, IAM, S3) that transformed and cached internal API data into a WordPress-friendly API for the CMS.",
             "Built and consumed RESTful APIs in Node.js/Express and GraphQL, coordinating with backend teams on contract definitions.",
             "Implemented real-time features with WebSockets for low-latency live updates on the frontend.",
+            "Owned on-page SEO for a sports-betting marketing site &mdash; semantic, performant React pages (live odds/lines linking out to sportsbooks) and content-driven WordPress pages &mdash; to maximize organic search ranking.",
             "Drove a custom React CMS to WordPress migration and rebuilt a contractor-abandoned critical page before deadline.",
         ],
     },
@@ -119,7 +122,7 @@ EXPERIENCE = [
         "date": "Oct 2014 &ndash; Dec 2014 &nbsp;&bull;&nbsp; 3 mos",
         "ctx": "",
         "bullets": [
-            "Built a SharePoint application from scratch (JavaScript, C#, Java, SQL) to manage internal operational workflows; delivered on schedule and ran end-user training.",
+            "Built a SharePoint application from scratch (JavaScript, C#, SQL) to manage internal operational workflows; delivered on schedule and ran end-user training.",
         ],
     },
 ]

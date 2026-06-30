@@ -271,7 +271,7 @@ No dedicated story files—documented at experience overview depth only.
 **Dates:** Oct 2014 – Dec 2014 (~3 months) · Aurora, Costa Rica  
 **Source:** [`../experience/fpt-latin-america.md`](../experience/fpt-latin-america.md)
 
-Earliest professional exposure—a short pre-career internship. Built a SharePoint application from scratch using JavaScript, C#, Java, and SQL; delivered on schedule, presented progress to the Operations Manager, and ran end-user training.
+Earliest professional exposure—a short pre-career internship. Built a SharePoint application from scratch using JavaScript, C#, and SQL; delivered on schedule, presented progress to the Operations Manager, and ran end-user training.
 
 **Resume guidance:** Typically **omit** from senior one-page resumes. Include only when an application specifically values early experience or a complete timeline. Adds C# and SharePoint to the early technology history—not current focus.
 

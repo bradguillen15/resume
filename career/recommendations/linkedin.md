@@ -23,6 +23,8 @@ Future AI assistants should use this file whenever helping improve my LinkedIn h
 - Demonstrate **ownership, simplification, and maintainability**—not framework hoarding
 - Support **Full Stack**, **Senior Frontend**, and **AI Software Engineer** opportunities without narrowing to "React developer only"
 
+**Ready-to-paste profile draft:** [`linkedin-profile.md`](linkedin-profile.md) — headline, About, experience entries, skills, and Open-To-Work copy generated from this strategy. Keep it synced; paste sections into the live profile when strategy or facts change.
+
 **Source of truth for facts:** [`../story-index.md`](../story-index.md) → [`../context.md`](../context.md) → leaf documents (`experience/`, `stories/`, `projects/`). Generate LinkedIn copy from those sources—never invent metrics, dates, or scope.
 
 **Known profile URLs** (presentation layer; verify before linking):
@@ -459,6 +461,7 @@ Review every **3–4 months**, or when starting an active job search.
 
 | Document | Purpose |
 |----------|---------|
+| [`linkedin-profile.md`](linkedin-profile.md) | **Paste-ready profile copy** (headline, About, experience, skills) |
 | [`../story-index.md`](../story-index.md) | Navigation; LinkedIn task mapping |
 | [`../context.md`](../context.md) | Identity and accuracy rules |
 | [`../strengths.md`](../strengths.md) | Value themes for About and headline |

@@ -210,7 +210,7 @@ This project reflects the engineer I am today more accurately than many professi
 
 ## AI Recommendation Feature (RAG)
 
-Free Slot includes a **shipped RAG-based recommendation feature**: it feeds the user's own activity data to an LLM to suggest habits and activities they want to build (e.g., reading, meditating). This is a direct application of my RAG coursework ([`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)) — product AI running in a live app, not a tutorial.
+Free Slot includes a **shipped RAG-based recommendation feature**: it feeds the user's own activity data to **Claude** to suggest habits and activities they want to build (e.g., reading, meditating). This is a direct application of my RAG coursework ([`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)) — product AI running in a live app, not a tutorial.
 
 ---
 

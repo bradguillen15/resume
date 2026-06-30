@@ -222,7 +222,7 @@ Condensed from canonical experience—align with [`linkedin.md`](linkedin.md#exp
 
 List only **verifiable** credentials with links. Primary source: [`../learning/2026.md`](../learning/2026.md).
 
-**Anthropic (Skilljar):** Claude API · MCP intro · MCP advanced · Agent skills
+**Anthropic (Skilljar):** Claude Code in Action · AI Fluency · MCP intro · MCP advanced · Agent Skills
 
 **Boot.dev:** AWS · Docker · CI/CD · (path in progress—link profile, don't overclaim "backend expert")
 
