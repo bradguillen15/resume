@@ -1,15 +1,19 @@
 import type { SkillIcon } from '@/lib/iconTypes';
 import { CursorIcon } from '@/components/icons/CursorIcon';
 import { GrokIcon } from '@/components/icons/GrokIcon';
+import { Database } from 'lucide-react';
 import { DiAws, DiJava } from 'react-icons/di';
 import {
   SiClaude,
+  SiCoderabbit,
   SiSharp,
+  SiDatadog,
   SiDocker,
   SiExpress,
   SiFastapi,
   SiFirebase,
   SiFlask,
+  SiGithubactions,
   SiGithubcopilot,
   SiGit,
   SiGooglegemini,
@@ -19,8 +23,9 @@ import {
   SiCss,
   SiJavascript,
   SiJest,
-  SiHelm,
+  SiJunit5,
   SiJenkins,
+  SiModelcontextprotocol,
   SiMongodb,
   SiMysql,
   SiNextdotjs,
@@ -33,12 +38,16 @@ import {
   SiReact,
   SiReactquery,
   SiSass,
+  SiSentry,
   SiSpringboot,
   SiSpinnaker,
   SiSupabase,
   SiTailwindcss,
+  SiTestinglibrary,
   SiTypescript,
+  SiVercel,
   SiVite,
+  SiVitest,
   SiWebpack,
 } from 'react-icons/si';
 
@@ -52,8 +61,8 @@ const DEFAULT_ICON_COLOR = '#F1F5F9';
 
 interface SkillDef {
   name: string;
-  url: string;
-  icon: SkillIcon;
+  url?: string;
+  icon?: SkillIcon;
   color?: string;
 }
 
@@ -86,8 +95,9 @@ const SKILLS: SkillDef[] = [
   { name: 'AWS',                     url: 'https://skillicons.dev/icons?i=aws&theme=dark',       icon: DiAws,           color: '#FF9900' },
   { name: 'Jenkins',                 url: devicon('jenkins'),                                     icon: SiJenkins,       color: '#D24939' },
   { name: 'MFE / Module Federation', url: devicon('webpack'),                                     icon: SiWebpack,       color: '#8DD6F9' },
-  { name: 'Harness',                 url: devicon('helm'),                                        icon: SiHelm,          color: '#00ADE4' },
+  { name: 'Harness',                 url: 'https://cdn.jsdelivr.net/gh/gilbarbara/logos/logos/harness-icon.svg' },
   { name: 'Spinnaker',               url: 'https://svgl.app/library/spinnaker.svg',              icon: SiSpinnaker,     color: '#139BB4' },
+  { name: 'SQL',                     icon: Database,        color: '#38BDF8' },
   { name: 'Firebase',                url: devicon('firebase'),                                    icon: SiFirebase,      color: '#FFCA28' },
   { name: 'TanStack',                url: 'https://svgl.app/library/tanstack.svg',               icon: SiReactquery,    color: '#FF4154' },
   { name: 'HTML',                    url: devicon('html5'),                                       icon: SiHtml5,         color: '#E34F26' },
@@ -102,14 +112,25 @@ const SKILLS: SkillDef[] = [
   { name: 'GitHub Copilot',          url: 'https://svgl.app/library/copilot_dark.svg',           icon: SiGithubcopilot, color: '#ffffff' },
   { name: 'Cursor',                  url: 'https://svgl.app/library/cursor_dark.svg',            icon: CursorIcon,      color: '#F1F5F9' },
   { name: 'Claude Code',             url: 'https://svgl.app/library/claude-ai-icon.svg',         icon: SiClaude,        color: '#D97757' },
+  { name: 'CodeRabbit',              icon: SiCoderabbit,    color: '#FF570A' },
+  { name: 'React Query',             url: 'https://svgl.app/library/tanstack.svg',                icon: SiReactquery,    color: '#FF4154' },
+  { name: 'Playwright',              url: `${DEVICON}/playwright/playwright-original.svg`,         color: '#2EAD33' },
+  { name: 'Vitest',                  url: `${DEVICON}/vitest/vitest-original.svg`,                 icon: SiVitest,        color: '#6E9F18' },
+  { name: 'React Testing Library',   icon: SiTestinglibrary, color: '#E33332' },
+  { name: 'JUnit / Mockito',         url: `${DEVICON}/junit/junit-original.svg`,                   icon: SiJunit5,        color: '#25A162' },
+  { name: 'Vercel',                  url: 'https://svgl.app/library/vercel_dark.svg',             icon: SiVercel,        color: '#ffffff' },
+  { name: 'Datadog',                 url: 'https://svgl.app/library/datadog.svg',                 icon: SiDatadog,       color: '#632CA6' },
+  { name: 'Sentry',                  icon: SiSentry,        color: '#C4A0F5' },
+  { name: 'CI/CD (GitHub Actions)',  icon: SiGithubactions, color: '#2088FF' },
+  { name: 'MCP (Model Context Protocol)', icon: SiModelcontextprotocol, color: '#F1F5F9' },
 ];
 
 export const SKILL_ICON_URLS: Record<string, string> = Object.fromEntries(
-  SKILLS.map(s => [s.name, s.url]),
+  SKILLS.filter(s => s.url !== undefined).map(s => [s.name, s.url!]),
 );
 
 export const SKILL_ICONS: Record<string, SkillIcon> = Object.fromEntries(
-  SKILLS.map(s => [s.name, s.icon]),
+  SKILLS.filter(s => s.icon !== undefined).map(s => [s.name, s.icon!]),
 );
 
 export const SKILL_ICON_COLORS: Partial<Record<string, string>> = Object.fromEntries(

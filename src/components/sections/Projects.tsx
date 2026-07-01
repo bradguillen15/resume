@@ -1,29 +1,62 @@
-import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { resume } from '@/data/resume'
-import { cn } from '@/lib/utils'
-import { SectionLabel } from '@/components/ui/SectionLabel'
-import { Tag } from '@/components/ui/Tag'
-import { Card, CardContent } from '@/components/ui/card'
+import { useCallback, useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { resume } from '@/data/resume';
+import { cn } from '@/lib/utils';
+import { SectionLabel } from '@/components/ui/SectionLabel';
+import { Tag } from '@/components/ui/Tag';
+import { ExternalLinkIcon } from '@/components/ui/ExternalLinkIcon';
+import { Card, CardContent } from '@/components/ui/card';
 
-type ProjectEntry = (typeof resume.projects)[number]
+type ProjectEntry = (typeof resume.projects)[number];
+
+const CAROUSEL_AUTO_MS = 4000;
+const CAROUSEL_FADE_S = 0.85;
+const PROJECT_THUMB_WIDTH = 1200;
+const PROJECT_THUMB_HEIGHT = 600;
+
+const projectImageProps = {
+  loading: 'lazy' as const,
+  decoding: 'async' as const,
+  width: PROJECT_THUMB_WIDTH,
+  height: PROJECT_THUMB_HEIGHT,
+};
 
 function ProjectGalleryCarousel({
   images,
   title,
 }: {
-  images: readonly string[]
-  title: string
+  images: readonly string[];
+  title: string;
 }) {
-  const [index, setIndex] = useState(0)
-  const n = images.length
-  const go = (delta: number) => {
-    setIndex((i) => (i + delta + n) % n)
-  }
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const n = images.length;
+  const go = useCallback(
+    (delta: number) => {
+      setIndex(i => (i + delta + n) % n);
+    },
+    [n],
+  );
+
+  useEffect(() => {
+    if (n <= 1 || paused) return;
+    const id = window.setInterval(() => go(1), CAROUSEL_AUTO_MS);
+    return () => window.clearInterval(id);
+  }, [n, paused, go]);
 
   return (
-    <div className="relative h-full w-full group/carousel">
+    <div
+      className="relative h-full w-full group/carousel"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={e => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+          setPaused(false);
+        }
+      }}
+    >
       <AnimatePresence mode="wait" initial={false}>
         <motion.img
           key={index}
@@ -33,7 +66,8 @@ function ProjectGalleryCarousel({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: CAROUSEL_FADE_S, ease: 'easeInOut' }}
+          {...projectImageProps}
         />
       </AnimatePresence>
 
@@ -42,9 +76,9 @@ function ProjectGalleryCarousel({
           <button
             type="button"
             aria-label="Previous screenshot"
-            onClick={(e) => {
-              e.stopPropagation()
-              go(-1)
+            onClick={e => {
+              e.stopPropagation();
+              go(-1);
             }}
             className={cn(
               'absolute left-1 top-1/2 z-10 -translate-y-1/2 rounded-md bg-bg-primary/80 p-1 text-text-primary shadow-sm backdrop-blur-sm',
@@ -57,9 +91,9 @@ function ProjectGalleryCarousel({
           <button
             type="button"
             aria-label="Next screenshot"
-            onClick={(e) => {
-              e.stopPropagation()
-              go(1)
+            onClick={e => {
+              e.stopPropagation();
+              go(1);
             }}
             className={cn(
               'absolute right-1 top-1/2 z-10 -translate-y-1/2 rounded-md bg-bg-primary/80 p-1 text-text-primary shadow-sm backdrop-blur-sm',
@@ -81,14 +115,16 @@ function ProjectGalleryCarousel({
                 role="tab"
                 aria-selected={i === index}
                 aria-label={`Screenshot ${i + 1} of ${n}`}
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setIndex(i)
+                onClick={e => {
+                  e.stopPropagation();
+                  setIndex(i);
                 }}
                 className={cn(
                   'h-1.5 w-1.5 rounded-full transition-colors duration-200',
                   'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
-                  i === index ? 'bg-accent' : 'bg-text-muted/50 hover:bg-text-muted',
+                  i === index
+                    ? 'bg-accent'
+                    : 'bg-text-muted/50 hover:bg-text-muted',
                 )}
               />
             ))}
@@ -96,14 +132,15 @@ function ProjectGalleryCarousel({
         </>
       )}
     </div>
-  )
+  );
 }
 
 function ProjectCardMedia({ p }: { p: ProjectEntry }) {
-  const gallery = 'gallery' in p && p.gallery && p.gallery.length > 0 ? p.gallery : null
+  const gallery =
+    'gallery' in p && p.gallery && p.gallery.length > 0 ? p.gallery : null;
 
   if (gallery) {
-    return <ProjectGalleryCarousel images={gallery} title={p.title} />
+    return <ProjectGalleryCarousel images={gallery} title={p.title} />;
   }
   if (p.image) {
     return (
@@ -111,8 +148,9 @@ function ProjectCardMedia({ p }: { p: ProjectEntry }) {
         src={p.image}
         alt={p.title}
         className="h-full w-full object-cover object-top"
+        {...projectImageProps}
       />
-    )
+    );
   }
   return (
     <div
@@ -125,20 +163,23 @@ function ProjectCardMedia({ p }: { p: ProjectEntry }) {
         {p.title}
       </span>
     </div>
-  )
+  );
 }
 
 const statusStyles: Record<string, string> = {
   Active: 'bg-green-500/10 text-green-400',
   'In Progress': 'bg-yellow-400/10 text-yellow-400',
   Completed: 'bg-text-muted/10 text-text-muted',
-}
+};
 
 export const Projects = () => {
-  const visible = resume.projects.filter((p) => p.visible)
+  const visible = resume.projects.filter(p => p.visible);
 
   return (
-    <section id="projects" className="px-6 sm:px-8 lg:px-12 py-20 lg:py-[120px]">
+    <section
+      id="projects"
+      className="px-6 sm:px-8 lg:px-12 py-20 lg:py-[120px]"
+    >
       <SectionLabel number="03" label="Projects" />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {visible.map((p, i) => (
@@ -173,7 +214,7 @@ export const Projects = () => {
                 </p>
 
                 <div className="flex gap-1.5 flex-wrap">
-                  {p.tags.map((t) => (
+                  {p.tags.map(t => (
                     <Tag key={t} label={t} />
                   ))}
                 </div>
@@ -186,9 +227,13 @@ export const Projects = () => {
                         href={p.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-text-muted text-[12px] hover:text-accent transition-colors duration-200"
+                        className="inline-flex items-center gap-1 text-text-muted text-[12px] hover:text-accent transition-colors duration-200"
                       >
-                        GitHub ↗
+                        GitHub
+                        <ExternalLinkIcon
+                          size={11}
+                          className="flex-shrink-0 opacity-70"
+                        />
                       </a>
                     )}
                     {p.live && (
@@ -196,9 +241,13 @@ export const Projects = () => {
                         href={p.live}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-text-muted text-[12px] hover:text-accent transition-colors duration-200"
+                        className="inline-flex items-center gap-1 text-text-muted text-[12px] hover:text-accent transition-colors duration-200"
                       >
-                        Live ↗
+                        Live
+                        <ExternalLinkIcon
+                          size={11}
+                          className="flex-shrink-0 opacity-70"
+                        />
                       </a>
                     )}
                   </div>
@@ -211,12 +260,17 @@ export const Projects = () => {
       {visible.length === 0 && (
         <p className="text-text-muted text-[13px] text-center py-10">
           More projects coming soon — check{' '}
-          <a href={`https://${resume.github}`} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+          <a
+            href={`https://${resume.github}`}
+            target="_blank"
+            rel="noreferrer"
+            className="text-accent hover:underline"
+          >
             GitHub
           </a>{' '}
           for latest work.
         </p>
       )}
     </section>
-  )
-}
+  );
+};

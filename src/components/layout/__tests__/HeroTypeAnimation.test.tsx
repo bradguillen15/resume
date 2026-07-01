@@ -21,6 +21,6 @@ describe('HeroTypeAnimation', () => {
 
   it('renders the first sequence item as the initial text', () => {
     render(<HeroTypeAnimation />);
-    expect(screen.getByText('Senior Front End Developer')).toBeInTheDocument();
+    expect(screen.getByText('Senior Software Engineer')).toBeInTheDocument();
   });
 });

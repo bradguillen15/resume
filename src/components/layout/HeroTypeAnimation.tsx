@@ -1,11 +1,11 @@
 import { TypeAnimation } from 'react-type-animation';
 
 const HERO_TYPE_SEQUENCE = [
-  'Senior Front End Developer',
+  'Senior Software Engineer',
   2200,
   'Full Stack Developer',
   2200,
-  'AI Engineer in Progress...',
+  'AI Engineer, loading...',
   2200,
   '',
   500,

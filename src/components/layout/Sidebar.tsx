@@ -35,8 +35,12 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
       >
         <div className="profile-portrait-wrap">
           <img
-            src="/profile-photo.png"
+            src="/profile-photo.webp"
             alt={resume.name}
+            width={480}
+            height={453}
+            decoding="async"
+            fetchPriority="high"
           />
         </div>
       </motion.div>

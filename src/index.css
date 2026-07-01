@@ -266,36 +266,6 @@ a {
   width: 68px;
   height: 64px;
 }
-.mobile-menu-photo {
-  min-height: 0;
-}
-.profile-portrait-wrap-menu {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  max-width: min(88vw, 360px);
-  padding: 0 16px 4px;
-  margin: 0;
-  box-sizing: border-box;
-}
-.profile-portrait-wrap-menu img {
-  width: auto;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-}
-.profile-portrait-wrap-menu::before {
-  width: 104%;
-  height: 68%;
-  filter: blur(8px);
-}
-.profile-portrait-wrap-menu::after {
-  width: 66%;
-  height: 40%;
-  filter: blur(10px);
-}
 .profile-portrait-wrap-sm::before {
   width: 104%;
   height: 64%;
@@ -305,6 +275,95 @@ a {
   width: 64%;
   height: 38%;
   filter: blur(9px);
+}
+.profile-portrait-shell {
+  position: relative;
+  width: clamp(4.5rem, 20vw, 10.5rem);
+  min-height: clamp(4.5rem, 20vw, 10.5rem);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: visible;
+  -webkit-mask-image: radial-gradient(
+    ellipse 92% 100% at 50% 82%,
+    #000 62%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 92% 100% at 50% 82%,
+    #000 62%,
+    transparent 100%
+  );
+}
+.profile-portrait-wrap-hero {
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow: visible;
+  flex-shrink: 0;
+}
+.profile-portrait-wrap.profile-portrait-wrap-hero img {
+  width: 100%;
+  height: auto;
+  max-width: clamp(4.5rem, 20vw, 6.5rem);
+  max-height: clamp(4.5rem, 20vw, 6.5rem);
+  object-fit: contain;
+  object-position: bottom center;
+}
+@media (min-width: 360px) {
+  .profile-portrait-wrap.profile-portrait-wrap-hero img {
+    max-width: clamp(5.5rem, 22vw, 7.5rem);
+    max-height: clamp(5.5rem, 22vw, 7.5rem);
+  }
+}
+@media (min-width: 480px) {
+  .profile-portrait-wrap.profile-portrait-wrap-hero img {
+    max-width: clamp(6.75rem, 24vw, 8.75rem);
+    max-height: clamp(6.75rem, 24vw, 8.75rem);
+  }
+}
+@media (min-width: 640px) {
+  .profile-portrait-wrap.profile-portrait-wrap-hero img {
+    max-width: clamp(8rem, 22vw, 10.5rem);
+    max-height: clamp(8rem, 22vw, 10.5rem);
+  }
+}
+.profile-portrait-wrap-hero::before {
+  width: 88%;
+  height: 64%;
+  filter: blur(7px);
+  animation: portrait-halo-breathe-hero 6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+.profile-portrait-wrap-hero::after {
+  width: 54%;
+  height: 36%;
+  filter: blur(9px);
+  animation: portrait-core-breathe-hero 6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+@keyframes portrait-halo-breathe-hero {
+  0%,
+  100% {
+    opacity: 0.62;
+    transform: translateX(-50%) scale(0.97);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(-50%) scale(1.02);
+  }
+}
+@keyframes portrait-core-breathe-hero {
+  0%,
+  100% {
+    opacity: 0.52;
+    transform: translateX(-50%) scale(0.94);
+  }
+  50% {
+    opacity: 0.82;
+    transform: translateX(-50%) scale(1.03);
+  }
 }
 @keyframes portrait-halo-breathe {
   0%,
@@ -415,7 +474,9 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   .profile-portrait-wrap::before,
-  .profile-portrait-wrap::after {
+  .profile-portrait-wrap::after,
+  .profile-portrait-wrap-hero::before,
+  .profile-portrait-wrap-hero::after {
     animation: none !important;
   }
 
