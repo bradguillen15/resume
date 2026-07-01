@@ -21,6 +21,7 @@ Although my title was frontend-focused, my work regularly extended beyond UI imp
 ## Primary Responsibilities
 
 - Built and maintained large React applications in TypeScript
+- Built reusable, **accessible** React components to **WCAG/ARIA** standards (keyboard navigation, screen-reader support) in the shared component library
 - Owned critical product features end-to-end—from design collaboration through production support
 - Collaborated daily with Product Managers, Designers, and Backend Engineers
 - Participated in architectural decisions for the applications my team owned, including micro frontend evolution
@@ -42,7 +43,7 @@ Understanding how code reached production was not optional. Owning a feature mea
 
 The team was a small cross-functional product squad of roughly **6–8 people**: **2–3 frontend engineers (including me)**, 2 backend engineers, 2–3 QA, a product owner, a designer, and an engineering manager. For most of my tenure there were only **two frontend engineers**—me and one partner—which meant I owned large portions of the frontend rather than a narrow slice.
 
-**Scope note:** Application user/traffic scale is not documented—observability was owned by the engineering manager, not me. Do not invent user counts or traffic metrics for Keller Williams.
+**Scale & observability:** The platform served roughly **60,000 users**. **Observability** ran on **Datadog**—I used it for dashboards, monitors, and alerting to catch regressions and triage production incidents (the engineering manager owned the broader observability strategy). Do not inflate beyond the ~60k figure.
 
 ---
 

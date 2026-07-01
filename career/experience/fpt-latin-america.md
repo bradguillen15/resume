@@ -22,7 +22,7 @@ My earliest professional software exposure—a short internship before my full-t
 
 ## Responsibilities
 
-- Built a **SharePoint application from scratch** using **JavaScript**, **C#**, **Java**, and **SQL** to manage internal operational workflows.
+- Built a **SharePoint application from scratch** using **JavaScript**, **C#**, and **SQL** to manage internal operational workflows.
 - Delivered the project across all phases on schedule, aligned with upper-management requirements.
 - Presented daily progress reports to the Operations Manager and participated in weekly stakeholder meetings.
 - Conducted end-user training sessions and provided post-launch support for adoption.

@@ -8,7 +8,7 @@ I spent 5+ years at Keller Williams on micro-frontend architecture: consolidatin
 **Languages:** TypeScript · JavaScript · Java · Python · SQL
 
 **Projects I'm building**
-- [**FreeSlot**](https://github.com/bradguillen15/free-slot) — time-awareness planner with a Claude-powered weekly planner ([live demo](https://free-slot-blush.vercel.app))
+- [**FreeSlot**](https://github.com/bradguillen15/free-slot) — time-awareness planner with a Claude-powered RAG feature that recommends habits from your activity ([live demo](https://free-slot-blush.vercel.app))
 - [**Sentiment**](https://github.com/bradguillen15/futures-crypto) — crypto futures assistant combining market data with Claude chat (in active development)
 - [**Portfolio**](https://github.com/bradguillen15/resume) — production site at [bradguillen.com](https://bradguillen.com) with Firebase + GitHub Actions
 
@@ -16,8 +16,8 @@ I spent 5+ years at Keller Williams on micro-frontend architecture: consolidatin
 - [**RAG Search Engine**](https://github.com/bradguillen15/rag-search-engine) — Boot.dev RAG course; hybrid search + Gemini-powered Q&A over movie metadata
 
 **Courses & certifications**
-- Anthropic — Claude API, Model Context Protocol, Agent Skills
-- [Boot.dev](https://www.boot.dev/u/bradgg) backend path — AWS, Docker, CI/CD, RAG (in progress)
+- Anthropic — Claude Code in Action, AI Fluency, Model Context Protocol (intro + advanced), Agent Skills
+- [Boot.dev](https://www.boot.dev/u/bradgg) Back-end Developer Path — AWS, Docker, CI/CD, RAG (in progress)
 
 **Elsewhere:** [LinkedIn](https://linkedin.com/in/brad-guillen-89794ba8) · [Portfolio](https://bradguillen.com) · [Email](mailto:bradguillen15@gmail.com)
 

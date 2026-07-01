@@ -33,6 +33,7 @@ I joined as a **Senior Web Developer**, delivering full-stack across React, Node
 - Built and consumed **RESTful APIs** in **Node.js** and **Express**, coordinating with backend teams on contract definitions
 - Worked with **GraphQL** to query and mutate backend data, improving frontend data-fetching efficiency
 - Implemented **real-time features with WebSockets** for low-latency live updates
+- Owned **on-page SEO** for a sports-betting marketing site—semantic markup, page performance, and search-ranking optimization across React odds/lines pages and content-driven WordPress pages
 - Built **React** frontends in **JavaScript**; developed reusable components and shared logic across 3+ web applications
 - Deployed applications to **AWS** (**EC2**, **S3**, **API Gateway**, **IAM**, **Lambda**)
 - Collaborated directly with the CTO on architecture and technical direction
@@ -96,6 +97,14 @@ I rebuilt the feature from scratch, completed it before the deadline, and delive
 **Engineering impact:** The product shipped on time. The story is about ownership and reliability—stepping in when delivery was at risk, understanding requirements quickly, and executing under pressure—not about assigning blame.
 
 → Detailed story: [`../stories/contractor-rescue.md`](../stories/contractor-rescue.md)
+
+### SEO for a Sports-Betting Marketing Site
+
+The product was a marketing site whose value depended on **organic search ranking**. I owned **on-page SEO** across the React pages that displayed live odds/lines and linked out to sportsbooks, as well as the content-driven WordPress pages.
+
+The work meant treating SEO as an engineering concern, not an afterthought: **semantic HTML**, fast page performance (a ranking factor), correct metadata and crawlable markup, and ensuring the React-rendered pages stayed indexable while linking users out to the right sportsbooks.
+
+**Engineering impact:** The site competed for high search positions in a ranking-driven market, where placement directly affected traffic and revenue. SEO considerations shaped how pages were structured and rendered, not just how they looked.
 
 ---
 
