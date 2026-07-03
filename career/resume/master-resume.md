@@ -684,16 +684,6 @@ Complete index of the `career/` repository. **Leaf documents are authoritative**
 | [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) | Dashboard rendering optimization |
 | [`../stories/contractor-rescue.md`](../stories/contractor-rescue.md) | Contractor handoff and rebuild |
 
-### Story redirects (legacy filenames)
-
-| Document | Points to |
-|----------|-----------|
-| [`../stories/api-migration.md`](../stories/api-migration.md) | `api-migration-v1-v2.md` |
-| [`../stories/configurable-banners.md`](../stories/configurable-banners.md) | `configurable-banner-system.md` |
-| [`../stories/modal-vs-page.md`](../stories/modal-vs-page.md) | `modal-vs-page-decision.md` |
-| [`../stories/lambda-wordpress.md`](../stories/lambda-wordpress.md) | `lambda-wordpress-integration.md` |
-| [`../stories/cms-migration.md`](../stories/cms-migration.md) | `react-cms-to-wordpress.md` |
-
 ### Philosophy
 
 | Document | Purpose |

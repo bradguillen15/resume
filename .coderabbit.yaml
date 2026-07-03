@@ -12,5 +12,28 @@ reviews:
     drafts: false
     base_branches:
       - main
+  path_filters:
+    - "!coverage/**"
+    - "!dist/**"
+    - "!exports/**"
+    - "!scripts/fonts/**"
+  path_instructions:
+    - path: "career/**/*.md"
+      instructions: |
+        This is the canonical source of truth for resume/portfolio content (see AGENTS.md).
+        - Never invent metrics, numbers, or achievements; flag anything that looks unverified.
+        - Never use em dashes (—); use commas, colons, or parentheses. En dashes are fine in date ranges.
+        - Flag content here that isn't mirrored into scripts/resume_data.py when it should be.
+    - path: "scripts/resume_data.py"
+      instructions: |
+        Python data structures consumed by scripts/generate_resume.py and scripts/generate_resume_docx.py.
+        Verify it stays in sync with career/resume/master-resume.md and flag invented metrics or em dashes.
+    - path: "src/**/*.{ts,tsx}"
+      instructions: |
+        React 19 + Vite + TypeScript portfolio site. Require full typing (avoid `any`), prefer incremental
+        focused changes, and match existing component/hook patterns rather than introducing new libraries.
+    - path: "**/*.{test,spec}.{ts,tsx}"
+      instructions: |
+        Tests use Vitest + Testing Library. Prefer behavior-focused assertions over implementation details.
 chat:
   auto_reply: false

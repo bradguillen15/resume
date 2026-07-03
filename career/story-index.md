@@ -91,8 +91,6 @@ Contains:
 
 **Use** for AI Software Engineer positions, AI-related interviews, and technical writing about AI workflows.
 
-**Redirect:** [`philosophy/ai.md`](philosophy/ai.md) → points here
-
 ---
 
 ### Strengths
@@ -240,16 +238,6 @@ Use [`interviews/behavioral.md`](interviews/behavioral.md) for question → stor
 | **Contractor rescue** | [`stories/contractor-rescue.md`](stories/contractor-rescue.md) | Ownership under pressure · delivery · responsibility |
 | **CMS migration** | [`stories/react-cms-to-wordpress.md`](stories/react-cms-to-wordpress.md) | Build vs buy · frontend transition · pragmatic modernization |
 
-**Redirect stubs** (do not use—link to canonical files above):
-
-| Old path | Canonical file |
-|----------|----------------|
-| `stories/api-migration.md` | `api-migration-v1-v2.md` |
-| `stories/configurable-banners.md` | `configurable-banner-system.md` |
-| `stories/lambda-wordpress.md` | `lambda-wordpress-integration.md` |
-| `stories/modal-vs-page.md` | `modal-vs-page-decision.md` |
-| `stories/cms-migration.md` | `react-cms-to-wordpress.md` |
-
 ---
 
 ## Resume Assets
@@ -277,6 +265,7 @@ Use [`interviews/behavioral.md`](interviews/behavioral.md) for question → stor
 | [`interviews/ai-software-engineer.md`](interviews/ai-software-engineer.md) | AI-assisted SWE · workflow · context engineering |
 | [`interviews/leadership.md`](interviews/leadership.md) | Leadership interview prep (derived from `leadership.md`) |
 | [`interviews/technical.md`](interviews/technical.md) | Technical interview prep (scaffold) |
+| [`interviews/vuori-senior-fe-prep.md`](interviews/vuori-senior-fe-prep.md) | Company-specific prep (Vuori, Senior FE) — pattern for future company preps |
 
 ---
 
@@ -285,8 +274,11 @@ Use [`interviews/behavioral.md`](interviews/behavioral.md) for question → stor
 | Document | Purpose |
 |----------|---------|
 | [`learning/2026.md`](learning/2026.md) | Current-year learning goals and progress |
-| [`recommendations/linkedin.md`](recommendations/linkedin.md) | LinkedIn content pointers |
+| [`job-board.md`](job-board.md) | Job boards and search strategy for the 2026 search |
+| [`target-companies.md`](target-companies.md) | Specific companies to apply to directly |
+| [`recommendations/linkedin.md`](recommendations/linkedin.md) | LinkedIn strategy · paste-ready copy in [`linkedin-profile.md`](recommendations/linkedin-profile.md) |
 | [`recommendations/github-profile.md`](recommendations/github-profile.md) | GitHub profile metadata, pins, README strategy |
+| [`recommendations/google-drive-resume.md`](recommendations/google-drive-resume.md) | Workflow for regenerating/uploading the Drive DOCX resume |
 | [`brag-document.md`](brag-document.md) | Living accomplishment log—update monthly/quarterly |
 | [`templates/`](templates/) | Schemas for new experience, project, and story entries |
 | [`README.md`](README.md) | Repository principles and maintenance rules |
