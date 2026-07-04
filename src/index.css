@@ -493,6 +493,9 @@ a {
   border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
   transform: rotate(45deg);
 }
+.chat-speech-bubble--no-tail::after {
+  display: none;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .profile-portrait-wrap::before,

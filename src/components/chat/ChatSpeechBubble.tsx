@@ -5,9 +5,17 @@ interface Props {
   onClick: () => void;
   hidden?: boolean;
   className?: string;
+  position?: 'absolute' | 'fixed';
+  tail?: boolean;
 }
 
-export const ChatSpeechBubble = ({ onClick, hidden = false, className = '' }: Props) => {
+export const ChatSpeechBubble = ({
+  onClick,
+  hidden = false,
+  className = '',
+  position = 'absolute',
+  tail = true,
+}: Props) => {
   if (hidden) return null;
 
   return (
@@ -19,7 +27,9 @@ export const ChatSpeechBubble = ({ onClick, hidden = false, className = '' }: Pr
       onClick={onClick}
       aria-label="Open chat with AI Brad"
       className={cn(
-        'chat-speech-bubble group absolute z-10 max-w-[9.5rem] cursor-pointer text-center transition-transform duration-200 hover:scale-[1.03]',
+        'chat-speech-bubble group z-10 max-w-[9.5rem] cursor-pointer text-center transition-transform duration-200 hover:scale-[1.03]',
+        !tail && 'chat-speech-bubble--no-tail',
+        position,
         className,
       )}
     >

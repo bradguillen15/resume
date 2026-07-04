@@ -16,6 +16,7 @@ import { Contact } from '@/components/sections/Contact';
 import { Hobbies } from '@/components/sections/Hobbies';
 import { StackBanner } from '@/components/sections/stack-banner';
 import { ChatPanel } from '@/components/chat/ChatPanel';
+import { ChatSpeechBubble } from '@/components/chat/ChatSpeechBubble';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { ScrollContext } from '@/context/ScrollContext';
 import { SECTION_IDS } from '@/lib/nav';
@@ -50,57 +51,64 @@ export default function App() {
 
   return (
     <TooltipProvider>
-    <div className="xl:flex xl:h-screen bg-bg-primary relative">
-      {/* Spotlight glow — desktop only, no React re-renders on mousemove */}
-      <Spotlight />
+      <div className="xl:flex xl:h-screen bg-bg-primary relative">
+        {/* Spotlight glow — desktop only, no React re-renders on mousemove */}
+        <Spotlight />
 
-      {/* Custom cursor — lazy loaded, desktop only */}
-      <Suspense fallback={null}>
-        <CustomCursor />
-      </Suspense>
+        {/* Custom cursor — lazy loaded, desktop only */}
+        <Suspense fallback={null}>
+          <CustomCursor />
+        </Suspense>
 
-      {/* Left panel — fixed sidebar, desktop only */}
-      <div className="hidden xl:block xl:w-[30%] xl:max-w-[400px] flex-shrink-0 relative z-10">
-        <Sidebar
-          activeSection={activeSection}
-          scrollToSection={scrollToSection}
-          onOpenChat={openChat}
-          chatOpen={chatOpen}
-        />
-      </div>
-
-      {/* AI chat panel — rendered once, state persists across open/close */}
-      <ChatPanel open={chatOpen} onOpenChange={setChatOpen} />
-
-      {/* Right panel — scrollable content */}
-      <ScrollContext.Provider value={scrollRef}>
-        <ScrollContainer ref={scrollRef}>
-          {/* Mobile/tablet sticky header */}
-          <MobileHeader
-            scrollToSection={scrollToSection}
+        {/* Left panel — fixed sidebar, desktop only */}
+        <div className="hidden xl:block xl:w-[30%] xl:max-w-[400px] flex-shrink-0 relative z-10">
+          <Sidebar
             activeSection={activeSection}
+            scrollToSection={scrollToSection}
+            onOpenChat={openChat}
+            chatOpen={chatOpen}
           />
+        </div>
 
-          {/* Spacer to push content below the fixed mobile header (~48px) */}
-          <div className="xl:hidden h-[48px]" />
+        {/* AI chat panel — rendered once, state persists across open/close */}
+        <ChatPanel open={chatOpen} onOpenChange={setChatOpen} />
+        <ChatSpeechBubble
+          onClick={openChat}
+          hidden={chatOpen}
+          position="fixed"
+          tail={false}
+          className="xl:hidden bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-5 z-40"
+        />
 
-          <StackBanner />
+        {/* Right panel — scrollable content */}
+        <ScrollContext.Provider value={scrollRef}>
+          <ScrollContainer ref={scrollRef}>
+            {/* Mobile/tablet sticky header */}
+            <MobileHeader
+              scrollToSection={scrollToSection}
+              activeSection={activeSection}
+            />
 
-          <MobileHero onOpenChat={openChat} chatOpen={chatOpen} />
+            {/* Spacer to push content below the fixed mobile header (~48px) */}
+            <div className="xl:hidden h-[48px]" />
 
-          {/* Main sections */}
-          <About />
-          <Experience />
-          <Skills />
-          <Projects />
-          <Certifications />
-          <Reviews />
-          <Contact />
-          <Hobbies />
-          <Footer />
-        </ScrollContainer>
-      </ScrollContext.Provider>
-    </div>
+            <StackBanner />
+
+            <MobileHero />
+
+            {/* Main sections */}
+            <About />
+            <Experience />
+            <Skills />
+            <Projects />
+            <Certifications />
+            <Reviews />
+            <Contact />
+            <Hobbies />
+            <Footer />
+          </ScrollContainer>
+        </ScrollContext.Provider>
+      </div>
     </TooltipProvider>
   );
 }
