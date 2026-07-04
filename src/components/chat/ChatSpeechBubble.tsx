@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 interface Props {
   onClick: () => void;
@@ -17,7 +18,10 @@ export const ChatSpeechBubble = ({ onClick, hidden = false, className = '' }: Pr
       transition={{ delay: 0.55, duration: 0.35, ease: 'easeOut' }}
       onClick={onClick}
       aria-label="Open chat with AI Brad"
-      className={`chat-speech-bubble group absolute z-10 max-w-[9.5rem] cursor-pointer text-center transition-transform duration-200 hover:scale-[1.03] ${className}`}
+      className={cn(
+        'chat-speech-bubble group absolute z-10 max-w-[9.5rem] cursor-pointer text-center transition-transform duration-200 hover:scale-[1.03]',
+        className,
+      )}
     >
       <span className="block font-mono text-[9px] leading-[1.35] tracking-[0.03em] text-accent group-hover:text-text-primary">
         Ask AI Brad

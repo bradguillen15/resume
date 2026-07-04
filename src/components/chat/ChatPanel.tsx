@@ -44,6 +44,15 @@ export const ChatPanel = ({ open, onOpenChange }: Props) => {
     if (open) inputRef.current?.focus();
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onOpenChange(false);
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [open, onOpenChange]);
+
   const handleSend = (text: string) => {
     if (isStreaming || !text.trim()) return;
     setInput('');

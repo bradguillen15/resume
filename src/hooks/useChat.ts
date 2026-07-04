@@ -47,14 +47,14 @@ export function useChat() {
           try {
             for await (const chunk of stream) {
               if (requestIdRef.current !== requestId) return
-              const text = chunk?.text
-              if (!text) continue
+              const chunkText = chunk?.text
+              if (!chunkText) continue
               updateMessages((prev) => {
                 const next = [...prev]
                 const last = next[next.length - 1]
                 next[next.length - 1] = {
                   ...last,
-                  content: last.content + text,
+                  content: last.content + chunkText,
                 }
                 return next
               })

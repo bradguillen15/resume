@@ -100,29 +100,28 @@ function toGeminiContents(messages) {
 async function enforceDailyCap(db, cap) {
   const today = new Date().toISOString().slice(0, 10);
   const ref = db.collection("chat_usage").doc(today);
-  const snap = await ref.get();
-  const count = snap.exists ? snap.data().count || 0 : 0;
-  if (count >= cap) {
-    throw new HttpsError(
-      "resource-exhausted",
-      "Daily chat limit reached. Please try again tomorrow."
-    );
-  }
-  await ref.set({ count: admin.firestore.FieldValue.increment(1) }, { merge: true });
+  await db.runTransaction(async (tx) => {
+    const snap = await tx.get(ref);
+    const count = snap.exists ? snap.data().count || 0 : 0;
+    if (count >= cap) {
+      throw new HttpsError(
+        "resource-exhausted",
+        "Daily chat limit reached. Please try again tomorrow."
+      );
+    }
+    tx.set(ref, { count: admin.firestore.FieldValue.increment(1) }, { merge: true });
+  });
 }
 
 function mapGeminiHttpError(status, body) {
   console.error("Gemini error:", status, body);
-  if (status === 400 || status === 403) {
-    const invalidKey = /api key|permission|invalid/i.test(body);
-    if (invalidKey) {
-      throw new HttpsError(
-        "failed-precondition",
-        "The AI is not configured right now."
-      );
-    }
-  }
   if (status === 401 || status === 403) {
+    throw new HttpsError(
+      "failed-precondition",
+      "The AI is not configured right now."
+    );
+  }
+  if (status === 400 && /api key|permission|invalid/i.test(body)) {
     throw new HttpsError(
       "failed-precondition",
       "The AI is not configured right now."

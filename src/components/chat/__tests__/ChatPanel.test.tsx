@@ -133,4 +133,13 @@ describe('ChatPanel', () => {
       expect(screen.getAllByText('I lead by example.').length).toBeGreaterThan(0)
     );
   });
+
+  it('closes on Escape', async () => {
+    const onOpenChange = vi.fn();
+    render(<ChatPanel open={true} onOpenChange={onOpenChange} />);
+
+    await userEvent.keyboard('{Escape}');
+
+    expect(onOpenChange).toHaveBeenCalledWith(false);
+  });
 });

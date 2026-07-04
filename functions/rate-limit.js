@@ -8,10 +8,17 @@ const MAX_SUBMISSIONS_PER_WINDOW = 5;
 function getClientIp(context) {
   const req = context.rawRequest;
   if (!req) return "unknown";
-  const forwarded = req.headers["x-forwarded-for"] || req.headers["x-appengine-user-ip"];
+  const forwarded = req.headers["x-forwarded-for"];
   if (forwarded) {
-    const first = typeof forwarded === "string" ? forwarded.split(",")[0] : forwarded[0];
-    return (first || "").trim() || "unknown";
+    const parts = typeof forwarded === "string" ? forwarded.split(",") : forwarded;
+    const last = parts[parts.length - 1];
+    const ip = (typeof last === "string" ? last : last || "").trim();
+    if (ip) return ip;
+  }
+  const appEngineIp = req.headers["x-appengine-user-ip"];
+  if (appEngineIp) {
+    const ip = typeof appEngineIp === "string" ? appEngineIp : appEngineIp[0];
+    return (ip || "").trim() || "unknown";
   }
   return req.connection?.remoteAddress || req.socket?.remoteAddress || "unknown";
 }
@@ -41,33 +48,36 @@ async function checkRateLimitAndRecord(ipHash, type, opts = {}) {
   const windowStartTimestamp = admin.firestore.Timestamp.fromMillis(now - windowMs);
 
   const blockedRef = db.collection("blocked_ips").doc(`${ipHash}_${type}`);
-  const blockedSnap = await blockedRef.get();
-  if (blockedSnap.exists) {
-    const blockedUntil = getBlockedUntilMillis(blockedSnap.data());
-    if (blockedUntil > now) {
-      throw new HttpsError("resource-exhausted", limitMessage);
-    }
-  }
-
-  const logSnap = await db
+  const logQuery = db
     .collection("submission_log")
     .where("ipHash", "==", ipHash)
     .where("type", "==", type)
     .where("createdAt", ">", windowStartTimestamp)
-    .orderBy("createdAt", "asc")
-    .get();
+    .orderBy("createdAt", "asc");
 
-  if (logSnap.size >= maxPerWindow) {
-    await blockedRef.set({
-      blockedUntil: admin.firestore.Timestamp.fromMillis(now + blockMs),
+  await db.runTransaction(async (tx) => {
+    const blockedSnap = await tx.get(blockedRef);
+    if (blockedSnap.exists) {
+      const blockedUntil = getBlockedUntilMillis(blockedSnap.data());
+      if (blockedUntil > now) {
+        throw new HttpsError("resource-exhausted", limitMessage);
+      }
+    }
+
+    const logSnap = await tx.get(logQuery);
+    if (logSnap.size >= maxPerWindow) {
+      tx.set(blockedRef, {
+        blockedUntil: admin.firestore.Timestamp.fromMillis(now + blockMs),
+      });
+      throw new HttpsError("resource-exhausted", limitMessage);
+    }
+
+    const logRef = db.collection("submission_log").doc();
+    tx.set(logRef, {
+      ipHash,
+      type,
+      createdAt: admin.firestore.Timestamp.fromMillis(now),
     });
-    throw new HttpsError("resource-exhausted", limitMessage);
-  }
-
-  await db.collection("submission_log").add({
-    ipHash,
-    type,
-    createdAt: admin.firestore.Timestamp.fromMillis(now),
   });
 }
 
