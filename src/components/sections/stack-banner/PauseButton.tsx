@@ -12,7 +12,7 @@ export function PauseButton({ paused, onToggle }: PauseButtonProps) {
       onClick={onToggle}
       aria-label={paused ? 'Resume technology rotation' : 'Pause technology rotation'}
       aria-pressed={paused}
-      className="absolute top-3 left-3 z-20 flex items-center justify-center w-8 h-8 rounded-lg border border-border bg-bg-secondary/95 text-text-muted hover:text-accent hover:border-accent/40 transition-colors cursor-pointer"
+      className="absolute top-3 right-3 z-20 flex items-center justify-center w-8 h-8 rounded-lg border border-border bg-bg-secondary/95 text-text-muted hover:text-accent hover:border-accent/40 transition-colors cursor-pointer"
     >
       {paused ? (
         <Play className="w-3.5 h-3.5" aria-hidden />

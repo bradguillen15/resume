@@ -350,7 +350,7 @@ TECHNICAL SKILLS
 EXPERIENCE
 
 Keller Williams · Senior Software Engineer · Nov 2020 – Apr 2026
-• (4–5 bullets — backend/cloud/architecture weighted; incl. Redux migration ~40%, dashboard ~35%+)
+• (4–5 bullets — backend/cloud/architecture weighted; incl. Redux migration and dashboard improvement, both described qualitatively)
 
 Advision Development · Lead Web Developer (promoted from Senior Web Developer) · Nov 2017 – Nov 2020
 • (4–5 bullets — strongest backend section + one team-leadership bullet)
@@ -376,7 +376,7 @@ Before finalizing a generated Full Stack resume, verify:
 - [ ] **Keller Williams** includes API migration and/or CI/CD—not only React
 - [ ] **First Factory** establishes Java/Spring Boot professionally (REST API from scratch, CRUD generator)
 - [ ] **Advision** shows **Team Lead (frontend team of 4)** where leadership/seniority matters
-- [ ] Quantified wins included where they fit: dashboard **~35%+** load time, Redux removal **~40%** boilerplate
+- [ ] No impact percentages: the old ~35% (dashboard) and ~40% (Redux) figures are retired as unmeasured; describe wins qualitatively
 - [ ] **Free Slot** is included with Supabase/full-stack signal
 - [ ] Bullet mix approximates **45/35/20** backend-frontend-leadership
 - [ ] No invented metrics, dates, or technologies

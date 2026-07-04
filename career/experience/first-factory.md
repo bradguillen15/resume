@@ -55,13 +55,15 @@ This was my introduction to professional **enterprise applications**—codebases
 
 ## Key Projects
 
-**Java REST API (architected from scratch)** — Designed and built a Java REST API using Hibernate and Jersey, with JUnit and Mockito test coverage, **for a US client**—including on-site collaboration and direct stakeholder reporting. Worked with QA on Selenium-based automation. Real production backend work with ownership over the design, not just assigned tickets.
+**Java REST API (architected from scratch)** — Designed and built a Java REST API using Hibernate and Jersey, with JUnit and Mockito test coverage, **for a US client**, starting a new system for them, including **architecting the database and the API**, with on-site collaboration and direct stakeholder reporting. Real production backend work with ownership over the design, not just assigned tickets.
 
-**Yeoman generator** — Built a developer tool that scaffolds full-stack project templates for Java (Spring Boot) or Node.js based on user-selected options—reducing setup time and repetitive boilerplate for new projects. An early example of the "remove repeated work" instinct that recurs throughout my career.
+→ Detailed story: [`../stories/greenfield-api-lesson.md`](../stories/greenfield-api-lesson.md) *(interview prep; kept out of public chat contexts)*
+
+**Yeoman generator** — Built a developer tool assigned directly by the **CEO**, who had noticed that many client projects were essentially simple CRUD routes. Given a resource definition, the generator scaffolded the full CRUD API code in the chosen language (**Java (Spring Boot)** or **Node.js**), reducing setup time and repetitive boilerplate for new projects. An early example of the "remove repeated work" instinct that recurs throughout my career (see the configurable banner system at Keller Williams).
 
 **Clinic management application (C# / ASP.NET MVC)** — Developed a C# application to handle internal operational workflows for a clinic.
 
-**Python / Flask** — Contributed to a Python Flask project.
+**Python / Flask** — Maintained a Python/Flask service for a couple of months. Maintenance work, not a project I owned or designed: useful as a resume keyword with honest scope, not as an interview story.
 
 **Google Sheets reporting add-on** — Developed an add-on that auto-generates reports using JavaScript (ES6), Webpack, and Google Apps Script.
 
@@ -84,6 +86,7 @@ This role marked the transition from university programming to professional soft
 - **Communicating technical ideas** — Explaining approach, asking questions when requirements were unclear
 - **Estimating work** — Learning how long things actually take versus initial guesses
 - **Receiving feedback** — Treating review comments as learning, not criticism
+- **Early mentoring** — Working in the office meant constant interaction; I mentored interns (several without computer science degrees) substantially, and learned from them in return
 
 These habits formed before Advision or Keller Williams. They explain why I still default to understanding existing code before adding to it.
 
@@ -128,4 +131,4 @@ First Factory is not the headline of my career. It is the floor—honest, founda
 | [`../philosophy/engineering.md`](../philosophy/engineering.md) | Principles shaped in part by early professional habits |
 | [`../resume/`](../resume/) | Curated bullets derived from this file |
 
-There are no dedicated story files for First Factory. The experience is documented here at overview depth; later roles contain the detailed engineering narratives.
+One dedicated story file exists for First Factory: [`../stories/greenfield-api-lesson.md`](../stories/greenfield-api-lesson.md) (architecting the Java REST API; interview prep material). The rest of the experience is documented here at overview depth; later roles contain the other detailed engineering narratives.

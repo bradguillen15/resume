@@ -106,7 +106,7 @@ Employment dates (author-provided). Total professional experience is **approxima
 
 #### Context
 
-Grew from frontend engineer into senior software engineer with significant ownership over critical parts of a **large production React application**. Title was frontend-focused; work regularly extended to architecture, backend API integration, CI/CD, cross-team migrations, product planning, and production support. Worked on a small cross-functional squad (~6–8: 2–3 frontend incl. me, 2 backend, 2–3 QA, PO, designer, EM); as **one of only two frontend engineers** for most of my tenure, I owned large portions of the frontend. The product was a **micro frontend platform of ~40 micro frontends**; I owned and maintained **3 of them (user, admin, shared)** (later consolidated from 3 repos to 2) and collaborated cross-team on multiple projects. Senior **individual-contributor** role with strong influence (unprompted initiatives, cross-team migrations, mentoring on owned systems)—**not** a formal lead (formal team leadership was earlier, as Lead Web Developer at Advision). **User/traffic scale not documented**—do not invent (a real number may be added later if obtained).
+Grew from frontend engineer into senior software engineer with significant ownership over critical parts of a **large production React application**. Title was frontend-focused; work regularly extended to architecture, backend API integration, CI/CD, cross-team migrations, product planning, and production support. Worked on a small cross-functional squad (~6–8: 2–3 frontend incl. me, 2 backend, 2–3 QA, PO, designer, EM); as **one of only two frontend engineers** for most of my tenure, I owned large portions of the frontend. The product was a **micro frontend platform of ~40 micro frontends**; I owned and maintained **3 of them (user, admin, shared)** (later consolidated from 3 repos to 2) and collaborated cross-team on multiple projects. Senior **individual-contributor** role with strong influence (unprompted initiatives, cross-team migrations, mentoring on owned systems)—**not** a formal lead (formal team leadership was earlier, as Lead Web Developer at Advision). **Scale:** ~60,000 users (documented in the experience file; do not inflate beyond it).
 
 #### Technologies
 
@@ -134,8 +134,8 @@ React, TypeScript, Redux, React Query, REST APIs, AWS, micro frontends, GitHub A
 | **Modal vs. page decision** | Raised architectural concerns for cross-org search; team evolved to page-based solution as nav requirements emerged | [`../stories/modal-vs-page-decision.md`](../stories/modal-vs-page-decision.md) |
 | **Micro frontend modernization** | Participated in migration toward micro frontend architecture for team independence and maintainability | (overview in experience doc) |
 | **CI/CD ownership** | Maintained deployment pipelines across GitHub Actions, Harness, Spinnaker | (overview in experience doc) |
-| **Dashboard performance** | Diagnosed frontend rendering bottleneck (not backend) early in tenure; lazy loading to resolve excessive re-renders; **~35%+ load-time reduction** | [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) |
-| **Data layer migration (Redux removal)** | Led migration off Redux to a more maintainable, performant approach; **~40% boilerplate reduction** | [`../stories/redux-removal.md`](../stories/redux-removal.md) |
+| **Dashboard performance** | Diagnosed frontend rendering bottleneck (not backend) early in tenure; lazy loading to resolve excessive re-renders; noticeably more responsive (**never measured — cite no figure**) | [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) |
+| **Data layer migration (Redux removal)** | Led migration off Redux to a more maintainable, performant approach; substantial boilerplate reduction (no measured figure) | [`../stories/redux-removal.md`](../stories/redux-removal.md) |
 
 **Metrics:** Not documented for any Keller Williams accomplishment—do not invent percentages, time saved, or deployment counts.
 
@@ -376,7 +376,9 @@ Module Federation, Jest, React Testing Library, JUnit, Mockito, Selenium, Jersey
 | **Computer Engineering** | ULACIT | 2015 · ~90% completed |
 | **Middle Technician in Software Development** | Colegio Técnico Carlos Luis Fallas | 2012–2014 |
 
-Computer Engineering is **not** marked complete—state "90% completed" or omit completion status; do not claim a conferred degree.
+Computer Engineering is **not** marked complete—state "90% completed" or omit completion status; do not claim a conferred degree. The only missing requirement is the final research project; full-time work took priority once the career started.
+
+**Timeline note (2015):** After the FPT internship (Dec 2014) and finishing the technical degree, 2015 was spent starting Computer Engineering at ULACIT and job hunting. Early applications did not land a role, so studying continued; a second round of applications led to First Factory (May 2016). Frame the gap as education, not idleness.
 
 ---
 
@@ -417,7 +419,7 @@ Configuration-driven banners replaced one-off sprint work; ~3 years in use; depr
 
 ### Data layer migration — Redux removal (Keller Williams)
 
-Led migration of the data layer off Redux to a more maintainable, performant approach; **~40% boilerplate reduction**.
+Led migration of the data layer off Redux to a more maintainable, performant approach; substantial boilerplate reduction (no measured figure).
 
 → [`../stories/redux-removal.md`](../stories/redux-removal.md)
 

@@ -25,9 +25,9 @@ export const resume = {
   name: 'Brad Guillen',
   title: 'Senior Software Engineer',
   aboutSummary:
-    'Senior Software Engineer with ~10 years designing and delivering production web applications across frontend and backend. Deep expertise building and maintaining large React/TypeScript applications, with real backend experience in Java, Spring Boot, Node.js, and AWS. Track record leading cross-team API migrations, repository consolidation, and performance work — plus mentoring and team leadership — while keeping systems simple and maintainable.',
+    'Senior Software Engineer with ~10 years designing and delivering production web applications across frontend and backend. Deep expertise building and maintaining large React/TypeScript applications, with real backend experience in Java, Spring Boot, Node.js, and AWS. Track record leading cross-team API migrations, repository consolidation, and performance work, plus mentoring and team leadership, while keeping systems simple and maintainable.',
   aboutContext:
-    'Based in Costa Rica. Most recently a Senior Software Engineer at Keller Williams (through Apr 2026), where I was one of two frontend engineers on an enterprise real-estate platform of ~40 micro frontends serving ~60,000 users — owning three production apps, leading an API V1→V2 migration behind a compatibility layer, and cutting dashboard load time ~35%. I am a software engineer with deep frontend roots and practical backend experience, not a frontend-only specialist, and I am open to remote roles.',
+    'Based in Costa Rica. Most recently a Senior Software Engineer at Keller Williams (through Apr 2026), where I was one of two frontend engineers on an enterprise real-estate platform of ~40 micro frontends serving ~60,000 users: owning three production apps, leading an API V1→V2 migration behind a compatibility layer, and migrating my apps to a micro frontend architecture (Module Federation). I am a software engineer with deep frontend roots and practical backend experience, not a frontend-only specialist, and I am open to remote roles.',
   hobbies: [
     "I spend a lot of my spare time learning to build with AI wiring up the Claude API, experimenting with agent-style workflows, and working through Anthropic's certification programs. What interests me is the product side: how to connect LLMs to real applications in ways that are genuinely useful, not just demos or gimmicks.",
     'Outside of work I follow the crypto and blockchain space closely. I am especially curious about decentralized systems how they could change ownership, coordination, and trust online and I enjoy staying on top of where the technology and the market are heading.',
@@ -53,14 +53,16 @@ export const resume = {
       period: 'Nov 2020 – Apr 2026',
       duration: '5.5 years',
       highlights: [
-        'One of two frontend engineers on an enterprise real-estate platform (~40 micro frontends serving ~60,000 users); owned 3 production apps (user, admin, shared).',
-        'Single-handedly migrated my app from another team’s API V1 to V2 (a full response redesign), building a transformation layer that normalized V2 into the shape consumers expected — no risky big-bang rewrite.',
-        'Migrated server state from Redux to React Query, cutting state-management boilerplate ~40% and simplifying onboarding for new work.',
-        'Diagnosed rendering bottlenecks in production and introduced lazy loading, cutting dashboard load time ~35%+.',
+        'One of two frontend engineers on an enterprise real-estate platform (~40 micro frontends serving ~60,000 users); owned 3 production apps (user, admin, shared) and acted as de facto frontend lead on a team with no dedicated tech lead.',
+        'Built features across the real-estate opportunity flow agents use daily: four opportunity types (listing, buyer, tenant, landlord) moving from agent submission through market-center approval into commissions.',
+        'Migrated my three apps to a micro frontend architecture (Module Federation) as part of an org-wide initiative that removed a shared-shell dependency spanning ~40 repositories.',
+        'Single-handedly migrated my app from another team’s API V1 to V2 (a full response redesign), building a transformation layer that normalized V2 into the shape consumers expected, with no risky big-bang rewrite.',
+        'Migrated server state from Redux to React Query, substantially cutting state-management boilerplate and simplifying onboarding for new work.',
+        'Diagnosed a slow production dashboard whose rendering work grew with the number of items displayed; introduced lazy loading to defer non-critical rendering, making it noticeably more responsive.',
         'Consolidated three repositories into two, reducing deployment steps, pipeline maintenance, and onboarding cost.',
         'Designed a configuration-driven banner system so Product could manage banners without engineering cycles.',
         'Built reusable, accessible React components to WCAG/ARIA standards in the shared component library.',
-        'Used Datadog for production observability — dashboards, monitors, and alerts — to catch regressions and triage incidents; maintained CI/CD across GitHub Actions, Harness, and Spinnaker.',
+        'Investigated production issues with Datadog (error traces, session replays, custom dashboards), reproducing bugs that only occurred in production; maintained CI/CD across GitHub Actions, Harness, and Spinnaker.',
       ],
       tags: ['React', 'TypeScript', 'MFE', 'React Query', 'Accessibility', 'Datadog', 'Performance'],
     },
@@ -82,7 +84,7 @@ export const resume = {
           duration: '11 mos',
           location: null,
           highlights: [
-            'Led a frontend team of 4 and served as Scrum Master — delegating, reviewing code, mentoring, setting coding standards, reviewing designs, and interviewing/helping hire.',
+            'Led a frontend team of 4 and served as Scrum Master: delegating, reviewing code, mentoring, setting coding standards, reviewing designs, and interviewing/helping hire.',
             'Led the migration from a legacy React CMS to WordPress connected via REST APIs to microservices.',
             'Managed deployments and code versioning; coordinated with stakeholders to translate requirements into deliverables.',
           ],
@@ -115,9 +117,10 @@ export const resume = {
       period: 'May 2016 – Nov 2017',
       duration: '1.5 years',
       highlights: [
-        'Architected a Java REST API from scratch (Hibernate, Jersey; JUnit/Mockito tests; Selenium QA automation) for a US client, with on-site collaboration and direct stakeholder reporting.',
+        'Architected the database and a Java REST API from scratch (Hibernate, Jersey; JUnit/Mockito tests; Selenium QA automation) for a US client, with on-site collaboration and direct stakeholder reporting.',
         'Created a Yeoman generator scaffolding full CRUD APIs for Java (Spring Boot) or Node.js, plus a Google Sheets reporting add-on in JavaScript ES6.',
         'Built a C# clinic-management application for internal workflows and contributed to a Python/Flask project.',
+        'Mentored interns new to software engineering while working on-site, an early habit that carried through later roles.',
       ],
       tags: ['Java', 'Spring Boot', 'Node.js', 'C#', 'Python'],
     },
@@ -250,7 +253,7 @@ export const resume = {
       id: 'resume-site',
       title: 'Portfolio / Resume',
       description:
-        'This site — a personal portfolio built from scratch with a split-panel layout, custom cursor, typewriter effect, and Firebase backend.',
+        'This site: a personal portfolio built from scratch with a split-panel layout, custom cursor, typewriter effect, and Firebase backend. Includes AI Brad, a chat grounded in my documented career knowledge base, streamed from a Cloud Function with rate limiting and a curated public-safe context.',
       tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion'],
       status: 'Active',
       github: 'https://github.com/bradguillen15/resume',
@@ -279,7 +282,7 @@ export const resume = {
       id: 'futures-crypto',
       title: 'Sentiment',
       description:
-        'Crypto futures sentiment assistant powered by Claude AI. Combines live BTC/USDT market data, Fear & Greed index, and futures positioning into a real-time chat interface. Under active development — more features and code coming soon.',
+        'Crypto futures sentiment assistant powered by Claude AI. Combines live BTC/USDT market data, Fear & Greed index, and futures positioning into a real-time chat interface. Under active development, more features and code coming soon.',
       tags: [
         'React',
         'Next.js',

@@ -12,9 +12,28 @@ Canonical record of employment at Keller Williams. Resume bullets and interview 
 
 **Dates:** November 2020 – April 2026 (~5.5 years)
 
+**Arrangement:** Direct, full-time contract with Keller Williams (40 hours/week), not through an agency or staffing firm.
+
+**How it ended:** I was **laid off in April 2026** when the company restructured and ended all of its independent contractor engagements (my role was structured as an independent contractor). The layoff was organizational, not performance-related. Use this framing for "why did you leave" questions: honest, brief, no bitterness.
+
 Keller Williams is where I grew from a frontend engineer into a senior software engineer with significant ownership over critical parts of a large production application.
 
 Although my title was frontend-focused, my work regularly extended beyond UI implementation: architectural discussions, backend API integration, CI/CD pipeline ownership, cross-team API migrations, product planning, and production support. The application was a long-lived React codebase serving real users at scale—not a greenfield prototype.
+
+---
+
+## Product Domain
+
+Keller Williams is one of the largest real estate franchises in the world. The platform I worked on is a system for **managing the real estate business itself**: it models **organizations**, **market centers**, **teams**, **agents**, and team coordinators/leaders within that hierarchy.
+
+My area handled **opportunities**: potential real estate deals (sales, rentals, leases). The domain had **four opportunity types**: **listing**, **buyer**, **tenant**, and **landlord**. The core flow:
+
+1. An agent creates an opportunity of one of the four types and fills in a type-specific **details section**.
+2. The agent submits an **offer** for that opportunity through a form.
+3. The submission goes to the **MCA** (Market Center Administrator; the market center's manager role) for **approval**.
+4. Once approved, the opportunity flows into a separate **commissions applet**, where the financial side is handled.
+
+Each "applet" was one of the platform's micro frontends. *(Which applets my three owned applications covered within this flow is not yet documented; confirm before citing specifics.)*
 
 ---
 
@@ -43,7 +62,7 @@ Understanding how code reached production was not optional. Owning a feature mea
 
 The team was a small cross-functional product squad of roughly **6–8 people**: **2–3 frontend engineers (including me)**, 2 backend engineers, 2–3 QA, a product owner, a designer, and an engineering manager. For most of my tenure there were only **two frontend engineers**—me and one partner—which meant I owned large portions of the frontend rather than a narrow slice.
 
-**Scale & observability:** The platform served roughly **60,000 users**. **Observability** ran on **Datadog**—I used it for dashboards, monitors, and alerting to catch regressions and triage production incidents (the engineering manager owned the broader observability strategy). Do not inflate beyond the ~60k figure.
+**Scale & observability:** The platform served roughly **60,000 users** (real figure, confirmed by my engineering manager at the time; do not inflate). **Observability** ran on **Datadog** and was **owned by the engineering manager**, who watched errors and alerts for anomalies. I had full access and used it heavily: navigating errors, inspecting user sessions, and reproducing bugs that only occurred in production; I could build my own dashboards when useful. **Do not claim ownership of observability**; my relationship to Datadog was as a heavy user for production debugging.
 
 ---
 
@@ -95,11 +114,13 @@ The team proceeded with the modal initially. As development progressed, navigati
 
 ### Frontend Modernization
 
-I participated in migrating toward a **micro frontend** architecture. The goal was not novelty—it was maintainability. Large monolithic frontends become difficult to evolve when multiple teams need to ship independently without stepping on each other.
+I participated in migrating toward a **micro frontend** architecture. The driver was concrete: a **shared shell library was a dependency of roughly 40 frontend repositories**, and every shell update forced a coordinated package bump and re-release across all of them. The migration was a staff-level, organization-wide decision made to break that coupling.
 
-Micro frontends allowed teams to own their applications with clearer boundaries, independent deployment where appropriate, and reduced blast radius when something broke. My involvement included architectural discussions, implementation patterns, and ensuring the migration path did not destabilize production.
+I **executed the migration for the three repositories my team owned**, learning the micro frontend model (how each application is exposed and composed into the platform) in the process. My involvement included architectural discussions, implementation patterns, and ensuring the migration path did not destabilize production.
 
-**Engineering impact:** Improved the team's ability to evolve applications independently without a single shared codebase becoming a bottleneck.
+**Engineering impact:** My team's applications could ship independently, and shell updates stopped fanning out into dozens of coordinated releases.
+
+→ Detailed story: [`../stories/microfrontend-migration.md`](../stories/microfrontend-migration.md)
 
 ### CI/CD Ownership
 
@@ -113,7 +134,7 @@ Understanding deployment pipelines became part of owning production software. A 
 
 I led a migration of the application's data layer **off Redux** toward a more maintainable, less boilerplate-heavy approach—leaning on lighter state patterns and React Query for server state instead of forcing everything through a global store. The migration was incremental, aligned with ongoing delivery rather than a stop-the-world rewrite.
 
-**Engineering impact:** Reduced state-management boilerplate by **~40%**, producing a more maintainable and performant data layer—clearer feature code, easier onboarding, and server state handled by purpose-built tooling.
+**Engineering impact:** Substantially reduced state-management boilerplate, producing a more maintainable and performant data layer—clearer feature code, easier onboarding, and server state handled by purpose-built tooling.
 
 → Detailed story: [`../stories/redux-removal.md`](../stories/redux-removal.md)
 
@@ -124,6 +145,14 @@ Early in my time on the project, one of the application's dashboards felt notice
 **Engineering impact:** The dashboard became noticeably more responsive, resolving a long-tolerated usability pain point without destabilizing a production feature. Teammates valued the fix more than I initially did—a reminder that engineering impact is measured by user experience, not implementation complexity.
 
 → Detailed story: [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md)
+
+### Production Support
+
+Production bugs for my features typically arrived as **Zendesk tickets**, usually with an attached user session capture. My workflow: investigate the session, narrow down the error, reproduce locally by following the user's steps when needed. For critical bugs the team practice was **rollback first** to restore users, then fix as soon as possible and redeploy.
+
+**Engineering impact:** Fast restoration on critical failures and a tight feedback loop between how my features were built and how they actually failed in the field.
+
+→ Detailed story: [`../stories/production-debugging-workflow.md`](../stories/production-debugging-workflow.md)
 
 ---
 
@@ -161,6 +190,8 @@ API migrations in particular demanded coordination: agreeing on timelines, under
 
 At Keller Williams I was a **senior individual contributor** — not a formal lead. My influence came through **ownership and technical reasoning** rather than authority.
 
+An important structural fact: **the team never had a dedicated tech lead.** In practice I often filled that space for the frontend, taking ownership of technical decisions and direction. I discussed trade-offs with my **engineering manager** for technical decisions and with the **Product Owner** for requirements questions, but my manager's usual posture was to ask "what is your recommendation?" and back it. When tickets turned out larger than estimated (normal in development: real scope often only appears once you start and hit the edge cases), I raised it early through the same channels rather than silently absorbing it.
+
 When I owned important features, teammates naturally came to me with questions, bug reports, and enhancement ideas — I held the deepest context on how those systems worked and where the risks lived. That ownership extended to mentoring teammates on systems I had built, reviewing PRs with an eye toward long-term maintainability, driving unprompted initiatives (repository consolidation, the configurable banner system), and coordinating cross-team on API migrations.
 
 **Scope note:** Formal team leadership — defining standards, reviewing others' designs, interviewing/hiring — came earlier, as **Lead Web Developer at Advision** (see [`advision.md`](advision.md)). Do not frame KW as a formal lead role.
@@ -190,7 +221,9 @@ Keller Williams shaped how I think about software engineering at scale:
 | [`../stories/configurable-banner-system.md`](../stories/configurable-banner-system.md) | Configurable banner system |
 | [`../stories/modal-vs-page-decision.md`](../stories/modal-vs-page-decision.md) | Modal vs page architectural disagreement |
 | [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) | Dashboard rendering performance investigation |
-| [`../stories/redux-removal.md`](../stories/redux-removal.md) | Data layer migration—removing Redux (~40% less boilerplate) |
+| [`../stories/redux-removal.md`](../stories/redux-removal.md) | Data layer migration—removing Redux (substantially less boilerplate) |
+| [`../stories/microfrontend-migration.md`](../stories/microfrontend-migration.md) | Micro frontend migration (executed for the three owned repositories) |
+| [`../stories/production-debugging-workflow.md`](../stories/production-debugging-workflow.md) | Production debugging workflow and rollback discipline |
 | [`../context.md`](../context.md) | Engineer profile and working principles |
 | [`../philosophy/engineering.md`](../philosophy/engineering.md) | How these patterns reflect broader philosophy |
 | [`../resume/`](../resume/) | Curated bullets derived from this file |

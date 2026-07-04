@@ -10,7 +10,7 @@ Costa Rica · +506 6201-1840 · bradguillen15@gmail.com · [linkedin.com/in/brad
 
 ## Professional Summary
 
-Senior Software Engineer with approximately ten years building and maintaining production web applications across the stack. Deep expertise in React and TypeScript at scale, with professional backend experience in Java, Spring Boot, Node.js, REST APIs, GraphQL, and AWS. Led API migrations, cloud integrations, and a data-layer migration that cut state boilerplate ~40%, while owning CI/CD and architectural simplification—and led a frontend team of 4 as Team Lead at Advision. Currently building full-stack production applications with Supabase and modern AI-assisted workflows. Known for ownership, maintainability, and reducing unnecessary complexity—improving software by making systems easier to understand, maintain, and evolve.
+Senior Software Engineer with approximately ten years building and maintaining production web applications across the stack. Deep expertise in React and TypeScript at scale, with professional backend experience in Java, Spring Boot, Node.js, REST APIs, GraphQL, and AWS. Led API migrations, cloud integrations, and a data-layer migration that substantially cut state boilerplate, while owning CI/CD and architectural simplification—and led a frontend team of 4 as Team Lead at Advision. Currently building full-stack production applications with Supabase and modern AI-assisted workflows. Known for ownership, maintainability, and reducing unnecessary complexity—improving software by making systems easier to understand, maintain, and evolve.
 
 ---
 
@@ -44,8 +44,8 @@ Owned critical product areas of a large, long-lived production React application
 - Coordinated the migration directly with an external backend engineering team, aligning on contracts and timelines so neither side blocked the other.
 - Led consolidation of three repositories into two, deprecating an entire repository and aligning the change with an in-flight product URL migration—reducing deployment steps, pipeline maintenance, and onboarding cost without a standalone refactor project.
 - Maintained and troubleshot production CI/CD pipelines across GitHub Actions, Harness, and Spinnaker, treating release reliability and pipeline literacy as part of feature ownership.
-- Led a data-layer migration off Redux to a lighter, more maintainable approach (React Query for server state), cutting state-management boilerplate by **~40%** and improving developer experience.
-- Diagnosed a slow production dashboard as a frontend rendering issue (not backend) and applied lazy loading to cut load time by **~35%+**—investigation over premature optimization.
+- Led a data-layer migration off Redux to a lighter, more maintainable approach (React Query for server state), substantially cutting state-management boilerplate and improving developer experience.
+- Diagnosed a slow production dashboard as a frontend rendering issue (not backend) and applied lazy loading to make it noticeably more responsive—investigation over premature optimization.
 - Proposed and built a configuration-driven banner system that let Product manage informational banners without engineering cycles—eliminating a recurring class of sprint work; in use ~3 years before being deprecated cleanly.
 - Participated in the migration toward a micro frontend architecture for clearer team boundaries and independent deployment, and partnered with Product, Design, and QA—raising the modal-vs-page navigation concern that the team later adopted as requirements grew.
 

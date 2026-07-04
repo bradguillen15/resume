@@ -19,6 +19,11 @@ coverage
 .claude/
 exports/
 scripts/__pycache__/
+functions/chat-context.md
+
+# Local-only interview cheat sheets (keep README, ignore contents)
+career/interviews/cheatsheets/*
+!career/interviews/cheatsheets/README.md
 
 # Editor directories and files
 .vscode/*

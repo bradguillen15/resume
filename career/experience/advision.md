@@ -90,11 +90,11 @@ This was earlier in my career—I was not the most senior backend engineer on th
 
 ### Contractor Rescue
 
-I took ownership of a critical page after an external contractor failed to deliver usable work. The contractor had several weeks; what remained was effectively a restart.
+An external contractor failed to deliver a primary **sportsbook-listing** marketing page for a sports-betting site. With an **event-driven deadline** approaching and the team considering postponement, I **volunteered** to finish it—less than a week remained.
 
-I rebuilt the feature from scratch, completed it before the deadline, and delivered the functionality the product needed.
+I had already reviewed the contractor's branch and chose a **clean rebuild**. I delivered on time with **paid overtime**, mostly solo, with my Lead available for questions.
 
-**Engineering impact:** The product shipped on time. The story is about ownership and reliability—stepping in when delivery was at risk, understanding requirements quickly, and executing under pressure—not about assigning blame.
+**Engineering impact:** The page shipped for the marketing window; team and client feedback were positive. The story is about **volunteering ownership** early in my career—not about assigning blame.
 
 → Detailed story: [`../stories/contractor-rescue.md`](../stories/contractor-rescue.md)
 
@@ -130,6 +130,10 @@ In the lead role I also **defined coding standards and reusable patterns**, **re
 
 I mentored junior developers directly—helping them understand architecture, pairing on difficult problems, reviewing code with explanations rather than just approvals, and walking through why a particular engineering decision made sense in context. Explaining a design forces clarity about whether it is actually good, and leading the team reinforced that engineering quality and delivery are a shared responsibility, not just an individual one.
 
+A concrete mentoring story comes from this period: **mentoring a recent graduate through React fundamentals** with sustained, hands-on sessions (most evenings) until she could complete tickets independently. → [`../stories/mentoring-junior-react.md`](../stories/mentoring-junior-react.md)
+
+The hardest people-leadership lesson from the lead period is documented separately for interview preparation in [`../stories/team-lead-burnout.md`](../stories/team-lead-burnout.md) *(kept out of public chat contexts)*.
+
 ---
 
 ## Lessons Learned
@@ -155,6 +159,8 @@ This role is why I push back when my profile is reduced to "frontend only." The 
 | [`../stories/lambda-wordpress-integration.md`](../stories/lambda-wordpress-integration.md) | AWS Lambda integration for WordPress |
 | [`../stories/react-cms-to-wordpress.md`](../stories/react-cms-to-wordpress.md) | React CMS → WordPress migration |
 | [`../stories/contractor-rescue.md`](../stories/contractor-rescue.md) | Critical page delivery under deadline pressure |
+| [`../stories/mentoring-junior-react.md`](../stories/mentoring-junior-react.md) | Mentoring a recent graduate through React fundamentals |
+| [`../stories/team-lead-burnout.md`](../stories/team-lead-burnout.md) | People-leadership lesson from the lead period (interview prep) |
 | [`../context.md`](../context.md) | Engineer profile—backend experience context |
 | [`../experience/keller-williams.md`](keller-williams.md) | Subsequent role—frontend specialization and senior ownership |
 | [`../philosophy/engineering.md`](../philosophy/engineering.md) | How Advision patterns reflect broader philosophy |

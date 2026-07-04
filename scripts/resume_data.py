@@ -72,19 +72,19 @@ EXPERIENCE = [
         "title": "Keller Williams · Senior Software Engineer",
         "date": "Nov 2020 &ndash; Apr 2026 &nbsp;&bull;&nbsp; 5.5 yrs",
         "ctx": (
-            "One of two frontend engineers on Keller Williams' enterprise real estate platform "
+            "One of two frontend engineers on Keller Williams' enterprise platform for running the real estate business (agents, market centers, opportunities, commissions) "
             "(~40 micro frontends in production{scale}); owned 3 production apps (user, admin, shared) and "
-            "collaborated cross-team across multiple projects."
+            "collaborated cross-team across multiple projects; acted as de facto frontend lead on a team with no dedicated tech lead."
         ),
         "bullets": [
             "Single-handedly migrated the application off another team's API V1 to V2 (a full response-format redesign), building a transformation layer that normalized V2 into the shape consumers already expected, so every call site moved without a risky big-bang rewrite.",
-            "Migrated server state from Redux to React Query, cutting state-management boilerplate ~40% and simplifying onboarding for new feature work.",
-            "Diagnosed rendering bottlenecks through production debugging and introduced lazy loading, cutting dashboard load time ~35%+.",
+            "Migrated server state from Redux to React Query, substantially cutting state-management boilerplate and simplifying onboarding for new feature work.",
+            "Diagnosed a slow production dashboard whose rendering grew with the number of items displayed and introduced lazy loading to defer non-critical rendering, making it noticeably more responsive.",
             "Consolidated three repositories into two, reducing deployment steps, pipeline maintenance, and onboarding cost.",
             "Designed a configuration-driven banner system that let Product manage banners without engineering cycles, eliminating a recurring class of sprint work.",
             "Built reusable, accessible React components to WCAG/ARIA standards (keyboard navigation and screen-reader support) in the shared component library.",
-            "Maintained CI/CD pipelines (GitHub Actions, Harness, Spinnaker) and helped migrate the platform to micro frontends.",
-            "Owned Datadog observability (dashboards, monitors, alerts) for apps serving ~60,000 users, catching regressions early and speeding incident triage.",
+            "Migrated the team's three apps to micro frontends (Module Federation), part of an org-wide initiative removing a shared-shell dependency that forced coordinated releases across ~40 repositories; maintained CI/CD pipelines (GitHub Actions, Harness, Spinnaker).",
+            "Investigated production issues with Datadog (error traces, session replays, custom dashboards), reproducing bugs that only occurred in production for apps serving ~60,000 users.",
         ],
     },
     {
@@ -109,7 +109,7 @@ EXPERIENCE = [
         "date": "May 2016 &ndash; Nov 2017 &nbsp;&bull;&nbsp; 1.5 yrs",
         "ctx": "",
         "bullets": [
-            "Architected a Java REST API from scratch (Hibernate, Jersey; JUnit/Mockito tests; Selenium QA automation) for a US client, with on-site collaboration and direct stakeholder reporting.",
+            "Architected the database and a Java REST API from scratch (Hibernate, Jersey; JUnit/Mockito tests; Selenium QA automation) for a US client, with on-site collaboration and direct stakeholder reporting.",
             "Created a Yeoman generator scaffolding full-stack templates for Java (Spring Boot) or Node.js, plus a Google Sheets reporting add-on.",
             "Built a C# clinic-management application for internal workflows and contributed to a Python/Flask project.",
         ],

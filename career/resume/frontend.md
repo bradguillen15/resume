@@ -38,8 +38,8 @@ Built and maintained large-scale React applications in TypeScript serving produc
 
 - Owned complex frontend features from design collaboration through production deployment and long-term maintenance, becoming the primary point of contact for questions, bugs, and enhancements on those systems.
 - Developed complex user interfaces using React, TypeScript, Redux, and React Query while improving maintainability through refactoring, consolidation, and removal of repetitive patterns.
-- Led a data-layer migration off Redux to a lighter, more maintainable approach (React Query for server state), reducing state-management boilerplate by ~40% and improving developer experience.
-- Diagnosed a slow production dashboard as a frontend rendering issue and applied lazy loading to reduce load time by ~35%+, tracing render behavior before optimizing.
+- Led a data-layer migration off Redux to a lighter, more maintainable approach (React Query for server state), substantially reducing state-management boilerplate and improving developer experience.
+- Diagnosed a slow production dashboard as a frontend rendering issue and applied lazy loading to make it noticeably more responsive, tracing render behavior before optimizing.
 - Led frontend implementation of a cross-team API migration by introducing a compatibility layer that isolated V2 contract changes from application consumers, coordinating with an external backend engineering team.
 - Designed and implemented a configurable banner system that replaced repeated one-off sprint work with a reusable, configuration-driven solution used for approximately three years.
 - Consolidated application architecture by deprecating an entire repository and reducing frontend deployment complexity from three repositories to two, aligned with an in-flight product migration.
@@ -136,7 +136,7 @@ Future resume customizations should begin from this document rather than creatin
 
 ### Sources
 
-Derived from [`master-resume.md`](master-resume.md) and [`bullet-bank.md`](bullet-bank.md). Story detail: [`../stories/`](../stories/). Employment dates are on file (KW Nov 2020–Apr 2026, Advision Nov 2017–Nov 2020, First Factory May 2016–Nov 2017). Use the documented ~35%+ (dashboard) and ~40% (Redux) figures; do not invent others.
+Derived from [`master-resume.md`](master-resume.md) and [`bullet-bank.md`](bullet-bank.md). Story detail: [`../stories/`](../stories/). Employment dates are on file (KW Nov 2020–Apr 2026, Advision Nov 2017–Nov 2020, First Factory May 2016–Nov 2017). No impact percentages are documented: the old ~35% (dashboard) and ~40% (Redux) figures are retired as unmeasured. Do not use or invent any.
 
 ### One-page tailoring
 

@@ -9,7 +9,7 @@ alwaysApply: true
 - **Type Safety**: All TypeScript code must be fully typed; avoid `any`.
 - **Clear Naming**: Use clear, descriptive names for all variables and functions.
 - **Minimal Comments**: Do not write comments by default. Add one only when it explains something the code cannot (non-obvious rationale, an edge case, a gotcha). Never restate what the code does.
-- **No em dashes**: Never use em dashes (—) in resume content, docs, commit messages, or any generated text. Use commas, colons, or parentheses instead. En dashes are fine in date ranges.
+- **No em dashes in resume output**: Never use em dashes (—) in resume content (generated PDFs/DOCX, `scripts/resume_data.py`, site copy) or other outward-facing text. Use commas, colons, or parentheses instead. En dashes are fine in date ranges. Internal docs under `career/` are exempt; do not sweep them.
 
 ## 2. Project Structure
 

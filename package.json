@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build:chat-context": "node scripts/build-chat-context.mjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "build": "tsc && vite build",

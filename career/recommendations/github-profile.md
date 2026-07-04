@@ -125,7 +125,7 @@ Excellent engineer who **improves systems**—not someone defined by a single fr
 - **Achievement-oriented** bullets—same themes as LinkedIn ([`linkedin.md`](linkedin.md#experience)) but shorter
 - **Honest scope** — KW: senior **IC**, owned 3 of ~40 MFE apps; Advision leadership = **Lead Web Developer** (~11 months), not 3 years as team lead
 - **Live URLs** — portfolio is [bradguillen.com](https://bradguillen.com/); Free Slot is [free-slot-blush.vercel.app](https://free-slot-blush.vercel.app/)
-- **No fabricated metrics** — dashboard ~35%+, Redux ~40% boilerplate are documented ([`../stories/dashboard-performance.md`](../stories/dashboard-performance.md), [`../stories/redux-removal.md`](../stories/redux-removal.md))
+- **No fabricated metrics** — no impact percentages exist (the old ~35% and ~40% figures are retired as unmeasured); describe impact qualitatively ([`../stories/dashboard-performance.md`](../stories/dashboard-performance.md), [`../stories/redux-removal.md`](../stories/redux-removal.md))
 - **AI positioning** — application-layer engineering (Claude API, MCP coursework, RAG in projects)—not ML research ([`../philosophy/working-with-ai.md`](../philosophy/working-with-ai.md))
 - **Availability** — open to full-time remote, contracts, consulting; **available immediately** when job searching per [`../context.md`](../context.md)
 

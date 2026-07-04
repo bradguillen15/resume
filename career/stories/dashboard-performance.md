@@ -47,7 +47,7 @@ Rather than immediately changing code, I spent time **understanding how the dash
 
 I traced the rendering flow, observed component behavior, and looked for where work repeated or ran before it was needed. The investigation distinguished frontend rendering cost from network latency—an important fork because optimizing the wrong layer would have wasted effort.
 
-The investigation pointed toward a **rendering issue**, not a backend performance problem: the dashboard did more work up front than necessary before showing useful information. The fix centered on **lazy loading** to defer non-critical work and resolve the excessive re-renders. I no longer recall every low-level detail (component names, exact render counts), but the core technique—lazy loading to cut unnecessary upfront rendering—is documented.
+The investigation pointed toward a **rendering issue**, not a backend performance problem: the dashboard did more work up front than necessary before showing useful information. A key characteristic: **rendering cost grew with the number of items the dashboard displayed**, so the more items a user had, the worse it got. The fix centered on **lazy loading** to defer non-critical work and resolve the excessive re-renders. I no longer recall every low-level detail (component names, exact render counts), but the core technique—lazy loading to cut unnecessary upfront rendering—is documented.
 
 Once the cause became clear, the **actual fix was relatively straightforward**. The difficult part was understanding the behavior, not deploying an exotic optimization.
 
@@ -75,7 +75,7 @@ I personally viewed the fix as a **normal engineering task**—find unnecessary 
 
 That gap in perception reinforced a lesson I still apply: **engineering value is often measured by user impact rather than implementation complexity.** A simple fix to a painful problem can matter more than a sophisticated feature nobody asked for.
 
-**Documented figure:** a prior resume records an approximately **35%+ reduction in dashboard load time** from this work (lazy loading to resolve excessive re-renders). Use that figure; do not inflate beyond it.
+**No measured figure exists.** A prior resume claimed "~35%+ load-time reduction," but the user has confirmed (July 2026) that the improvement was **never measured**: the fix was verified by observation ("I fixed it and saw it was working"). The ~35% figure is **retired**; do not use it anywhere. Describe the impact qualitatively: noticeably more responsive, immediately visible to the team.
 
 ---
 
@@ -109,7 +109,7 @@ See also [`../philosophy/engineering.md`](../philosophy/engineering.md).
 
 ## Business Impact
 
-Documented impact: an approximately **35%+ reduction in dashboard load time** (recorded on a prior resume).
+No quantified impact figure exists (see Results above; the previously used ~35% is retired as unmeasured).
 
 Users experienced a **noticeably faster dashboard**. The improvement **increased team confidence**—an existing performance issue was resolved **without introducing instability**. A tolerated pain point became a solved one.
 
@@ -153,7 +153,7 @@ This story works well for questions such as:
 - Tell me about optimizing a React application
 - Tell me about improving user experience
 
-**Suggested framing:** Lead with investigation and ruling out the backend, then the lazy-loading fix and the ~35%+ load-time reduction. Be honest that low-level details aren't all recalled—emphasize process. Mention teammates valued it more than you did—shows humility and user-impact awareness.
+**Suggested framing:** Lead with investigation and ruling out the backend, then the lazy-loading fix and the noticeable responsiveness improvement (rendering grew with item count; the fix deferred non-critical work). Do not cite a percentage; the improvement was never measured. Be honest that low-level details aren't all recalled—emphasize process. Mention teammates valued it more than you did—shows humility and user-impact awareness.
 
 ---
 
@@ -161,12 +161,12 @@ This story works well for questions such as:
 
 Possible bullets—add to [`../resume/bullet-bank.md`](../resume/bullet-bank.md) with `Source:` link to this file:
 
-- Reduced dashboard load time by ~35%+ by implementing lazy loading to resolve excessive re-renders in a production React application.
+- Diagnosed a slow production dashboard whose rendering work grew with the number of items displayed and introduced lazy loading to defer non-critical rendering, making it noticeably more responsive.
 - Diagnosed and resolved frontend rendering bottlenecks that significantly improved dashboard responsiveness in a production React application.
 - Investigated application rendering behavior to identify and eliminate unnecessary React renders without a large architectural rewrite.
 - Improved user experience by optimizing frontend rendering while maintaining a simple and maintainable implementation.
 
-Use only the documented ~35%+ figure; do not invent additional latency percentages or render-count metrics.
+Do not cite any percentage for this work; the improvement was never measured (the old ~35%+ figure is retired).
 
 ---
 
