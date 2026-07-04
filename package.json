@@ -19,6 +19,7 @@
     "verify:fast": "pnpm lint && pnpm typecheck && pnpm test",
     "verify": "pnpm verify:fast && pnpm build",
     "verify:ci": "pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm build",
+    "postinstall": "npm ci --prefix functions",
     "prepare": "husky"
   },
   "devDependencies": {
