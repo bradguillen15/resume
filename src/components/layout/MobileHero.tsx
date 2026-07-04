@@ -9,6 +9,7 @@ import { EmailIcon } from '@/components/icons/EmailIcon';
 import { GitHubIcon } from '@/components/icons/GitHubIcon';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 import { ResumeIcon } from '@/components/icons/ResumeIcon';
+import { ChatSpeechBubble } from '@/components/chat/ChatSpeechBubble';
 
 const [firstName, ...lastNameParts] = resume.name.split(' ');
 const lastName = lastNameParts.join(' ');
@@ -40,7 +41,12 @@ const SOCIAL_LINKS = [
   },
 ] as const;
 
-export const MobileHero = () => (
+interface Props {
+  onOpenChat: () => void;
+  chatOpen: boolean;
+}
+
+export const MobileHero = ({ onOpenChat, chatOpen }: Props) => (
   <div className="xl:hidden overflow-visible border-b border-border bg-bg-secondary px-5 pb-6 pt-8 min-[360px]:px-6 min-[360px]:pt-9 sm:px-8 sm:pt-10">
     <div className="flex items-center gap-3 overflow-visible min-[360px]:gap-5 sm:gap-6">
       <div className="min-w-[min(235px,calc(100%-5.5rem))] flex-1">
@@ -92,6 +98,11 @@ export const MobileHero = () => (
             height={453}
             decoding="async"
             fetchPriority="high"
+          />
+          <ChatSpeechBubble
+            onClick={onOpenChat}
+            hidden={chatOpen}
+            className="top-0 -left-1 max-w-[8.5rem] sm:max-w-[9.5rem]"
           />
         </div>
       </div>

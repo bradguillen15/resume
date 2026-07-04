@@ -20,7 +20,7 @@ _Alternates (rotate by campaign):_
 
 I'm a Senior Software Engineer with ~10 years building production web applications across the frontend and backend. I specialize in **simplifying complex systems** — reducing complexity, removing unnecessary abstractions, and making software easier to maintain and evolve.
 
-Most recently I spent 5+ years at Keller Williams on a large React/TypeScript platform of ~40 micro-frontends, where I owned three of those apps and collaborated across teams. The work I'm proudest of is the kind that leaves a codebase healthier: a compatibility layer that let teams migrate an API independently, replacing a heavyweight Redux data layer with React Query (~40% less boilerplate), consolidating repositories to cut maintenance overhead, and tracing a slow dashboard to its root cause to cut load time 35%+.
+Most recently I spent 5+ years at Keller Williams on a large React/TypeScript platform of ~40 micro-frontends, where I owned three of those apps and collaborated across teams. The work I'm proudest of is the kind that leaves a codebase healthier: a compatibility layer that let teams migrate an API independently, replacing a heavyweight Redux data layer with React Query (substantially less boilerplate), consolidating repositories to cut maintenance overhead, and tracing a slow dashboard to its root cause to make it noticeably faster.
 
 Earlier, I was promoted to Lead Web Developer at Advision, where I led a frontend team of four while staying hands-on across React, Node.js/Express, REST and GraphQL APIs, WebSockets, and AWS Lambda — with my earliest backend roots in Java and Spring Boot.
 
@@ -39,8 +39,8 @@ I'm currently open to remote full-time, contract, and consulting work where I ca
 
 - Owned and maintained 3 of a ~40 micro-frontend platform (user, admin, shared), collaborating cross-team across multiple projects.
 - Single-handedly migrated my application off another team's API V1→V2 (a full response-format redesign), building a transformation/mapping layer that normalized V2 into the existing shape so every call site could move without a risky big-bang rewrite.
-- Led a data-layer migration off Redux to React Query, cutting state-management boilerplate ~40% and improving developer experience.
-- Diagnosed a slow production dashboard as a frontend rendering issue and applied lazy loading, cutting load time ~35%+.
+- Led a data-layer migration off Redux to React Query, substantially cutting state-management boilerplate and improving developer experience.
+- Diagnosed a slow production dashboard as a frontend rendering issue and applied lazy loading, making it noticeably more responsive.
 - Consolidated three repositories into two, reducing deployment and maintenance overhead.
 - Built a configuration-driven banner system so Product could manage banners without engineering cycles.
 - Maintained CI/CD (GitHub Actions, Harness, Spinnaker) and participated in the micro-frontend migration.
@@ -113,6 +113,6 @@ Senior Software Engineer · Senior Full Stack Engineer · AI Software Engineer �
 
 - KW = senior **IC** (no formal-lead claim); Advision Team Lead = the **Lead Web Developer** entry (2020) only.
 - Advision backend = **Node.js**, not Java (Java is First Factory).
-- Only documented metrics: dashboard **~35%+**, Redux **~40%**. No invented user/traffic numbers.
+- No impact percentages: the old ~35% (dashboard) and ~40% (Redux) figures are retired as unmeasured. No invented user/traffic numbers.
 - "Between roles" — do **not** show "Currently at Keller Williams."
 - Keep consistent with the résumé and GitHub profile (one source of truth).

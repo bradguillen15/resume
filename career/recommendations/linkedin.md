@@ -174,7 +174,7 @@ Featured content should **prove credibility quickly**—production work, not scr
 | Frontend architecture (modal→page, micro frontends) | [`../stories/modal-vs-page-decision.md`](../stories/modal-vs-page-decision.md) · [`../experience/keller-williams.md`](../experience/keller-williams.md) |
 | Scope: owned 3 of a ~40 micro-frontend platform (user, admin, shared); cross-team collaboration on multiple projects | [`../experience/keller-williams.md`](../experience/keller-williams.md) |
 | Feature ownership & mentoring (senior **IC**, not a formal lead) | [`../experience/keller-williams.md`](../experience/keller-williams.md) · [`../leadership.md`](../leadership.md) |
-| Quantified wins: dashboard ~35%+ load time; Redux removal ~40% boilerplate | [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) · [`../stories/redux-removal.md`](../stories/redux-removal.md) |
+| Impact described qualitatively; no measured percentages exist (old ~35% and ~40% figures retired) | [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md) · [`../stories/redux-removal.md`](../stories/redux-removal.md) |
 | CI/CD (GitHub Actions, Harness, Spinnaker) | [`../experience/keller-williams.md`](../experience/keller-williams.md) |
 | Cross-team backend collaboration | API migration story; integration layers—not primary backend author |
 

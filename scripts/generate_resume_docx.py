@@ -255,7 +255,7 @@ def build_document() -> Document:
     pr = D.PROJECT
     add_job_header(
         doc,
-        f'<a href="{pr["url"]}">{pr["name"]}</a> — {pr["subtitle"]}',
+        f'<a href="{pr["url"]}">{pr["name"]}</a> · {pr["subtitle"]}',
         f'<a href="{pr["url"]}">{pr["url_display"]}</a>',
     )
     add_rich_paragraph(doc, pr["tech"], size_pt=8.8, color=GRAY, italic=True, space_after_pt=2)

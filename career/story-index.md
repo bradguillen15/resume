@@ -91,8 +91,6 @@ Contains:
 
 **Use** for AI Software Engineer positions, AI-related interviews, and technical writing about AI workflows.
 
-**Redirect:** [`philosophy/ai.md`](philosophy/ai.md) → points here
-
 ---
 
 ### Strengths
@@ -144,7 +142,7 @@ Contains:
 
 **Primary source** for Senior Frontend / Senior Software Engineer (frontend-heavy) experience.
 
-**Related stories:** [Repository consolidation](stories/repository-deprecation.md) · [API migration](stories/api-migration-v1-v2.md) · [Configurable banners](stories/configurable-banner-system.md) · [Modal vs page](stories/modal-vs-page-decision.md) · [Dashboard performance](stories/dashboard-performance.md) · [Data layer migration (Redux removal)](stories/redux-removal.md)
+**Related stories:** [Repository consolidation](stories/repository-deprecation.md) · [API migration](stories/api-migration-v1-v2.md) · [Configurable banners](stories/configurable-banner-system.md) · [Modal vs page](stories/modal-vs-page-decision.md) · [Dashboard performance](stories/dashboard-performance.md) · [Data layer migration (Redux removal)](stories/redux-removal.md) · [Micro frontend migration](stories/microfrontend-migration.md) · [Production debugging workflow](stories/production-debugging-workflow.md)
 
 ---
 
@@ -163,7 +161,7 @@ Contains:
 
 **Primary source** for Full Stack experience.
 
-**Related stories:** [Lambda integration](stories/lambda-wordpress-integration.md) · [CMS migration](stories/react-cms-to-wordpress.md) · [Contractor rescue](stories/contractor-rescue.md)
+**Related stories:** [Lambda integration](stories/lambda-wordpress-integration.md) · [CMS migration](stories/react-cms-to-wordpress.md) · [Contractor rescue](stories/contractor-rescue.md) · [Mentoring junior (React)](stories/mentoring-junior-react.md) · [Team lead burnout](stories/team-lead-burnout.md)
 
 ---
 
@@ -178,6 +176,8 @@ Contains:
 - Enterprise app support (Java 8, JSP, Spring, jQuery)
 
 **Primary source** for professional backend foundation and early tooling work.
+
+**Related stories:** [Greenfield Java API](stories/greenfield-api-lesson.md) (greenfield architecture and honest early-career failure)
 
 ---
 
@@ -236,19 +236,14 @@ Use [`interviews/behavioral.md`](interviews/behavioral.md) for question → stor
 | **Lambda integration** | [`stories/lambda-wordpress-integration.md`](stories/lambda-wordpress-integration.md) | Backend/cloud · implementation leadership · service boundaries |
 | **Modal vs page decision** | [`stories/modal-vs-page-decision.md`](stories/modal-vs-page-decision.md) | Disagreement · collaboration · architecture evolution |
 | **Dashboard performance** | [`stories/dashboard-performance.md`](stories/dashboard-performance.md) | Performance · ownership · root-cause investigation |
-| **Data layer migration (Redux removal)** | [`stories/redux-removal.md`](stories/redux-removal.md) | Architecture · simplification · ~40% boilerplate reduction |
+| **Data layer migration (Redux removal)** | [`stories/redux-removal.md`](stories/redux-removal.md) | Architecture · simplification · major boilerplate reduction |
 | **Contractor rescue** | [`stories/contractor-rescue.md`](stories/contractor-rescue.md) | Ownership under pressure · delivery · responsibility |
 | **CMS migration** | [`stories/react-cms-to-wordpress.md`](stories/react-cms-to-wordpress.md) | Build vs buy · frontend transition · pragmatic modernization |
-
-**Redirect stubs** (do not use—link to canonical files above):
-
-| Old path | Canonical file |
-|----------|----------------|
-| `stories/api-migration.md` | `api-migration-v1-v2.md` |
-| `stories/configurable-banners.md` | `configurable-banner-system.md` |
-| `stories/lambda-wordpress.md` | `lambda-wordpress-integration.md` |
-| `stories/modal-vs-page.md` | `modal-vs-page-decision.md` |
-| `stories/cms-migration.md` | `react-cms-to-wordpress.md` |
+| **Micro frontend migration** | [`stories/microfrontend-migration.md`](stories/microfrontend-migration.md) | Architecture at scale · learning fast · executing org-wide decisions |
+| **Production debugging workflow** | [`stories/production-debugging-workflow.md`](stories/production-debugging-workflow.md) | Production process · debugging discipline · rollback-first (pattern, not a single incident) |
+| **Mentoring junior (React)** | [`stories/mentoring-junior-react.md`](stories/mentoring-junior-react.md) | Mentoring · coaching · seniority |
+| **Team lead burnout** | [`stories/team-lead-burnout.md`](stories/team-lead-burnout.md) | Honest leadership failure · difficult people situation · lessons |
+| **Greenfield Java API** | [`stories/greenfield-api-lesson.md`](stories/greenfield-api-lesson.md) | Early-career failure with consequences · design review · greenfield architecture |
 
 ---
 
@@ -277,6 +272,7 @@ Use [`interviews/behavioral.md`](interviews/behavioral.md) for question → stor
 | [`interviews/ai-software-engineer.md`](interviews/ai-software-engineer.md) | AI-assisted SWE · workflow · context engineering |
 | [`interviews/leadership.md`](interviews/leadership.md) | Leadership interview prep (derived from `leadership.md`) |
 | [`interviews/technical.md`](interviews/technical.md) | Technical interview prep (scaffold) |
+| `interviews/cheatsheets/` | **Local-only** (gitignored) company-specific interview cheat sheets; generate one per company/interview on request. Never commit or publish these. |
 
 ---
 
@@ -285,8 +281,11 @@ Use [`interviews/behavioral.md`](interviews/behavioral.md) for question → stor
 | Document | Purpose |
 |----------|---------|
 | [`learning/2026.md`](learning/2026.md) | Current-year learning goals and progress |
-| [`recommendations/linkedin.md`](recommendations/linkedin.md) | LinkedIn content pointers |
+| [`job-board.md`](job-board.md) | Job boards and search strategy for the 2026 search |
+| [`target-companies.md`](target-companies.md) | Specific companies to apply to directly |
+| [`recommendations/linkedin.md`](recommendations/linkedin.md) | LinkedIn strategy · paste-ready copy in [`linkedin-profile.md`](recommendations/linkedin-profile.md) |
 | [`recommendations/github-profile.md`](recommendations/github-profile.md) | GitHub profile metadata, pins, README strategy |
+| [`recommendations/google-drive-resume.md`](recommendations/google-drive-resume.md) | Workflow for regenerating/uploading the Drive DOCX resume |
 | [`brag-document.md`](brag-document.md) | Living accomplishment log—update monthly/quarterly |
 | [`templates/`](templates/) | Schemas for new experience, project, and story entries |
 | [`README.md`](README.md) | Repository principles and maintenance rules |
@@ -320,7 +319,7 @@ When preparing interview answers:
 - Mention **lessons learned** without sounding rehearsed
 - Rotate stories—see [`interviews/behavioral.md`](interviews/behavioral.md) rotation guide
 - **Challenge undervaluing impact**—straightforward fixes can still have large team/user benefit
-- For gaps marked "not documented" (e.g., production incident story)—ask the user; do not fabricate
+- For gaps marked "not documented" (e.g., a single named production outage, the Python/Flask story): ask the user; do not fabricate
 
 ---
 

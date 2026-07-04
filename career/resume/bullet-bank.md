@@ -85,9 +85,9 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
   - **Source:** [`../experience/first-factory.md`](../experience/first-factory.md), [`../experience/advision.md`](../experience/advision.md)
   - **Tags:** backend, rest-api
 
-- Architected a Java REST API from scratch using Hibernate and Jersey, with JUnit and Mockito test coverage and Selenium-based QA automation.
-  - **Source:** [`../experience/first-factory.md`](../experience/first-factory.md)
-  - **Tags:** backend, java, hibernate, jersey, testing, first-factory
+- Architected the database and a Java REST API from scratch for a greenfield client system, using Hibernate and Jersey with JUnit and Mockito test coverage and Selenium-based QA automation.
+  - **Source:** [`../experience/first-factory.md`](../experience/first-factory.md), [`../stories/greenfield-api-lesson.md`](../stories/greenfield-api-lesson.md)
+  - **Tags:** backend, java, hibernate, jersey, database-design, testing, first-factory
 
 - Built a Yeoman generator that scaffolds full CRUD APIs for Java (Spring Boot) or Node.js from user-selected options, reducing boilerplate for new services.
   - **Source:** [`../experience/first-factory.md`](../experience/first-factory.md)
@@ -193,19 +193,23 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
   - **Source:** [`../stories/api-migration-v1-v2.md`](../stories/api-migration-v1-v2.md), [`../projects/free-slot.md`](../projects/free-slot.md)
   - **Tags:** architecture, abstraction, maintainability
 
-- Led a data layer migration that removed Redux in favor of a more maintainable, performant state-management approach, reducing boilerplate by ~40%.
+- Led a data layer migration that removed Redux in favor of a more maintainable, performant state-management approach, substantially reducing boilerplate.
   - **Source:** [`../stories/redux-removal.md`](../stories/redux-removal.md)
-  - **Tags:** architecture, frontend, state-management, simplification, metrics, keller-williams
+  - **Tags:** architecture, frontend, state-management, simplification, keller-williams
 
 - Reduced state-management complexity and improved developer experience by replacing a heavyweight global store with lighter patterns and React Query for server state.
   - **Source:** [`../stories/redux-removal.md`](../stories/redux-removal.md)
   - **Tags:** architecture, frontend, react-query, maintainability, keller-williams
 
+- Migrated my team's three applications to a micro frontend architecture as part of an organization-wide initiative to remove a shared-library dependency spanning ~40 frontend repositories.
+  - **Source:** [`../stories/microfrontend-migration.md`](../stories/microfrontend-migration.md)
+  - **Tags:** architecture, frontend, micro-frontends, migration, keller-williams
+
 ---
 
 ## Performance
 
-- Reduced dashboard load time by ~35%+ by implementing lazy loading to resolve excessive re-render issues in a production React application.
+- Diagnosed a slow production dashboard whose rendering grew with the number of items displayed and introduced lazy loading to defer non-critical rendering, making it noticeably more responsive.
   - **Source:** [`../stories/dashboard-performance.md`](../stories/dashboard-performance.md)
   - **Tags:** performance, react, metrics, keller-williams
 
@@ -280,6 +284,14 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 - Mentored junior developers through pair programming, code reviews, and architectural discussions.
   - **Source:** [`../experience/advision.md`](../experience/advision.md), [`../experience/keller-williams.md`](../experience/keller-williams.md)
   - **Tags:** leadership, mentoring
+
+- Mentored a recently graduated developer through React fundamentals with sustained hands-on sessions until she was completing tickets independently.
+  - **Source:** [`../stories/mentoring-junior-react.md`](../stories/mentoring-junior-react.md)
+  - **Tags:** leadership, mentoring, react, advision
+
+- Acted as de facto frontend technical lead on a team with no dedicated lead, owning technical decisions and providing recommendations the engineering manager relied on.
+  - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
+  - **Tags:** leadership, ownership, decision-making, keller-williams
 
 - Mentored teammates on features and systems I owned deeply, becoming the primary point of contact for questions and enhancements.
   - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
@@ -440,6 +452,10 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 - Owned end-to-end feature delivery on a small team spanning frontend, backend, infrastructure, and production support.
   - **Source:** [`../experience/advision.md`](../experience/advision.md)
   - **Tags:** ownership, full-stack, advision
+
+- Owned production support for critical features, diagnosing user-reported issues from support tickets and session captures, reproducing locally, and applying rollback-first practice for critical bugs.
+  - **Source:** [`../stories/production-debugging-workflow.md`](../stories/production-debugging-workflow.md)
+  - **Tags:** ownership, production, debugging, keller-williams
 
 ---
 

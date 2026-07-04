@@ -209,7 +209,7 @@ def build_story() -> list:
     pr = D.PROJECT
     story.append(
         _job_header(
-            f'<font color="{accent}"><b>{pr["name"]}</b></font> &mdash; {pr["subtitle"]}',
+            f'<font color="{accent}"><b>{pr["name"]}</b></font> · {pr["subtitle"]}',
             T.linked_url(pr["url"], pr["url_display"], icon_path=LINK_ICON, color=link, icon_size=7),
             st,
             date_style="project_link",

@@ -1,0 +1,3 @@
+echo "▶ Running full verify before push (pnpm verify) — bypass with 'git push --no-verify'"
+
+pnpm verify

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Engineering case study documenting a project I inherited after an external contractor failed to deliver it. This is **not** intended to criticize another engineer—it documents how I evaluated an incomplete implementation, decided to start over, and successfully delivered the feature under time pressure.
+Engineering case study documenting a primary marketing page I **volunteered to complete** after an external contractor failed to deliver it. This is **not** intended to criticize another engineer—it documents how I stepped up when the team was stuck, evaluated an incomplete implementation, decided to start over, and delivered under an event-driven deadline.
 
 Facts live here; resume bullets and interview answers reference this file—they do not duplicate it.
 
@@ -12,11 +12,19 @@ Facts live here; resume bullets and interview answers reference this file—they
 
 ## Context
 
-While working at Advision Development, the company hired an **external contractor** to implement a new **React** page.
+While working at Advision Development, the company hired an **external contractor** to implement a new **React** page for a **sports-betting marketing site**.
 
-The expectation was that the contractor would complete the work independently within **several weeks**. As the deadline approached, it became clear that **very little progress** had actually been made. The page was incomplete and not ready for production.
+The page was a **sportsbook listing**: links, ratings, supporting information, and a **responsive, visual layout**. It was one of the site's **primary marketing pages**—high visibility, not a minor internal screen.
 
-With the delivery date approaching, **I was asked to take ownership** of the project. At that time I was still relatively early in my career. This was one of my first experiences being trusted to recover a delivery at risk—not polish someone else's nearly-done work, but salvage a deadline.
+The expectation was that the contractor would complete the work independently within **several weeks**. As the deadline approached, it became clear that **very little progress** had actually been made. The page was incomplete and not ready for production. The contractor was **no longer with the company** and was not contributing further.
+
+The deadline was tied to **marketing around sporting events**—not an arbitrary internal date. Missing it had real business consequences.
+
+In a meeting with the **PM**, my **Lead**, and **another developer**, the team did not have a clear path forward. The main option on the table was to **postpone the page**. I had already been **reviewing the contractor's branch** and knew what had and had not been done.
+
+**I volunteered to finish it**—something like "I'll do it." My Lead asked whether I was sure; it was a substantial amount of work, and it would likely require **overtime** (which the company paid). I was about **two years into my professional career** at that point—not yet in the Team Lead role. Volunteering in front of the team that way was new for me.
+
+I had **less than a week** before the event-driven deadline.
 
 ---
 
@@ -39,6 +47,7 @@ The central challenge was deciding whether to **continue building on top of the 
 - The feature still needed to satisfy the **original business requirements**
 - There was **not enough time** for lengthy architectural discussions or extended pair-debugging of incomplete contractor code
 - The solution needed to be **reliable and maintainable**—a rushed patch that shipped would still be owned by the team afterward
+- **Overtime was expected** and accepted as part of making the deadline
 
 These constraints favored a decision made quickly and executed cleanly.
 
@@ -46,9 +55,11 @@ These constraints favored a decision made quickly and executed cleanly.
 
 ## Evaluation
 
-Before writing code, I **reviewed the contractor's implementation** to understand its current state.
+I had **already reviewed the contractor's branch** before the meeting and knew the implementation's state with clarity.
 
 After that review, I concluded that **continuing from the existing branch would likely take longer** than rebuilding the page myself. The partial implementation did not provide enough value to justify preserving it—unfinished structure, unclear decisions, and gaps that would require archaeology before productive forward progress.
+
+I **told the team I planned to start fresh**—rebuilding felt like the simpler path, not a hidden decision made after the fact.
 
 | Continue from partial work | Clean rebuild |
 |----------------------------|---------------|
@@ -77,17 +88,19 @@ Using the **approved designs** as guidance, I rebuilt the feature from scratch. 
 
 Rather than spending limited time understanding every incomplete decision left in the contractor branch, I focused on **delivering a clean implementation** the team could maintain.
 
-Specific page purpose, route names, and API contract details are **not documented here** where they are not essential to the story pattern—avoiding fabrication of product specifics not provided in source material.
+I worked **mostly independently**, with my **Lead available for questions** when I was blocked or needed a second opinion. Route names and API contract details beyond the sportsbook-listing scope are **not documented here** where they are not essential to the story pattern.
 
 ---
 
 ## Results
 
-The page was **successfully completed before the delivery deadline**.
+The page was **successfully completed before the event-driven deadline**.
 
-The business received the functionality it expected. The project moved forward **without requiring additional contractor involvement**.
+The business received the functionality it expected. The project moved forward **without requiring additional contractor involvement**. I received **positive feedback from the team and the client**.
 
-The experience also built **personal confidence**: I could quickly understand unfamiliar requirements, make a pragmatic build-vs-rebuild call, and deliver under pressure—skills that mattered more as ownership grew in later roles.
+With paid overtime in the plan, I was confident I could make the deadline—I did not reach a point where I thought delivery would fail.
+
+The experience also built **personal confidence**: volunteering publicly, committing to a hard deadline, and following through—one of my first clear ownership moments early in my career.
 
 No timeline compression metrics (e.g., "saved X weeks") are recorded and none should be invented.
 
@@ -135,6 +148,8 @@ The company **successfully delivered a feature** that otherwise risked missing i
 
 **Ownership means accepting the outcome**, not blaming the handoff. The business needed the feature; the team needed maintainable code; the calendar did not move.
 
+**Deadlines tied to real-world events do not bend.** When marketing depends on a sporting calendar, postponing is sometimes discussed—but someone still has to step up and deliver. That was the lesson I carried forward: take responsibility when the team is stuck, be honest about the cost (overtime, rebuild), and execute.
+
 ---
 
 ## Connection to Engineering Philosophy
@@ -163,7 +178,7 @@ This story is useful for questions such as:
 - Tell me about evaluating whether to rewrite or refactor
 - Tell me about recovering a struggling project
 
-**Suggested framing:** No criticism of the contractor—focus on evaluation criteria, deadline constraints, and delivery risk. Emphasize that rebuild was the pragmatic lower-risk path, not a heroic save. Acknowledge early-career context without underselling the judgment involved.
+**Suggested framing:** No criticism of the contractor—focus on the meeting (team stuck, postpone on the table), volunteering, Lead's "are you sure?" check, rebuild decision communicated upfront, overtime, and event-driven deadline. Emphasize ownership and follow-through, not a heroic save. Early career (~2 years)—first time volunteering publicly in front of the team.
 
 ---
 
@@ -171,7 +186,7 @@ This story is useful for questions such as:
 
 Possible bullets—add to [`../resume/bullet-bank.md`](../resume/bullet-bank.md) with `Source:` link to this file:
 
-- Took ownership of an incomplete React feature after an external contractor failed to deliver, rebuilding the implementation and successfully meeting the project deadline.
+- Volunteered to complete a primary sportsbook-listing page after an external contractor failed to deliver; rebuilt from scratch and met an event-driven marketing deadline with less than a week remaining.
 - Evaluated an unfinished implementation and determined that a clean rebuild would reduce delivery risk and improve maintainability compared to continuing partial work.
 - Delivered production-ready functionality under tight deadlines by rapidly understanding requirements and implementing a complete solution from approved designs.
 

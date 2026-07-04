@@ -1,4 +1,4 @@
-import { lazy, Suspense, useRef, useCallback } from 'react';
+import { lazy, Suspense, useRef, useCallback, useState } from 'react';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Spotlight } from '@/components/cursor/Spotlight';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -15,6 +15,7 @@ import { Reviews } from '@/components/sections/Reviews';
 import { Contact } from '@/components/sections/Contact';
 import { Hobbies } from '@/components/sections/Hobbies';
 import { StackBanner } from '@/components/sections/stack-banner';
+import { ChatPanel } from '@/components/chat/ChatPanel';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { ScrollContext } from '@/context/ScrollContext';
 import { SECTION_IDS } from '@/lib/nav';
@@ -29,6 +30,8 @@ const CustomCursor = lazy(() =>
 export default function App() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const activeSection = useActiveSection(scrollRef, SECTION_IDS);
+  const [chatOpen, setChatOpen] = useState(false);
+  const openChat = useCallback(() => setChatOpen(true), []);
 
   const scrollToSection = useCallback((id: string) => {
     // Desktop: scroll within the right panel container
@@ -61,8 +64,13 @@ export default function App() {
         <Sidebar
           activeSection={activeSection}
           scrollToSection={scrollToSection}
+          onOpenChat={openChat}
+          chatOpen={chatOpen}
         />
       </div>
+
+      {/* AI chat panel — rendered once, state persists across open/close */}
+      <ChatPanel open={chatOpen} onOpenChange={setChatOpen} />
 
       {/* Right panel — scrollable content */}
       <ScrollContext.Provider value={scrollRef}>
@@ -78,7 +86,7 @@ export default function App() {
 
           <StackBanner />
 
-          <MobileHero />
+          <MobileHero onOpenChat={openChat} chatOpen={chatOpen} />
 
           {/* Main sections */}
           <About />

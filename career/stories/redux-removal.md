@@ -38,11 +38,11 @@ The migration was **incremental**, aligned with ongoing delivery rather than a s
 
 ## Results
 
-- **~40% reduction in boilerplate** (figure recorded on a prior resume) for the affected state management code
+- **Substantially less boilerplate** for the affected state-management code (no measured figure; see note below)
 - More **maintainable and performant** data layer—less indirection, clearer feature code, easier onboarding
 - Server state handled by purpose-built tooling rather than hand-rolled global store logic
 
-Use the documented **~40%** figure; do not invent additional metrics.
+**No measured figure exists.** The ~40% previously used on resumes was added for ATS reasons and confirmed as unmeasured by the user (July 2026). The figure is **retired**; describe the reduction qualitatively.
 
 ---
 
@@ -64,13 +64,13 @@ Use the documented **~40%** figure; do not invent additional metrics.
 - Tell me about an architecture decision you led
 - Tell me about simplifying a complex system
 
-**Suggested framing:** Led a data-layer migration off Redux, cut ~40% of boilerplate, and improved maintainability—incrementally, without halting delivery. Pair with the simplification theme that recurs across repository consolidation and the API compatibility layer.
+**Suggested framing:** Led a data-layer migration off Redux, substantially cut boilerplate, and improved maintainability—incrementally, without halting delivery. Pair with the simplification theme that recurs across repository consolidation and the API compatibility layer.
 
 ---
 
 ## Resume Bullet Extraction
 
-- Led a data layer migration that removed Redux in favor of a more maintainable, performant state-management approach, reducing boilerplate by ~40%.
+- Led a data layer migration that removed Redux in favor of a more maintainable, performant state-management approach, substantially reducing boilerplate.
 - Reduced state-management complexity and improved developer experience by replacing a heavyweight global store with lighter patterns and React Query for server state.
 
 ---

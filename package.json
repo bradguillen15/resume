@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build:chat-context": "node scripts/build-chat-context.mjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "build": "tsc && vite build",
@@ -15,6 +16,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
+    "verify:fast": "pnpm lint && pnpm typecheck && pnpm test",
+    "verify": "pnpm verify:fast && pnpm build",
+    "verify:ci": "pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm build",
+    "postinstall": "npm ci --prefix functions",
     "prepare": "husky"
   },
   "devDependencies": {

@@ -12,13 +12,16 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { NAV_LINKS } from '@/lib/nav';
+import { ChatSpeechBubble } from '@/components/chat/ChatSpeechBubble';
 
 interface Props {
   activeSection: string;
   scrollToSection: (id: string) => void;
+  onOpenChat: () => void;
+  chatOpen: boolean;
 }
 
-export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
+export const Sidebar = ({ activeSection, scrollToSection, onOpenChat, chatOpen }: Props) => (
   <aside className="h-screen flex flex-col px-10 xl:px-14 pt-0 pb-6 bg-bg-secondary border-r border-border overflow-hidden">
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -41,6 +44,11 @@ export const Sidebar = ({ activeSection, scrollToSection }: Props) => (
             height={453}
             decoding="async"
             fetchPriority="high"
+          />
+          <ChatSpeechBubble
+            onClick={onOpenChat}
+            hidden={chatOpen}
+            className="top-[4%] left-[calc(50%+2.25rem)]"
           />
         </div>
       </motion.div>

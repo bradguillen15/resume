@@ -25,7 +25,9 @@ This directory is the canonical source of truth for my software engineering care
 | `resume/` | Curated bullet banks and role-specific resume views |
 | `interviews/` | Interview prep organized by category |
 | `learning/` | Yearly learning goals and progress |
-| `recommendations/` | Platform-specific content (e.g. LinkedIn) |
+| `job-board.md` | Job boards and search strategy for the active search |
+| `target-companies.md` | Specific companies to apply to directly |
+| `recommendations/` | Platform-specific content (LinkedIn, GitHub, Drive resume) |
 | `templates/` | Schemas for adding new entries without restructuring |
 
 ## Principles
@@ -38,6 +40,8 @@ This directory is the canonical source of truth for my software engineering care
 ## TODO
 
 - [x] Populate `context.md`
-- [ ] Fill experience, project, and story documents
-- [ ] Establish cross-references between related files
-- [ ] Define a workflow for generating resume views from source material
+- [x] Fill experience, project, and story documents
+- [x] Establish cross-references between related files
+- [x] Define a workflow for generating resume views (`resume/fullstack-version.md` spec + `scripts/resume_data.py` exports)
+- [ ] Populate `interviews/technical.md` (currently a scaffold)
+- [ ] Expand `philosophy/architecture.md` (in progress)

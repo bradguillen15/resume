@@ -149,11 +149,11 @@ Each entry summarizes STAR components. **Full detail lives in linked story files
 
 | STAR | Summary |
 |------|---------|
-| **Situation** | External contractor failed to deliver React page after several weeks; deadline fixed; partial non-functional implementation remained. |
-| **Task** | Deliver production-ready feature before deadline; decide continue vs. rebuild. |
-| **Actions** | Evaluated partial work objectively; chose clean rebuild from approved designs; implemented page, data integration, validation; focused on delivery over archaeology of incomplete code. |
-| **Result** | Feature shipped before deadline; maintainable implementation team owned. **Not a personal failure story—organizational recovery.** |
-| **Lessons** | Inherited code deserves objective evaluation; rewrite is sometimes lower risk than repair under deadline pressure. |
+| **Situation** | Sports-betting marketing site; contractor failed to deliver primary sportsbook-listing React page after several weeks; event-driven deadline; contractor gone; meeting with PM, Lead, another dev—postpone was the main option. |
+| **Task** | Volunteer to finish; deliver before sporting-event deadline with less than a week left; decide continue vs. rebuild. |
+| **Actions** | Had already reviewed contractor branch; volunteered ("I'll do it"); Lead confirmed commitment (overtime); told team rebuild was simpler; implemented visual responsive page mostly solo; Lead helped with questions. |
+| **Result** | Shipped on time; positive team and client feedback; maintainable implementation. **Volunteered ownership—early career (~2 years).** |
+| **Lessons** | Event deadlines don't bend; step up when team is stuck; inherited code deserves objective evaluation; rewrite can be lower risk than repair. |
 
 **Competencies:** Ownership · Execution · Delivery · Judgment · Pressure
 
@@ -237,6 +237,102 @@ Each entry summarizes STAR components. **Full detail lives in linked story files
 
 ---
 
+### Micro Frontend Migration
+
+**Source:** [`../stories/microfrontend-migration.md`](../stories/microfrontend-migration.md) · **Employer:** Keller Williams
+
+| STAR | Summary |
+|------|---------|
+| **Situation** | Shared shell library was a dependency of ~40 frontend repositories; every shell update forced coordinated package bumps and re-releases across all of them (dependency hell). |
+| **Task** | Organization made a staff-level decision to adopt micro frontends; execute the migration for the three repositories my team owned without destabilizing production. |
+| **Actions** | Migrated all three owned applications onto the micro frontend model; learned the architecture (exposure, composition, independent deployment) while executing. |
+| **Result** | Team's applications shipped independently; shell updates stopped fanning out into dozens of releases. **No quantified metrics documented.** |
+| **Lessons** | Shared libraries have a scaling ceiling; executing others' decisions well is a skill; migrations are learning accelerators. |
+
+**Competencies:** Architecture at scale · Execution · Learning quickly · Micro frontends
+
+**Strong for:** Architecture at scale · Learning new technology under constraints · Executing a decision you didn't make
+
+**Honest scope:** The decision was organizational; my contribution was executing my team's three repositories.
+
+---
+
+### Production Debugging Workflow (Supplementary)
+
+**Source:** [`../stories/production-debugging-workflow.md`](../stories/production-debugging-workflow.md) · **Employer:** Keller Williams
+
+| STAR | Summary |
+|------|---------|
+| **Situation** | Production bugs arrived as Zendesk tickets, usually with a user session capture attached. |
+| **Task** | Diagnose and resolve production issues for owned features; keep users unblocked. |
+| **Actions** | Investigated session data; narrowed down errors; reproduced locally following user steps when needed; for critical bugs, rolled back first, then fixed and redeployed ASAP. |
+| **Result** | Fast restoration on critical failures; tight feedback loop into how features were built. **A workflow pattern, not a single incident: do not invent a specific outage.** |
+| **Lessons** | Restore first, diagnose second; session data shortens diagnosis; production support is part of ownership. |
+
+**Competencies:** Debugging · Production discipline · Ownership
+
+**Strong for:** How do you handle production bugs · Debugging process · Speed vs. safety
+
+---
+
+### Mentoring a Junior Through React Fundamentals
+
+**Source:** [`../stories/mentoring-junior-react.md`](../stories/mentoring-junior-react.md) · **Employer:** Advision
+
+| STAR | Summary |
+|------|---------|
+| **Situation** | Recent graduate on the team struggled with React fundamentals; completing tickets was a real challenge for her. |
+| **Task** | As the most experienced React developer, make her productive and self-sufficient. |
+| **Actions** | Sat with her most evenings teaching React fundamentals (components, props, state, rendering); taught the model, not the ticket; sustained investment over time. |
+| **Result** | She grasped the fundamentals and started completing tickets independently. **No timeline metrics documented.** |
+| **Lessons** | Consistent short sessions beat one-off explanations; teach the model, not the ticket; mentoring is a seniority obligation. |
+
+**Competencies:** Mentoring · Patience · Seniority · Teaching
+
+**Strong for:** Mentoring/coaching · Helping someone grow · What seniority means
+
+---
+
+### Team Lead Burnout (Failure Story)
+
+**Source:** [`../stories/team-lead-burnout.md`](../stories/team-lead-burnout.md) · **Employer:** Advision (Lead period, 2020)
+
+| STAR | Summary |
+|------|---------|
+| **Situation** | Most senior developer on my team of 4 (after me) was capable and delivering, but did not want the senior/lead track; the company's PM and culture expected more from him. |
+| **Task** | As a first-time lead, balance stakeholder expectations against the developer's honest preferences. |
+| **Actions** | Handled it badly: kept pushing him toward a role he did not want, did not push back upward, did not protect the working arrangement; lacked the soft skills at the time. |
+| **Result** | He burned out and quit; we have not spoken since. The experience soured me on formal lead roles for a while. |
+| **Lessons** | Meet people where they are; retention is a leadership outcome; a lead absorbs pressure downward selectively; soft skills are learned skills. |
+
+**Competencies:** Leadership (failure) · Self-awareness · People judgment
+
+**Strong for:** Biggest failure · Difficult team situation · What would you do differently as a leader
+
+**Avoid:** Blaming the developer; venting about company culture; pretending the outcome was fine.
+
+---
+
+### Greenfield Java API (Early-Career Failure)
+
+**Source:** [`../stories/greenfield-api-lesson.md`](../stories/greenfield-api-lesson.md) · **Employer:** First Factory
+
+| STAR | Summary |
+|------|---------|
+| **Situation** | Junior engineer assigned to start a new system for a US client; responsible for architecting the database and REST API; senior supervisor was largely hands-off. |
+| **Task** | Design and deliver the system's foundation (schema, API) essentially unsupervised. |
+| **Actions** | Designed and built the database and Java REST API (Hibernate, Jersey); made architectural mistakes without an engaged reviewer; did not insist on design review. |
+| **Result** | The team was eventually removed from the client engagement; I believe my wrong decisions contributed. **Specific wrong decisions are not remembered; do not reconstruct them.** |
+| **Lessons** | Ask for design review early and explicitly; foundational decisions deserve disproportionate scrutiny; supervision that never intervenes is not mentorship. |
+
+**Competencies:** Architecture (early) · Honesty · Growth from failure
+
+**Strong for:** Biggest mistake · Failure with real consequences · Why design review matters to me
+
+**Avoid:** Blaming the senior colleague; inventing the specific technical mistakes.
+
+---
+
 ## Story Rotation Guide
 
 Avoid using the same story for every answer in one interview session.
@@ -252,6 +348,11 @@ Avoid using the same story for every answer in one interview session.
 | Modal vs. page | Disagreement, collaboration, product | Already used for "influence" |
 | CMS migration | Build vs. buy, pragmatism | Legacy, modernization |
 | Free Slot AI | AI workflow, judgment | AI-specific questions only |
+| Micro frontend migration | Architecture at scale, learning fast, execution | Already used for "architecture" |
+| Production debugging workflow | Production process, debugging discipline | Process questions only (not a single incident) |
+| Mentoring junior (React) | Mentoring, coaching, seniority | Mentoring questions only |
+| Team lead burnout | Failure, difficult people situation, leadership lessons | Use once per interview; it is heavy |
+| Greenfield API | Early failure with consequences, design review | Already used for "failure" |
 
 ---
 
@@ -279,6 +380,30 @@ For each: **recommended stories**, **important points**, **mistakes to avoid**.
 
 ---
 
+### Why did you leave Keller Williams?
+
+**Honest answer (keep it brief and neutral):**
+
+> I was laid off in April 2026 when Keller Williams restructured and ended all of its independent contractor engagements; my role was structured that way. It wasn't performance-related. Since then I've been shipping personal projects and doing structured coursework while interviewing, so the time has been continuous building, not a gap.
+
+**Important points:** State it plainly and move on; do not over-explain or apologize. Pivot quickly to what you have built since (Free Slot, portfolio, AI chat feature, coursework in [`../learning/2026.md`](../learning/2026.md)).
+
+**Avoid:** Bitterness about the restructuring; vagueness that sounds like hiding something; calling it a "gap."
+
+**Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
+
+---
+
+### Why isn't your degree finished? / What were you doing in 2015?
+
+**Degree (Computer Engineering, ~90%):** Only the final research project is missing. Once I started working full-time, the career took priority over that last requirement. State it plainly; never claim a conferred degree.
+
+**2015 gap (between FPT internship and First Factory):** I finished my technical degree, started Computer Engineering at ULACIT, and job hunted. The first round of applications didn't land a role, so I kept studying; when I felt ready I applied again and got First Factory in May 2016. Frame it as education, not idleness.
+
+**Source:** [`../resume/master-resume.md`](../resume/master-resume.md) (Education)
+
+---
+
 ### Biggest technical challenge
 
 **Primary stories (pick one):**
@@ -296,18 +421,22 @@ For each: **recommended stories**, **important points**, **mistakes to avoid**.
 
 ### Biggest failure / Tell me about a mistake
 
-**⚠️ Not yet documented:** No production incident, rollback, or outage story exists in the career knowledge base. **Do not fabricate** rollback, RCA, or outage narratives.
+**Two documented, honest failure stories now exist. Prefer these:**
 
-**Until documented, use one of these honest approaches:**
+1. **Team lead burnout** ([`../stories/team-lead-burnout.md`](../stories/team-lead-burnout.md)): best for people/leadership failure. As a first-time lead I mishandled a capable developer who did not want the senior track; he burned out and quit. Strongest when the role involves leading or mentoring.
+2. **Greenfield Java API** ([`../stories/greenfield-api-lesson.md`](../stories/greenfield-api-lesson.md)): best for technical/judgment failure with real consequences. Early-career architecture mistakes made without insisting on design review contributed to losing a client engagement. Strongest for "mistake that changed how you work."
+
+**Pick by interview type:** leadership-flavored question → burnout story; technical-flavored question → greenfield API. Both end with a concrete behavior change, which is what the question is really asking for.
+
+**Backup framings (if both stories are already used):**
 
 | Approach | Story / framing |
 |----------|-----------------|
-| **Learning from early direction** | Modal vs. page — team tried modal; requirements evolved; adapted collectively (not personal failure, shows humility) |
+| **Learning from early direction** | Modal vs. page — team tried modal; requirements evolved; adapted collectively |
 | **Calibration weakness** | Undervaluing own impact (dashboard fix felt "normal" but mattered to team) |
 | **Judgment trade-off** | Times maintainability investment exceeded what deadline required—learned to balance ([Weaknesses](#weaknesses)) |
-| **Organizational context** | Contractor rescue — inherited failure, focus on evaluation and delivery (not your mistake) |
 
-**When user adds a production incident story:** Document in `../stories/` first, then add STAR entry here.
+**Production incidents:** the debugging/rollback **workflow** is documented ([`../stories/production-debugging-workflow.md`](../stories/production-debugging-workflow.md)), but no single named outage story exists. **Do not fabricate** a specific outage or RCA narrative.
 
 **Avoid:** "I can't think of any failure"; inventing outages; blaming others
 
@@ -339,7 +468,9 @@ For each: **recommended stories**, **important points**, **mistakes to avoid**.
 2. **Repository consolidation** — drove simplification initiative
 3. **Configurable banners** — unprompted proposal
 4. **Feature ownership at KW** — informal go-to for owned systems
-5. **Mentoring** — Advision juniors; KW teammates on owned features
+5. **Mentoring** — Advision juniors ([`../stories/mentoring-junior-react.md`](../stories/mentoring-junior-react.md)); KW teammates on owned features
+6. **Leadership failure**: when asked about hard leadership lessons, use [`../stories/team-lead-burnout.md`](../stories/team-lead-burnout.md)
+7. **De facto lead at KW**: the team never had a dedicated tech lead; I took ownership of technical decisions, with my manager typically asking "what is your recommendation?"
 
 **Important points:** Not a people manager; leadership through **ownership**, **mentoring**, **technical clarity**, **initiative**
 
@@ -415,7 +546,7 @@ For each: **recommended stories**, **important points**, **mistakes to avoid**.
 
 ### Tell me about a time you learned something quickly
 
-**Primary stories:** Dashboard performance (new to codebase) · Contractor rescue (rapid requirements → delivery) · First Factory professional transition
+**Primary stories:** Micro frontend migration (learned the architecture while executing it) · Dashboard performance (new to codebase) · Contractor rescue (rapid requirements → delivery) · First Factory professional transition
 
 ---
 
@@ -465,7 +596,7 @@ Use with **specific story evidence**—not as unsupported adjectives.
 
 3. **Specialization perception** — Recent years are frontend-heavy; I actively reinforce backend narrative with Advision/First Factory evidence and full-stack projects so others don't pigeonhole me.
 
-**Not yet documented:** Specific failure with production incident—add to stories when ready.
+**Documented failure stories:** [`../stories/team-lead-burnout.md`](../stories/team-lead-burnout.md) (people/leadership) and [`../stories/greenfield-api-lesson.md`](../stories/greenfield-api-lesson.md) (technical judgment). A single named production outage remains undocumented; the workflow is in [`../stories/production-debugging-workflow.md`](../stories/production-debugging-workflow.md).
 
 ---
 
@@ -500,8 +631,9 @@ The best engineers often **remove complexity** instead of adding it.
 
 | Gap | Action |
 |-----|--------|
-| Production incident / failure story | Add to `../stories/` when user documents one |
-| Formal conflict with peer | No dedicated story—use modal vs. page or cross-team API friction honestly |
+| Single named production incident (specific outage + RCA) | Workflow documented in [`../stories/production-debugging-workflow.md`](../stories/production-debugging-workflow.md); add one concrete incident when recalled |
+| Formal conflict with peer | No dedicated story; use modal vs. page, cross-team API friction, or team-lead burnout honestly |
+| ~~Python / Flask story~~ | Resolved: a couple of months of maintenance on a Flask service, resume keyword only, not story-worthy (see [`../experience/first-factory.md`](../experience/first-factory.md)) |
 
 ---
 
