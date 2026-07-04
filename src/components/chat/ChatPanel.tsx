@@ -69,9 +69,9 @@ export const ChatPanel = ({ open, onOpenChange }: Props) => {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 12, scale: 0.98 }}
           transition={{ duration: 0.22, ease: 'easeOut' }}
-          className="fixed bottom-4 right-4 z-50 flex w-[min(400px,calc(100vw-2rem))] h-[min(75dvh,640px)] flex-col overflow-hidden rounded-2xl border border-border-strong bg-bg-secondary shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:bottom-6 sm:right-6"
+          className="fixed inset-0 z-[60] flex h-[100dvh] w-full flex-col overflow-hidden bg-bg-secondary sm:inset-auto sm:bottom-6 sm:right-6 sm:h-[min(75dvh,640px)] sm:w-[min(400px,calc(100vw-2rem))] sm:rounded-2xl sm:border sm:border-border-strong sm:shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
         >
-          <header className="flex shrink-0 items-start justify-between gap-3 border-b border-border px-4 py-3">
+          <header className="flex shrink-0 items-start justify-between gap-3 border-b border-border px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
             <div className="min-w-0">
               <h2 className="text-[14px] font-medium text-text-primary">AI Brad</h2>
               <p className="mt-0.5 text-[11px] leading-[1.45] text-text-muted">
@@ -85,7 +85,7 @@ export const ChatPanel = ({ open, onOpenChange }: Props) => {
               aria-label="Close chat"
               className="shrink-0 rounded-md p-1 text-text-muted transition-colors duration-200 hover:bg-bg-hover hover:text-text-primary cursor-pointer"
             >
-              <X className="h-4 w-4" />
+              <X className="h-5 w-5 sm:h-4 sm:w-4" />
             </button>
           </header>
 
@@ -162,7 +162,7 @@ export const ChatPanel = ({ open, onOpenChange }: Props) => {
               e.preventDefault();
               handleSend(input);
             }}
-            className="flex shrink-0 items-end gap-2 border-t border-border p-3"
+            className="flex shrink-0 items-end gap-2 border-t border-border p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
           >
             <textarea
               ref={inputRef}
