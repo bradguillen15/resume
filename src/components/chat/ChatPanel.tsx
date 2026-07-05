@@ -41,7 +41,30 @@ export const ChatPanel = ({ open, onOpenChange }: Props) => {
   }, [messages]);
 
   useEffect(() => {
-    if (open) inputRef.current?.focus();
+    if (!open) return;
+    // On mobile the panel is fullscreen; auto-focusing pops the keyboard
+    // immediately and covers half the chat, so only do it on the desktop
+    // floating widget (sm breakpoint and up).
+    if (window.matchMedia('(min-width: 640px)').matches) {
+      inputRef.current?.focus();
+    }
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const scrollY = window.scrollY;
+    const { style } = document.body;
+    style.position = 'fixed';
+    style.top = `-${scrollY}px`;
+    style.left = '0';
+    style.right = '0';
+    return () => {
+      style.position = '';
+      style.top = '';
+      style.left = '';
+      style.right = '';
+      window.scrollTo(0, scrollY);
+    };
   }, [open]);
 
   useEffect(() => {
