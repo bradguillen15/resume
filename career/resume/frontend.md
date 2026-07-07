@@ -34,10 +34,10 @@ Known for frontend architecture, incremental modernization, and reducing unneces
 
 **Senior Software Engineer** · Nov 2020 – Apr 2026
 
-Built and maintained large-scale React applications in TypeScript serving production users in a long-lived codebase. Grew from frontend engineer into senior ownership of critical product areas—architecture discussions, cross-team API integration, CI/CD pipeline support, and production quality—not UI implementation alone.
+Built and maintained large-scale React and Next.js applications in TypeScript serving production users in a long-lived codebase. Grew from frontend engineer into senior ownership of critical product areas—architecture discussions, cross-team API integration, CI/CD pipeline support, and production quality—not UI implementation alone.
 
 - Owned complex frontend features from design collaboration through production deployment and long-term maintenance, becoming the primary point of contact for questions, bugs, and enhancements on those systems.
-- Developed complex user interfaces using React, TypeScript, Redux, and React Query while improving maintainability through refactoring, consolidation, and removal of repetitive patterns.
+- Developed complex user interfaces using React, Next.js, TypeScript, Redux, and React Query while improving maintainability through refactoring, consolidation, and removal of repetitive patterns.
 - Led a data-layer migration off Redux to a lighter, more maintainable approach (React Query for server state), substantially reducing state-management boilerplate and improving developer experience.
 - Diagnosed a slow production dashboard as a frontend rendering issue and applied lazy loading to make it noticeably more responsive, tracing render behavior before optimizing.
 - Led frontend implementation of a cross-team API migration by introducing a compatibility layer that isolated V2 contract changes from application consumers, coordinating with an external backend engineering team.
@@ -109,7 +109,7 @@ Live production site (React 19, TypeScript, Vite, Tailwind, Firebase) with autom
 
 ## Education
 
-- **Computer Engineering** — ULACIT (2015, ~90% completed)
+- **Computer Engineering** — ULACIT (2015 – Present, ~90% completed)
 - **Middle Technician in Software Development** — Colegio Técnico Carlos Luis Fallas (2012–2014)
 
 ## Languages

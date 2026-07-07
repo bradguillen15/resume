@@ -1,4 +1,4 @@
-interface ExperienceRole {
+export interface ExperienceRole {
   role: string;
   period: string;
   duration: string;
@@ -6,7 +6,7 @@ interface ExperienceRole {
   highlights: string[];
 }
 
-interface ExperienceEntry {
+export interface ExperienceEntry {
   id: string;
   role: string;
   company: string;
@@ -21,7 +21,75 @@ interface ExperienceEntry {
   tags: string[];
 }
 
-export const resume = {
+export interface Skill {
+  name: string;
+  years: number;
+  level: number;
+}
+
+export interface SkillGroup {
+  category: string;
+  items: Skill[];
+}
+
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  tags: string[];
+  status: string;
+  github: string;
+  live: string | null;
+  image: string | null;
+  gallery?: string[];
+  visible: boolean;
+}
+
+export interface Certification {
+  name: string;
+  issuer: string;
+  date: string | null;
+  url: string;
+}
+
+export interface CertificationGroup {
+  group: string;
+  items: Certification[];
+}
+
+export interface Education {
+  degree: string;
+  school: string;
+  year: string;
+  note: string;
+}
+
+export interface Language {
+  lang: string;
+  level: string;
+}
+
+export interface Resume {
+  name: string;
+  title: string;
+  aboutSummary: string;
+  aboutContext: string;
+  hobbies: string[];
+  location: string;
+  email: string;
+  phone: string;
+  linkedin: string;
+  github: string;
+  resumeUrl: string;
+  experience: ExperienceEntry[];
+  skills: SkillGroup[];
+  projects: Project[];
+  certifications: CertificationGroup[];
+  education: Education[];
+  languages: Language[];
+}
+
+export const resume: Resume = {
   name: 'Brad Guillen',
   title: 'Senior Software Engineer',
   aboutSummary:
@@ -142,7 +210,7 @@ export const resume = {
       roles: null,
       tags: ['JavaScript', 'C#', 'SQL', 'SharePoint'],
     },
-  ] as ExperienceEntry[],
+  ],
 
   skills: [
     {

@@ -5,41 +5,11 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { EmailIcon } from '@/components/icons/EmailIcon';
-import { GitHubIcon } from '@/components/icons/GitHubIcon';
-import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
-import { ResumeIcon } from '@/components/icons/ResumeIcon';
+import { SOCIAL_LINKS } from '@/lib/socialLinks';
 import { ChatSpeechBubble } from '@/components/chat/ChatSpeechBubble';
 
 const [firstName, ...lastNameParts] = resume.name.split(' ');
 const lastName = lastNameParts.join(' ');
-
-const SOCIAL_LINKS = [
-  {
-    href: `https://${resume.github}`,
-    label: 'GitHub',
-    icon: GitHubIcon,
-    external: true,
-  },
-  {
-    href: `https://${resume.linkedin}`,
-    label: 'LinkedIn',
-    icon: LinkedInIcon,
-    external: true,
-  },
-  {
-    href: `mailto:${resume.email}`,
-    label: 'Email',
-    icon: EmailIcon,
-    external: false,
-  },
-  {
-    href: resume.resumeUrl,
-    label: 'Resume',
-    icon: ResumeIcon,
-    external: true,
-  },
-] as const;
 
 interface Props {
   onOpenChat: () => void;
