@@ -15,6 +15,7 @@
     "deploy:firebase": "pnpm build && firebase deploy",
     "pretest": "pnpm build:chat-context",
     "test": "vitest run",
+    "pretest:watch": "pnpm build:chat-context",
     "test:watch": "vitest",
     "pretest:coverage": "pnpm build:chat-context",
     "test:coverage": "vitest run --coverage",
