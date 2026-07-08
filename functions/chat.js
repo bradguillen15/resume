@@ -19,7 +19,7 @@ const {
   MAX_MESSAGE_LENGTH,
   MAX_TOTAL_LENGTH,
   HISTORY_SENT: HISTORY_SENT_TO_MODEL,
-} = require("../shared/chatLimits.json");
+} = require("./chatLimits.json");
 
 const CHAT_RATE_OPTS = {
   maxPerWindow: 20,

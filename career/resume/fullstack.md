@@ -122,7 +122,7 @@ Recurring engineering themes across roles and projects—the throughline behind 
 
 ## Education
 
-- **Computer Engineering** — ULACIT (2015 – Present, ~90% completed)
+- **Computer Engineering**: ULACIT (2015 – Present, ~90% completed)
 - **Middle Technician in Software Development** — Colegio Técnico Carlos Luis Fallas (2012–2014)
 
 ## Languages

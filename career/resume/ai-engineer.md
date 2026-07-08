@@ -115,7 +115,7 @@ Live site at bradguillen.com (React 19, Firebase, GitHub Actions) evolving into 
 
 ### Education & Languages
 
-- **Computer Engineering** — ULACIT (2015 – Present, ~90% completed) · **Middle Technician in Software Development** — Colegio Técnico Carlos Luis Fallas (2012–2014)
+- **Computer Engineering**: ULACIT (2015 – Present, ~90% completed) · **Middle Technician in Software Development**: Colegio Técnico Carlos Luis Fallas (2012–2014)
 - **Languages:** Spanish (native) · English (C1)
 
 ### What this resume is not

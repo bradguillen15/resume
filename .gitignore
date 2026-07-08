@@ -20,6 +20,7 @@ coverage
 exports/
 scripts/__pycache__/
 functions/chat-context.md
+functions/chatLimits.json
 
 # Local-only interview cheat sheets (keep README, ignore contents)
 career/interviews/cheatsheets/*

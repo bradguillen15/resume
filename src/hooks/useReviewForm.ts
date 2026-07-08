@@ -57,6 +57,7 @@ export function useReviewForm() {
         });
         setSubmitStatus('success');
         form.reset();
+        if (successTimerRef.current !== null) clearTimeout(successTimerRef.current);
         successTimerRef.current = setTimeout(() => setSubmitStatus('idle'), 4000);
       } catch (err: unknown) {
         setSubmitStatus('error');

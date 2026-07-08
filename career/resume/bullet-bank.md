@@ -27,7 +27,7 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 
 - Developed complex user interfaces using React, Next.js, TypeScript, Redux, and React Query in a long-lived production codebase.
   - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
-  - **Tags:** frontend, react, typescript, state-management
+  - **Tags:** frontend, react, nextjs, typescript, state-management
 
 - Built React frontends and user flows as part of full-stack delivery at Advision Development.
   - **Source:** [`../experience/advision.md`](../experience/advision.md)

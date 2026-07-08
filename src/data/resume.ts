@@ -38,7 +38,7 @@ export interface Project {
   description: string;
   tags: string[];
   status: string;
-  github: string;
+  github: string | null;
   live: string | null;
   image: string | null;
   gallery?: string[];
