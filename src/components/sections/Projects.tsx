@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { resume } from '@/data/resume';
+import { resume, type Project } from '@/data/resume';
 import { cn } from '@/lib/utils';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Tag } from '@/components/ui/Tag';
 import { ExternalLinkIcon } from '@/components/ui/ExternalLinkIcon';
 import { Card, CardContent } from '@/components/ui/card';
 
-type ProjectEntry = (typeof resume.projects)[number];
+type ProjectEntry = Project;
 
 const CAROUSEL_AUTO_MS = 4000;
 const CAROUSEL_FADE_S = 0.85;

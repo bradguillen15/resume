@@ -21,13 +21,13 @@ Every bullet is based on real work documented in [`../experience/`](../experienc
 
 ## Frontend Engineering
 
-- Built and maintained large-scale React applications in TypeScript serving production users at Keller Williams.
+- Built and maintained large-scale React and Next.js applications in TypeScript serving production users at Keller Williams.
   - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
-  - **Tags:** frontend, react, typescript, keller-williams
+  - **Tags:** frontend, react, nextjs, typescript, keller-williams
 
-- Developed complex user interfaces using React, TypeScript, Redux, and React Query in a long-lived production codebase.
+- Developed complex user interfaces using React, Next.js, TypeScript, Redux, and React Query in a long-lived production codebase.
   - **Source:** [`../experience/keller-williams.md`](../experience/keller-williams.md)
-  - **Tags:** frontend, react, typescript, state-management
+  - **Tags:** frontend, react, nextjs, typescript, state-management
 
 - Built React frontends and user flows as part of full-stack delivery at Advision Development.
   - **Source:** [`../experience/advision.md`](../experience/advision.md)

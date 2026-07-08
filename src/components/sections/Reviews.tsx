@@ -1,34 +1,17 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useEffect, useRef, useLayoutEffect } from 'react';
-import {
-  collection,
-  query,
-  where,
-  orderBy,
-  limit,
-  getDocs,
-  Timestamp,
-} from 'firebase/firestore';
 import { Plus, X } from 'lucide-react';
 import { SectionLabel } from '@/components/ui/SectionLabel';
-import { db, submitReviewFn } from '@/lib/firebase';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 import { cn } from '@/lib/utils';
 import { inputClasses } from '@/lib/inputClasses';
-import { parseLinkedInUrl } from '@/lib/parseLinkedInUrl';
-
-interface Review {
-  id: string;
-  name: string;
-  role: string;
-  message: string;
-  date: string;
-  linkedInUrl: string;
-}
-
-const REVIEWS_LIMIT = 50;
+import type { Review } from '@/lib/reviews';
+import { useReviews } from '@/hooks/useReviews';
+import { useReviewForm } from '@/hooks/useReviewForm';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { BREAKPOINT_LG } from '@/lib/breakpoints';
 
 const REVIEW_EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -204,74 +187,20 @@ function ReviewCard(props: { review: Review; index: number }) {
 }
 
 export const Reviews = () => {
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [role, setRole] = useState('');
-  const [message, setMessage] = useState('');
-  const [linkedInInput, setLinkedInInput] = useState('');
-  const [submitStatus, setSubmitStatus] = useState<
-    'idle' | 'sending' | 'success' | 'error'
-  >('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  const { reviews, loading } = useReviews();
+  const { form, submitStatus, errorMessage } = useReviewForm();
   const formColumnRef = useRef<HTMLDivElement>(null);
-  const successTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isLargeScreen = useMediaQuery(BREAKPOINT_LG);
   const [reviewsMaxHeightPx, setReviewsMaxHeightPx] = useState<
     number | undefined
   >(undefined);
-
-  useEffect(() => {
-    return () => {
-      if (successTimerRef.current !== null) clearTimeout(successTimerRef.current);
-    };
-  }, []);
-
-  useEffect(() => {
-    const loadReviews = async () => {
-      try {
-        const q = query(
-          collection(db, 'reviews'),
-          where('status', '==', 'approved'),
-          orderBy('createdAt', 'desc'),
-          limit(REVIEWS_LIMIT),
-        );
-        const snap = await getDocs(q);
-        const list: Review[] = snap.docs.map(doc => {
-          const d = doc.data();
-          const createdAt = d.createdAt as Timestamp | undefined;
-          return {
-            id: doc.id,
-            name: d.name ?? '',
-            role: d.role ?? '',
-            message: d.message ?? '',
-            date:
-              d.date ??
-              (createdAt
-                ? new Date(createdAt.toMillis()).toLocaleDateString('en-US', {
-                    month: 'short',
-                    year: 'numeric',
-                  })
-                : ''),
-            linkedInUrl: typeof d.linkedInUrl === 'string' ? d.linkedInUrl : '',
-          };
-        });
-        setReviews(list);
-      } catch {
-        setReviews([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-    loadReviews();
-  }, []);
 
   useEffect(() => {
     const el = formColumnRef.current;
     if (!el) return;
 
     const syncHeight = () => {
-      if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
+      if (isLargeScreen) {
         setReviewsMaxHeightPx(el.getBoundingClientRect().height);
       } else {
         setReviewsMaxHeightPx(undefined);
@@ -282,65 +211,13 @@ export const Reviews = () => {
     ro.observe(el);
     syncHeight();
     return () => ro.disconnect();
-  }, []);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (
-      !name.trim() ||
-      !email.trim() ||
-      !role.trim() ||
-      !message.trim() ||
-      !linkedInInput.trim()
-    )
-      return;
-
-    const linkedNormalized = parseLinkedInUrl(linkedInInput);
-    if (!linkedNormalized) {
-      setSubmitStatus('error');
-      setErrorMessage(
-        'Enter a valid LinkedIn profile URL (e.g. linkedin.com/in/your-profile).',
-      );
-      return;
-    }
-
-    setSubmitStatus('sending');
-    setErrorMessage('');
-    try {
-      await submitReviewFn({
-        name: name.trim(),
-        email: email.trim(),
-        role: role.trim(),
-        message: message.trim(),
-        linkedInUrl: linkedNormalized,
-      });
-      setSubmitStatus('success');
-      setName('');
-      setEmail('');
-      setRole('');
-      setMessage('');
-      setLinkedInInput('');
-      successTimerRef.current = setTimeout(() => setSubmitStatus('idle'), 4000);
-    } catch (err: unknown) {
-      setSubmitStatus('error');
-      const msg =
-        err && typeof err === 'object' && 'message' in err
-          ? String((err as { message: unknown }).message)
-          : '';
-      if (msg.includes('Demasiados')) {
-        setErrorMessage('Demasiados envíos. Intenta de nuevo en 1 hora.');
-      } else {
-        setErrorMessage('No se pudo enviar. Intenta de nuevo.');
-      }
-    }
-  };
+  }, [isLargeScreen]);
 
   return (
     <section id="reviews" className="px-6 sm:px-8 lg:px-12 py-20 lg:py-[120px]">
       <SectionLabel number="05" label="Reviews" />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-        {/* Form column */}
         <div ref={formColumnRef}>
           <h2 className="font-display text-[26px] sm:text-[28px] font-semibold leading-[1.2] mb-3 text-text-primary">
             Leave a <span className="text-accent">review</span>
@@ -350,44 +227,75 @@ export const Reviews = () => {
             so visitors can verify your recommendation.
           </p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-            <input
-              placeholder="Your name"
-              value={name}
-              onChange={e => setName(e.target.value)}
-              required
-              className={inputClasses}
+          <form
+            onSubmit={e => {
+              e.preventDefault();
+              form.handleSubmit();
+            }}
+            className="flex flex-col gap-3"
+          >
+            <form.Field
+              name="name"
+              children={field => (
+                <input
+                  placeholder="Your name"
+                  value={field.state.value}
+                  onChange={e => field.handleChange(e.target.value)}
+                  required
+                  className={inputClasses}
+                />
+              )}
             />
-            <input
-              type="email"
-              placeholder="Your email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              required
-              className={inputClasses}
+            <form.Field
+              name="email"
+              children={field => (
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  value={field.state.value}
+                  onChange={e => field.handleChange(e.target.value)}
+                  required
+                  className={inputClasses}
+                />
+              )}
             />
-            <input
-              placeholder="Role / Company"
-              value={role}
-              onChange={e => setRole(e.target.value)}
-              required
-              className={inputClasses}
+            <form.Field
+              name="role"
+              children={field => (
+                <input
+                  placeholder="Role / Company"
+                  value={field.state.value}
+                  onChange={e => field.handleChange(e.target.value)}
+                  required
+                  className={inputClasses}
+                />
+              )}
             />
-            <input
-              type="url"
-              placeholder="LinkedIn profile URL"
-              value={linkedInInput}
-              onChange={e => setLinkedInInput(e.target.value)}
-              required
-              className={inputClasses}
+            <form.Field
+              name="linkedInInput"
+              children={field => (
+                <input
+                  type="url"
+                  placeholder="LinkedIn profile URL"
+                  value={field.state.value}
+                  onChange={e => field.handleChange(e.target.value)}
+                  required
+                  className={inputClasses}
+                />
+              )}
             />
-            <textarea
-              placeholder="Your review..."
-              value={message}
-              onChange={e => setMessage(e.target.value)}
-              required
-              rows={4}
-              className={`${inputClasses} resize-y`}
+            <form.Field
+              name="message"
+              children={field => (
+                <textarea
+                  placeholder="Your review..."
+                  value={field.state.value}
+                  onChange={e => field.handleChange(e.target.value)}
+                  required
+                  rows={4}
+                  className={`${inputClasses} resize-y`}
+                />
+              )}
             />
             <Button
               type="submit"
@@ -407,7 +315,6 @@ export const Reviews = () => {
           </form>
         </div>
 
-        {/* Reviews column */}
         <div
           className={
             reviewsMaxHeightPx != null

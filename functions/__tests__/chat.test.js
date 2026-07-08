@@ -6,6 +6,7 @@ const require = createRequire(import.meta.url);
 const { HttpsError } = require("firebase-functions/v2/https");
 const { validateMessages, streamGemini, toGeminiContents, mapGeminiHttpError } =
   require("../chat.js")._internal;
+const chatLimits = require("../../shared/chatLimits.json");
 
 function geminiEvent(text) {
   return {
@@ -54,6 +55,58 @@ describe("chat function internals", () => {
       expect(() =>
         validateMessages([{ role: "user", content: "Hi" }, { role: "assistant", content: "Hey" }])
       ).toThrow(HttpsError);
+    });
+
+    it("rejects when message count exceeds MAX_MESSAGES", () => {
+      const messages = Array.from({ length: chatLimits.MAX_MESSAGES + 1 }, (_, index) => ({
+        role: index % 2 === 0 ? "user" : "assistant",
+        content: "ok",
+      }));
+      messages[messages.length - 1] = { role: "user", content: "last" };
+
+      expect(() => validateMessages(messages)).toThrow(
+        expect.objectContaining({ code: "invalid-argument", message: "Too many messages." })
+      );
+    });
+
+    it("rejects a single message longer than MAX_MESSAGE_LENGTH", () => {
+      expect(() =>
+        validateMessages([
+          { role: "user", content: "x".repeat(chatLimits.MAX_MESSAGE_LENGTH + 1) },
+        ])
+      ).toThrow(
+        expect.objectContaining({ code: "invalid-argument", message: "Message too long." })
+      );
+    });
+
+    it("rejects when total conversation length exceeds MAX_TOTAL_LENGTH", () => {
+      const chunk = "x".repeat(chatLimits.MAX_MESSAGE_LENGTH);
+      const messages = Array.from({ length: chatLimits.MAX_MESSAGES }, (_, index) => ({
+        role: index % 2 === 0 ? "user" : "assistant",
+        content: chunk,
+      }));
+      messages[messages.length - 1] = { role: "user", content: chunk };
+
+      expect(() => validateMessages(messages)).toThrow(
+        expect.objectContaining({ code: "invalid-argument", message: "Conversation too long." })
+      );
+    });
+
+    it("returns only the most recent HISTORY_SENT messages", () => {
+      const messages = Array.from({ length: chatLimits.HISTORY_SENT + 3 }, (_, index) => ({
+        role: index % 2 === 0 ? "user" : "assistant",
+        content: `message-${index}`,
+      }));
+      messages[messages.length - 1] = { role: "user", content: "latest" };
+
+      const trimmed = validateMessages(messages);
+
+      expect(trimmed).toHaveLength(chatLimits.HISTORY_SENT);
+      expect(trimmed.at(-1)).toEqual({ role: "user", content: "latest" });
+      expect(trimmed[0]).toEqual({
+        role: "assistant",
+        content: `message-${messages.length - chatLimits.HISTORY_SENT}`,
+      });
     });
   });
 

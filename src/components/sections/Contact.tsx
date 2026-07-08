@@ -4,6 +4,7 @@ import { useState } from "react"
 import { resume } from "@/data/resume"
 import { SectionLabel } from "@/components/ui/SectionLabel"
 import { sendContactEmailFn } from "@/lib/firebase"
+import { getSubmitErrorMessage } from "@/lib/functionsErrors"
 import { Button } from "@/components/ui/button"
 import { inputClasses } from "@/lib/inputClasses"
 
@@ -25,13 +26,9 @@ export const Contact = () => {
         setStatus("sent")
       } catch (err: unknown) {
         setStatus("error")
-        const code = err && typeof err === "object" && "code" in err ? (err as { code: string }).code : ""
-        const message = err && typeof err === "object" && "message" in err ? String((err as { message: unknown }).message) : ""
-        if (code === "functions/resource-exhausted" || message.includes("Demasiados")) {
-          setErrorMessage("Demasiados envíos. Intenta de nuevo en 1 hora.")
-        } else {
-          setErrorMessage("Something went wrong. Try emailing directly.")
-        }
+        setErrorMessage(
+          getSubmitErrorMessage(err, "Something went wrong. Try emailing directly."),
+        )
       }
     },
   })

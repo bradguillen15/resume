@@ -110,11 +110,11 @@ Grew from frontend engineer into senior software engineer with significant owner
 
 #### Technologies
 
-React, TypeScript, Redux, React Query, REST APIs, AWS, micro frontends, GitHub Actions, Harness, Spinnaker, testing (emphasis varied by area)
+React, Next.js, TypeScript, Redux, React Query, REST APIs, AWS, micro frontends, GitHub Actions, Harness, Spinnaker, testing (emphasis varied by area)
 
 #### Responsibilities
 
-- Built and maintained large React/TypeScript applications
+- Built and maintained large React and Next.js applications in TypeScript
 - Owned critical product features end-to-end (design collaboration through production support)
 - Collaborated daily with Product Managers, Designers, Backend Engineers, QA
 - Participated in architectural decisions including micro frontend evolution
@@ -373,7 +373,7 @@ Module Federation, Jest, React Testing Library, JUnit, Mockito, Selenium, Jersey
 
 | Credential | Institution | Notes |
 |------------|-------------|-------|
-| **Computer Engineering** | ULACIT | 2015 · ~90% completed |
+| **Computer Engineering** | ULACIT | 2015 – Present · ~90% completed (final research project pending) |
 | **Middle Technician in Software Development** | Colegio Técnico Carlos Luis Fallas | 2012–2014 |
 
 Computer Engineering is **not** marked complete—state "90% completed" or omit completion status; do not claim a conferred degree. The only missing requirement is the final research project; full-time work took priority once the career started.

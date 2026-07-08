@@ -14,11 +14,12 @@ const chatDailyCap = defineInt("CHAT_DAILY_CAP", { default: 45 });
 
 const GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta";
 
-// Keep in sync with src/lib/chat.ts
-const MAX_MESSAGES = 20;
-const MAX_MESSAGE_LENGTH = 2000;
-const MAX_TOTAL_LENGTH = 16000;
-const HISTORY_SENT_TO_MODEL = 12;
+const {
+  MAX_MESSAGES,
+  MAX_MESSAGE_LENGTH,
+  MAX_TOTAL_LENGTH,
+  HISTORY_SENT: HISTORY_SENT_TO_MODEL,
+} = require("./chatLimits.json");
 
 const CHAT_RATE_OPTS = {
   maxPerWindow: 20,
