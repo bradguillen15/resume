@@ -357,6 +357,12 @@ export const resume = {
           date: 'July 2026',
           url: 'https://www.boot.dev/certificates/806de848-ab22-457a-bd95-773ca067b602',
         },
+        {
+          name: 'Learn Kubernetes',
+          issuer: 'Boot.dev',
+          date: 'July 2026',
+          url: 'https://www.boot.dev/certificates/df59e4c9-f651-419c-baac-67ab1a955208',
+        },
       ],
     },
     {

@@ -46,7 +46,7 @@ PHILOSOPHY = (
 SKILLS = [
     ("Frontend", "React, Redux, React Query, Next.js, Micro Frontends (Module Federation), Webpack, Tailwind CSS, Web Accessibility (WCAG, ARIA, a11y), SEO"),
     ("Backend", "Node.js, Express, REST APIs, GraphQL, WebSockets, Spring Boot, Hibernate, AWS Lambda (serverless)"),
-    ("Cloud &amp; DevOps", "AWS (Lambda, API Gateway, EC2, S3, IAM, CloudFront), Firebase, Vercel, GitHub Actions, Harness, Spinnaker, Docker"),
+    ("Cloud &amp; DevOps", "AWS (Lambda, API Gateway, EC2, S3, IAM, CloudFront), Firebase, Vercel, GitHub Actions, Harness, Spinnaker, Docker, Kubernetes"),
     ("Testing", "Playwright, Jest, React Testing Library, Vitest, JUnit, Mockito"),
     ("Databases", "PostgreSQL, MySQL, Supabase"),
     ("Languages", "TypeScript, JavaScript, Java, C#, Python, SQL"),
@@ -125,7 +125,7 @@ EXPERIENCE = [
 ]
 
 EDUCATION = [
-    '<b><a href="https://www.boot.dev/u/bradgg" color="#1E4976">Boot.dev</a></b> Back-end Developer Path (in progress): Python, TypeScript, SQL, Docker, CI/CD, AWS, RAG',
+    '<b><a href="https://www.boot.dev/u/bradgg" color="#1E4976">Boot.dev</a></b> Back-end Developer Path (in progress): Python, TypeScript, SQL, Docker, Kubernetes, CI/CD, AWS, RAG',
     "<b>Computer Engineering</b>, ULACIT (2015, ~90% completed)",
     "<b>Middle Technician in Software Development</b>, Colegio Técnico Carlos Luis Fallas (2012&ndash;2014)",
     "<b>Languages:</b> Spanish (Native) &nbsp;&bull;&nbsp; English (C1)",

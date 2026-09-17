@@ -26,7 +26,7 @@ Senior Software Engineer with approximately ten years building and maintaining p
 
 **Cloud:** AWS (Lambda · API Gateway · EC2 · S3 · IAM · CloudFront) · Firebase · Supabase
 
-**DevOps & CI/CD:** GitHub Actions · Jenkins · Harness · Spinnaker · Docker · Git · Linux
+**DevOps & CI/CD:** GitHub Actions · Jenkins · Harness · Spinnaker · Docker · Kubernetes · Git · Linux
 
 **Testing:** Playwright (E2E) · Vitest · Jest · React Testing Library · JUnit · Mockito
 
@@ -98,7 +98,7 @@ First professional role; backend foundation that the full-stack narrative builds
 
 Deliberate, dated skill development reinforcing the backend, cloud, and AI dimensions of the full-stack profile. *Structured coursework and guided projects—not production ownership.*
 
-- **Boot.dev — Back-end Developer Path** (in progress; [boot.dev/u/bradgg](https://www.boot.dev/u/bradgg)): completed 14 courses + 5 guided projects in 2026 spanning Python (incl. OOP and functional), server-side TypeScript (HTTP clients/servers), SQL, Git, Linux, Docker, CI/CD with GitHub Actions, AWS, S3/CloudFront, and Retrieval Augmented Generation—reinforced by projects including an AI agent in Python.
+- **Boot.dev — Back-end Developer Path** (in progress; [boot.dev/u/bradgg](https://www.boot.dev/u/bradgg)): completed 15 courses + 5 guided projects in 2026 spanning Python (incl. OOP and functional), server-side TypeScript (HTTP clients/servers), SQL, Git, Linux, Docker, Kubernetes, CI/CD with GitHub Actions, AWS, S3/CloudFront, and Retrieval Augmented Generation—reinforced by projects including an AI agent in Python.
 - **Anthropic (Skilljar) — AI engineering courses:** Claude Code in Action, AI Fluency: Framework & Foundations, Introduction to and Advanced Model Context Protocol, and Introduction to Agent Skills.
 - **MouréDev (Big School):** *Certificado de iniciación al desarrollo con AI* (introductory).
 
