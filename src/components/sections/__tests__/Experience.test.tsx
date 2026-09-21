@@ -19,6 +19,7 @@ vi.mock('@/data/resume', () => ({
         role: 'Senior Developer',
         company: 'Acme Corp',
         companyUrl: 'https://acme.example.com',
+        logo: '/logos/acme.webp',
         period: '2022–Present',
         duration: '2 years',
         highlights: ['Built things'],
@@ -29,6 +30,7 @@ vi.mock('@/data/resume', () => ({
         role: 'Junior Developer',
         company: 'Initech',
         companyUrl: null,
+        logo: null,
         period: '2020–2022',
         duration: '2 years',
         highlights: ['Learned things'],
@@ -57,5 +59,11 @@ describe('Experience', () => {
     render(<Experience />);
     expect(screen.getByText('Senior Developer')).toBeInTheDocument();
     expect(screen.getByText('Junior Developer')).toBeInTheDocument();
+  });
+
+  it('renders the company logo when provided', () => {
+    render(<Experience />);
+    expect(screen.getByAltText('Acme Corp logo')).toHaveAttribute('src', '/logos/acme.webp');
+    expect(screen.queryByAltText('Initech logo')).not.toBeInTheDocument();
   });
 });

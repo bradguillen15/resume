@@ -1,7 +1,23 @@
-# Interview Cheat Sheets (local only)
+# Interview Cheat Sheets (moved to Obsidian)
 
-Company-specific interview cheat sheets generated per application or interview round.
+**Cheat sheets are no longer generated here.** They live in the Obsidian vault:
 
-**This folder is gitignored except for this README. Never commit or publish cheat sheet contents.**
+`~/Documents/Brad's Vault/interviews/`
 
-How to use: ask the AI assistant for a cheat sheet for a specific company/role. It should pull from `story-index.md`, the relevant `stories/`, and the role-matching `interviews/` prep doc, and save the result here as `<company>-<role>.md`.
+- One note per role, plus a `<role> - Cheatsheet.md` for prep
+- `Interview Tracker.md` is the index (Active / Archived)
+- Closed and rejected roles move to `interviews/archive/`
+- Real interview misses go to `Brad's Vault/INTERVIEW FAILS.md` **and** get flagged `weak: true` on the matching note in `Brad's Vault/Concept Graph/concepts/`
+
+**Why:** prep sits next to the concept graph, so a cheat sheet can wikilink straight to the concept it wants you to study.
+
+## Division of responsibility
+
+| This repo (`career/`) | The vault |
+|---|---|
+| **Facts** — stories, experience, strengths, leadership, philosophy, resume | **Prep** — per-interview cheat sheets, concept study notes, fail log |
+| Canonical. Never invent experience or metrics. | Reads *from* this repo; grounds every claim here. |
+
+When generating a cheat sheet, still start from `story-index.md` in this repo — just write the output to the vault.
+
+**This folder is gitignored except for this README.** The one file left here is a pointer stub for the GFT role; delete it once the move is settled.

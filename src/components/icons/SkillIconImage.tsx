@@ -1,4 +1,4 @@
-import { createElement } from 'react';
+import { createElement, useState } from 'react';
 import { getSkillColor, getSkillIcon, getSkillIconUrl } from '@/lib/skillIcons';
 
 interface SkillIconImageProps {
@@ -8,10 +8,11 @@ interface SkillIconImageProps {
 }
 
 export const SkillIconImage = ({ name, size, className }: SkillIconImageProps) => {
+  const [imageFailed, setImageFailed] = useState(false);
   const iconUrl = getSkillIconUrl(name);
   const FallbackIcon = getSkillIcon(name);
 
-  if (iconUrl) {
+  if (iconUrl && !imageFailed) {
     return (
       <img
         src={iconUrl}
@@ -22,6 +23,7 @@ export const SkillIconImage = ({ name, size, className }: SkillIconImageProps) =
         loading="lazy"
         decoding="async"
         draggable={false}
+        onError={() => setImageFailed(true)}
       />
     );
   }

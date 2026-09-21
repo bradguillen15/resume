@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { resume, type Project } from '@/data/resume';
 import { cn } from '@/lib/utils';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Tag } from '@/components/ui/Tag';
 import { ExternalLinkIcon } from '@/components/ui/ExternalLinkIcon';
+import { BrowserFrame } from '@/components/ui/BrowserFrame';
 import { Card, CardContent } from '@/components/ui/card';
 
 type ProjectEntry = Project;
@@ -31,6 +32,7 @@ function ProjectGalleryCarousel({
 }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
   const n = images.length;
   const go = useCallback(
     (delta: number) => {
@@ -40,10 +42,10 @@ function ProjectGalleryCarousel({
   );
 
   useEffect(() => {
-    if (n <= 1 || paused) return;
+    if (n <= 1 || paused || prefersReducedMotion) return;
     const id = window.setInterval(() => go(1), CAROUSEL_AUTO_MS);
     return () => window.clearInterval(id);
-  }, [n, paused, go]);
+  }, [n, paused, prefersReducedMotion, go]);
 
   return (
     <div
@@ -61,7 +63,7 @@ function ProjectGalleryCarousel({
         <motion.img
           key={index}
           src={images[index]}
-          alt={`${title} — screenshot ${index + 1} of ${n}`}
+          alt={`${title} screenshot ${index + 1} of ${n}`}
           className="absolute inset-0 h-full w-full object-cover object-top"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -192,9 +194,10 @@ export const Projects = () => {
             whileHover={{ y: -4 }}
           >
             <Card className="overflow-hidden border-border bg-bg-secondary hover:border-accent/30 transition-colors duration-300 h-full flex flex-col">
-              {/* Card header — image or gradient fallback */}
-              <div className="relative h-[160px] flex-shrink-0 overflow-hidden">
-                <ProjectCardMedia p={p} />
+              <div className="h-[228px] flex-shrink-0 border-b border-border">
+                <BrowserFrame url={p.live}>
+                  <ProjectCardMedia p={p} />
+                </BrowserFrame>
               </div>
 
               <CardContent className="flex flex-col flex-1 p-5 gap-3">
@@ -259,7 +262,7 @@ export const Projects = () => {
       </div>
       {visible.length === 0 && (
         <p className="text-text-muted text-[13px] text-center py-10">
-          More projects coming soon — check{' '}
+          More projects coming soon, check{' '}
           <a
             href={`https://${resume.github}`}
             target="_blank"

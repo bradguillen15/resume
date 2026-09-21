@@ -510,4 +510,8 @@ a {
     animation: none !important;
     opacity: 0.85;
   }
+
+  .skill-chip-float {
+    animation: none !important;
+  }
 }

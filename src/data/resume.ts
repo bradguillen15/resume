@@ -11,6 +11,7 @@ export interface ExperienceEntry {
   role: string;
   company: string;
   companyUrl: string | null;
+  logo: string | null;
   employmentType: string | null;
   workMode: string | null;
   place: string | null;
@@ -114,6 +115,7 @@ export const resume: Resume = {
       role: 'Senior Software Engineer',
       company: 'Keller Williams Inc.',
       companyUrl: 'https://www.kw.com',
+      logo: '/logos/keller-williams.webp',
       employmentType: 'Full-time',
       workMode: 'Remote',
       place: 'US',
@@ -139,6 +141,7 @@ export const resume: Resume = {
       role: 'Lead Web Developer',
       company: 'Advision Development',
       companyUrl: null,
+      logo: '/logos/advision.webp',
       employmentType: 'Full-time',
       workMode: 'Hybrid',
       place: 'Costa Rica',
@@ -178,6 +181,7 @@ export const resume: Resume = {
       role: 'Software Engineer',
       company: 'First Factory',
       companyUrl: null,
+      logo: '/logos/first-factory.webp',
       employmentType: 'Full-time',
       workMode: 'Hybrid',
       place: 'Costa Rica',
@@ -197,6 +201,7 @@ export const resume: Resume = {
       role: 'Software Developer Intern',
       company: 'FPT Latin America',
       companyUrl: null,
+      logo: '/logos/fpt.webp',
       employmentType: 'Internship',
       workMode: 'On-site',
       place: 'Costa Rica',
@@ -424,6 +429,12 @@ export const resume: Resume = {
           issuer: 'Boot.dev',
           date: 'July 2026',
           url: 'https://www.boot.dev/certificates/806de848-ab22-457a-bd95-773ca067b602',
+        },
+        {
+          name: 'Learn Kubernetes',
+          issuer: 'Boot.dev',
+          date: 'July 2026',
+          url: 'https://www.boot.dev/certificates/df59e4c9-f651-419c-baac-67ab1a955208',
         },
       ],
     },

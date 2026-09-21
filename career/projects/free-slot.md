@@ -210,7 +210,9 @@ This project reflects the engineer I am today more accurately than many professi
 
 ## AI Recommendation Feature (RAG)
 
-Free Slot includes a **shipped RAG-based recommendation feature**: it feeds the user's own activity data to **Claude** to suggest habits and activities they want to build (e.g., reading, meditating). This is a direct application of my RAG coursework ([`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)) — product AI running in a live app, not a tutorial.
+Free Slot includes a **shipped RAG-based recommendation feature** (the AI weekly planner): a Supabase Edge Function retrieves the user's own structured data (activities, priorities, daily notes, computed free-time windows) from Postgres, builds a system + user prompt from it, and calls **Gemini** (`gemini-3.5-flash`) using function calling — the model returns structured tool-call arguments (a `propose_plan` schema), not free text. Every returned slot is re-validated server-side against the actual submitted time windows before being persisted, so a hallucinated or out-of-window slot never reaches the database.
+
+This is retrieval-augmented in the general sense — the user's own relational data grounds the generation — not an embedding/vector-store pipeline. No FAISS, no LlamaIndex, no vector DB; retrieval is `WHERE user_id = ?` against Postgres, not nearest-neighbor search. This is a direct application of my RAG coursework ([`../learning/2026.md`](../learning/2026.md#certifications--structured-courses)) — product AI running in a live app, not a tutorial. (Model choice note: Gemini here; the separate crypto-sentiment project uses the Claude API — don't conflate the two when describing either.)
 
 ---
 
