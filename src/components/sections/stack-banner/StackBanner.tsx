@@ -1,4 +1,4 @@
-import { useEffect, useState, type CSSProperties } from 'react';
+import { useState, type CSSProperties } from 'react';
 import { CarouselProvider, useCarouselState } from './CarouselContext';
 import { DeviceMockups } from './DeviceMockups';
 import { DualChannels } from './DualChannels';
@@ -7,22 +7,8 @@ import { RotatingStackCard } from './RotatingStackCard';
 import { WIRE_GAP, WIRE_GAP_Y, ROTATE_MS } from './constants';
 import type { StackCategoryId } from './types';
 import { BREAKPOINT_LG } from '@/lib/breakpoints';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { VerticalWireBar, WireBar } from './WireBar';
-
-function useLargeScreen(): boolean {
-  const [isLarge, setIsLarge] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia(BREAKPOINT_LG).matches,
-  );
-
-  useEffect(() => {
-    const media = window.matchMedia(BREAKPOINT_LG);
-    const onChange = (event: MediaQueryListEvent) => setIsLarge(event.matches);
-    media.addEventListener('change', onChange);
-    return () => media.removeEventListener('change', onChange);
-  }, []);
-
-  return isLarge;
-}
 
 function CategoryCard({ categoryId }: { categoryId: StackCategoryId }) {
   const { indices, advance } = useCarouselState();
@@ -57,7 +43,7 @@ function StackNodes({ layout }: { layout: 'mobile' | 'desktop' }) {
 }
 
 function StackBannerFlow() {
-  const isDesktop = useLargeScreen();
+  const isDesktop = useMediaQuery(BREAKPOINT_LG);
 
   if (isDesktop) {
     return (

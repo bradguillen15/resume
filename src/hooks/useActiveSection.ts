@@ -1,21 +1,13 @@
 import { useState, useEffect, type RefObject } from 'react'
 import { BREAKPOINT_XL } from '@/lib/breakpoints'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 export function useActiveSection(
   containerRef: RefObject<HTMLDivElement | null>,
   sectionIds: string[]
 ): string {
   const [active, setActive] = useState(sectionIds[0])
-  const [isDesktop, setIsDesktop] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia(BREAKPOINT_XL).matches,
-  )
-
-  useEffect(() => {
-    const media = window.matchMedia(BREAKPOINT_XL)
-    const onChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches)
-    media.addEventListener('change', onChange)
-    return () => media.removeEventListener('change', onChange)
-  }, [])
+  const isDesktop = useMediaQuery(BREAKPOINT_XL)
 
   useEffect(() => {
     const container = isDesktop ? (containerRef.current ?? null) : null

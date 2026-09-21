@@ -1,7 +1,8 @@
-// Keep limits in sync with functions/chat.js
-export const MAX_MESSAGES = 20
-export const MAX_MESSAGE_LENGTH = 2000
-export const HISTORY_SENT_TO_SERVER = 12
+import chatLimits from "../../shared/chatLimits.json"
+
+export const MAX_MESSAGES = chatLimits.MAX_MESSAGES
+export const MAX_MESSAGE_LENGTH = chatLimits.MAX_MESSAGE_LENGTH
+export const HISTORY_SENT_TO_SERVER = chatLimits.HISTORY_SENT
 
 export type ChatRole = "user" | "assistant"
 
@@ -33,16 +34,10 @@ export const SUGGESTED_QUESTIONS = [
 const GENERIC_ERROR_MESSAGE =
   "Something went wrong talking to AI Brad. Try again, or contact the real Brad below."
 
+import { parseFunctionsError } from "./functionsErrors"
+
 const DEFAULT_RATE_LIMIT_MESSAGE =
   "The chat is taking a breather (rate limit reached). Try again in a bit, or reach out through the contact form."
-
-function parseFunctionsError(err: unknown): { code: string; message: string } {
-  if (!err || typeof err !== "object") return { code: "", message: "" }
-  const code = "code" in err && err.code != null ? String(err.code) : ""
-  const message =
-    "message" in err && err.message != null ? String(err.message) : ""
-  return { code, message }
-}
 
 function looksLikeInternalError(message: string): boolean {
   return (

@@ -1,13 +1,7 @@
 import { motion } from 'framer-motion'
-import { resume } from '@/data/resume'
+import { resume, type Skill } from '@/data/resume'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { SkillIconImage } from '@/components/icons/SkillIconImage'
-
-interface SkillItem {
-  name: string
-  years: number
-  level: number
-}
 
 const LevelDots = ({ level }: { level: number }) => (
   <div className="flex gap-[3px] items-center">
@@ -22,7 +16,7 @@ const LevelDots = ({ level }: { level: number }) => (
   </div>
 )
 
-const SkillChip = ({ item, index }: { item: SkillItem; index: number }) => {
+const SkillChip = ({ item, index }: { item: Skill; index: number }) => {
   const duration = 2.8 + (index % 5) * 0.35
   const delay = index * 0.22
 

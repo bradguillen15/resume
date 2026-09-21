@@ -3,21 +3,18 @@ import { resume } from '@/data/resume'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ExternalLinkIcon } from '@/components/ui/ExternalLinkIcon'
 
-const GROUP_URLS: Record<string, string> = {
-  Anthropic: 'https://anthropic.skilljar.com/',
-  'Boot.dev': 'https://www.boot.dev/',
-}
-
 const groupConfig = {
   Anthropic: {
     dotClass: 'bg-green-500',
     labelClass: 'text-green-400',
     badgeClass: 'border-green-500/30 text-green-400 hover:bg-green-500/10',
+    url: 'https://anthropic.skilljar.com/',
   },
   'Boot.dev': {
     dotClass: 'bg-accent',
     labelClass: 'text-accent',
     badgeClass: 'border-accent/30 text-accent hover:bg-accent/10',
+    url: 'https://www.boot.dev/',
   },
   Completed: {
     dotClass: 'bg-green-500',
@@ -54,9 +51,9 @@ export const Certifications = () => (
             {/* Group heading */}
             <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border">
               <span className={`w-2 h-2 rounded-full flex-shrink-0 ${config.dotClass}`} />
-              {GROUP_URLS[group.group] ? (
+              {'url' in config && config.url ? (
                 <a
-                  href={GROUP_URLS[group.group]}
+                  href={config.url}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 text-[11px] tracking-[0.1em] uppercase font-mono font-medium text-accent underline underline-offset-2 decoration-accent/40 hover:decoration-accent transition-colors duration-200"

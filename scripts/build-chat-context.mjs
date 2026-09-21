@@ -8,13 +8,15 @@
  * material (interviews/, target-companies.md, job-board.md, recommendations/,
  * learning/, templates/) must never be added here.
  */
-import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, copyFileSync } from "node:fs";
 import { join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const CAREER = join(ROOT, "career");
 const OUTPUT = join(ROOT, "functions", "chat-context.md");
+const CHAT_LIMITS_SOURCE = join(ROOT, "shared", "chatLimits.json");
+const CHAT_LIMITS_OUTPUT = join(ROOT, "functions", "chatLimits.json");
 // Gemini Flash supports a ~1M-token context window; this cap is a sanity check only.
 const MAX_CHARS = 400_000;
 
@@ -83,7 +85,13 @@ if (output.length > MAX_CHARS) {
 
 writeFileSync(OUTPUT, output);
 
+// functions/ is the only directory Firebase deploys, so chatLimits.json must be
+// copied in from shared/ (its canonical source, also used by src/lib/chat.ts)
+// rather than required across the deploy boundary.
+copyFileSync(CHAT_LIMITS_SOURCE, CHAT_LIMITS_OUTPUT);
+
 const words = output.split(/\s+/).length;
 console.log(
   `Wrote ${relative(ROOT, OUTPUT)}: ${files.length} files, ${words.toLocaleString()} words, ${output.length.toLocaleString()} chars`
 );
+console.log(`Copied ${relative(ROOT, CHAT_LIMITS_SOURCE)} to ${relative(ROOT, CHAT_LIMITS_OUTPUT)}`);

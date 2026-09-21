@@ -39,7 +39,7 @@ Each "applet" was one of the platform's micro frontends. *(Which applets my thre
 
 ## Primary Responsibilities
 
-- Built and maintained large React applications in TypeScript
+- Built and maintained large React and Next.js applications in TypeScript
 - Built reusable, **accessible** React components to **WCAG/ARIA** standards (keyboard navigation, screen-reader support) in the shared component library
 - Owned critical product features end-to-end—from design collaboration through production support
 - Collaborated daily with Product Managers, Designers, and Backend Engineers
@@ -54,7 +54,9 @@ Each "applet" was one of the platform's micro frontends. *(Which applets my thre
 
 ## Engineering Context
 
-The team operated on a mature frontend stack centered on **React** and **TypeScript**, with **Redux** and **React Query** handling state and server data. The product was a large **micro frontend** platform composed of roughly **40 micro frontends**, letting teams ship and maintain independently. Within it, I owned **three interconnected applications (user, admin, and shared)** — later consolidated from three repositories into two.
+The team operated on a mature frontend stack centered on **React**, **TypeScript**, and **Next.js**, with **Redux** and **React Query** handling state and server data. The product was a large **micro frontend** platform composed of roughly **40 micro frontends**, letting teams ship and maintain independently. Within it, I owned **three interconnected applications (user, admin, and shared)** — later consolidated from three repositories into two.
+
+**Next.js scope (honesty note):** The platform used **Next.js** as part of the React stack, so I have real hands-on exposure to building and maintaining applications in it. My work did **not** center on its server-side rendering strategies (SSR / SSG / ISR / RSC); I can speak to Next.js as a framework I have worked in and explain its rendering models conceptually, but I should frame this as genuine framework experience plus active study, **not** deep production SSR architecture. Do not overclaim SSR ownership.
 
 Backend integration was primarily through **REST APIs** on **AWS**. Deployments ran through **CI/CD** tooling—**GitHub Actions** for automation, **Harness** and **Spinnaker** for release orchestration. **Testing** was part of the delivery process, though the emphasis varied by area of the codebase.
 

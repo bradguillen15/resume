@@ -2,16 +2,13 @@ import { motion } from 'framer-motion';
 import { resume } from '@/data/resume';
 import { HeroTypeAnimation } from '@/components/layout/HeroTypeAnimation';
 import { Separator } from '@/components/ui/separator';
-import { EmailIcon } from '@/components/icons/EmailIcon';
-import { GitHubIcon } from '@/components/icons/GitHubIcon';
-import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
-import { ResumeIcon } from '@/components/icons/ResumeIcon';
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { NAV_LINKS } from '@/lib/nav';
+import { SOCIAL_LINKS } from '@/lib/socialLinks';
 import { ChatSpeechBubble } from '@/components/chat/ChatSpeechBubble';
 
 interface Props {
@@ -131,66 +128,21 @@ export const Sidebar = ({ activeSection, scrollToSection, onOpenChat, chatOpen }
         transition={{ delay: 1.1 }}
         className="flex gap-4 pt-4 pb-1 border-t border-border mt-auto"
       >
-        <Tooltip>
+        {SOCIAL_LINKS.map(({ href, label, icon: Icon, external }) => (
+          <Tooltip key={label}>
             <TooltipTrigger asChild>
               <a
-                href={resume.resumeUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Resume"
+                href={href}
+                {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
+                aria-label={label}
                 className="inline-flex text-text-muted hover:text-accent transition-colors duration-200"
               >
-                <ResumeIcon width={20} height={20} />
+                <Icon width={20} height={20} />
               </a>
             </TooltipTrigger>
-            <TooltipContent>Resume</TooltipContent>
+            <TooltipContent>{label}</TooltipContent>
           </Tooltip>
-
-          {/* LinkedIn */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <a
-                href={`https://${resume.linkedin}`}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-                className="inline-flex text-text-muted hover:text-accent transition-colors duration-200"
-              >
-                <LinkedInIcon width={20} height={20} />
-              </a>
-            </TooltipTrigger>
-            <TooltipContent>LinkedIn</TooltipContent>
-          </Tooltip>
-
-          {/* GitHub */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <a
-                href={`https://${resume.github}`}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-                className="inline-flex text-text-muted hover:text-accent transition-colors duration-200"
-              >
-                <GitHubIcon width={20} height={20} />
-              </a>
-            </TooltipTrigger>
-            <TooltipContent>GitHub</TooltipContent>
-          </Tooltip>
-
-          {/* Email */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <a
-                href={`mailto:${resume.email}`}
-                aria-label="Email"
-                className="inline-flex text-text-muted hover:text-accent transition-colors duration-200"
-              >
-                <EmailIcon width={20} height={20} />
-              </a>
-            </TooltipTrigger>
-            <TooltipContent>Email</TooltipContent>
-          </Tooltip>
+        ))}
       </motion.div>
     </motion.div>
   </aside>
