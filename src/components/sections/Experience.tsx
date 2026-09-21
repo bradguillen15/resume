@@ -25,14 +25,29 @@ export const Experience = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: i * 0.1 }}
-          className="pl-8 sm:pl-10 mb-14 relative group"
+          className={`${exp.logo ? "pl-10 sm:pl-12" : "pl-8 sm:pl-10"} mb-14 relative group`}
         >
-          <div
-            className="absolute -left-1 top-1.5 w-[9px] h-[9px] rounded-full border border-border-strong transition-colors duration-200 group-hover:border-accent"
-            style={{
-              background: i === 0 ? "var(--color-accent)" : "var(--color-bg-hover)",
-            }}
-          />
+          {exp.logo ? (
+            <img
+              src={exp.logo}
+              alt={`${exp.company} logo`}
+              width={32}
+              height={32}
+              loading="lazy"
+              decoding="async"
+              draggable={false}
+              className={`absolute -left-4 top-0 z-10 w-8 h-8 rounded-md object-cover ring-1 ring-offset-2 ring-offset-bg-primary transition-[box-shadow,transform] duration-200 group-hover:ring-accent group-hover:scale-105 ${
+                i === 0 ? "ring-accent" : "ring-border-strong"
+              }`}
+            />
+          ) : (
+            <div
+              className="absolute -left-1 top-1.5 w-[9px] h-[9px] rounded-full border border-border-strong transition-colors duration-200 group-hover:border-accent"
+              style={{
+                background: i === 0 ? "var(--color-accent)" : "var(--color-bg-hover)",
+              }}
+            />
+          )}
 
           {/* Hover left border accent */}
           <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200 -ml-px" />

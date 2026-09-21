@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getSkillColor, getSkillIconUrl, getSkillIcon, SKILL_ICON_COLORS } from '../skillIcons';
+import { getSkillColor, getSkillIconUrl, getSkillIcon, hasSkillIcon, SKILL_ICON_COLORS } from '../skillIcons';
 
 const DEFAULT_COLOR = '#F1F5F9';
 
@@ -49,5 +49,18 @@ describe('getSkillIcon', () => {
 
   it('Claude Code reuses the Claude icon component', () => {
     expect(getSkillIcon('Claude Code')).toBe(getSkillIcon('Claude'));
+  });
+});
+
+describe('hasSkillIcon', () => {
+  it('resolves tag aliases to their canonical skill icon', () => {
+    expect(getSkillIconUrl('Tailwind CSS')).toBe(getSkillIconUrl('Tailwind'));
+    expect(getSkillIcon('AWS Lambda')).toBe(getSkillIcon('AWS'));
+    expect(hasSkillIcon('Firestore')).toBe(true);
+  });
+
+  it('returns false for concept tags without an icon', () => {
+    expect(hasSkillIcon('Team Lead')).toBe(false);
+    expect(hasSkillIcon('Accessibility')).toBe(false);
   });
 });

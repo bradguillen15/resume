@@ -11,6 +11,7 @@ interface ExperienceEntry {
   role: string;
   company: string;
   companyUrl: string | null;
+  logo: string | null;
   employmentType: string | null;
   workMode: string | null;
   place: string | null;
@@ -46,6 +47,7 @@ export const resume = {
       role: 'Senior Software Engineer',
       company: 'Keller Williams Inc.',
       companyUrl: 'https://www.kw.com',
+      logo: '/logos/keller-williams.webp',
       employmentType: 'Full-time',
       workMode: 'Remote',
       place: 'US',
@@ -71,6 +73,7 @@ export const resume = {
       role: 'Lead Web Developer',
       company: 'Advision Development',
       companyUrl: null,
+      logo: '/logos/advision.webp',
       employmentType: 'Full-time',
       workMode: 'Hybrid',
       place: 'Costa Rica',
@@ -110,6 +113,7 @@ export const resume = {
       role: 'Software Engineer',
       company: 'First Factory',
       companyUrl: null,
+      logo: '/logos/first-factory.webp',
       employmentType: 'Full-time',
       workMode: 'Hybrid',
       place: 'Costa Rica',
@@ -129,6 +133,7 @@ export const resume = {
       role: 'Software Developer Intern',
       company: 'FPT Latin America',
       companyUrl: null,
+      logo: '/logos/fpt.webp',
       employmentType: 'Internship',
       workMode: 'On-site',
       place: 'Costa Rica',

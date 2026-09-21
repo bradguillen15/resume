@@ -84,6 +84,8 @@ const SKILLS: SkillDef[] = [
   { name: 'Spring Boot',             url: devicon('spring'),                                      icon: SiSpringboot,    color: '#6DB33F' },
   { name: 'Flask',                   url: 'https://skillicons.dev/icons?i=flask&theme=dark',     icon: SiFlask,         color: '#ffffff' },
   { name: 'FastAPI',                 url: devicon('fastapi'),                                     icon: SiFastapi,       color: '#009688' },
+  { name: 'Framer Motion',           url: devicon('framermotion'),                                color: '#F1F5F9' },
+  { name: 'WordPress',               url: `${DEVICON}/wordpress/wordpress-plain.svg`,             color: '#21759B' },
   { name: 'Vite',                    url: devicon('vite'),                                        icon: SiVite,          color: '#646CFF' },
   { name: 'MySQL',                   url: devicon('mysql'),                                       icon: SiMysql,         color: '#4479A1' },
   { name: 'PostgreSQL',              url: devicon('postgresql'),                                  icon: SiPostgresql,    color: '#336791' },
@@ -99,7 +101,7 @@ const SKILLS: SkillDef[] = [
   { name: 'Spinnaker',               url: 'https://svgl.app/library/spinnaker.svg',              icon: SiSpinnaker,     color: '#139BB4' },
   { name: 'SQL',                     icon: Database,        color: '#38BDF8' },
   { name: 'Firebase',                url: devicon('firebase'),                                    icon: SiFirebase,      color: '#FFCA28' },
-  { name: 'TanStack',                url: 'https://svgl.app/library/tanstack.svg',               icon: SiReactquery,    color: '#FF4154' },
+  { name: 'TanStack',                icon: SiReactquery,    color: '#FF4154' },
   { name: 'HTML',                    url: devicon('html5'),                                       icon: SiHtml5,         color: '#E34F26' },
   { name: 'CSS',                     url: devicon('css3'),                                        icon: SiCss,           color: '#1572B6' },
   { name: 'Tailwind',                url: devicon('tailwindcss'),                                 icon: SiTailwindcss,   color: '#06B6D4' },
@@ -113,7 +115,7 @@ const SKILLS: SkillDef[] = [
   { name: 'Cursor',                  url: 'https://svgl.app/library/cursor_dark.svg',            icon: CursorIcon,      color: '#F1F5F9' },
   { name: 'Claude Code',             url: 'https://svgl.app/library/claude-ai-icon.svg',         icon: SiClaude,        color: '#D97757' },
   { name: 'CodeRabbit',              icon: SiCoderabbit,    color: '#FF570A' },
-  { name: 'React Query',             url: 'https://svgl.app/library/tanstack.svg',                icon: SiReactquery,    color: '#FF4154' },
+  { name: 'React Query',             icon: SiReactquery,    color: '#FF4154' },
   { name: 'Playwright',              url: `${DEVICON}/playwright/playwright-original.svg`,         color: '#2EAD33' },
   { name: 'Vitest',                  url: `${DEVICON}/vitest/vitest-original.svg`,                 icon: SiVitest,        color: '#6E9F18' },
   { name: 'React Testing Library',   icon: SiTestinglibrary, color: '#E33332' },
@@ -124,6 +126,18 @@ const SKILLS: SkillDef[] = [
   { name: 'CI/CD (GitHub Actions)',  icon: SiGithubactions, color: '#2088FF' },
   { name: 'MCP (Model Context Protocol)', icon: SiModelcontextprotocol, color: '#F1F5F9' },
 ];
+
+const SKILL_ALIASES: Record<string, string> = {
+  'Tailwind CSS': 'Tailwind',
+  'AWS Lambda': 'AWS',
+  MFE: 'MFE / Module Federation',
+  Firestore: 'Firebase',
+  'Claude API': 'Claude',
+};
+
+function canonicalSkillName(name: string): string {
+  return Object.hasOwn(SKILL_ALIASES, name) ? SKILL_ALIASES[name] : name;
+}
 
 export const SKILL_ICON_URLS: Record<string, string> = Object.fromEntries(
   SKILLS.filter(s => s.url !== undefined).map(s => [s.name, s.url!]),
@@ -138,15 +152,22 @@ export const SKILL_ICON_COLORS: Partial<Record<string, string>> = Object.fromEnt
 );
 
 export function getSkillIconUrl(name: string): string | undefined {
-  return Object.hasOwn(SKILL_ICON_URLS, name) ? SKILL_ICON_URLS[name] : undefined;
+  const key = canonicalSkillName(name);
+  return Object.hasOwn(SKILL_ICON_URLS, key) ? SKILL_ICON_URLS[key] : undefined;
 }
 
 export function getSkillIcon(name: string): SkillIcon | undefined {
-  return Object.hasOwn(SKILL_ICONS, name) ? SKILL_ICONS[name] : undefined;
+  const key = canonicalSkillName(name);
+  return Object.hasOwn(SKILL_ICONS, key) ? SKILL_ICONS[key] : undefined;
 }
 
 export function getSkillColor(name: string): string {
-  return Object.hasOwn(SKILL_ICON_COLORS, name)
-    ? (SKILL_ICON_COLORS[name] ?? DEFAULT_ICON_COLOR)
+  const key = canonicalSkillName(name);
+  return Object.hasOwn(SKILL_ICON_COLORS, key)
+    ? (SKILL_ICON_COLORS[key] ?? DEFAULT_ICON_COLOR)
     : DEFAULT_ICON_COLOR;
+}
+
+export function hasSkillIcon(name: string): boolean {
+  return getSkillIconUrl(name) !== undefined || getSkillIcon(name) !== undefined;
 }
